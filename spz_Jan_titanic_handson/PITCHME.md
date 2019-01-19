@@ -143,7 +143,7 @@
 
 ## Are you ready?
 
-##（アカウントはできましたか？）
+## （アカウントはできましたか？）
 
 ---
 
@@ -240,7 +240,7 @@ https://www.kaggle.com/c/titanic
 
 ### 欠損値
 
-`train_df.isnull().sum()`, `test_df.isnull().sum()`で確認
+`train_df.isnull().sum()`,<br>`test_df.isnull().sum()`で確認
 
 - Age（20%程度）
 - Fare（数件）
@@ -534,3 +534,7 @@ Embarked=SとCに注目
 <span class="visualize-result-img">
 ![](spz_Jan_titanic_handson/assets/11_embarked_count.png)
 </span>
+
++++
+
+### EOF
