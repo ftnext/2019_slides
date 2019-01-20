@@ -86,7 +86,7 @@ Djangoの前にエラーが立ちはだかる 攻略できない。。
 ### ハンズオンを始める前に
 
 1. コマンドライン（コマンドプロンプトやターミナル）を起動
-2. errorfriendsフォルダに移動する
+2. errorfriendsディレクトリに移動する
 	- 作成していない方は`mkdir errorfriends && cd errorfriends`
 3. [環境構築参考記事](https://qiita.com/ftnext/items/082ec8fe96f26b181fc5)を参照された方は仮想環境を有効にする
 	- Windows: `myvenv\Scripts\activate`
