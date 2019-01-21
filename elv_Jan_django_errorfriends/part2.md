@@ -1,8 +1,8 @@
 ### 【エラーは友達】Django基礎ハンズオン
 
-1. 管理画面からブログ記事を作る（前半15分）
-2. ブログ記事を画面に表示する（前半30分）←
-3. ブログ画面からブログ記事を作る（後半45分）
+1. 管理画面からブログ記事を作る（30分）
+2. ブログ記事を画面に表示する（45分）←
+3. ブログ画面からブログ記事を作る（可能な範囲で）
 
 +++
 
@@ -16,19 +16,27 @@
 
 ### ブログ記事を画面に表示する
 
-- URLの設定
-- ビューの設定
-- テンプレートに表示
-- CSS導入
+1. URLの設定
+2. ビューの設定
+3. テンプレートに表示
+4. CSS導入
 
 ---
 
-### URLの設定
+### (1)URLの設定
 
-- ブログ一覧ページのURLを`http://127.0.0.1:8000/`にする
+- URLとは、Web上の住所
+- インターネットの全てのページは独自のURLを持つ
+- ブラウザは入力されたURLのページを表示する
+
++++
+
+### (1)URLの設定
+
+- 記事一覧ページのURLを`http://127.0.0.1:8000/`にする
 - 2つのurls.pyをエディタで編集する
 	- プロジェクトのurls.py（mysite/urls.py）
-	- blogアプリケーションのurls.py（blog/urls.py）**新規作成**
+	- blogアプリケーションのurls.py（blog/urls.py）**@color[#ff9400](新規作成)**
 
 +++
 
@@ -50,9 +58,12 @@ urlpatterns = [
 
 ### mysite/urls.pyの大まかな内容
 
-- 前提：URL`http://127.0.0.1:8000`はブログアプリへのアクセス
-- `http://127.0.0.1:8000/admin/`とブログアプリにアクセスされたら、管理画面を表示すると設定されている
-- `http://127.0.0.1:8000/admin/`以外のアクセスの場合は、blog/urls.pyの設定を使うと設定した
+前提：`http://127.0.0.1:8000/`というURLはブログアプリへのアクセス
+
+URL | 設定内容
+----- | -----
+`http://127.0.0.1:8000/admin/` | 管理画面を表示
+`http://127.0.0.1:8000/admin/`以外 | blog/urls.pyの設定を使う
 
 +++
 
@@ -71,15 +82,15 @@ urlpatterns = [
 
 ### blog/urls.pyの大まかな内容
 
-- `http://127.0.0.1:8000/`とブログアプリにアクセスされた場合を設定している
-- 現在、`http://127.0.0.1:8000/admin/`と`http://127.0.0.1:8000/`以外のURLでのアクセスは想定していない
+- `http://127.0.0.1:8000/`とブログアプリに<br>アクセスされた場合を設定している
+- 現在、`http://127.0.0.1:8000/admin/`と`http://127.0.0.1:8000/`以外のURLでの<br>アクセスは想定していない
 
 +++
 
 ### 第1のエラー：AttributeError
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- AttributeErrorにより、サーバが起動しない（ブラウザで`http://127.0.0.1:8000/`が開けない）
+- AttributeErrorにより、サーバが起動しない（ブラウザで http://127.0.0.1:8000/ が開けない）
 
 > AttributeError: module 'blog.views' has no attribute 'post_list'
 
@@ -91,20 +102,20 @@ urlpatterns = [
 - `path('', views.post_list, name='post_list')`
 	- 第1引数：`http://127.0.0.1:8000/`にアクセスされたら
 	- 第2引数：blog/views.pyの`post_list`関数を使って対応する と設定した
-	- （`post_list`関数にはブログ一覧を表示する処理を書く）
+	- （`post_list`関数には記事一覧を表示する処理を書く）
 
 +++
 
-### ビューとテンプレート
+### (2)ビューとテンプレート
 
-- blog/views.pyに`post_list`関数でブログ一覧を表示したい
+- blog/views.pyに`post_list`関数で記事一覧を表示したい
 - Djangoにおける役割分担：ビューとテンプレート（他にモデル）
-	- ブログ一覧用のデータの取得：ビューが担う（≒ Pythonの関数）
-	- ブログ一覧の表示：テンプレートが担う（≒ HTMLファイル）
+	- 記事一覧用のデータの取得：ビューが担う（≒ Pythonの関数）
+	- 記事一覧の表示：テンプレートが担う（≒ HTMLファイル）
 
 +++
 
-### ビューを作る（blog/views.pyの`post_list`関数）
+### `post_list`関数の行う処理
 
 1. 記事の一覧をモデルから取得
 2. 取得した記事のデータをテンプレートに渡す
@@ -126,18 +137,18 @@ def post_list(request):
 
 +++
 
-### `post_list`関数 1/2
+### （参考）`post_list`関数 1/2
 
-- `Post.objects.filter(published_date__lte=timezone.now())`
+- `Post.objects.filter(`<br>`    published_date__lte=timezone.now())`
 	- 公開日が現在時刻よりも前の記事の一覧を取得
-	- （このブログアプリは公開日を未来に設定することもできる）
+	- （このブログアプリは公開日を未来に<br>設定することもできる）
 - `.order_by('-published_date')`
-	- 公開日が現在時刻よりも前の記事の一覧を公開日が大きいものが先に来るように並び替え
+	- 公開日が現在時刻よりも前の記事の一覧を<br>公開日が大きいものが先に来るように並び替え
 	- 公開日が大きいものが先＝**最近公開されたものが先**
 
 +++
 
-### `post_list`関数 2/2
+### （参考）`post_list`関数 2/2
 
 - `render(request, 'blog/post_list.html', {'posts': posts})`
 	- `posts`は記事を並べたもの（最近公開されたものが先）
@@ -149,12 +160,12 @@ def post_list(request):
 ### 第2のエラー：TemplateDoesNotExist
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス
+- ブラウザで http://127.0.0.1:8000/ にアクセス
 - 記事一覧ページと思いきや`TemplateDoesNotExist`というエラーが表示される
 
 +++
 
-画像貼る
+![TemplateDoesNotExist](elv_Jan_django_errorfriends/assets/part2/1_TemplateDoesNotExist.png)
 
 ---
 
@@ -164,11 +175,11 @@ def post_list(request):
 
 - テンプレート`blog/post_list.html`をまだ作っていない
 - まずテンプレートの空ファイルを用意する
-- 次にブログ一覧を表示できるように修正する
+- 次に記事一覧を表示できるように修正する
 
 +++
 
-### テンプレートの空ファイルを用意する
+### (3)テンプレートの空ファイルを用意する
 
 作るファイル：`blog/templates/blog/post_list.html`
 
@@ -188,7 +199,8 @@ def post_list(request):
 
 ### テンプレートの空ファイルを用意する
 
-- TemplateDoesNotExistエラーは表示されなくなった
+- TemplateDoesNotExistは表示されなくなった
+		- http://127.0.0.1:8000/
 - 作りたいのは、ブログ記事の一覧画面
 - ビューからテンプレートに渡されたpostsをテンプレートに表示したい
 
@@ -228,7 +240,7 @@ def post_list(request):
 
 +++
 
-### post_list.html 1/2
+### （参考）post_list.html 1/2
 
 テンプレートタグ `{% for post in posts %}`
 
@@ -237,7 +249,7 @@ def post_list(request):
 
 +++
 
-### post_list.html 2/2
+### （参考）post_list.html 2/2
 
 - `{{ post.published_date }}`は記事の公開日の日付に置き換わる
 - `{{ post.title }}`は記事のタイトルの文字列に置き換わる
@@ -249,15 +261,16 @@ def post_list(request):
 ### 動作確認：ブログ記事を画面に表示する
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス
+- ブラウザで http://127.0.0.1:8000/ にアクセス
+- **注**：テンプレートが見つからなくてTemplateDoesNotExistが表示されたままのときがある。その際はCtrl+Cで止めて、再度runserverする
 
 +++
 
-スクショ
+![ブログ記事が表示されています](elv_Jan_django_errorfriends/assets/part2/2_post_list.png)
 
 ---
 
-### CSS導入
+### (4)CSS導入
 
 - 一覧画面の見た目を整える
 - 次のスライドの内容で`blog/static/css/blog.css`を作成
@@ -358,7 +371,7 @@ h1, h2, h3, h4 {
 
 +++
 
-### post_list.html アップデート
+### （参考）post_list.html アップデート
 
 - 1行目の`{% load static %}`：CSSを追加したことをテンプレートに教える
 - Bootstrap3のクラスやblog.cssでスタイル定義したクラスを設定
@@ -368,12 +381,12 @@ h1, h2, h3, h4 {
 ### CSS反映の確認
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス
+- ブラウザで http://127.0.0.1:8000/ にアクセス
 - **注**：CSSが見つからなくてスタイルが反映されないことがある。その際はCtrl+Cで止めて、再度runserverする
 
 +++
 
-スクショ
+![CSS設定済みブログ一覧](elv_Jan_django_errorfriends/assets/part2/3_post_list_with_style.png)
 
 +++
 
