@@ -1,8 +1,8 @@
 ### 【エラーは友達】Django基礎ハンズオン
 
-1. 管理画面からブログ記事を作る（前半15分）
-2. ブログ記事を画面に表示する（前半30分）
-3. ブログ画面からブログ記事を作る（後半45分）←
+1. 管理画面からブログ記事を作る（30分）
+2. ブログ記事を画面に表示する（45分）
+3. ブログ画面からブログ記事を作る（可能な範囲で）←
 
 +++
 
@@ -17,93 +17,9 @@
 
 ### ブログ画面からブログ記事を作る
 
-- 基本テンプレート導入
 - 記事作成フォーム設定
 - フォームに遷移できるようにする
 - フォームから保存できるようにする
-
----
-
-### 基本テンプレート
-
-- 記事作成フォームを表示するために、新規のテンプレートを作ることになる
-- どのページにも共通する部分（例：見出しのDjango Girls Blog）はそれぞれのテンプレートで書きたくない
-	- 見出しを変えることになったときに苦労する
-	- そこで、基本テンプレートに共通化する
-
-+++
-
-### 基本テンプレート base.html
-
-```html
-{% load static %}
-<html>
-    <head>
-        <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
-
-		<div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                	{% block content %}
-                	{% endblock %}
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
-```
-
-+++
-
-### base.html
-
-- ブログアプリで使うCSSの設定と見出しの部分を共通化
-- `{% block content %}` `{% endblock %}`
-	- この部分は各テンプレートの内容で置き換わる
-
-+++
-
-### post_list.html アップデート
-
-```html
-{% extends 'blog/base.html' %}
-
-{% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                <p>published: {{ post.published_date }}</p>
-            </div>
-            <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
-{% endblock %}
-```
-
-+++
-
-### post_list.html アップデート
-
-- 1行目`{% extends 'blog/base.html' %}`：基本テンプレートblog/base.htmlを使うと設定
-- `{% block content %}`〜`{% endblock %}`：blog/base.htmlの`{% block content %}` `{% endblock %}`の部分を置き換える
-- これまで同様、記事一覧が表示されるが、テンプレートのファイルの構成が変更されている
-
-+++
-
-### 動作確認：ブログ記事を画面に表示する
-
-- Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス
 
 ---
 
@@ -143,11 +59,11 @@ class PostForm(forms.ModelForm):
 
 - 「Django Girls Blog」という見出し部分に、**記事作成フォームへのリンクを追加** する
 - 具体的には、プラス(+)アイコンをクリックすると、記事作成フォームに遷移するとする
-- エディタでbase.htmlを編集
+- エディタでpost_list.htmlを編集
 
 +++
 
-### base.html 変更箇所
+### post_list.html 変更箇所
 
 ```html
 <div class="page-header">
@@ -266,15 +182,35 @@ def post_new(request): # 追加
 ### テンプレート blog/post_edit.html 作成
 
 ```html
-{% extends 'blog/base.html' %}
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
 
-{% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
-{% endblock %}
+        <div class="content container">
+            <div class="row">
+								<!-- 以下の部分だけが post_list.html と異なる -->
+                <div class="col-md-8">
+                    <h2>New post</h2>
+                    <form method="POST" class="post-form">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="save btn btn-default">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
 ```
 
 +++
@@ -391,7 +327,7 @@ def post_new(request):
 
 +++
 
-### base.html 変更箇所
+### post_list.html, post_edit.html 変更箇所
 
 ```html
 <div class="page-header">
@@ -406,7 +342,7 @@ def post_new(request):
 
 +++
 
-### base.htmlの変更
+### テンプレートの変更
 
 `{% if user.is_authenticated %}`
 
@@ -432,3 +368,11 @@ def post_new(request):
 ### 管理画面でログインしていない場合
 
 スクショ追加
+
++++
+
+### 書き換えた2つのテンプレート
+
+- post_list.htmlとpost_edit.htmlには共通部分が多い
+- 共通部分を「基本テンプレート」に切り出せる
+- 詳しくはAppendix参照
