@@ -1,8 +1,8 @@
 ### 【エラーは友達】Django基礎ハンズオン
 
 1. 管理画面からブログ記事を作る（30分）
-2. ブログ記事を画面に表示する（45分）
-3. ブログ画面からブログ記事を作る（可能な範囲で）←
+2. ブログ記事を画面に表示する（40分）
+3. ブログ画面からブログ記事を作る（40分）←
 
 +++
 
@@ -17,13 +17,13 @@
 
 ### ブログ画面からブログ記事を作る
 
-- 記事作成フォーム設定
-- フォームに遷移できるようにする
-- フォームから保存できるようにする
+1. 記事作成フォーム設定
+2. フォームに遷移できるようにする
+3. フォームから保存できるようにする
 
 ---
 
-### 記事作成フォーム設定
+### (1)記事作成フォーム設定
 
 - エディタでblog/forms.pyを作成
 - Postモデルをもとにしたフォーム（入力欄の集まり）を作る
@@ -46,7 +46,7 @@ class PostForm(forms.ModelForm):
 
 +++
 
-### blog/forms.py
+### （参考）blog/forms.py
 
 `class Meta`
 
@@ -55,7 +55,7 @@ class PostForm(forms.ModelForm):
 
 ---
 
-### フォームに遷移できるようにする
+### (2)フォームに遷移できるようにする
 
 - 「Django Girls Blog」という見出し部分に、**記事作成フォームへのリンクを追加** する
 - 具体的には、プラス(+)アイコンをクリックすると、記事作成フォームに遷移するとする
@@ -74,15 +74,18 @@ class PostForm(forms.ModelForm):
 
 +++
 
-### 第3のエラー NoReverseMatch
+### 動作確認
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス
-- 記事一覧ページではなく`NoReverseMatch`というエラーが表示される
+- ブラウザで http://127.0.0.1:8000/ にアクセス
 
 +++
 
-スクショ
+### 第3のエラー NoReverseMatch
+
+記事一覧ページではなく`NoReverseMatch`というエラーが表示される
+
+![](elv_Jan_django_errorfriends/assets/part3/1_NoReverseMatch.png)
 
 +++
 
@@ -109,7 +112,7 @@ urlpatterns = [
 
 +++
 
-### NoReverseMatch解消するも
+### NoReverseMatch解消確認
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
 - AttributeErrorにより、サーバが起動しない
@@ -158,15 +161,19 @@ def post_new(request): # 追加
 
 +++
 
-### AttributeError解消するも
+### AttributeError解消確認
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス → 記事一覧が表示される
-- 記事作成アイコン（リンク）をクリックすると、`TemplateDoesNotExist`
+- ブラウザで http://127.0.0.1:8000/ にアクセス → 記事一覧が表示される
+- 記事作成アイコン（リンク）をクリックする
 
 +++
 
-スクショ
+### TemplateDoesNotExist
+
+記事作成アイコン（リンク）をクリックした後の画面
+
+![](elv_Jan_django_errorfriends/assets/part3/2_TemplateDoesNotExist.png)
 
 +++
 
@@ -199,7 +206,7 @@ def post_new(request): # 追加
 
         <div class="content container">
             <div class="row">
-								<!-- 以下の部分だけが post_list.html と異なる -->
+                <!-- 以下の部分だけが post_list.html と異なる -->
                 <div class="col-md-8">
                     <h2>New post</h2>
                     <form method="POST" class="post-form">{% csrf_token %}
@@ -215,7 +222,7 @@ def post_new(request): # 追加
 
 +++
 
-### テンプレート blog/post_edit.html
+### （参考）テンプレート blog/post_edit.html
 
 - `{{ form.as_p }}`：フォームに必要な入力欄を表示
 - `{% csrf_token %}`：セキュリティ対策（クロスサイトリクエストフォージェリ）
@@ -227,23 +234,23 @@ def post_new(request): # 追加
 ### 動作確認：フォームに遷移できるようにする
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス → 記事一覧が表示される
+- ブラウザで http://127.0.0.1:8000/ にアクセス → 記事一覧が表示される
 - 記事作成アイコン（リンク）をクリックする
 
 +++
 
-スクショ
+![](elv_Jan_django_errorfriends/assets/part3/3_display_form.png)
 
 ---
 
-### フォームから保存できるようにする
+### (3)フォームから保存できるようにする
 
-- 記事作成フォームから記事を保存できるようにする（`post_new`関数の修正）
-- 記事作成フォームへのリンクを管理画面でログインしているユーザだけに見せる
+1. 記事作成フォームから記事を保存できるようにする（`post_new`関数の修正）
+2. 記事作成フォームへのリンクを管理画面でログインしているユーザだけに見せる
 
 +++
 
-### blog/views.py アップデート
+### (3-1)blog/views.py アップデート
 
 ```python
 from django.shortcuts import redirect # 追加（他のimportは省略）
@@ -266,7 +273,7 @@ def post_new(request):
 
 +++
 
-### `post_new`関数の修正 1/4
+### （参考）`post_new`関数の修正 1/4
 
 `request.method == "POST"`
 
@@ -277,7 +284,7 @@ def post_new(request):
 
 +++
 
-### `post_new`関数の修正 2/4
+### （参考）`post_new`関数の修正 2/4
 
 - `form = PostForm(request.POST)`：入力された内容でPostFormを作成
 - `form.is_valid()`：入力値の検証
@@ -286,7 +293,7 @@ def post_new(request):
 
 +++
 
-### `post_new`関数の修正 3/4
+### （参考）`post_new`関数の修正 3/4
 
 記事の保存処理
 
@@ -296,7 +303,7 @@ def post_new(request):
 
 +++
 
-### `post_new`関数の修正 4/4
+### （参考）`post_new`関数の修正 4/4
 
 - `return redirect('post_list')`：記事一覧画面を表示する
 - 記事を保存したら、記事一覧画面に遷移する
@@ -307,20 +314,22 @@ def post_new(request):
 ### 動作確認：フォームから保存できるようにする
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス → 記事一覧が表示される
+- ブラウザで http://127.0.0.1:8000/ にアクセス → 記事一覧が表示される
 - 記事作成アイコン（リンク）をクリック→記事を作成してみる
 
 +++
 
-入力例スクショ
+![フォームから記事を作成](elv_Jan_django_errorfriends/assets/part3/4_post_from_form.png)
 
 +++
 
-作成されました（一覧ページスクショ）
+### 作成されました
+
+![一覧ページに遷移](elv_Jan_django_errorfriends/assets/part3/5_post_created_from_form.png)
 
 +++
 
-### 記事作成フォームへのリンクの表示を修正
+### (3-2)記事作成フォームへのリンクの表示を修正
 
 - 管理画面でログインしているユーザだけに見せる
 - **注**：これはセキュリティ対策としては不十分です（ログインしているユーザだけが記事を**作成**できるようにするべき）
@@ -342,9 +351,7 @@ def post_new(request):
 
 +++
 
-### テンプレートの変更
-
-`{% if user.is_authenticated %}`
+### `{% if user.is_authenticated %}`
 
 - Pythonのif文のイメージ
 - アクセスしたユーザが管理画面でログインしている場合、True
@@ -355,19 +362,21 @@ def post_new(request):
 ### 動作確認：記事作成フォームへのリンクの表示
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス
+- ブラウザで http://127.0.0.1:8000/ にアクセス
 
 +++
 
 ### 管理画面でログインしている場合
 
-スクショ追加
+![+リンクが表示される](elv_Jan_django_errorfriends/assets/part3/6_logged_in.png)
+
+管理画面 http://127.0.0.1:8000/admin/
 
 +++
 
 ### 管理画面でログインしていない場合
 
-スクショ追加
+![+リンクが表示されない](elv_Jan_django_errorfriends/assets/part3/7_not_logged_in.png)
 
 +++
 
