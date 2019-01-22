@@ -1,8 +1,8 @@
-### 【エラーは友達】Django基礎ハンズオン
+### 【エラーは友達】<br>Django基礎ハンズオン
 
 1. 管理画面からブログ記事を作る（30分）
 2. ブログ記事を画面に表示する（40分）
-3. ブログ画面からブログ記事を作る（40分）←
+3. <div class="django-girls-highlight">ブログ画面からブログ記事を作る（40分）</div>
 
 +++
 
@@ -10,7 +10,14 @@
 
 - 現状：記事は管理画面から作ることができる
 - 管理画面以外からも記事を作れるようにしたい
-- ゴール：記事一覧ページ`http://127.0.0.1:8000/`に記事の作成フォームに遷移するリンクを追加。フォームから記事が作成できる
+
++++
+
+### ブログ画面からブログ記事を作る ゴール
+
+- 記事一覧ページ`http://127.0.0.1:8000/`にリンクを追加
+- リンクから記事の作成フォームに遷移する
+- フォームから記事が作成できる
 - ※管理画面にログインしているユーザ以外にはリンクを見せない
 
 +++
@@ -23,10 +30,18 @@
 
 ---
 
+### フォーム
+
+- 入力欄の集まり
+		- 例：connpassでイベント申し込み。参加コメントを入力
+- フォームを通してデータを作成・更新
+
++++
+
 ### (1)記事作成フォーム設定
 
 - エディタでblog/forms.pyを作成
-- Postモデルをもとにしたフォーム（入力欄の集まり）を作る
+- Postモデルをもとにしたフォームを作る
 	- タイトルは200文字以内で入力など、モデルの設定を反映したフォームとなる
 
 +++
@@ -83,7 +98,7 @@ class PostForm(forms.ModelForm):
 
 ### 第3のエラー NoReverseMatch
 
-記事一覧ページではなく`NoReverseMatch`というエラーが表示される
+記事一覧ページではなく`NoReverseMatch`というエラーが表示される😱
 
 ![](elv_Jan_django_errorfriends/assets/part3/1_NoReverseMatch.png)
 
@@ -94,7 +109,7 @@ class PostForm(forms.ModelForm):
 > Reverse for 'post_new' not found.
 
 - 追加したaタグ `href="{% url 'post_new' %}"`
-- 設定された`urlpatterns`から`name='post_new'`と設定されているURLを返す
+- `{% url %}`タグは、urls.pyの`urlpatterns`の中から`name='post_new'`と設定されているURLを返す
 - 現在`name='post_new'`というURLは設定されていない
 
 +++
@@ -115,17 +130,27 @@ urlpatterns = [
 ### NoReverseMatch解消確認
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- AttributeErrorにより、サーバが起動しない
+
++++
+
+### AttributeError
+
+- コマンドラインを見ると、サーバが起動していない
 
 > AttributeError: module 'blog.views' has no attribute 'post_new'
 
 +++
 
-### AttributeErrorの原因
+### AttributeErrorを思い出す
 
 - 先ほどはurlpatternsで設定した`post_list`関数がblog/views.pyの中にないために発生
 	- `path('', views.post_list, name='post_list')`
-- 直近でurlpatternsで設定した`post_new`関数もまだblog/views.pyの中に用意していない
+
++++
+
+### AttributeErrorの原因
+
+- 直近でurlpatternsで設定した`post_new`関数もまだblog/views.pyの中に用意していない💡
 	- `path('post/new/', views.post_new, name='post_new')`
 
 +++
@@ -177,11 +202,16 @@ def post_new(request): # 追加
 
 +++
 
-### TemplateDoesNotExistの原因
+### TemplateDoesNotExistを思い出す
 
 - 先ほどは`blog/templates/blog/post_list.html`を作っていなかったために発生
 	- `render(request, 'blog/post_list.html', {'posts': posts})`
-- 今回も`blog/templates/blog/post_edit.html`を作っていない
+
++++
+
+### TemplateDoesNotExistの原因
+
+- 今回も`blog/templates/blog/post_edit.html`を作っていない💡
 	- `render(request, 'blog/post_edit.html', {'form': form})`
 
 +++
@@ -222,12 +252,20 @@ def post_new(request): # 追加
 
 +++
 
-### （参考）テンプレート blog/post_edit.html
+### （参考）テンプレート blog/post_edit.html (1/2)
 
 - `{{ form.as_p }}`：フォームに必要な入力欄を表示
 - `{% csrf_token %}`：セキュリティ対策（クロスサイトリクエストフォージェリ）
 	- このタグをつけ忘れるとエラーが出る（タグをつけることで解決）
-- `<form>`にaction属性が指定されていないので、フォームが表示されているページ自身に対して入力されたデータを送信
+
++++
+
+### （参考）テンプレート blog/post_edit.html (2/2)
+
+`<form>`タグ
+
+- action属性が指定されていない
+- **フォームが表示されているページ自身に対して** 入力されたデータを送信する設定
 
 +++
 
@@ -239,7 +277,7 @@ def post_new(request): # 追加
 
 +++
 
-![](elv_Jan_django_errorfriends/assets/part3/3_display_form.png)
+![フォームに遷移できました](elv_Jan_django_errorfriends/assets/part3/3_display_form.png)
 
 ---
 
@@ -277,10 +315,10 @@ def post_new(request):
 
 `request.method == "POST"`
 
-- 記事作成ページに遷移してきた時、Falseとなる
-	- フォームを表示する処理
-- フォームが表示されているページ自身に対して入力されたデータを送信した時、Trueとなる
-	- 入力内容の検証処理・入力内容の保存処理
+条件 | 条件式の値 | 後続処理
+----- | ----- | -----
+記事作成ページに遷移 | False | フォーム表示
+記事作成ページに入力されたデータを送信 | True | 入力内容の検証／保存
 
 +++
 
@@ -325,7 +363,9 @@ def post_new(request):
 
 ### 作成されました
 
+<span class="sixty-percent-img">
 ![一覧ページに遷移](elv_Jan_django_errorfriends/assets/part3/5_post_created_from_form.png)
+</span>
 
 +++
 
@@ -340,7 +380,7 @@ def post_new(request):
 
 ```html
 <div class="page-header">
-	<!-- 変更箇所 -->
+    <!-- 変更箇所 -->
     {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
     {% endif %}
@@ -385,3 +425,12 @@ def post_new(request):
 - post_list.htmlとpost_edit.htmlには共通部分が多い
 - 共通部分を「基本テンプレート」に切り出せる
 - 詳しくはAppendix参照
+
++++
+
+### ブログ画面からブログ記事を作る
+
+- 記事作成フォーム設定（forms.py）
+- フォームに遷移できるようにする
+		- NoReverseMatch、AttributeError、TemplateDoesNotExist
+- フォームから保存できるようにする
