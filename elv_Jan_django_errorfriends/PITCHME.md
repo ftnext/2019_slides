@@ -31,15 +31,19 @@
 
 +++
 
-私たち Django 仲良くなりたい
+![私たち Django 仲良くなりたい](elv_Jan_django_errorfriends/assets/django_taik_images.001.png)
 
 +++
 
-Djangoの前にエラーが立ちはだかる 攻略できない。。
+![Djangoの前にエラーが立ちはだかる](elv_Jan_django_errorfriends/assets/django_taik_images.002.png)
 
 +++
 
-このエラーと友達になることでDjangoとも仲良くなる
+![エラーを攻略できない。。](elv_Jan_django_errorfriends/assets/django_taik_images.003.png)
+
++++
+
+![このエラーと友達になることでDjangoとも仲良くなる](elv_Jan_django_errorfriends/assets/django_taik_images.004.png)
 
 ---
 
@@ -148,7 +152,7 @@ Djangoの前にエラーが立ちはだかる 攻略できない。。
 
 +++
 
-冒頭 私たち Django 仲良くなりたい
+![冒頭 私たち Django 仲良くなりたい](elv_Jan_django_errorfriends/assets/django_taik_images.001.png)
 
 +++
 
@@ -159,7 +163,7 @@ Djangoの前にエラーが立ちはだかる 攻略できない。。
 
 +++
 
-エラーはDjangoなのだからうまくやっていけるはず（敵ではない）
+![エラーはDjangoなのだからうまくやっていけるはず（敵ではない）](elv_Jan_django_errorfriends/assets/django_taik_images.005.png)
 
 +++
 
