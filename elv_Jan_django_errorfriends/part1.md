@@ -25,7 +25,7 @@
 - コマンドラインで以下を入力
 	- Windows: `django-admin.exe startproject mysite .`
 	- macOS: `django-admin startproject mysite .`
-- 「現在のディレクトリにmysiteプロジェクトを作成」という意味
+- 「現在のディレクトリに@color[#ff9400](mysiteプロジェクト)を作成」という意味
 
 +++
 
@@ -40,7 +40,7 @@
 
 ### (2)settings.py編集項目
 
-エディタでmysite/settings.pyを編集する
+エディタで@color[#ff9400](mysite/settings.py)を編集する
 
 - タイムゾーン `TIME_ZONE`
 - 言語コード `LANGUAGE_CODE`
@@ -100,7 +100,7 @@
 
 - コマンドラインで以下を実行
 	- `python manage.py startapp blog`
-	- blogディレクトリとその中にいくつかのファイルができる
+	- @color[#ff9400](blogディレクトリ)とその中にいくつかのファイルができる
 
 +++
 
@@ -133,17 +133,17 @@ INSTALLED_APPS = [
 
 ### (2)ブログ記事データを保存できるようにする
 
-1. ブログ記事の「モデル」を作成
+1. ブログ記事の **モデル** を作成
 2. ブログ記事のモデルをデータベースに反映
 
 +++
 
-### (2-1)ブログ記事の「モデル」を作成
+### (2-1)ブログ記事のモデルを作成
 
 - 今回はブログアプリケーションを作る
 - ブログ記事にはどんな項目が必要？
 - ブログ記事のデータを保存できるようにしたい
-    - 「データベース」に保存する
+    - **データベース** に保存する
 
 +++
 
@@ -162,7 +162,7 @@ INSTALLED_APPS = [
 - 「作成日時」(例:2019/01/24 23:00)
 - 「公開日時」(例:2019/01/25 8:00)
 
-決めた項目を元に、エディタでblog/models.pyを編集する（次のスライドのようにする）
+決めた項目を元に、エディタでblog/@color[#ff9400](models.py)を編集する（次のスライドのようにする）
 
 +++
 
@@ -218,7 +218,7 @@ published_date | 公開日 | 日付
 
 ### データベースにブログ記事の保存場所を用意した
 
-- Excelの表をイメージする
+- @color[#ff9400](Excelの表)をイメージする
 - 列は、ブログ記事の項目（先ほど決めた）
 - 今後は行を追加していく（1つ1つのブログ記事に対応）
 
@@ -253,7 +253,7 @@ author | title | text | created_date | published_date
 
 ### (3-1)管理画面から記事を作れるように設定
 
-- エディタでblog/admin.pyを編集し、以下のようにする
+- エディタでblog/@color[#ff9400](admin.py)を編集し、以下のようにする
 
 ```python
 from django.contrib import admin
@@ -300,7 +300,7 @@ admin.site.register(Post)
 ### 管理画面からブログ記事を作る まとめ
 
 - ロケットを飛ばす（＝Djangoの設定の確認）
-		- プロジェクト作成、settings.py編集
+	- プロジェクト作成、settings.py編集
 - 管理画面から記事を作れるようにする
-		- アプリケーション作成
-		- models.py、admin.py
+	- アプリケーション作成
+	- models.py、admin.py
