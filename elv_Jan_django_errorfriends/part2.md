@@ -9,7 +9,7 @@
 ### ブログ記事を画面に表示する
 
 - 現状：管理画面で作った記事を管理画面で一覧が見られる
-- 管理画面以外でも一覧の記事を確認できるようにしたい
+- @color[#ff9400](管理画面以外でも一覧の記事を確認できる)ようにしたい
 - ゴール：`http://127.0.0.1:8000/`にブラウザでアクセスすると記事の一覧が見られる
 
 +++
@@ -25,7 +25,7 @@
 
 ### (1)URLの設定
 
-- URLとは、Web上の住所
+- URLとは、@color[#ff9400](Web上の住所)
 - インターネットの全てのページは独自のURLを持つ
 - ブラウザは入力されたURLのページを表示する
 
@@ -36,7 +36,7 @@
 - 記事一覧ページのURLを`http://127.0.0.1:8000/`にする
 - 2つのurls.pyをエディタで編集する
 	- プロジェクトのurls.py（mysite/urls.py）
-	- blogアプリケーションのurls.py（blog/urls.py）**@color[#ff9400](新規作成)**
+	- blogアプリケーションのurls.py（blog/urls.py）@color[#ff9400](新規作成)
 
 +++
 
@@ -58,7 +58,7 @@ urlpatterns = [
 
 ### mysite/urls.pyの大まかな内容
 
-前提：`http://127.0.0.1:8000/`というURLはブログアプリへのアクセス
+前提：`http://127.0.0.1:8000/`というURLは、お手元のPCで動くブログアプリの住所
 
 URL | 設定内容
 ----- | -----
@@ -82,7 +82,7 @@ urlpatterns = [
 
 ### blog/urls.pyの大まかな内容
 
-- `http://127.0.0.1:8000/`とブログアプリに<br>アクセスされた場合を設定している
+- `http://127.0.0.1:8000/`というURLに対して、ブログアプリの動作を設定
 - 現在、`http://127.0.0.1:8000/admin/`と<br>`http://127.0.0.1:8000/`以外のURLでの<br>アクセスは想定していない
 
 +++
@@ -106,13 +106,13 @@ urlpatterns = [
 ### AttributeErrorの原因
 
 - blog/urls.pyの`path('', views.post_list, name='post_list')`
-- blog/views.pyの中に`post_list`関数がない
+- blog/@color[#ff9400](views.py)の中に@color[#ff9400](`post_list`関数がない)
 
 +++
 
 ### `path('', views.post_list, name='post_list')`
 
-引数 | 値 | 意味あい
+引数 | 値 | 意味
 ----- | ----- | -----
 第1引数 | `''` | `http://127.0.0.1:8000/`にアクセスされたら
 第2引数 | `views.post_list` | blog/views.pyの`post_list`関数を使って対応する
@@ -123,6 +123,8 @@ urlpatterns = [
 
 - blog/views.pyに`post_list`関数で記事一覧を表示したい
 - Djangoにおける役割分担：ビューとテンプレート（他にモデル）
+
++++
 
 ### ビュー／テンプレート／モデル
 
@@ -159,7 +161,7 @@ def post_list(request):
 ### （参考）`post_list`関数 1/3
 
 - `Post.objects.filter(`<br>`published_date__lte=timezone.now())`
-	- 公開日が現在時刻よりも前の記事の一覧を取得
+	- 公開日が@color[#ff9400](現在時刻よりも前)の記事の一覧を取得
 	- （このブログアプリは公開日を未来に<br>設定することもできる）
 
 +++
@@ -168,7 +170,7 @@ def post_list(request):
 
 - `.order_by('-published_date')`
 	- 公開日が現在時刻よりも前の記事の一覧を<br>公開日が大きいものが先に来るように並び替え
-	- 公開日が大きいものが先＝**最近公開されたものが先**
+	- 公開日が大きいものが先＝@color[#ff9400](最近公開されたものが先)
 
 +++
 
@@ -203,7 +205,7 @@ def post_list(request):
 
 > TemplateDoesNotExist: blog/post_list.html
 
-- テンプレート`blog/post_list.html`をまだ作っていない
+- テンプレート`blog/post_list.html`を@color[#ff9400](まだ作っていない)
 - まずテンプレートの空ファイルを用意する
 - 次に記事一覧を表示できるように修正する
 
@@ -226,7 +228,7 @@ def post_list(request):
 ### （参考）テンプレートの名前空間
 
 - なぜblog/templates/blogディレクトリに作成？
-- templatesの下のアプリケーション名(blog)のディレクトリに作成することで、Djangoがテンプレートを区別できる（複数のアプリケーションが別々のpost_list.htmlを持つケース）
+- templatesの下のアプリケーション名(blog)のディレクトリに作成することで、@color[#ff9400](Djangoがテンプレートを区別)できる（複数のアプリケーションが別々のpost_list.htmlを持つケース）
 - ref: [はじめての Django アプリ作成、その 3](https://docs.djangoproject.com/ja/2.1/intro/tutorial03/)
 
 +++
@@ -235,7 +237,7 @@ def post_list(request):
 
 - http://127.0.0.1:8000/ にアクセスすると、TemplateDoesNotExistは表示されなくなった
 - 作りたいのは、ブログ記事の一覧画面
-- ビューからテンプレートに渡されたpostsをテンプレートに表示したい
+- ビューからテンプレートに渡された@color[#ff9400](postsをテンプレートに表示)したい
 
 +++
 
@@ -277,20 +279,20 @@ def post_list(request):
 
 テンプレートタグ `{% for post in posts %}`
 
-- ビューから渡されたpostsの1つ1つをpostとして取り出して処理
+- ビューから渡されたpostsの@color[#ff9400](1つ1つを)postとして@color[#ff9400](取り出して)処理
 - Pythonのfor文のイメージ
 
 +++
 
 ### （参考）post_list.html 2/3
 
-テンプレート中のタグ `{{ }}` が置き換わる
+テンプレート中の@color[#ff9400](タグ `{{ }}` が置き換わる)
 
 タグ | 置き換わった後
 ----- | -----
 `{{ post.published_date }}` | 記事の公開日の日付
 `{{ post.title }}` | 記事のタイトル
-`{{ post.text|linebreaksbr }}` | 記事の本文
+`{{ post.text }}` | 記事の本文
 
 +++
 
@@ -318,7 +320,7 @@ def post_list(request):
 
 ### (4)CSS導入
 
-- 一覧画面の見た目を整える
+- 一覧画面の@color[#ff9400](見た目を整える)
 - 次のスライドの内容で`blog/static/css/blog.css`を作成
 	- blogディレクトリの中にstaticディレクトリを作る
 	- blog/staticディレクトリの中にcssディレクトリを作る
@@ -440,7 +442,7 @@ h1, h2, h3, h4 {
 
 ### ここまでの設定内容
 
-- blog/urls.py：「`http://127.0.0.1:8000/`にアクセスされたら、blog/views.pyの`post_list`関数を使って対応する」と設定
+- blog/@color[#ff9400](urls.py)：「`http://127.0.0.1:8000/`にアクセスされたら、blog/@color[#ff9400](views.py)の`post_list`関数を使って対応する」と設定
 - `post_list`関数：
 	- 記事の一覧をPostモデルから取得
 	- post_list.htmlテンプレートに記事のデータを埋め込んで表示する
