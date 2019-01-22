@@ -12,3 +12,13 @@
   border: 0;
   box-shadow: none;
 }
+
+.reveal div .django-girls-highlight {
+  background-color: #ff9400;
+  padding: 15px 8px;
+}
+
+.sixty-percent-img img {
+  width: 60%;
+  height: 60%;
+}
