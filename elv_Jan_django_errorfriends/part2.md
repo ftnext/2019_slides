@@ -1,8 +1,8 @@
-### 【エラーは友達】Django基礎ハンズオン
+### 【エラーは友達】<br>Django基礎ハンズオン
 
 1. 管理画面からブログ記事を作る（30分）
-2. ブログ記事を画面に表示する（45分）←
-3. ブログ画面からブログ記事を作る（可能な範囲で）
+2. <div class="django-girls-highlight">ブログ記事を画面に表示する（40分）</div>
+3. ブログ画面からブログ記事を作る（40分）
 
 +++
 
@@ -83,26 +83,39 @@ urlpatterns = [
 ### blog/urls.pyの大まかな内容
 
 - `http://127.0.0.1:8000/`とブログアプリに<br>アクセスされた場合を設定している
-- 現在、`http://127.0.0.1:8000/admin/`と`http://127.0.0.1:8000/`以外のURLでの<br>アクセスは想定していない
+- 現在、`http://127.0.0.1:8000/admin/`と<br>`http://127.0.0.1:8000/`以外のURLでの<br>アクセスは想定していない
+
++++
+
+### 動作確認
+
+- Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
+- ブラウザで http://127.0.0.1:8000/ にアクセス
 
 +++
 
 ### 第1のエラー：AttributeError
 
-- Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- AttributeErrorにより、サーバが起動しない（ブラウザで http://127.0.0.1:8000/ が開けない）
-
 > AttributeError: module 'blog.views' has no attribute 'post_list'
+
+- ブラウザで http://127.0.0.1:8000/ にアクセスできない😱
+- コマンドラインを見ると、AttributeErrorにより、サーバが起動していない
 
 ---
 
 ### AttributeErrorの原因
 
+- blog/urls.pyの`path('', views.post_list, name='post_list')`
 - blog/views.pyの中に`post_list`関数がない
-- `path('', views.post_list, name='post_list')`
-	- 第1引数：`http://127.0.0.1:8000/`にアクセスされたら
-	- 第2引数：blog/views.pyの`post_list`関数を使って対応する と設定した
-	- （`post_list`関数には記事一覧を表示する処理を書く）
+
++++
+
+### `path('', views.post_list, name='post_list')`
+
+引数 | 値 | 意味あい
+----- | ----- | -----
+第1引数 | `''` | `http://127.0.0.1:8000/`にアクセスされたら
+第2引数 | `views.post_list` | blog/views.pyの`post_list`関数を使って対応する
 
 +++
 
@@ -110,8 +123,14 @@ urlpatterns = [
 
 - blog/views.pyに`post_list`関数で記事一覧を表示したい
 - Djangoにおける役割分担：ビューとテンプレート（他にモデル）
-	- 記事一覧用のデータの取得：ビューが担う（≒ Pythonの関数）
-	- 記事一覧の表示：テンプレートが担う（≒ HTMLファイル）
+
+### ビュー／テンプレート／モデル
+
+名前 | 役割 | 関連
+----- | ----- | -----
+ビュー | 記事一覧用のデータの取得 | ≒ Pythonの関数
+テンプレート | 記事一覧の表示 | ≒ HTMLファイル
+モデル | 記事データの操作 | ≒ データベース
 
 +++
 
@@ -137,35 +156,46 @@ def post_list(request):
 
 +++
 
-### （参考）`post_list`関数 1/2
+### （参考）`post_list`関数 1/3
 
-- `Post.objects.filter(`<br>`    published_date__lte=timezone.now())`
+- `Post.objects.filter(`<br>`published_date__lte=timezone.now())`
 	- 公開日が現在時刻よりも前の記事の一覧を取得
 	- （このブログアプリは公開日を未来に<br>設定することもできる）
+
++++
+
+### （参考）`post_list`関数 2/3
+
 - `.order_by('-published_date')`
 	- 公開日が現在時刻よりも前の記事の一覧を<br>公開日が大きいものが先に来るように並び替え
 	- 公開日が大きいものが先＝**最近公開されたものが先**
 
 +++
 
-### （参考）`post_list`関数 2/2
+### （参考）`post_list`関数 3/3
 
 - `render(request, 'blog/post_list.html', {'posts': posts})`
 	- `posts`は記事を並べたもの（最近公開されたものが先）
 	- `posts`をテンプレート`blog/post_list.html`に渡す
+	- 渡された記事は、テンプレートでも`posts`として使える
 	- `blog/post_list.html`に`posts`のデータを埋め込んで表示する
+
++++
+
+### 動作確認
+
+- Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
+- ブラウザで http://127.0.0.1:8000/ にアクセス
 
 +++
 
 ### 第2のエラー：TemplateDoesNotExist
 
-- Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで http://127.0.0.1:8000/ にアクセス
-- 記事一覧ページと思いきや`TemplateDoesNotExist`というエラーが表示される
+記事一覧ページと思いきや😱
 
-+++
-
+<span class="sixty-percent-img">
 ![TemplateDoesNotExist](elv_Jan_django_errorfriends/assets/part2/1_TemplateDoesNotExist.png)
+</span>
 
 ---
 
@@ -183,6 +213,10 @@ def post_list(request):
 
 作るファイル：`blog/templates/blog/post_list.html`
 
++++
+
+### テンプレートの空ファイルを用意する
+
 1. blogディレクトリにtemplatesディレクトリを作る
 2. blog/templatesディレクトリにblogディレクトリを作る
 3. blog/templates/blogディレクトリに空のpost_list.htmlを作る
@@ -199,8 +233,7 @@ def post_list(request):
 
 ### テンプレートの空ファイルを用意する
 
-- TemplateDoesNotExistは表示されなくなった
-		- http://127.0.0.1:8000/
+- http://127.0.0.1:8000/ にアクセスすると、TemplateDoesNotExistは表示されなくなった
 - 作りたいのは、ブログ記事の一覧画面
 - ビューからテンプレートに渡されたpostsをテンプレートに表示したい
 
@@ -240,7 +273,7 @@ def post_list(request):
 
 +++
 
-### （参考）post_list.html 1/2
+### （参考）post_list.html 1/3
 
 テンプレートタグ `{% for post in posts %}`
 
@@ -249,12 +282,23 @@ def post_list(request):
 
 +++
 
-### （参考）post_list.html 2/2
+### （参考）post_list.html 2/3
 
-- `{{ post.published_date }}`は記事の公開日の日付に置き換わる
-- `{{ post.title }}`は記事のタイトルの文字列に置き換わる
-- `{{ post.text|linebreaksbr }}`は記事の本文に置き換わる
-	- `linebreaksbr`によって、本文の中の改行がHTMLでも表現される
+テンプレート中のタグ `{{ }}` が置き換わる
+
+タグ | 置き換わった後
+----- | -----
+`{{ post.published_date }}` | 記事の公開日の日付
+`{{ post.title }}` | 記事のタイトル
+`{{ post.text|linebreaksbr }}` | 記事の本文
+
++++
+
+### （参考）post_list.html 3/3
+
+- `{{ post.text|linebreaksbr }}`
+- `linebreaksbr`によって、本文の中の改行がHTMLでも表現される
+- （`linebreaksbr`はフィルタと呼ばれるものの一つ）
 
 +++
 
@@ -266,7 +310,9 @@ def post_list(request):
 
 +++
 
+<span class="sixty-percent-img">
 ![ブログ記事が表示されています](elv_Jan_django_errorfriends/assets/part2/2_post_list.png)
+</span>
 
 ---
 
@@ -386,7 +432,9 @@ h1, h2, h3, h4 {
 
 +++
 
+<span class="sixty-percent-img">
 ![CSS設定済みブログ一覧](elv_Jan_django_errorfriends/assets/part2/3_post_list_with_style.png)
+</span>
 
 +++
 
