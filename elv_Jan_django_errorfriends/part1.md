@@ -1,8 +1,8 @@
-### 【エラーは友達】Django基礎ハンズオン
+### 【エラーは友達】<br>Django基礎ハンズオン
 
-1. 管理画面からブログ記事を作る（30分）←
-2. ブログ記事を画面に表示する（60分）
-3. ブログ画面からブログ記事を作る（可能な範囲で）
+1. <div class="django-girls-highlight">管理画面からブログ記事を作る（30分）</div>
+2. ブログ記事を画面に表示する（40分）
+3. ブログ画面からブログ記事を作る（40分）
 
 +++
 
@@ -80,7 +80,9 @@
 
 ### Djangoの初期設定完了
 
+<span class="sixty-percent-img">
 ![ロケットが飛んでいます！](elv_Jan_django_errorfriends/assets/part1/1_rocket.png)
+</span>
 
 コマンドラインでCtrlキーとCキーを同時押しするとrunserverは止まります
 
@@ -218,12 +220,18 @@ published_date | 公開日 | 日付
 
 - Excelの表をイメージする
 - 列は、ブログ記事の項目（先ほど決めた）
-    - models.pyで項目に名前をつけた（「作成者」はauthor）
-    - models.pyで「入力規則」を設定した（日付しか入れられない）
 - 今後は行を追加していく（1つ1つのブログ記事に対応）
 
 author | title | text | created_date | published_date
 ----- | ----- | ----- | ----- | -----
+
++++
+
+author | title | text | created_date | published_date
+----- | ----- | ----- | ----- | -----
+
+- models.pyでブログ記事の項目に名前をつけた（「作成者」はauthor）
+- models.pyで「入力規則」を設定した（日付しか入れられない）
 
 +++
 
@@ -281,6 +289,18 @@ admin.site.register(Post)
 
 ### 記事を作る
 
+<span class="sixty-percent-img">
 ![管理画面から記事を作る](elv_Jan_django_errorfriends/assets/part1/3_add_post.png)
+</span>
 
 2つほど作ってみましょう
+
++++
+
+### 管理画面からブログ記事を作る まとめ
+
+- ロケットを飛ばす（＝Djangoの設定の確認）
+		- プロジェクト作成、settings.py編集
+- 管理画面から記事を作れるようにする
+		- アプリケーション作成
+		- models.py、admin.py
