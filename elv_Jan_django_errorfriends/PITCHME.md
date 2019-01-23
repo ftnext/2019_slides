@@ -201,6 +201,8 @@ Appendixをご参照ください
 ### ハンズオンお疲れさまでした！
 2月に続編の勉強会を開催予定です。
 
+---?include=elv_Jan_django_errorfriends/appendix.md
+
 +++
 
 ### EOF
