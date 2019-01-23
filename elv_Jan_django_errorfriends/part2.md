@@ -398,10 +398,10 @@ h1, h2, h3, h4 {
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-		<div class="content container">
+        <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                	{% for post in posts %}
+                    {% for post in posts %}
                         <div class="post">
                             <div class="date">
                                 <p>published: {{ post.published_date }}</p>
