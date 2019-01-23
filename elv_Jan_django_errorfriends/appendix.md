@@ -96,7 +96,7 @@
 ### 動作確認：ブログ記事を画面に表示する
 
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
-- ブラウザで`http://127.0.0.1:8000/`にアクセス
+- ブラウザで http://127.0.0.1:8000/ にアクセス
 - テンプレートのファイルを変更したが、これまで同様、記事一覧が表示される
 
 +++
@@ -110,11 +110,11 @@
 
 {% block content %}
     {% for post in posts %}
-				<h2>New post</h2>
-				<form method="POST" class="post-form">{% csrf_token %}
-						{{ form.as_p }}
-						<button type="submit" class="save btn btn-default">Save</button>
-				</form>
+        <h2>New post</h2>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
     {% endfor %}
 {% endblock %}
 ```
