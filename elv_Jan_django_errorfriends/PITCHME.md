@@ -72,13 +72,17 @@ Web開発経験について
 
 ### 管理画面からブログ記事を作る
 
+<span class="eighty-percent-img">
 ![](elv_Jan_django_errorfriends/assets/part1/add_post_from_admin.png)
+</span>
 
 +++
 
 ### ブログ記事を画面に表示する
 
+<span class="eighty-percent-img">
 ![](elv_Jan_django_errorfriends/assets/part2/3_post_list_with_style.png)
+</span>
 
 +++
 
@@ -148,7 +152,7 @@ Web開発経験について
 +++
 
 <span class="eighty-percent-img">
-![機能追加はサイクルで進む](https://github.com/ftnext/2018_LTslides/blob/master/pyladies_Oct_Django_Girls/assets/django_add_feature.png)
+![機能追加はサイクルで進む](elv_Jan_django_errorfriends/assets/django_add_feature.png)
 </span>
 
 +++
@@ -219,6 +223,8 @@ Appendixをご参照ください
 ### ご清聴ありがとうございました
 ### ハンズオンお疲れさまでした！
 2月に続編の勉強会を開催予定です。
+
+Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 ---?include=elv_Jan_django_errorfriends/appendix.md
 
