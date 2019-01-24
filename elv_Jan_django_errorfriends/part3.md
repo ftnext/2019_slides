@@ -250,14 +250,14 @@ def post_new(request): # 追加
 </html>
 ```
 
++++
+
 ### （参考）テンプレート blog/post_edit.html (1/2)
 
 `<form>`タグ
 
 - method="POST": POSTという方法でデータを送信
 - action属性指定なし＝@color[#ff9400](フォームのあるページ /post/new 自身に対して)入力されたデータを送信
-
-+++
 
 +++
 
