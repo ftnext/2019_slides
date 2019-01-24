@@ -9,13 +9,13 @@
 
 +++
 
-### アンケート
+### アンケート🙋
 
-聞いたことある方🙋‍
-
-- URL
-- フォーム
-- モデル、ビュー、テンプレート
+Web開発経験について
+‍
+- Djangoの経験あり
+- 他の言語で経験あり(PHP, Rails)
+- はじめて
 
 +++
 
@@ -59,7 +59,6 @@
 
 - @color[#ff9400](ブログアプリ)を作る
 - ハンズオンは[Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)に基づく
-- ハンズオン中、質問は随時受け付けます
 
 +++
 
@@ -96,6 +95,13 @@
 - 解説はDjangoに絞っています
 	- Pythonの基礎、HTML、CSSについては詳しく取り上げません
 - お手元のPCの中だけで動かします（今回はデプロイを扱いません）
+
++++
+
+### 実りあるハンズオンにするために🙇
+
+- ハンズオン中、質問は随時受け付けます（うまくいかないときはお知らせください）
+- 隣近所で教え合っていただけると助かります（わからなければ遠慮なくサポートを呼んでください）
 
 +++
 
@@ -138,6 +144,12 @@
 - AttributeError：views.pyに関数が用意されていない
 - TemplateDoesNotExist：テンプレートが用意されていない
 - NoReverseMatch：urlpatternsが設定されていない
+
++++
+
+<span class="eighty-percent-img">
+![機能追加はサイクルで進む](https://github.com/ftnext/2018_LTslides/blob/master/pyladies_Oct_Django_Girls/assets/django_add_feature.png)
+</span>
 
 +++
 
@@ -194,6 +206,13 @@ Appendixをご参照ください
 - または、[Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)で復習（デプロイはスキップしてよい）
 - [Django 投票アプリ チュートリアル](https://docs.djangoproject.com/ja/2.1/intro/tutorial01/)
 - 参考：akiyokoさん [初学者・初級者向け Django の学習ロードマップ](https://akiyoko.hatenablog.jp/entry/2018/12/01/133427)
+
++++
+
+### 参考文献
+
+- [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)
+- [『プロになるためのWeb技術入門』](https://www.amazon.co.jp/dp/4774142352)
 
 +++
 

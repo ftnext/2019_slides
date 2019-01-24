@@ -31,12 +31,27 @@
 
 +++
 
+### 例：http://www.example.com/index
+
+- `http`：プロトコル
+- `www.example.com`：ホスト（インターネット上のコンピュータ）
+- `index`：パス（サーバ上のどこにアクセスするかの指定）
+
++++
+
 ### (1)URLの設定
 
-- 記事一覧ページのURLを`http://127.0.0.1:8000/`にする
-- 2つのurls.pyをエディタで編集する
-	- プロジェクトのurls.py（mysite/urls.py）
-	- blogアプリケーションのurls.py（blog/urls.py）@color[#ff9400](新規作成)
+- お手元のPCを示す：`127.0.0.1:8000`
+- 記事一覧のパスを空文字`''`にする → `http://127.0.0.1:8000/`
+
++++
+
+### urls.py編集
+
+2つのurls.pyをエディタで編集する
+
+- プロジェクトのurls.py（mysite/urls.py）
+- blogアプリケーションのurls.py（blog/urls.py）@color[#ff9400](新規作成)
 
 +++
 
@@ -58,12 +73,12 @@ urlpatterns = [
 
 ### mysite/urls.pyの大まかな内容
 
-前提：`http://127.0.0.1:8000/`というURLは、お手元のPCで動くブログアプリの住所
+前提：`http://127.0.0.1:8000/`は、お手元のPCで動くブログアプリへのアクセス
 
-URL | 設定内容
+パス | 設定内容
 ----- | -----
-`http://127.0.0.1:8000/admin/` | 管理画面を表示
-`http://127.0.0.1:8000/admin/`以外 | blog/urls.pyの設定を使う
+`admin/` | 管理画面を表示
+`admin/`以外 | blog/urls.pyの設定を使う
 
 +++
 
