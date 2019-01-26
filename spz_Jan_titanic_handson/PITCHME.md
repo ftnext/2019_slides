@@ -5,14 +5,12 @@
 
 ---
 
-### アンケート
+### アンケート🙋‍
 
-前処理、欠損値
+- 「前処理」「欠損値」が何かわかる
+- 「前処理」「欠損値」を聞いたことがある
 
-1. 何のことかわかる方？
-2. 聞いたことがある方？
-
-**注**: このあと説明し、体験もしていただくので、今はわからなくても問題ありません
+**注**: このあと説明し、体験もしていただくので、今は用語がわからなくても問題ありません
 
 +++
 
@@ -26,34 +24,15 @@
 
 ### Kaggleのアカウント作成
 
-事前に作っていない人向け
+**事前に作っていない人** は作成をお願いします🙇
 
-1. https://www.kaggle.com/account/login にアクセス
-2. お好みの登録方法で進めてください（FB, Google, Yahoo, Email）
-
-+++
-
-### タイタニックコンペに参加
-
-1. ログイン後 https://www.kaggle.com/competitions にアクセス（上部の「Competition」）
-2. 「titanic」で検索
-3. タイタニックコンペにJoin
-
-参考情報：Qiita [Kaggle事始め](https://qiita.com/taka4sato/items/802c494fdebeaa7f43b7)
+まず https://www.kaggle.com/account/login にアクセス
 
 +++
 
-### 「titanic」でコンペを検索
+![お好みの登録方法で進めてください（FB, Google, Yahoo, Email）](spz_Jan_titanic_handson/assets/kaggle_register.png)
 
-![タイタニックコンペを検索](spz_Jan_titanic_handson/assets/1_search_titanic_competition.png)
-
-+++
-
-### タイタニックコンペにJoin
-
-![](spz_Jan_titanic_handson/assets/join_titanic_competition.png)
-
-+++
+---
 
 ### 自己紹介（About nikkie）
 
@@ -66,7 +45,7 @@
 
 ### ハンズオン後の姿
 
-- Kaggleのタイタニックコンペで機械学習を体験していただく
+- Kaggleのタイタニックコンペで機械学習を **体験** していただく
 - 「機械学習はこんなことをやるのか」とつかんでいただく
 - 機械学習の勉強に進むもよし、ハンズオンで満足してもよし
 
@@ -76,6 +55,10 @@
 
 - 機械学習の概念を詳細に説明しません
 - ディープラーニングには立ち入りません
+
++++
+
+## Kaggleのアカウントはできましたか？
 
 +++
 
@@ -109,16 +92,14 @@
 
 ### (1)機械学習とは
 
-データとアルゴリズム→モデル（モデル＝「計算式の塊」）
+図：データとアルゴリズム→モデル（モデル＝「計算式の塊」）
 
 +++
 
 ### （参考）機械学習
 
-タイタニックコンペは、教師あり学習・分類です
-
 - 教師あり学習
-  - 分類
+  - 分類（タイタニックコンペが該当）
   - 回帰
 - 教師なし学習
 - 強化学習
@@ -150,15 +131,15 @@
 
 図：データ収集→分析→**前処理→モデル作成→モデル評価**→運用
 
-時間の都合により分析は省略しています。
+このハンズオンでは、**分析は省略** しています。
 
 +++
 
-### (3)タイタニックとは
+### (3)タイタニックとは🛳️
 
 - 機械学習の入門者用コンペ
     - [What is a Getting Started competition?](https://www.kaggle.com/c/titanic#frequently-asked-questions)
-- 乗客が生存か死亡かを予測したい
+- **乗客が生存したか死亡したかを予測したい**
 - 沈没したタイタニック号の乗客データからモデル作成
 
 +++
@@ -213,16 +194,6 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 +++
 
-### kaggleのコンペ 2/2
-
-- モデルがテスト用データについて推測した結果をKaggleに提出
-- Kaggleには「正解」が用意されていて、提出結果からモデルの性能が評価される
-    - 性能評価に使う指標はコンペごとに異なる
-    - タイタニックの場合：生存／死亡を正しく予想できた割合
-- 性能が一番高いモデルを作った人（チーム）が優勝
-
-+++
-
 ### タイタニックのイメージ
 
 データ種別 | 年齢 | 性別 | 生死
@@ -234,9 +205,17 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 +++
 
-## Are you ready?
+### kaggleのコンペ 2/2
 
-## （アカウントはできましたか？）
+- テスト用データについてモデルが推測した結果をKaggleに提出
+- Kaggleには「正解」が用意されていて、提出結果からモデルの性能が評価される
+    - 性能評価に使う指標はコンペごとに異なる
+    - タイタニックの場合：生存／死亡の正解率
+- 性能が一番高いモデルを作った人（チーム）が優勝
+
++++
+
+## Are you ready? 😎
 
 ---
 
@@ -250,41 +229,55 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 +++
 
+### タイタニックコンペに参加
+
+**全員** 操作をお願いします🙇
+
+- ログイン後 https://www.kaggle.com/competitions にアクセス
+- （上部の「Competition」のクリックでもOK）
+
+参考情報：Qiita [Kaggle事始め](https://qiita.com/taka4sato/items/802c494fdebeaa7f43b7)
+
++++
+
+### 「titanic」でコンペを検索🔍
+
+![検索欄にtitanicと入力](spz_Jan_titanic_handson/assets/1_search_titanic_competition.png)
+
++++
+
+### タイタニックコンペにJoin
+
+![「Join Competition」→「I Understand and Accept」](spz_Jan_titanic_handson/assets/join_titanic_competition.png)
+
++++
+
 ### ハンズオン
 
-ブラウザで2つの操作
-
-1. サンプルコードのGistにアクセス
-    - https://gist.github.com/ftnext/34d8ad1bacbd7b928915c12599af9f92
-    - titanic_handson_sample_code.ipynb を使います
-2. KaggleでKernelを立ち上げる（このあと一緒にやります）
+- ブラウザで以下のKernel（≒ソースコード）にアクセス
+  - https://www.kaggle.com/ftnext/kaggle-spzcolab-201901
+- 自分のアカウントにコピーして、お手元で動かします
 
 +++
 
-https://www.kaggle.com/c/titanic
+### Kernelのコピー
 
-![Kernelをクリック](spz_Jan_titanic_handson/assets/2_go_titanic_kernel.png)
-
-+++
-
-![New Kernelをクリック](spz_Jan_titanic_handson/assets/3_go_new_kernel.png)
+![「・・・」→「Fork Kernel」をクリック](spz_Jan_titanic_handson/assets/fork_kernel.png)
 
 +++
 
-![Notebookを選択](spz_Jan_titanic_handson/assets/4_choose_notebook.png)
+## 準備完了です！👍
+
+![Kernelのコピーが編集できるようになりました](spz_Jan_titanic_handson/assets/editting_kernel.png)
+
+以降はKernelを一緒に進めます
 
 +++
 
-ここから先はソースコードに寄せる
-ソースコードはバッサリ削る
-必要なところだけスライドにする
-
-+++
-
-### 大まかな流れ
+### 大まかな流れ（TODO:位置変え）
 
 機械学習ではこう進みますという図を入れる（サンプルコードに寄せる）
-前処理はなぜ必要か。そのままでは機械学習に持ち込めない（抜けがある。扱いづらい「整っていないデータ」）
+前処理はなぜ必要か。そのままでは機械学習に持ち込めない（抜けがある。扱いづらい「整っていないデータ」）体験後の言語化としてみるか
 
 1. `train_df`からモデルを作る
     - 前処理
@@ -295,7 +288,7 @@ https://www.kaggle.com/c/titanic
 
 +++
 
-### モデル作成のポイント（図にする）
+### モデル作成のポイント（TODO:図にする）
 
 - `test_df`について予測する前に、どの程度の性能のモデルなのか確認したい
 - そこで、`train_df`をランダムに2つに分ける（`train_test_split`）
@@ -304,38 +297,62 @@ https://www.kaggle.com/c/titanic
 
 +++
 
-### （参考）モデル作成のポイント
+### Kernelの提出方法
 
-- 今回はすぐ提出するが、別のモデルを作ったときに、モデルの性能が芳しく無ければ提出しないと判断できる ←ここの文章の見直し
-
-+++
-
-TODO：提出方法を追加
-
-タイトル入れる「first_submission_20190130」
-commitする（コードが実行される）
-リンクが現れるのでクリックする
-下にスクロールしてsubmission
+- 前提：submisson.csvを作成するセルまで実行が終わった状態
+- オプション：タイトルを変えたい人は変える
+  - 例：「first_submission_20190130」
 
 +++
 
-### 提出練習用データセット
+### 1. Kernel上部の「Commit」をクリック
 
-- 試しに提出することができるデータセット
-- 性能：0.76555
-- ロジックはシンプル。女性が助かり、男性が死亡と予測
+![](spz_Jan_titanic_handson/assets/commit_kernel.png)
+
++++
+
+### 2. 現れたリンクをクリック
+
+![outputという項目へ移動](spz_Jan_titanic_handson/assets/kaggle_kernel_go_output.png)
+
++++
+
+### 3. Submit to Competition
+
+![](spz_Jan_titanic_handson/assets/kaggle_kernel_submission.png)
+
++++
+
+### 初提出、お疲れさまでした🎉
+
++++
+
+### 提出練習用データを試す
+
+- 試しに提出することができる生死予測データ
+- ここに提出したkernelがあります（nikkieだけで試します）
+
++++
+
+### 提出練習用データ
+
+- 性能：0.76555 😳
+- ロジックはシンプル。**女性が助かり、男性が死亡と予測**
 
 ---
 
 ### 0.76555超えを目指す
 
-サンプルコードを組合せてみましょう
+- サンプルコードを組合せてみましょう
+- 先ほどCommitしたKernelを編集しながら **上から再実行** します
 
-ノートブックは再実行します
++++
 
-- Ageの欠損の埋め方を見直す
-- AgeとFareを数段階のカテゴリに変換する（やらない）
-- モデルのアルゴリズムを変える（SVM、ランダムフォレスト）どういうものかざっくり説明
+### Kernel再実行
+
+![Editをクリック](spz_Jan_titanic_handson/assets/edit_committed_kernel.png)
+
+（以降はKernelで説明します）
 
 +++
 
@@ -346,6 +363,10 @@ commitする（コードが実行される）
 +++
 
 ## 0.76555超えた人🙋
+
++++
+
+## 0.80超えた人🙋 👏
 
 ---
 
@@ -373,6 +394,10 @@ commitする（コードが実行される）
 - モデル構築に使うデータを選抜する（可視化）
     - 人が仮説を立てて行う領域
 - モデルを構築する（今回体験）
+
++++
+
+TODO:今後学ぶ上でのキーワードを共有
 
 +++
 
@@ -433,6 +458,13 @@ commitする（コードが実行される）
 - [Google | Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
 
 「手を出したいな」と思っています
+
++++
+
+参考文献
+
+PyData
+noteさん
 
 +++
 
