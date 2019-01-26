@@ -13,6 +13,17 @@
   box-shadow: none;
 }
 
+.reveal div .kaggle-color-highlight {
+  color: #fff;
+  background-color: #58BCF9;
+  padding: 15px 8px;
+}
+
+.visualize-result-img img {
+  width: 60%;
+  height: 60%;
+}
+
 .reveal div .django-girls-highlight {
   background-color: #ff9400;
   padding: 15px 8px;
