@@ -7,10 +7,9 @@
 
 ### アンケート🙋‍
 
-- 「前処理」「欠損値」が何かわかる
-- 「前処理」「欠損値」を聞いたことがある
-
-**注**: このあと説明し、体験もしていただくので、今は用語がわからなくても問題ありません
+- Pythonでデータ分析経験あり
+- PythonでWebや自動化経験あり
+- Python以外でデータ分析経験あり
 
 +++
 
@@ -22,6 +21,25 @@
 
 +++
 
+### 自己紹介（About nikkie）
+
+- Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
+- 業務ではマーケティング(Google Analyticsなど)
+- Pythonを教える活動も [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳に参加
+- アニメが好き（アイマス、ユーフォ）
+
++++
+
+### 頼れるTAの皆さま👏
+
+- nao_yさん
+- shimakaze_softさん
+- jbkingさん
+- fumiさん
+- Kanzawaさん
+
+---
+
 ### Kaggleのアカウント作成
 
 **事前に作っていない人** は作成をお願いします🙇
@@ -32,22 +50,12 @@
 
 ![お好みの登録方法で進めてください（FB, Google, Yahoo, Email）](spz_Jan_titanic_handson/assets/kaggle_register.png)
 
----
-
-### 自己紹介（About nikkie）
-
-- Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
-- 業務ではマーケティング(Google Analyticsなど)
-- Pythonを教える活動も [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳に参加
-- アニメが好き（アイマス、ユーフォ）
-
 +++
 
 ### ハンズオン後の姿
 
 - Kaggleのタイタニックコンペで機械学習を **体験** していただく
 - 「機械学習はこんなことをやるのか」とつかんでいただく
-- 機械学習の勉強に進むもよし、ハンズオンで満足してもよし
 
 +++
 
@@ -65,9 +73,9 @@
 ### アジェンダ
 
 - 導入：機械学習／Kaggle／タイタニック（10分）
-- ハンズオン：手を動かしてタイタニックコンペに参加（20分）
+- ハンズオン：手を動かしてタイタニックコンペに参加（25分）
 - 座学：精度を上げるためのアプローチの紹介（5分）
-- もくもくタイム：精度向上に各自挑戦（15分）
+- もくもくタイム：精度向上に各自挑戦（10分）
 - まとめ（10分）
 
 ---
@@ -75,9 +83,9 @@
 ### すかすかタイタニックハンズオン
 
 - <div class="kaggle-color-highlight">導入：機械学習／Kaggle／タイタニック（10分）</div>
-- ハンズオン：手を動かしてタイタニックコンペに参加（20分）
+- ハンズオン：手を動かしてタイタニックコンペに参加（25分）
 - 座学：精度を上げるためのアプローチの紹介（5分）
-- もくもくタイム：精度向上に各自挑戦（15分）
+- もくもくタイム：精度向上に各自挑戦（10分）
 - まとめ（10分）
 
 +++
@@ -92,7 +100,7 @@
 
 ### (1)機械学習とは
 
-図：データとアルゴリズム→モデル（モデル＝「計算式の塊」）
+![データとアルゴリズムからモデル（計算式の塊）を作る](spz_Jan_titanic_handson/assets/201901kaggel_talk.001.png)
 
 +++
 
@@ -108,7 +116,7 @@
 
 ### 機械学習の流れ
 
-図：データ収集→分析→前処理→モデル作成→モデル評価→運用
+![問題設定→データ収集→分析→前処理→モデル作成→モデル評価→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.002.png)
 
 +++
 
@@ -123,13 +131,13 @@
 
 ### Kaggleの対象範囲
 
-図：データ収集→**分析→前処理→モデル作成→モデル評価**→運用
+![問題設定→データ収集→**分析→前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.003.png)
 
 +++
 
 ### 今回のハンズオンの範囲
 
-図：データ収集→分析→**前処理→モデル作成→モデル評価**→運用
+![問題設定→データ収集→分析→**前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.004.png)
 
 このハンズオンでは、**分析は省略** しています。
 
@@ -139,8 +147,8 @@
 
 - 機械学習の入門者用コンペ
     - [What is a Getting Started competition?](https://www.kaggle.com/c/titanic#frequently-asked-questions)
+- 沈没したタイタニック号の乗客データを用いる
 - **乗客が生存したか死亡したかを予測したい**
-- 沈没したタイタニック号の乗客データからモデル作成
 
 +++
 
@@ -166,7 +174,23 @@
 
 ### 機械学習で取り組むこと（分類の場合）
 
-「知っているデータ」から「知らないデータ」を推測したい
+![「知っているデータ」から「知らないデータ」を予測したい](spz_Jan_titanic_handson/assets/201901kaggel_talk.005.png)
+
++++
+
+### 「知っているデータ」から「知らないデータ」を予測 1/2
+
+![「知っているデータ」から「モデル」を作る](spz_Jan_titanic_handson/assets/201901kaggel_talk.006.png)
+
++++
+
+### 「知っているデータ」から「知らないデータ」を予測 2/2
+
+![「モデル」を使って「知らないデータ」について予測する](spz_Jan_titanic_handson/assets/201901kaggel_talk.007.png)
+
++++
+
+### 「知っているデータ」と「知らないデータ」
 
  | コンペでの扱い | タイタニックの場合
 ----- | ----- | -----
@@ -175,18 +199,10 @@
 
 +++
 
-### 「知っているデータ」から「知らないデータ」を推測
-
-- 「知っているデータ」から「モデル」を作る
-- 「モデル」を使って「知らないデータ」について推測する
-- モデルは「計算式の塊」（pydatatext）
-
-+++
-
 ### 例：タイタニックの場合に取り組むこと
 
 - 乗客の属性と生存／死亡情報からモデルを作る
-- モデルを使って、生存／死亡を知らない乗客について、生存／死亡を推測する
+- モデルを使って、生存／死亡を知らない乗客について、生存／死亡を予測する
 - ref: https://www.kaggle.com/c/titanic#evaluation
 
 >It is your job to predict if a passenger survived the sinking of the Titanic or not.
@@ -201,13 +217,13 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 学習用データ | 26歳 | 男性 | 死亡
 学習用データ | 30歳 | 男性 | 死亡
 学習用データ | 28歳 | 女性 | 生存
-テスト用データ | 28歳 | 男性 | ？(推測)
+テスト用データ | 28歳 | 男性 | ？(予測)
 
 +++
 
 ### kaggleのコンペ 2/2
 
-- テスト用データについてモデルが推測した結果をKaggleに提出
+- テスト用データについてモデルが予測した結果をKaggleに提出
 - Kaggleには「正解」が用意されていて、提出結果からモデルの性能が評価される
     - 性能評価に使う指標はコンペごとに異なる
     - タイタニックの場合：生存／死亡の正解率
@@ -222,9 +238,9 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 ### すかすかタイタニックハンズオン
 
 - 導入：機械学習／Kaggle／タイタニック（10分）
-- <div class="kaggle-color-highlight">ハンズオン：手を動かしてタイタニックコンペに参加（20分）</div>
+- <div class="kaggle-color-highlight">ハンズオン：手を動かしてタイタニックコンペに参加（25分）</div>
 - 座学：精度を上げるためのアプローチの紹介（5分）
-- もくもくタイム：精度向上に各自挑戦（15分）
+- もくもくタイム：精度向上に各自挑戦（10分）
 - まとめ（10分）
 
 +++
@@ -256,7 +272,7 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 - ブラウザで以下のKernel（≒ソースコード）にアクセス
   - https://www.kaggle.com/ftnext/kaggle-spzcolab-201901
-- 自分のアカウントにコピーして、お手元で動かします
+- Kernelを自分のアカウントにコピーします（フォークと言います）
 
 +++
 
@@ -274,26 +290,21 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 +++
 
-### 大まかな流れ（TODO:位置変え）
+### （参考）`train_test_split` 1/3
 
-機械学習ではこう進みますという図を入れる（サンプルコードに寄せる）
-前処理はなぜ必要か。そのままでは機械学習に持ち込めない（抜けがある。扱いづらい「整っていないデータ」）体験後の言語化としてみるか
-
-1. `train_df`からモデルを作る
-    - 前処理
-        - 欠損値処理
-        - カテゴリ変数の扱い
-    - 性能確認
-2. 作成したモデルで`test_df`について予測する
+![学習用データをランダムに2つに分ける](spz_Jan_titanic_handson/assets/201901kaggel_talk.008.png)
 
 +++
 
-### モデル作成のポイント（TODO:図にする）
+### （参考）`train_test_split` 2/3
 
-- `test_df`について予測する前に、どの程度の性能のモデルなのか確認したい
-- そこで、`train_df`をランダムに2つに分ける（`train_test_split`）
-    - `train_df`のうち7割でモデルを作る
-    - 残りの3割でモデルの性能を評価する
+![2つに分けた片方からモデルを作る](spz_Jan_titanic_handson/assets/201901kaggel_talk.009.png)
+
++++
+
+### （参考）`train_test_split` 3/3
+
+![2つに分けた残りでモデルの性能を評価する](spz_Jan_titanic_handson/assets/201901kaggel_talk.010.png)
 
 +++
 
@@ -348,7 +359,19 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 +++
 
-### Kernel再実行
+### Kernel再実行 1/3
+
+![提出した画面で上部のKernelsをクリック](spz_Jan_titanic_handson/assets/submission_results_to_kernel.png)
+
++++
+
+### Kernel再実行 2/3
+
+![Your Workから先ほどのKernelをクリック](spz_Jan_titanic_handson/assets/select_your_kernels.png)
+
++++
+
+### Kernel再実行 3/3
 
 ![Editをクリック](spz_Jan_titanic_handson/assets/edit_committed_kernel.png)
 
@@ -364,46 +387,69 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 ## 0.76555超えた人🙋
 
-+++
-
-## 0.80超えた人🙋 👏
-
 ---
 
 ### すかすかタイタニックハンズオン
 
 - 導入：機械学習／Kaggle／タイタニック（10分）
-- ハンズオン：手を動かしてタイタニックコンペに参加（20分）
+- ハンズオン：手を動かしてタイタニックコンペに参加（25分）
 - 座学：精度を上げるためのアプローチの紹介（5分）
-- もくもくタイム：精度向上に各自挑戦（15分）
+- もくもくタイム：精度向上に各自挑戦（10分）
 - <div class="kaggle-color-highlight">まとめ（10分）</div>
 
 +++
 
 ### まとめ
 
+- 分析について
 - さらなる工夫の紹介
+- Kaggleの苦楽
 - ハンズオン後の機械学習学び方案
 
 +++
 
-### 機械学習の全体像
+### 再掲：機械学習の全体像
 
-実は可視化が必要
-
-- モデル構築に使うデータを選抜する（可視化）
-    - 人が仮説を立てて行う領域
-- モデルを構築する（今回体験）
+![問題設定→データ収集→分析→**前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.004.png)
 
 +++
 
-TODO:今後学ぶ上でのキーワードを共有
+### 体験したこと
+
+1. 前処理（データは抜けや形式のために、そのままでは機械学習に持ち込めない）
+2. モデル作成
+3. モデル評価
+
++++
+
+### 実は、面白いのは「分析」
+
+- 今回の体験では、使うデータは決まっていた
+- **分析** では、モデル作成に使うデータを選抜する
+    - データを可視化する
+    - 人が仮説を立てて行う領域
+
++++
+
+### 分析の参考：PyData.Tokyo Tutorial
+
+- [分析パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_dh.ipynb)
+- [モデル作成パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_ml.ipynb)
+
+Kernelにコピペして実行してみては？
+
++++
+
+### さらに工夫できる 1/2
+
+- 連続値（AgeやFare）をいくつかのカテゴリに分ける
+- 年齢の小さいところで助かっている（4歳以下）
+  - → Nameを加工してTitle
 
 +++
 
 ### さらに工夫できる
 
-- 年齢の小さいところで助かっている（4歳以下）Nameを加工してTitle
 - 特徴量を作る
     - Aloneかどうか（SibSpとParchを加工する）
     - Pclass と Age（カテゴリ）の積
@@ -411,60 +457,63 @@ TODO:今後学ぶ上でのキーワードを共有
 
 +++
 
-### nikkie（エンジニア出身）の考え
+### Kaggleの苦楽
 
-- データサイエンティストとエンジニアが協働できれば素敵
-- エンジニアは性能のいい機械学習モデルが作れなくても協働できる
-    - 機械学習モデルをAPIにして他のアプリと連携
-- アプリにAIを組み込むなら、クラウドベンダー公開の高性能な人工知能APIを使ってもいい
-    - 例: Microsoft Cognitive Services
-
-データサイエンティストはここ。エンジニアはここ
+- 楽：分析→工夫アイデア→試してスコアが上がる
+- 苦：工夫をいくつか試すも、スコアが上がらず
+  - ランダムフォレストというアルゴリズムでモデルを作り、0.727というスコアからはじめました
 
 +++
 
 ### Follow your heart
 
 - 機械学習体験、楽しかった😁
-    - ハンズオンと同様のコードが書ける状態を目指してみては？（可視化や機械学習の考え方を学ぶ）
+    - 機械学習の考え方を学びつつコンペに参加してみては？
 - 機械学習、意外とツライ。。😢
-    - アプリケーションにできあいのモデルや人工知能APIを組み込めるように手を動かしてみては？
+    - 機械学習には立ち入らないという姿勢でももちろんOK
 
 +++
 
-### 今後の学習に向けて
+### 機械学習の考え方を学ぶ
+
+- コードは豊富にある（コピーすれば動かせる）
+- 大事なのは、機械学習の考え方（例：学習用データ、テスト用データ）
+- 考え方を掴んで、コードを自由に読み書きしよう
+
++++
+
+### 今後の学習に向けて（キーワード紹介）
 
 - タイタニックは「教師あり学習」「分類問題」
-- モデルを構築する前の可視化
 - 実務では交差検証して性能評価
 - accuracy以外の性能評価指標もある
+- モデル評価ではハイパーパラメタを調整する
+
++++
+
+### 機械学習せずに機械学習をアプリに組み込む 1/2
+
+- 前提：Webエンジニア視点からの意見です
+- データサイエンティストとの協働
+    - データサイエンティストは性能のいいモデルを作る
+    - Webエンジニアはモデルをアプリに組み込む（APIにする）
+
++++
+
+### 機械学習せずに機械学習をアプリに組み込む 2/2
+
+- クラウドベンダーが高性能なモデルをAPIとして公開している
+- APIを呼ぶだけで、モデルの予測結果を利用できる
+- 例: Microsoft Cognitive Services
 
 +++
 
 ### 参考書籍（ハンズオンを作るに当たり）
 
-- 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』(2018)
+- 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』(2018) pydatatext
     - ざっとつかめる。説明がわかりやすい
 - 『Python機械学習プログラミング』（現在は[2版](https://www.amazon.co.jp/dp/4295003379)）
     - 機械学習の概念について詳細な説明
-
-+++
-
-### 充実のオンライン教材👀
-
-- Kaggle Learn
-- [Coursera | Machine Learning](https://ja.coursera.org/lecture/machine-learning/what-is-machine-learning-Ujm7v)
-- [Amazon | Machine Learning](https://aws.amazon.com/jp/training/learning-paths/machine-learning/)
-- [Google | Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
-
-「手を出したいな」と思っています
-
-+++
-
-参考文献
-
-PyData
-noteさん
 
 +++
 
@@ -506,7 +555,7 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 - 生存／死亡を判断するのに使えそうな特徴量を選びたい
 - **本来は可視化してから特徴量を選択** しますが、ここでは天下り（よさそうと言われている特徴量を可視化）です
-- 可視化コードはGistの titanic_handson_visualization.ipynb 参照
+- 可視化コードは[Gist](https://gist.github.com/ftnext/34d8ad1bacbd7b928915c12599af9f92)の titanic_handson_visualization.ipynb 参照
 - [特徴量の選択の参考になるkernelはこちら](https://www.kaggle.com/startupsci/titanic-data-science-solutions)
 
 +++
