@@ -35,8 +35,8 @@
 - nao_yさん
 - shimakaze_softさん
 - jbkingさん
-- fumiさん
-- Kanzawaさん
+- Fumiさん
+- canzawaさん
 
 ---
 
@@ -448,7 +448,7 @@ Kernelにコピペして実行してみては？
 
 +++
 
-### さらに工夫できる
+### さらに工夫できる 2/2
 
 - 特徴量を作る
     - Aloneかどうか（SibSpとParchを加工する）
