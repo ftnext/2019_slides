@@ -548,6 +548,7 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 ### Appendix
 
 - タイタニック号沈没事故の情報
+- Google Colaboratoryでの実行
 - 特徴量選定のための可視化
 
 +++
@@ -571,12 +572,49 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 ---
 
+### Google Colaboratoryでの実行
+
+- Kaggleが使えない場合のハンズオン用に用意
+- Googleアカウントを持っている前提
+- 用意したサンプルコードはColaboratoryでも動かすことができる
+
++++
+
+### Google Colaboratoryでの実行手順
+
+1. https://colab.research.google.com/ にアクセス
+2. GitHubリポジトリ https://github.com/ftnext/spzcolab_titanic の中のノートブックを開く(続くスライドで説明)
+
++++
+
+### ノートブックを開く 1/2
+
+![GitHubのタブを選び、https://github.com/ftnext/spzcolab_titanic と入力](spz_Jan_titanic_handson/assets/colab_select_notebook.png)
+
++++
+
+### ノートブックを開く 2/2
+
+![ノートブック(.ipynb)のリンクをクリック](spz_Jan_titanic_handson/assets/colab_select_notebook2.png)
+
++++
+
+### セル実行時 1/2
+
+![セルを初めて実行したときの警告は「このまま実行」を選択](spz_Jan_titanic_handson/assets/colab_run_cell.png)
+
++++
+
+### セル実行時 2/2
+
+![続くすべてのランタイムをリセットは「はい」を選択](spz_Jan_titanic_handson/assets/colab_run_cell2.png)
+
+---
+
 ### 特徴量選定のための可視化
 
-モデル構築前にやる作業のイメージの共有（全ての特徴量について考える）
-
+- モデル作成前の分析のイメージの共有（ただし、よさそうと言われている特徴量を可視化）
 - 生存／死亡を判断するのに使えそうな特徴量を選びたい
-- **本来は可視化してから特徴量を選択** しますが、ここでは天下り（よさそうと言われている特徴量を可視化）です
 - 可視化コードは[Gist](https://gist.github.com/ftnext/34d8ad1bacbd7b928915c12599af9f92)の titanic_handson_visualization.ipynb 参照
 - [特徴量の選択の参考になるkernelはこちら](https://www.kaggle.com/startupsci/titanic-data-science-solutions)
 
