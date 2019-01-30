@@ -118,7 +118,9 @@
 
 ### 機械学習の流れ
 
+<span class="seventy-percent-img">
 ![問題設定→データ収集→分析→前処理→モデル作成→モデル評価→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.002.png)
+</span>
 
 +++
 
@@ -133,13 +135,17 @@
 
 ### Kaggleの対象範囲
 
+<span class="seventy-percent-img">
 ![問題設定→データ収集→**分析→前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.003.png)
+</span>
 
 +++
 
 ### 今回のハンズオンの範囲
 
+<span class="seventy-percent-img">
 ![問題設定→データ収集→分析→**前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.004.png)
+</span>
 
 このハンズオンでは、**分析は省略** しています。
 
@@ -176,19 +182,25 @@
 
 ### 機械学習で取り組むこと（分類の場合）
 
+<span class="seventy-percent-img">
 ![「知っているデータ」から「知らないデータ」を予測したい](spz_Jan_titanic_handson/assets/201901kaggel_talk.005.png)
+</span>
 
 +++
 
 ### 「知っているデータ」から「知らないデータ」を予測 1/2
 
+<span class="seventy-percent-img">
 ![「知っているデータ」から「モデル」を作る](spz_Jan_titanic_handson/assets/201901kaggel_talk.006.png)
+</span>
 
 +++
 
 ### 「知っているデータ」から「知らないデータ」を予測 2/2
 
+<span class="seventy-percent-img">
 ![「モデル」を使って「知らないデータ」について予測する](spz_Jan_titanic_handson/assets/201901kaggel_talk.007.png)
+</span>
 
 +++
 
@@ -294,19 +306,25 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 ### （参考）`train_test_split` 1/3
 
+<span class="seventy-percent-img">
 ![学習用データをランダムに2つに分ける](spz_Jan_titanic_handson/assets/201901kaggel_talk.008.png)
+</span>
 
 +++
 
 ### （参考）`train_test_split` 2/3
 
+<span class="seventy-percent-img">
 ![2つに分けた片方からモデルを作る](spz_Jan_titanic_handson/assets/201901kaggel_talk.009.png)
+</span>
 
 +++
 
 ### （参考）`train_test_split` 3/3
 
+<span class="seventy-percent-img">
 ![2つに分けた残りでモデルの性能を評価する](spz_Jan_titanic_handson/assets/201901kaggel_talk.010.png)
+</span>
 
 +++
 
@@ -412,7 +430,9 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 ### 再掲：機械学習の全体像
 
+<span class="seventy-percent-img">
 ![問題設定→データ収集→分析→**前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.004.png)
+</span>
 
 +++
 
