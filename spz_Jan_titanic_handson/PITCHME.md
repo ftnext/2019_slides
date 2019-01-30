@@ -100,7 +100,9 @@
 
 ### (1)機械学習とは
 
+<span class="seventy-percent-img">
 ![データとアルゴリズムからモデル（計算式の塊）を作る](spz_Jan_titanic_handson/assets/201901kaggel_talk.001.png)
+</span>
 
 +++
 
