@@ -381,7 +381,7 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 ### Kernel再実行 1/3
 
-![提出した画面で上部のKernelsをクリック](spz_Jan_titanic_handson/assets/submission_results_to_kernel.png)
+![提出した画面で上部のKernelsをクリック](spz_Jan_titanic_handson/assets/submission_results_to_kernel.jpg)
 
 +++
 
