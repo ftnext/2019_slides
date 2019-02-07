@@ -2,7 +2,7 @@
 
 0. ブログアプリの機能のおさらい（10分）
 1. ブログ画面からブログ記事を作る（40分）
-2. ブログ記事の詳細が見られるようにする（30分）
+2. <div class="django-girls-highlight">ブログ記事の詳細が見られるようにする（30分）</div>
 3. ブログ記事に画像を追加できるようにする（30分）
 
 +++
@@ -11,7 +11,7 @@
 
 - 現状：一覧には記事の公開日時、タイトル、本文を表示している
 - 記事の作成者や作成日時も見たい
-- 1個1個の記事について別々のページで見たい（記事の詳細画面）
+- 1個1個の記事についてそれぞれのページを用意したい（記事の詳細画面）
 
 +++
 
@@ -27,13 +27,15 @@
 
 - blog/post_list.htmlに記事詳細へのリンク追加
 - 記事詳細画面用のURL、ビュー、テンプレートが必要
-- 疑問：ブログ記事が3つあるが、URL、ビュー、テンプレートはそれぞれいくつ必要？
+- 疑問：例えばブログ記事が3つあるとき、URL、ビュー、テンプレートはそれぞれいくつ必要？
 
 +++
 
 ### 羅針盤
 
-使うところだけ濃くする。数字入れる
+<span class="eighty-percent-img">
+![](elv_Feb_django_developcompass/assets/part2/django_compass_part2.001.png)
+</span>
 
 +++
 
@@ -48,15 +50,17 @@
 
 ### (1)リンクを追加する
 
-羅針盤の図
+<span class="eighty-percent-img">
+![](elv_Feb_django_developcompass/assets/part2/django_compass_part2.002.png)
+</span>
 
 +++
 
 ### リンクの追加にあたって
 
-- 記事の持つID(1,2,3,...)を利用
-- 例えば、`post/1/` というパスであれば、ID=1の記事を表示するものとする
-- 記事は増えていくので、リンクは自動的に作られてほしい
+- 方針：記事の持つID(1,2,3,...)を利用する
+- 例えば、ID=1の記事を表示するパスは、`post/1/`
+- IDを使えば、記事が増えていってもリンクを自動で決めることができる
 
 +++
 
@@ -111,8 +115,7 @@
 ### （参考）`{% url %}`
 
 - urls.pyの`urlpatterns`の中から`name`が一致するURLのパスを返す
-- aタグのhref属性に設定するリンクとして使える
-- ビューがテンプレートを実行する中で置き換わる（今回は置き換えに失敗）
+- ビューがテンプレートにデータを埋め込む中で、`{% url %}`はパスに置き換わる（今回は置き換えに失敗してエラー）
 
 +++
 
@@ -125,30 +128,32 @@
 ```
 
 - blog/urls.pyの設定：`path('post/new/', views.post_new, name='post_new')`
-- タグはHTMLでは`/post/new/`というパスに置き換わる
+- `{% url %}`は`/post/new/`というパスに置き換わる
 
 +++
 
 ### （参考）`pk=post.pk`
 
-- post.pkは記事のID（具体例：`pk=1`）
-- 記事の詳細のURLを作る際に必要
-- URLを記事ごとに作るのではなく、IDを指定したら記事が指定できるようにする
+- post.pkは記事のID（具体例：1, 108）
+- 記事の詳細のURLを作る際に記事のIDが必要（`{% url %}`タグの中に指定する）
+- 例）ID=1の記事の詳細画面：`{% url 'post_detail' pk=1 %}`→ URLは`post/1/`
 
 +++
 
 ### （参考）pkはprimary keyの略
 
 - pk：主キー
-- migrateでIDをpkとして設定した
+- migrateでIDをpkとして設定した(IDは整数値)
 - 参考：[はじめての Django アプリ作成、その2](https://docs.djangoproject.com/ja/2.1/intro/tutorial02/#activating-models)
-- 実は、pkはID(数字)でなくてもよい（一意であり空の値をとらなければ主キーとして使える）
+- 実は、pkはID(整数値)でなくてもよい（一意であり空の値をとらなければ主キーとして使える）
 
 ---
 
 ### (2)URLを設定する
 
-羅針盤の図
+<span class="eighty-percent-img">
+![](elv_Feb_django_developcompass/assets/part2/django_compass_part2.003.png)
+</span>
 
 +++
 
@@ -171,8 +176,8 @@ urlpatterns = [
 ### `'post/<int:pk>/'`
 
 - パスのパターンを表す（パターンで指定することで1つ1つ指定しなくてよい）
-- 例：post/1やpost/108が該当
-- <int:pk>の部分の整数がpkという変数に入る
+- 例：post/1/やpost/108/が該当
+- `<int:pk>`の部分の整数がpkという変数に入る(post/108/の場合はpk=108となる)
 
 +++
 
@@ -220,7 +225,9 @@ def post_detail(request, pk):
 
 ### (3)記事を表示するためのビューを作る
 
-羅針盤の図
+<span class="eighty-percent-img">
+![](elv_Feb_django_developcompass/assets/part2/django_compass_part2.004.png)
+</span>
 
 +++
 
@@ -256,22 +263,23 @@ def post_detail(request, pk):
 - `post = get_object_or_404(Post, pk=pk)`
     - URLで指定されたpkの記事を取得
 - `render(request, 'blog/post_detail.html', {'post': post})`
-    - 記事をテンプレートに渡す `{'post': post}`
-    - テンプレートに記事のデータを埋め込んで表示する `render`
+    - 記事をテンプレートに渡す：`{'post': post}`
+    - テンプレートに記事のデータを埋め込んで表示する：`render`
 
 +++
 
 ### （参考）`get_object_or_404`
 
 - 存在しない記事のURLにはエラーページを出す（カスタマイズ可能）
-- 記事を単に`get`するとDoesNotExistというエラーになってしまうため、`get_object_or_404`を使うのがオススメ
+- 記事を単に`get`すると、存在しない記事のURLの際はDoesNotExistというエラーになる
+- `get_object_or_404`を使えば、DoesNotExistというエラーは出ない
 
 +++
 
 ### 手順1でリンクに追加したURLについて
 
-- `{% url 'post_detail' pk=post.pk %}`によりpkを指定したリンクができる
-- リンクをクリックすると、`post_detail`関数のpk引数にpkが渡る
+- `{% url 'post_detail' pk=post.pk %}`により、記事のIDでpkを指定したリンクができる
+- タイトルのリンクをクリックすると、`post/<int:pk>/`というパスが呼ばれ、`post_detail`関数のpk引数にpkが渡る
 
 +++
 
@@ -307,7 +315,9 @@ def post_detail(request, pk):
 
 ### (4)テンプレートに記事の詳細を表示する
 
-羅針盤の図
+<span class="eighty-percent-img">
+![](elv_Feb_django_developcompass/assets/part2/django_compass_part2.005.png)
+</span>
 
 +++
 
@@ -357,15 +367,15 @@ def post_detail(request, pk):
 
 ### テンプレートは1つだけでよい
 
-- 詳細画面のパスのパターンではpkが指定される
-- ビューはpkに応じた記事を取得し、テンプレートに渡す
-- テンプレートは1つの記事について表示することだけを考える
+- 詳細画面のパスのパターンではpkが指定される（`'post/<int:pk>/'`）
+- ビューはモデルからpkに応じた記事を取得し、テンプレートに渡す
+- テンプレートは記事について表示することだけを考える（Postの項目が表示できればいい）
 
 +++
 
 ### 公開されていない記事も詳細が見られます
 
-図
+![](elv_Feb_django_developcompass/assets/part2/5_not_published_post.png)
 
 URL例：http://127.0.0.1:8000/post/3
 
