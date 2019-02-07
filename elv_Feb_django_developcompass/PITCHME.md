@@ -200,13 +200,13 @@ Django「用意しておいたよ」
 
 ---
 
----include=elv_Feb_django_developcompass/part0.md
+---?include=elv_Feb_django_developcompass/part0.md
 
----include=elv_Feb_django_developcompass/part1.md
+---?include=elv_Feb_django_developcompass/part1.md
 
----include=elv_Feb_django_developcompass/part2.md
+---?include=elv_Feb_django_developcompass/part2.md
 
----include=elv_Feb_django_developcompass/part3.md
+---?include=elv_Feb_django_developcompass/part3.md
 
 ---
 
