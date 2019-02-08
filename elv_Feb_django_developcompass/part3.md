@@ -10,7 +10,7 @@
 ### 画像の追加
 
 - ブログなのだから写真を追加したい
-- Django Girls Tutorialの範囲外
+- **注**：Django Girls Tutorialの範囲外
 
 +++
 
@@ -42,7 +42,10 @@
 
 ### 画像追加のケースの羅針盤
 
-図（使わないところを薄くし、3ステップ）
+<span class="eighty-percent-img">
+![1.モデル、2.ビュー、3.（既存）テンプレート](elv_Feb_django_developcompass/assets/part3/django_compass_part3.001.png)
+</span>
+
 
 +++
 
@@ -125,6 +128,14 @@ if settings.DEBUG:
 - 開発時向けの設定をしています [参考](https://docs.djangoproject.com/ja/2.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development)
 
 ---
+
+### (2)Postモデルに画像のフィールド追加
+
+<span class="eighty-percent-img">
+![まずはモデルを変更](elv_Feb_django_developcompass/assets/part3/django_compass_part3.002.png)
+</span>
+
++++
 
 ### (2)Postモデルに画像のフィールド追加
 
@@ -237,6 +248,14 @@ ftnext | 既存記事1 | 本文1 | ？
 図：管理画面ではアップロードできるようになる（要確認）
 
 ---
+
+### (3)フォームからの画像アップロード
+
+<span class="eighty-percent-img">
+![続いてビューを変更](elv_Feb_django_developcompass/assets/part3/django_compass_part3.003.png)
+</span>
+
++++
 
 ### (3)フォームからの画像アップロード
 
@@ -354,6 +373,14 @@ class PostForm(forms.ModelForm):
 3. forms.py（画像がアップロードできるように設定変更）
 
 ---
+
+### (4)詳細画面に表示
+
+<span class="eighty-percent-img">
+![最後にテンプレートを変更](elv_Feb_django_developcompass/assets/part3/django_compass_part3.004.png)
+</span>
+
++++
 
 ### (4)詳細画面に表示
 
