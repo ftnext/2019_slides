@@ -1,7 +1,7 @@
 ### 【羅針盤を手に入れる】<br>Django基礎ハンズオンⅡ
 
 0. ブログアプリの機能のおさらい（10分）
-1. ブログ画面からブログ記事を作る（40分）
+1. <div class="django-girls-highlight">ブログ画面からブログ記事を作る（40分）</div>
 2. ブログ記事の詳細が見られるようにする（30分）
 3. ブログ記事に画像を追加できるようにする（30分）
 
@@ -99,7 +99,8 @@ class PostForm(forms.ModelForm):
 
 ```html
 <div class="page-header">
-    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> <!-- 追加 -->
+    <!-- 下の1行を追加 -->
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
     <h1><a href="/">Django Girls Blog</a></h1>
 </div>
 ```
@@ -117,7 +118,9 @@ class PostForm(forms.ModelForm):
 
 記事一覧ページではなく`NoReverseMatch`というエラーが表示される😱
 
+<span class="eighty-percent-img">
 ![](elv_Jan_django_errorfriends/assets/part3/1_NoReverseMatch.png)
+</span>
 
 原因はなんでしょう？（前回からの参加の方向け）
 
@@ -319,7 +322,7 @@ def post_new(request): # 追加
 ### (3)フォームから保存できるようにする
 
 - 「Save」をクリックしても空のフォームが表示される
-- /post/new 自身にデータが送信されたときの処理がないため
+- /post/new 自身に@color[#ff9400](データが送信されたときの処理がない)ため
 - `post_new`関数を修正し、記事を保存できるようにする
 
 +++
@@ -327,7 +330,8 @@ def post_new(request): # 追加
 ### `post_new`関数を修正（blog/views.py）
 
 ```python
-from django.shortcuts import redirect # 追加（他のimportは省略）
+from django.shortcuts import redirect # 追加
+# 他のimportは省略
 
 # post_list関数には変更なし
 
@@ -351,7 +355,7 @@ def post_new(request):
 
 - `request.method == "POST"`：データ送信なのか、ページの表示なのかを判断
   - `<form>`タグの設定により、データはPOSTという方法で送信される
-- データ送信の場合、入力値に不備がなければ、記事を保存し、記事一覧画面を表示
+- データ送信の場合、記事を保存し、記事一覧画面を表示（詳しくは続くスライドを参照）
 
 +++
 
@@ -380,8 +384,8 @@ def post_new(request):
 記事の保存処理
 
 - `post = form.save(commit=False)`：入力値を元に記事を作成（まだ保存しない）
-- 記事に作成者と公開日が未設定のため設定する
-- 未設定の項目がなくなったため、`post.save()`で保存する
+- 記事に必要な作成者と公開日が未設定のため設定する
+- 未設定の項目がなくなったら、`post.save()`で保存する
 
 +++
 
@@ -398,11 +402,12 @@ def post_new(request):
 - Ctrl+Cで止めている場合、コマンドラインで`python manage.py runserver`
 - ブラウザで http://127.0.0.1:8000/ にアクセス → 記事一覧が表示される
 - +アイコン（リンク）をクリック→記事を作成してみる
-- TODO；管理画面でのログインしていない場合にエラーになるか要確認
 
 +++
 
 ![フォームから記事を作成](elv_Jan_django_errorfriends/assets/part3/4_post_from_form.png)
+
+**注**：管理画面でログインしていない場合に記事作成でエラーになります（ログインしてください）
 
 +++
 
@@ -468,9 +473,9 @@ def post_new(request):
 
 ### 基本テンプレート
 
-- 共通部分を基本テンプレートにまとめる
+- @color[#ff9400](共通部分を)基本テンプレートに@color[#ff9400](まとめる)
 - 保守性が向上する（基本テンプレートの見出しを変えるだけで済む）
-- `blog/templates/blog/base.html`を作成
+- `blog/templates/blog/base.html`を作成（次のスライド）
 
 +++
 
@@ -486,7 +491,9 @@ def post_new(request):
 </div>
 ```
 
-### 基本テンプレート base.html 全容
++++
+
+### （参考）基本テンプレート base.html 全容
 
 前のスライドの手順でうまく動かない場合は、以下をコピーして作成
 
@@ -526,7 +533,7 @@ def post_new(request):
 
 - headタグ（ブログアプリで使うCSSの設定）と見出しの部分を共通化
 - `{% block content %}` `{% endblock %}`
-	- この部分は各テンプレートの内容で置き換わる
+	- この部分は各テンプレートの内容で@color[#ff9400](置き換わる)（このあと各テンプレートを変更）
 
 +++
 
