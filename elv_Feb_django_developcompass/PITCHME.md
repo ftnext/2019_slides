@@ -155,8 +155,6 @@ Django「用意しておいたよ」
 2. ブログ記事の詳細が見られるようにする（30分）
 3. ブログ記事に画像を追加できるようにする（40分）
 
----
-
 ---?include=elv_Feb_django_developcompass/part0.md
 
 ---?include=elv_Feb_django_developcompass/part1.md
