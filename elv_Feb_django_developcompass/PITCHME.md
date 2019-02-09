@@ -130,50 +130,7 @@ Django「用意しておいたよ」
 
 +++
 
-### ハンズオンを始める前に（今回からの参加者向け）1/2
-
-1. [GitHubのソースコード](https://github.com/ftnext/error-friends-django-handson/tree/Jan/part2)をZIPでダウンロード
-2. ZIPファイルを解凍し、フォルダ名を「errorfriends」に変更
-3. コマンドラインを起動し、`cd errorfriends`
-
-+++
-
-### ハンズオンを始める前に（今回からの参加者向け）2/2
-
-4. Django開発用環境を作成（次のスライド）
-5. Django開発用環境を有効化（2つ先のスライド）
-6. Djangoをインストール（3つ先のスライド）
-
-+++
-
-### 手順4 Django開発用環境を作成（今回からの参加者向け）
-
-- Django開発用環境をmyvenvとします
-- 仮想環境を使う方
-  - Windows: `python -m venv myvenv`
-  - macOS: `python3 -m venv myvenv`
-- Anacondaの方： `conda create -n myvenv python=3.7`
-
-+++
-
-### 手順5 開発用環境の有効化（今回からの参加者向け）
-
-- Django開発用環境をmyvenvとしています（[環境構築参考記事](https://qiita.com/ftnext/items/082ec8fe96f26b181fc5)）
-- 仮想環境を使う方
-  - Windows: `myvenv\Scripts\activate`
-  - macOS: `source myvenv/bin/activate`
-- Anacondaの方： `activate myvenv`
-
-+++
-
-### 手順6 Djangoをインストール（今回からの参加者向け）
-
-- 仮想環境を使う方： `pip install Django~=2.1`
-- Anacondaの方： `conda install django=2.1`
-
-+++
-
-### ハンズオンを始める前に（前回からの参加者向け）
+### ハンズオンを始める前に
 
 1. コマンドライン（コマンドプロンプトやターミナル）を起動
 2. `cd errorfriends`（errorfriendsディレクトリに移動）
@@ -181,7 +138,7 @@ Django「用意しておいたよ」
 
 +++
 
-### 手順3 開発用環境の有効化（前回からの参加者向け）
+### 手順3 開発用環境の有効化
 
 - Django開発用環境をmyvenvとしています（[環境構築参考記事](https://qiita.com/ftnext/items/082ec8fe96f26b181fc5)）
 - 仮想環境を使う方
