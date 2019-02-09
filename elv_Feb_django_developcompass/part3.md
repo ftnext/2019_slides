@@ -3,13 +3,13 @@
 0. ブログアプリの機能のおさらい（10分）
 1. ブログ画面からブログ記事を作る（40分）
 2. ブログ記事の詳細が見られるようにする（30分）
-3. ブログ記事に画像を追加できるようにする（30分）
+3. <div class="django-girls-highlight">ブログ記事に画像を追加できるようにする（30分）</div>
 
 +++
 
 ### 画像の追加
 
-- ブログなのだから写真を追加したい
+- ブログなのだから画像を追加したい（例：旅行の記事に写真を載せる）
 - **注**：Django Girls Tutorialの範囲外
 
 +++
@@ -18,6 +18,12 @@
 
 - 記事作成フォームで画像をアップロードできる（0枚or1枚）
 - 記事詳細画面で画像が見られる
+
++++
+
+### 羅針盤のうちの何が必要？
+
+TODO：羅針盤の画像入れる
 
 +++
 
@@ -52,7 +58,7 @@
 ### 画像アップロード機能 実装手順
 
 1. 画像を扱うための設定変更
-2. Postモデルに画像のフィールド追加
+2. Postモデルに画像を扱う項目を追加
 3. フォームからの画像アップロード（ビュー）
 4. 詳細画面に表示（テンプレート）
 
@@ -62,15 +68,16 @@
 
 1. 画像の扱いに必要なモジュールをインストール
 2. 画像アップロード用フォルダを作る
-3. settings.py
-4. urls.py
+3. settings.py変更
+4. urls.py変更
 
 +++
 
 ### (1-1)画像の扱いに必要なモジュールをインストール
 
+- 画像処理に使うモジュール：Pillow
 - コマンドラインで`pip install Pillow`
-- Pillowは画像処理に使うライブラリ
+  - **注**：Anacondaの方は`conda install Pillow`
 - Pillowでできること参考：[『退屈なことはPythonにやらせよう』英語版](http://automatetheboringstuff.com/chapter17/)
 
 +++
@@ -126,10 +133,12 @@ if settings.DEBUG:
 
 - 開発環境のアップロードファイルの扱いを追加
 - 開発時向けの設定をしています [参考](https://docs.djangoproject.com/ja/2.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development)
+- ここまでの設定により、アップロードした画像のURLは次のようになる
+  - `http://127.0.0.1:8000/media/photos/2019/02/14/a_image.jpg`
 
 ---
 
-### (2)Postモデルに画像のフィールド追加
+### (2)Postモデルに画像を扱う項目を追加
 
 <span class="eighty-percent-img">
 ![まずはモデルを変更](elv_Feb_django_developcompass/assets/part3/django_compass_part3.002.png)
@@ -137,7 +146,7 @@ if settings.DEBUG:
 
 +++
 
-### (2)Postモデルに画像のフィールド追加
+### (2)Postモデルに画像を扱う項目を追加
 
 1. models.py編集（エディタ）
 2. マイグレーション実施（コマンドライン）
@@ -147,6 +156,11 @@ if settings.DEBUG:
 ### (2-1)models.py編集内容
 
 - 画像を扱う"列"をimageとして追加する
+
+author | title | text | image@color[#ff9400](（追加）)
+----- | ----- | ----- | -----
+
+Postモデルの一部の列を表示
 
 +++
 
@@ -192,12 +206,12 @@ class Post(models.Model):
 
 ### （参考）2019/02/14に保存する場合
 
-- media
-  - ┗ photos
-    - ┗ 2019
-      - ┗ 02
-       - ┗ 14
-        - ┗ アップロードした画像
+- media/
+  - ┗ photos/
+    - ┗ 2019/
+      - ┗ 02/
+        - ┗ 14/
+          - ┗ アップロードした画像
 
 +++
 
@@ -213,7 +227,7 @@ class Post(models.Model):
 
 Postモデルの一部の列を表示
 
-author | title | text | image（@color[#ff9400](追加)）
+author | title | text | image@color[#ff9400](（追加）)
 ----- | ----- | ----- | -----
 ftnext | 既存記事1 | 本文1 | ？
 
@@ -245,7 +259,7 @@ ftnext | 既存記事1 | 本文1 | ？
 
 +++
 
-図：管理画面ではアップロードできるようになる（要確認）
+![管理画面からアップロードできるようになりました](elv_Feb_django_developcompass/assets/part3/1_add_image_from_admin.png)
 
 ---
 
@@ -289,7 +303,7 @@ ftnext | 既存記事1 | 本文1 | ？
 ### （参考）blog/post_edit.htmlの編集
 
 - formタグのenctype属性
-- フォームからファイルを送るために`enctype="multipart/form-data"`と設定
+- フォームから画像ファイルを送るために`enctype="multipart/form-data"`と設定
 - [MDN 参考ドキュメント](https://mzl.la/2HZ3VfL)
 
 +++
@@ -333,7 +347,7 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'text', 'image') # imageを追加
+        fields = ('title', 'text', 'image',) # imageを追加
 ```
 
 +++
@@ -356,13 +370,19 @@ class PostForm(forms.ModelForm):
 
 ### 記事が作られました
 
-画像つきでアップロードした記事です
+![画像つきで記事が作成できます](elv_Feb_django_developcompass/assets/part3/2_add_image_from_form.png)
 
 +++
 
 ### 画像アップロードはあくまでオプション
 
-画像は設定しなくても記事が作れる（TODO：要確認）
+![画像を設定しなくても記事が作れます](elv_Feb_django_developcompass/assets/part3/3_create_post_no_image.png)
+
++++
+
+### 作成した記事は一覧に表示
+
+![画像つきの記事も画像なしの記事も一覧に表示されます](elv_Feb_django_developcompass/assets/part3/4_post_list.png)
 
 +++
 
@@ -390,6 +410,8 @@ class PostForm(forms.ModelForm):
 +++
 
 ### blog/post_detail.html
+
+TODO：GitPitchではコード中のimgタグが上手く表示されない
 
 ```html
 {% extends 'blog/base.html' %}
@@ -442,13 +464,13 @@ class PostForm(forms.ModelForm):
 
 +++
 
-アップロードした画像が表示されています
+![アップロードした画像が表示されています](elv_Feb_django_developcompass/assets/part3/5_post_detail_with_image.png)
 
 +++
 
 ### まとめ：ブログ記事に画像を追加できるようにする
 
 1. 画像を扱うための設定変更
-2. Postモデルに画像のフィールド追加
+2. Postモデルに画像を扱う項目を追加
 3. フォームからの画像アップロード
 4. 詳細画面に表示
