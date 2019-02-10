@@ -412,7 +412,6 @@ class PostForm(forms.ModelForm):
 ### blog/post_detail.html
 
 `src="{{ post.image.url }}"`をimgタグに指定
-TODO：GitPitchではコード中のimgタグが上手く表示されない
 
 ```html
 {% extends 'blog/base.html' %}
@@ -429,7 +428,7 @@ TODO：GitPitchではコード中のimgタグが上手く表示されない
         <p><em>Author: {{ post.author }}</em></p>
         <!-- 画像の表示を追加 -->
         {% if post.image %}
-            <img src="{{ post.image.url }}">
+            <img ><!-- src属性を追加してください -->
         {% endif %}
         <!-- 画像の表示を追加 終わり -->
         <p>{{ post.text|linebreaksbr }}</p>
