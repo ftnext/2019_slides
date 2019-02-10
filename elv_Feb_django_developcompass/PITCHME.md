@@ -61,17 +61,15 @@ Web開発経験について（このハンズオンを除いて）
 
 +++
 
-現状（URL？モデル？ビュー？テンプレート？）
-Django「用意しておいたよ」
+![DjangoにはURL・モデル・ビュー・テンプレートなどなど用意されている](elv_Feb_django_developcompass/assets/django_talk_image.001.png)
 
 +++
 
-「記事の詳細ページを作りたいけどまず何をいじればいい？」
-友達になったエラーを出す方法がわからない
+![作りたい機能（例：ブログ記事の詳細ページ）を実現するにはまず何をいじればいい？](elv_Feb_django_developcompass/assets/django_talk_image.002.png)
 
 +++
 
-そこで、今回羅針盤を手に入れます
+## そこで、今回<br>羅針盤（開発手順）を<br>手に入れます
 
 ---
 
@@ -107,9 +105,13 @@ Django「用意しておいたよ」
 
 ### ブログ記事の詳細が見られるようにする
 
+![](elv_Feb_django_developcompass/assets/part2/4_display_detail.png)
+
 +++
 
 ### ブログ記事に画像を追加できるようにする
+
+![](elv_Feb_django_developcompass/assets/part3/5_post_detail_with_image.png)
 
 ---
 
@@ -185,7 +187,7 @@ Django「用意しておいたよ」
 ### 羅針盤
 
 <span class="eighty-percent-img">
-![機能追加はサイクルで進む](elv_Jan_django_errorfriends/assets/django_add_feature.png)
+![](elv_Feb_django_developcompass/assets/django_compass.png)
 </span>
 
 +++
@@ -211,6 +213,10 @@ Django「用意しておいたよ」
 - [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)で復習（デプロイはスキップしてよい）
 - [Django 投票アプリ チュートリアル](https://docs.djangoproject.com/ja/2.1/intro/tutorial01/)
 - 参考：akiyokoさん [初学者・初級者向け Django の学習ロードマップ](https://akiyoko.hatenablog.jp/entry/2018/12/01/133427)
+
++++
+
+![羅針盤を手に、エラーを仲間に、あなたが決めた目的地へDjangoという船で向かってください](elv_Feb_django_developcompass/assets/django_talk_image.003.png)
 
 +++
 
