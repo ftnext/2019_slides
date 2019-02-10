@@ -23,7 +23,7 @@
 
 ### 羅針盤のうちの何が必要？
 
-TODO：羅針盤の画像入れる
+![テンプレート？URL設定？モデル？ビュー？](elv_Feb_django_developcompass/assets/django_compass.png)
 
 +++
 
