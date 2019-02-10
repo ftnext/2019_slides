@@ -6,7 +6,7 @@
 
 ### LT: pandas vor!
 
-- 意味：「pandas前進！」
+- 意味：「pandas@color[#79A53A](前進)！」
 - pandasを使ったデータ分析を前に進めるため、基礎を確認 → 知ったことを共有します
 
 +++
@@ -31,15 +31,15 @@
 ### LT: pandas vor!
 
 1. indexとcolumn
-2. 複数列選択でリストを渡し損ねたときのエラー
+2. DataFrameで複数列選択し損ねたときのエラー
 3. nan、この特別な存在
 
 ---
 
 ### LT: pandas vor!
 
-1. indexとcolumn
-2. DataFrameから複数列選択
+1. @color[#79A53A](indexとcolumn)
+2. DataFrameで複数列選択し損ねたときのエラー
 3. nan、この特別な存在
 
 +++
@@ -59,7 +59,7 @@
 
 ### `df.drop(['Ticket', 'Cabin'], axis=1)`
 
-カラムの中から該当する名前を削除と解釈できる
+@color[#79A53A](カラムの中から)該当する名前を@color[#79A53A](削除)と解釈できる
 
 ![カラムの中からTicketとCabinを削除](stapy_Feb_pandas_basics/assets/drop_specified_column.png)
 
@@ -68,12 +68,12 @@
 ### LT: pandas vor!
 
 1. indexとcolumn
-2. DataFrameから複数列選択
+2. @color[#79A53A](DataFrameで複数列選択し損ねたときのエラー)
 3. nan、この特別な存在
 
 +++
 
-### DataFrameから複数列選択
+### DataFrameで複数列選択し損ねたときのエラー
 
 - カラム名のリストを渡す：`df[['columnA', 'columnB']]`
 - リストで渡し損ねるとKeyError：`df['columnA', 'columnB']`
@@ -82,8 +82,8 @@
 
 ### なぜKeyError？
 
-- 'columnA', 'columnB'はタプルとして解釈される
-- ('columnA', 'columnB') というカラムを探すが、見つからない
+- 'columnA', 'columnB'は@color[#79A53A](タプル)として解釈される
+- `('columnA', 'columnB')`というカラムを探すが、見つからない
 
 ```console
 >>> 2, 3
@@ -122,15 +122,15 @@ Name: (name, alias), dtype: object
 ### LT: pandas vor!
 
 1. indexとcolumn
-2. DataFrameから複数列選択
-3. nan、この特別な存在
+2. DataFrameで複数列選択し損ねたときのエラー
+3. @color[#79A53A](nan、この特別な存在)
 
 +++
 
-### nanの異常性
+### nanは特別
 
 - 自分自身と比較してFalse😧
-- nan（欠損）の検出は`isnull()`を使いましょう
+- nan（欠損）の検出は@color[#79A53A](`isnull`)`()`を使いましょう
 
 ```python
 import numpy as np
@@ -148,7 +148,7 @@ np.nan == np.nan
 
 ### 読み始めました
 
-[pandasクックブック](http://www.asakura.co.jp/books/isbn/978-4-254-12242-8/)(2019 朝倉書店)
+『[@color[#79A53A](pandasクックブック)](http://www.asakura.co.jp/books/isbn/978-4-254-12242-8/)』(2019 朝倉書店)
 
 ![pandasクックブック 書影](http://www.asakura.co.jp/goods_img/115751.jpg)
 
@@ -157,7 +157,7 @@ np.nan == np.nan
 ### どれもpandasクックブックで知りました
 
 1. indexとcolumn（レシピ1）
-2. DataFrameから複数列選択（レシピ11）
+2. DataFrameで複数列選択し損ねたときのエラー（レシピ11）
 3. nan、この特別な存在 （レシピ17）
 
 +++
@@ -165,14 +165,14 @@ np.nan == np.nan
 ### pandasクックブック
 
 - 1-2章でずいぶん知らないことがあった
-- 全9章あり、**データ分析の力を鍛えられそう** でワクワク😆
+- 全9章あり、@color[#79A53A](**データ分析の力を鍛えられそう**)でワクワク😆
 
 +++
 
 ### まとめ：pandas vor!
 
 - pandasを使ったデータ分析を前進させるために基礎を確認
-- 知らないことが多く、pandasの基礎の奥深さを実感
+- 知らないことが多く、@color[#79A53A](pandasの基礎の奥深さ)を実感
 - 『pandasクックブック』でpandas基礎力磨きに取り組んでいきます
 
 +++
