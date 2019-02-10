@@ -411,6 +411,7 @@ class PostForm(forms.ModelForm):
 
 ### blog/post_detail.html
 
+`<img src="{{ post.image.url }}">`を追加
 TODO：GitPitchではコード中のimgタグが上手く表示されない
 
 ```html
