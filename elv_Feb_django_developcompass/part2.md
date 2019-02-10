@@ -34,7 +34,7 @@
 ### 羅針盤
 
 <span class="eighty-percent-img">
-![](elv_Feb_django_developcompass/assets/part2/django_compass_part2.001.png)
+![1.既存テンプレート、2.URL、3.ビュー、4.新規テンプレート](elv_Feb_django_developcompass/assets/part2/django_compass_part2.001.png)
 </span>
 
 +++
