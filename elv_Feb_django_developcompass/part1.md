@@ -620,12 +620,4 @@ def post_new(request):
 
 ### 羅針盤
 
-図
-
-+++
-
-### Django開発という旅路
-
-- 手には羅針盤
-- 旅の仲間はエラー
-- 一緒に手を動かして進みましょう
+![](elv_Feb_django_developcompass/assets/django_compass.png)
