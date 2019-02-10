@@ -176,10 +176,12 @@ urlpatterns = [
 
 ### （参考）`path('post/new/', views.post_new, name='post_new')`
 
+<div class="ninety-percent-font-table">
 引数 | 値 | 意味
 ----- | ----- | -----
 第1引数 | `'post/new/'` | `http://127.0.0.1:8000/post/new/`にアクセスされたら
 第2引数 | `views.post_new` | blog/views.pyの`post_new`関数を使って対応する
+</div>
 
 +++
 
