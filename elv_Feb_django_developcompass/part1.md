@@ -620,4 +620,6 @@ def post_new(request):
 
 ### 羅針盤
 
+<span class="eighty-percent-img">
 ![](elv_Feb_django_developcompass/assets/django_compass.png)
+</span>
