@@ -375,7 +375,9 @@ def post_detail(request, pk):
 
 ### 公開されていない記事も詳細が見られます
 
+<span class="sixty-percent-img">
 ![](elv_Feb_django_developcompass/assets/part2/5_not_published_post.png)
+</span>
 
 URL例：http://127.0.0.1:8000/post/3
 
