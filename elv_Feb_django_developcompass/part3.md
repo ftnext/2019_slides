@@ -21,9 +21,11 @@
 
 +++
 
-### 羅針盤のうちの何が必要？
+### 羅針盤のうち何が必要？
 
+<span class="eighty-percent-img">
 ![テンプレート？URL設定？モデル？ビュー？](elv_Feb_django_developcompass/assets/django_compass.png)
+</span>
 
 +++
 
@@ -134,7 +136,7 @@ if settings.DEBUG:
 - 開発環境のアップロードファイルの扱いを追加
 - 開発時向けの設定をしています [参考](https://docs.djangoproject.com/ja/2.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development)
 - ここまでの設定により、アップロードした画像のURLは次のようになる
-  - `http://127.0.0.1:8000/media/photos/2019/02/14/a_image.jpg`
+  - @size[75%](`http://127.0.0.1:8000/media/photos/2019/02/14/a_image.jpg`)
 
 ---
 
@@ -259,7 +261,9 @@ ftnext | 既存記事1 | 本文1 | ？
 
 +++
 
+<span class="eighty-percent-img">
 ![管理画面からアップロードできるようになりました](elv_Feb_django_developcompass/assets/part3/1_add_image_from_admin.png)
+</span>
 
 ---
 
@@ -370,13 +374,17 @@ class PostForm(forms.ModelForm):
 
 ### 記事が作られました
 
+<span class="seventy-percent-img">
 ![画像つきで記事が作成できます](elv_Feb_django_developcompass/assets/part3/2_add_image_from_form.png)
+</span>
 
 +++
 
 ### 画像アップロードはあくまでオプション
 
+<span class="seventy-percent-img">
 ![画像を設定しなくても記事が作れます](elv_Feb_django_developcompass/assets/part3/3_create_post_no_image.png)
+</span>
 
 +++
 
@@ -464,7 +472,9 @@ class PostForm(forms.ModelForm):
 
 +++
 
+<span class="eighty-percent-img">
 ![アップロードした画像が表示されています](elv_Feb_django_developcompass/assets/part3/5_post_detail_with_image.png)
+</span>
 
 +++
 
