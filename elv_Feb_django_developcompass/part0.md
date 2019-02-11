@@ -41,7 +41,9 @@
 
 ### フォルダ構造を見ながらがオススメ
 
+<span class="eighty-percent-img">
 ![エクスプローラーやFinderを使わなくてもエディタからファイルやフォルダを作れます](elv_Feb_django_developcompass/assets/part0/vscode_operate_files.png)
+</span>
 
 +++
 
@@ -201,13 +203,17 @@ published_date | 公開日 | 日付
 
 ### Djangoの動き
 
+<span class="eighty-percent-img">
 ![URLに対応するビューが呼び出され、必要なモデルにアクセス、取得した結果をテンプレートに埋め込み、HTMLを生成して返す](elv_Feb_django_developcompass/assets/part0/django_structure.001.png)
+</span>
 
 +++
 
 ### URL設定 → ビュー
 
+<span class="eighty-percent-img">
 ![URLに対応するビューが呼び出される部分について](elv_Feb_django_developcompass/assets/part0/django_structure.002.png)
+</span>
 
 +++
 
@@ -229,7 +235,9 @@ published_date | 公開日 | 日付
 
 ### ビュー・モデル・テンプレート
 
+<span class="eighty-percent-img">
 ![ビューがモデルにアクセスし、取得した結果をテンプレートに埋め込み、HTMLを生成する部分について](elv_Feb_django_developcompass/assets/part0/django_structure.003.png)
+</span>
 
 +++
 
