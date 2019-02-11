@@ -32,6 +32,13 @@ Web開発経験について（このハンズオンを除いて）
 - 3年目のソフトウェアエンジニア（Web開発、機械学習）
 - 2018〜 Django Girls Tutorial翻訳に参加、Workshopコーチ
 
++++
+
+### TA：nao_yさん
+
+- [@NaoY_py](https://twitter.com/NaoY_py)
+- みんなのPython勉強会 運営メンバーのお一人
+
 ---
 
 ## 羅針盤？
@@ -55,7 +62,7 @@ Web開発経験について（このハンズオンを除いて）
 
 ### エラーと友達になったあと
 
-- Djangoと友達になる段階
+- Djangoと友達になる（使いこなす）段階
 - Djangoは機能が豊富
 - それゆえに把握しきれない🤨
 
@@ -111,7 +118,9 @@ Web開発経験について（このハンズオンを除いて）
 
 ### ブログ記事に画像を追加できるようにする
 
+<span class="sixty-percent-img">
 ![](elv_Feb_django_developcompass/assets/part3/5_post_detail_with_image.png)
+</span>
 
 ---
 
