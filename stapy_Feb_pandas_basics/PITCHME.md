@@ -52,8 +52,8 @@
 
 ### indexとcolumn
 
-- indexは0, 1, 2, ... の部分
-- columnは列名の部分
+- indexは0, 1, ... の部分（axis=0に対応）
+- columnは列名の部分（axis=1に対応）
 
 +++
 
@@ -117,6 +117,8 @@ nikkie | ftnext | (nikkie, ftnext)
 Name: (name, alias), dtype: object
 ```
 
+[Snippet](https://gist.github.com/ftnext/b4d7946bc99a03a217f1b3a4896cc84c) (Gist)
+
 ---
 
 ### LT: pandas vor!
@@ -154,7 +156,7 @@ np.nan == np.nan
 
 +++
 
-### どれもpandasクックブックで知りました
+### どれも@color[#79A53A](pandasクックブック)で知りました
 
 1. indexとcolumn（レシピ1）
 2. DataFrameで複数列選択し損ねたときのエラー（レシピ11）
