@@ -48,6 +48,8 @@
 
 ![indexとcolumnの例：タイタニックの乗客属性データ](stapy_Feb_pandas_basics/assets/df_index_and_column.png)
 
+[PyDataTokyo タイタニックチュートリアル](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_dh.ipynb)より
+
 +++
 
 ### indexとcolumn
@@ -132,7 +134,7 @@ Name: (name, alias), dtype: object
 ### nanは特別
 
 - 自分自身と比較してFalse😧
-- nan（欠損）の検出は@color[#79A53A](`isnull`)`()`を使いましょう
+- nan（欠損）の検出は、df.@color[#79A53A](`isnull`)`()`やpd.@color[#79A53A](`isna`)`()`を使いましょう
 
 ```python
 import numpy as np
