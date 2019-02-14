@@ -31,6 +31,32 @@
 
 +++
 
+### 羅針盤のうち何が必要？
+
+<span class="eighty-percent-img">
+![テンプレート？URL設定？モデル？ビュー？](elv_Feb_django_developcompass/assets/django_compass.png)
+</span>
+
++++
+
+### 羅針盤に照らして 1/2
+
+新しくページを作る（詳細ページ）
+
+- リンク
+- URL設定
+- ビュー
+- テンプレート
+
++++
+
+### 羅針盤に照らして 2/2
+
+- モデルは変更しない
+- 新しいデータ項目を設けるわけではない
+
++++
+
 ### 羅針盤
 
 <span class="eighty-percent-img">
@@ -278,8 +304,8 @@ def post_detail(request, pk):
 
 ### 手順1でリンクに追加したURLについて
 
-- `{% url 'post_detail' pk=post.pk %}`により、記事のIDでpkを指定したリンクができる
-- タイトルのリンクをクリックすると、`post/<int:pk>/`というパスが呼ばれ、`post_detail`関数のpk引数にpkが渡る
+- ID=1の記事のタイトルには`post/1/`というパスでリンクが設定される（`{% url 'post_detail' pk=post.pk %}`）
+- ID=1の記事のタイトルをクリックすると、`post/<int:pk>/`というURL設定に該当し、`post_detail`関数のpk引数に1が渡る
 
 +++
 
