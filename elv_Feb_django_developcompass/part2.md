@@ -1,9 +1,9 @@
 ### 【羅針盤を手に入れる】<br>Django基礎ハンズオンⅡ
 
-0. ブログアプリの機能のおさらい（10分）
-1. ブログ画面からブログ記事を作る（40分）
-2. <div class="django-girls-highlight">ブログ記事の詳細が見られるようにする（30分）</div>
-3. ブログ記事に画像を追加できるようにする（30分）
+0. ブログアプリの機能のおさらい（20分）
+1. ブログ画面からブログ記事を作る（35分）
+2. <div class="django-girls-highlight">ブログ記事の詳細が見られるようにする（25分）</div>
+3. ブログ記事に画像を追加できるようにする（35分）
 
 +++
 
@@ -28,6 +28,32 @@
 - blog/post_list.htmlに記事詳細へのリンク追加
 - 記事詳細画面用のURL、ビュー、テンプレートが必要
 - 疑問：例えばブログ記事が3つあるとき、URL、ビュー、テンプレートはそれぞれいくつ必要？
+
++++
+
+### 羅針盤のうち何が必要？
+
+<span class="eighty-percent-img">
+![テンプレート？URL設定？モデル？ビュー？](elv_Feb_django_developcompass/assets/django_compass.png)
+</span>
+
++++
+
+### 羅針盤に照らして 1/2
+
+新しくページを作る（詳細ページ）
+
+- リンク
+- URL設定
+- ビュー
+- テンプレート
+
++++
+
+### 羅針盤に照らして 2/2
+
+- モデルは変更しない
+- 新しいデータ項目を設けるわけではない
 
 +++
 
@@ -278,8 +304,8 @@ def post_detail(request, pk):
 
 ### 手順1でリンクに追加したURLについて
 
-- `{% url 'post_detail' pk=post.pk %}`により、記事のIDでpkを指定したリンクができる
-- タイトルのリンクをクリックすると、`post/<int:pk>/`というパスが呼ばれ、`post_detail`関数のpk引数にpkが渡る
+- ID=1の記事のタイトルには`post/1/`というパスでリンクが設定される（`{% url 'post_detail' pk=post.pk %}`）
+- ID=1の記事のタイトルをクリックすると、`post/<int:pk>/`というURL設定に該当し、`post_detail`関数のpk引数に1が渡る
 
 +++
 
@@ -375,7 +401,9 @@ def post_detail(request, pk):
 
 ### 公開されていない記事も詳細が見られます
 
+<span class="sixty-percent-img">
 ![](elv_Feb_django_developcompass/assets/part2/5_not_published_post.png)
+</span>
 
 URL例：http://127.0.0.1:8000/post/3
 

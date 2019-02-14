@@ -1,9 +1,9 @@
 ### 【羅針盤を手に入れる】<br>Django基礎ハンズオンⅡ
 
-0. <div class="django-girls-highlight">ブログアプリの機能のおさらい（10分）</div>
-1. ブログ画面からブログ記事を作る（40分）
-2. ブログ記事の詳細が見られるようにする（30分）
-3. ブログ記事に画像を追加できるようにする（30分）
+0. <div class="django-girls-highlight">ブログアプリの機能のおさらい（20分）</div>
+1. ブログ画面からブログ記事を作る（35分）
+2. ブログ記事の詳細が見られるようにする（25分）
+3. ブログ記事に画像を追加できるようにする（35分）
 
 +++
 
@@ -41,7 +41,9 @@
 
 ### フォルダ構造を見ながらがオススメ
 
+<span class="eighty-percent-img">
 ![エクスプローラーやFinderを使わなくてもエディタからファイルやフォルダを作れます](elv_Feb_django_developcompass/assets/part0/vscode_operate_files.png)
+</span>
 
 +++
 
@@ -124,22 +126,13 @@ Djangoに用意されたコマンドを使って開発を進める
 
 +++
 
-### 記事の項目（5つ）1/2
+### 記事の項目（Postモデル）
 
-Postモデルでの名前 | 意味するもの | 備考
------ | ----- | -----
-author | 作成者 |  Djangoが用意したUserモデルと紐づけ
-title | ブログタイトル | 200文字以下の文字列
-text | ブログ本文 | 大量の文字列（複数行に渡って書ける）
-
-+++
-
-### 記事の項目（5つ）2/2
-
-Postモデルでの名前 | 意味するもの | 備考
------ | ----- | -----
-created_date | 作成日 | 日付
-published_date | 公開日 | 日付
+- 作成者(author)
+- タイトル(title)
+- 本文(text)
+- 作成日時(created_date)
+- 公開日時(published_date)
 
 +++
 
@@ -201,21 +194,17 @@ published_date | 公開日 | 日付
 
 ### Djangoの動き
 
+<span class="eighty-percent-img">
 ![URLに対応するビューが呼び出され、必要なモデルにアクセス、取得した結果をテンプレートに埋め込み、HTMLを生成して返す](elv_Feb_django_developcompass/assets/part0/django_structure.001.png)
+</span>
 
 +++
 
 ### URL設定 → ビュー
 
+<span class="eighty-percent-img">
 ![URLに対応するビューが呼び出される部分について](elv_Feb_django_developcompass/assets/part0/django_structure.002.png)
-
-+++
-
-### URL設定 → ビュー
-
-- URLのパスの部分とビューの関数を対応付ける
-  - パス`''`（URL：http://127.0.0.1:8000/ ）へのアクセスは、blog/views.pyの`post_list`関数を呼び出す
-- 大元のURLの設定（mysite/urls.py）がblog/urls.pyのURL設定を読み込むように設定
+</span>
 
 +++
 
@@ -227,9 +216,19 @@ published_date | 公開日 | 日付
 
 +++
 
+### URL設定 → ビュー
+
+- URLのパスの部分とビューの関数を対応付ける
+  - パス`''`（URL：http://127.0.0.1:8000/ ）へのアクセスは、blog/views.pyの`post_list`関数を呼び出す
+- （参考）大元のURLの設定（mysite/urls.py）がblog/urls.pyのURL設定を読み込むように設定
+
++++
+
 ### ビュー・モデル・テンプレート
 
+<span class="eighty-percent-img">
 ![ビューがモデルにアクセスし、取得した結果をテンプレートに埋め込み、HTMLを生成する部分について](elv_Feb_django_developcompass/assets/part0/django_structure.003.png)
+</span>
 
 +++
 

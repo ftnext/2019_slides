@@ -1,9 +1,9 @@
 ### 【羅針盤を手に入れる】<br>Django基礎ハンズオンⅡ
 
-0. ブログアプリの機能のおさらい（10分）
-1. ブログ画面からブログ記事を作る（40分）
-2. ブログ記事の詳細が見られるようにする（30分）
-3. <div class="django-girls-highlight">ブログ記事に画像を追加できるようにする（30分）</div>
+0. ブログアプリの機能のおさらい（20分）
+1. ブログ画面からブログ記事を作る（35分）
+2. ブログ記事の詳細が見られるようにする（25分）
+3. <div class="django-girls-highlight">ブログ記事に画像を追加できるようにする（35分）</div>
 
 +++
 
@@ -21,9 +21,11 @@
 
 +++
 
-### 羅針盤のうちの何が必要？
+### 羅針盤のうち何が必要？
 
+<span class="eighty-percent-img">
 ![テンプレート？URL設定？モデル？ビュー？](elv_Feb_django_developcompass/assets/django_compass.png)
+</span>
 
 +++
 
@@ -134,7 +136,7 @@ if settings.DEBUG:
 - 開発環境のアップロードファイルの扱いを追加
 - 開発時向けの設定をしています [参考](https://docs.djangoproject.com/ja/2.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development)
 - ここまでの設定により、アップロードした画像のURLは次のようになる
-  - `http://127.0.0.1:8000/media/photos/2019/02/14/a_image.jpg`
+  - @size[75%](`http://127.0.0.1:8000/media/photos/2019/02/14/a_image.jpg`)
 
 ---
 
@@ -157,7 +159,7 @@ if settings.DEBUG:
 
 - 画像を扱う"列"をimageとして追加する
 
-author | title | text | image@color[#ff9400](（追加）)
+author | title | text | @color[#ff9400](image（追加）)
 ----- | ----- | ----- | -----
 
 Postモデルの一部の列を表示
@@ -215,21 +217,21 @@ class Post(models.Model):
 
 +++
 
+### （参考）列の追加のイメージ
+
+Postモデルの一部の列を表示
+
+author | title | text | @color[#ff9400](image（追加）)
+----- | ----- | ----- | -----
+ftnext | 既存記事1 | 本文1 | ？
+
++++
+
 ### （参考）`blank=True`
 
 - すでに作られた記事がある状態で、画像用の"列"を追加
 - すでに作成された記事に画像を設定するかを決める必要がある
 - 今回はしないとして設定した（設定する場合は、デフォルトで取る値を指定する）
-
-+++
-
-### （参考）列の追加のイメージ
-
-Postモデルの一部の列を表示
-
-author | title | text | image@color[#ff9400](（追加）)
------ | ----- | ----- | -----
-ftnext | 既存記事1 | 本文1 | ？
 
 +++
 
@@ -259,7 +261,9 @@ ftnext | 既存記事1 | 本文1 | ？
 
 +++
 
+<span class="eighty-percent-img">
 ![管理画面からアップロードできるようになりました](elv_Feb_django_developcompass/assets/part3/1_add_image_from_admin.png)
+</span>
 
 ---
 
@@ -370,13 +374,17 @@ class PostForm(forms.ModelForm):
 
 ### 記事が作られました
 
+<span class="seventy-percent-img">
 ![画像つきで記事が作成できます](elv_Feb_django_developcompass/assets/part3/2_add_image_from_form.png)
+</span>
 
 +++
 
 ### 画像アップロードはあくまでオプション
 
+<span class="seventy-percent-img">
 ![画像を設定しなくても記事が作れます](elv_Feb_django_developcompass/assets/part3/3_create_post_no_image.png)
+</span>
 
 +++
 
@@ -464,7 +472,9 @@ class PostForm(forms.ModelForm):
 
 +++
 
+<span class="eighty-percent-img">
 ![アップロードした画像が表示されています](elv_Feb_django_developcompass/assets/part3/5_post_detail_with_image.png)
+</span>
 
 +++
 

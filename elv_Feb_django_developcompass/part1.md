@@ -1,9 +1,9 @@
 ### 【羅針盤を手に入れる】<br>Django基礎ハンズオンⅡ
 
-0. ブログアプリの機能のおさらい（10分）
-1. <div class="django-girls-highlight">ブログ画面からブログ記事を作る（40分）</div>
-2. ブログ記事の詳細が見られるようにする（30分）
-3. ブログ記事に画像を追加できるようにする（30分）
+0. ブログアプリの機能のおさらい（20分）
+1. <div class="django-girls-highlight">ブログ画面からブログ記事を作る（35分）</div>
+2. ブログ記事の詳細が見られるようにする（25分）
+3. ブログ記事に画像を追加できるようにする（35分）
 
 +++
 
@@ -405,7 +405,9 @@ def post_new(request):
 
 +++
 
+<span class="sixty-percent-img">
 ![フォームから記事を作成](elv_Jan_django_errorfriends/assets/part3/4_post_from_form.png)
+</span>
 
 **注**：管理画面でログインしていない場合に記事作成でエラーになります（ログインしてください）
 
@@ -620,4 +622,6 @@ def post_new(request):
 
 ### 羅針盤
 
+<span class="eighty-percent-img">
 ![](elv_Feb_django_developcompass/assets/django_compass.png)
+</span>
