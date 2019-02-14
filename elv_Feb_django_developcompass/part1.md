@@ -405,7 +405,9 @@ def post_new(request):
 
 +++
 
+<span class="sixty-percent-img">
 ![フォームから記事を作成](elv_Jan_django_errorfriends/assets/part3/4_post_from_form.png)
+</span>
 
 **注**：管理画面でログインしていない場合に記事作成でエラーになります（ログインしてください）
 
