@@ -126,22 +126,13 @@ Djangoに用意されたコマンドを使って開発を進める
 
 +++
 
-### 記事の項目（5つ）1/2
+### 記事の項目（Postモデル）
 
-Postモデルでの名前 | 意味するもの | 備考
------ | ----- | -----
-author | 作成者 |  Djangoが用意したUserモデルと紐づけ
-title | ブログタイトル | 200文字以下の文字列
-text | ブログ本文 | 大量の文字列（複数行に渡って書ける）
-
-+++
-
-### 記事の項目（5つ）2/2
-
-Postモデルでの名前 | 意味するもの | 備考
------ | ----- | -----
-created_date | 作成日 | 日付
-published_date | 公開日 | 日付
+- 作成者(author)
+- タイトル(title)
+- 本文(text)
+- 作成日時(created_date)
+- 公開日時(published_date)
 
 +++
 
@@ -217,19 +208,19 @@ published_date | 公開日 | 日付
 
 +++
 
-### URL設定 → ビュー
-
-- URLのパスの部分とビューの関数を対応付ける
-  - パス`''`（URL：http://127.0.0.1:8000/ ）へのアクセスは、blog/views.pyの`post_list`関数を呼び出す
-- 大元のURLの設定（mysite/urls.py）がblog/urls.pyのURL設定を読み込むように設定
-
-+++
-
 ### URLの例：http://www.example.com/index
 
 - `http`：プロトコル
 - `www.example.com`：ホスト（インターネット上のコンピュータ）
 - `index`：@color[#ff9400](パス)（サーバ上のどこにアクセスするかの指定）
+
++++
+
+### URL設定 → ビュー
+
+- URLのパスの部分とビューの関数を対応付ける
+  - パス`''`（URL：http://127.0.0.1:8000/ ）へのアクセスは、blog/views.pyの`post_list`関数を呼び出す
+- （参考）大元のURLの設定（mysite/urls.py）がblog/urls.pyのURL設定を読み込むように設定
 
 +++
 
