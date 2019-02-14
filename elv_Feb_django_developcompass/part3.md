@@ -159,7 +159,7 @@ if settings.DEBUG:
 
 - 画像を扱う"列"をimageとして追加する
 
-author | title | text | image@color[#ff9400](（追加）)
+author | title | text | @color[#ff9400](image（追加）)
 ----- | ----- | ----- | -----
 
 Postモデルの一部の列を表示
@@ -217,21 +217,21 @@ class Post(models.Model):
 
 +++
 
+### （参考）列の追加のイメージ
+
+Postモデルの一部の列を表示
+
+author | title | text | @color[#ff9400](image（追加）)
+----- | ----- | ----- | -----
+ftnext | 既存記事1 | 本文1 | ？
+
++++
+
 ### （参考）`blank=True`
 
 - すでに作られた記事がある状態で、画像用の"列"を追加
 - すでに作成された記事に画像を設定するかを決める必要がある
 - 今回はしないとして設定した（設定する場合は、デフォルトで取る値を指定する）
-
-+++
-
-### （参考）列の追加のイメージ
-
-Postモデルの一部の列を表示
-
-author | title | text | image@color[#ff9400](（追加）)
------ | ----- | ----- | -----
-ftnext | 既存記事1 | 本文1 | ？
 
 +++
 
