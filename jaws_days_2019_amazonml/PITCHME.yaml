@@ -6,3 +6,6 @@ slide-number : true
 
 #トランジションの設定
 transition : none
+
+# 全スライドに表示されるロゴ
+logo : jaws_days_2019_amazonml/assets/all_slide_QR.png
