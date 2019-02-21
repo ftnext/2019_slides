@@ -13,7 +13,7 @@
 
 - 対象：AWS経験あり・機械学習興味あり
 - Amazon ML(Amazon Machine Learning)を紹介します
-- 機械学習モデルの作成とアプリケーションへの組み込みを話します
+- @color[#316A5B](機械学習モデルの作成)と@color[#316A5B](アプリケーションへの組み込み)を話します
 
 +++
 
@@ -22,7 +22,7 @@
 - 春から4年目、ソフトウェアエンジニア
 - Love Python（Web開発、機械学習勉強中）
 - Alias @ftnext でアウトプット：[Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
-- AWS初学者、Amazon MLは業務で調査
+- @color[#316A5B](AWS初学者、Amazon MLは業務で調査)
 
 +++
 
@@ -37,7 +37,7 @@
 
 ### LT: Amazon MLで機械学習始めませんか？
 
-1. 機械学習 in Amazon ML
+1. @color[#316A5B](機械学習 in Amazon ML)
 2. Amazon MLの特徴
 3. 機械学習モデルを組み込んだWebアプリ（デモ）
 4. まとめ
@@ -47,28 +47,30 @@
 ### 機械学習とは
 
 <span class="seventy-percent-img">
-![データとアルゴリズムからモデル（計算式の塊）を作る](spz_Jan_titanic_handson/assets/201901kaggel_talk.001.png)
+![データとアルゴリズムからモデル（推論のルール＝計算式）を作る](jaws_days_2019_amazonml/assets/201902jaws_lt.001.png)
 </span>
 
 +++
 
 ### Amazon MLにおける機械学習 1/3
 
-図：アルゴリズムはAmazon MLが用意、私たちはデータを用意（機械学習とはの図を改変）
+<span class="seventy-percent-img">
+![アルゴリズムはAmazon MLが用意、私たちはデータを用意](jaws_days_2019_amazonml/assets/201902jaws_lt.002.png)
+</span>
 
 +++
 
 ### Amazon MLにおける機械学習 2/3
 
-- 知っているデータから知らないデータを予測
+- @color[#316A5B](知っているデータから知らないデータを予測)
 - Amazon MLでは *教師あり学習* のみ可能
 
 +++
 
 ### Amazon MLにおける機械学習 3/3
 
-1. 知っているデータからAmazon MLでモデルを作る
-2. モデルで知らないデータについて予測する
+1. 知っているデータからAmazon MLで@color[#316A5B](モデル)を作る
+2. @color[#316A5B](モデル)で知らないデータについて予測する
 
 例としてタイタニック🛳️乗客データを用います
 
@@ -81,14 +83,14 @@
 知っているデータ | 26歳 | 男性 | 死亡
 知っているデータ | 30歳 | 男性 | 死亡
 知っているデータ | 28歳 | 女性 | 生存
-知らないデータ | 28歳 | 男性 | ？(予測)
+@color[#316A5B](知らないデータ) | 28歳 | 男性 | @color[#316A5B](？(予測）)
 
 ---
 
 ### LT: Amazon MLで機械学習始めませんか？
 
 1. 機械学習 in Amazon ML
-2. Amazon MLの特徴
+2. @color[#316A5B](Amazon MLの特徴)
 3. 機械学習モデルを組み込んだWebアプリ（デモ）
 4. まとめ
 
@@ -104,27 +106,28 @@
 
 ### 1.ノンコーディング＝ウィザード操作
 
+<span class="eighty-percent-img">
 ![おなじみのウィザード操作で機械学習](jaws_days_2019_amazonml/assets/0_amazonml_wizard.png)
+</span>
 
 +++
 
 ### ウィザードの流れ
 
-1. 手元のデータから **データソース** を作る
-2. データソースから **MLモデル** を作る
+1. 手元のデータから@color[#316A5B](データソース)を作る
+2. データソースから@color[#316A5B](MLモデル)を作る
 3. MLモデルをAPIとしてデプロイする
 
 +++
 
 ### 2.データはS3に用意
 
-- S3のファイルを指定する
+- @color[#316A5B](S3のファイルを指定)する
 - Amazon MLが自動解析してデータソースを作る
-- 私たちは予測したい項目（ここでは生死）だけ指定する
 
 +++
 
-### 予測したいデータを設定
+### 予測したい項目を指定するだけ
 
 ![乗客の生死を予測するように設定](jaws_days_2019_amazonml/assets/3_choose_target.png)
 
@@ -140,14 +143,14 @@
 
 1. 機械学習 in Amazon ML
 2. Amazon MLの特徴
-3. 機械学習モデルを組み込んだWebアプリ（デモ）
+3. @color[#316A5B](機械学習モデルを組み込んだWebアプリ（デモ）)
 4. まとめ
 
 +++
 
 ### デモアプリ
 
-- 「あなたがタイタニックに乗っていたら助かるでしょうか？」
+- @color[#316A5B](「あなたがタイタニックに乗っていたら助かるでしょうか？」)
 - AWS Lambdaにデプロイ
 - 言語：Python
 - フレームワーク：Flask
@@ -156,7 +159,9 @@
 
 ### 機能1：フォーム入力から判定
 
+<span class="seventy-percent-img">
 ![あなたの情報をフォームに入力するとタイタニック号で生き残るかどうか判定されます](jaws_days_2019_amazonml/assets/feature1_form.png)
+</span>
 
 +++
 
@@ -168,8 +173,9 @@
 
 ### デモアプリ構成図
 
-顔写真の場合の構成図（Rekognition）
-フォーム入力の場合も薄く示す
+<span class="seventy-percent-img">
+![①顔写真をS3に配置、②S3のファイルを指定してRekognition呼び出し、③年齢と性別取得、④フォームからの入力情報と同じ形式にしてAmazon MLのAPI呼び出し、返ってきた結果を表示](jaws_days_2019_amazonml/assets/201902jaws_lt.003.png)
+</span>
 
 +++
 
@@ -177,7 +183,7 @@
 
 自撮りしてアップロードしてみます
 
-QRコード
+![https://bit.ly/2VcfsKw](jaws_days_2019_amazonml/assets/demo_slide_QR.png)
 
 +++
 
@@ -192,25 +198,25 @@ QRコード
 1. 機械学習 in Amazon ML
 2. Amazon MLの特徴
 3. 機械学習モデルを組み込んだWebアプリ（デモ）
-4. まとめ
+4. @color[#316A5B](まとめ)
 
 +++
 
 ### まとめ：Amazon MLでは
 
-- ノンコーディングで機械学習モデルのAPIを作れる
-- 一歩目として機械学習の考え方に触れられる
-- 得意な言語からAPIを呼び出して、機械学習を既存のアプリに組み込みましょう
+- @color[#316A5B](ノンコーディング)で機械学習モデルのAPIを作れる
+- 機械学習に触れる@color[#316A5B](一歩目)となる
+- @color[#316A5B](得意な言語からAPIを呼び出し)て、機械学習を既存のアプリに組み込みましょう
 
 +++
 
-### 機械学習の考え方
+### 機械学習の一歩目として
 
-- ウィザードを進める中で触れられる
-- ウィザートの進め方、機械学習の考え方についてはAppendix参照（本LTコンテンツも満漢全席）
-- 考え方を掴んだら、コーディングで機械学習（in SageMaker）
+- ウィザードを通して@color[#316A5B](機械学習の考え方)に触れられる
+- ウィザートの進め方、機械学習の考え方についてはAppendix参照（本LTも満漢全席）
+- 考え方を掴んだら、コーディングで機械学習（in @color[#316A5B](SageMaker)）
 
-+++?image=spz_Jan_titanic_handson/assets/6_sex_count.png&size=cover&opacity=40
++++?image=spz_Jan_titanic_handson/assets/6_sex_count.png&size=contain&opacity=40
 
 ### ネタバラシ
 
