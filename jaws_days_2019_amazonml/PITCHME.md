@@ -189,7 +189,9 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 ### Appendix
 
-目次を入れる
+- タイタニックデータとネタバラシ
+- Amazon ML ウィザード全容
+- ウィザードで触れた機械学習の考え方
 
 +++
 
@@ -209,77 +211,7 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 - データは女性や子供が助かりやすい傾向にある（男性の参加者の皆さん、ごめんなさい）
 - 「女性と子供優先」ref: Wikipedia [タイタニック号沈没事故](https://ja.m.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%82%BF%E3%83%8B%E3%83%83%E3%82%AF%E5%8F%B7%E6%B2%88%E6%B2%A1%E4%BA%8B%E6%95%85)
 
-+++
-
-### Amazon MLの用語
-
-- データソース：機械学習に使うデータについてのデータ（例：Ageという項目は数値データ）
-- MLモデル：Amazon MLで作ったモデル
-
-+++
-
-### (1)データソース作成
-
-1. 手元のデータをS3にアップロード
-2. 予測されたスキーマの確認
-3. 予測したいデータの設定
-
-+++
-
-### (1-1)S3にアップロード
-
-![CSVファイルをアップロード](jaws_days_2019_amazonml/assets/1_s3_bucket_upload.png)
-
-+++
-
-### (1-2)予測されたスキーマの確認
-
-![Numericは数値、Categoricalは限られた数の文字列の値、Binaryは0または1](jaws_days_2019_amazonml/assets/2_confirm_schema.png)
-
-+++
-
-### (2)MLモデル作成
-
-- S3にアップロードしたデータのうち、7割から
-- 残りの3割でMLモデルの性能評価
-- AUCは0.825（1に近いほど予測が正確）
-
-+++
-
-### デプロイ前に調整可能
-
-![誤って生存と予測することが少なくなるように調整](jaws_days_2019_amazonml/assets/5_adjust_mlmodel.png)
-
-+++
-
-### MLモデルの性能評価
-
-![データソースをランダムに分割し、一方でMLモデルを作り、残りでMLモデルを評価する](jaws_days_2019_amazonml/assets/4_random_split.png)
-
-+++
-
-### Amazon MLの流れ
-
-図：S3にデータ→データソース→MLモデル→デプロイ（得意な言語からAPIとして呼び出す）
-
-+++
-
-### 機械学習の考え方（補足）
-
-- 知っているデータから知らないデータを予測
-- 知っているデータはモデル作成とモデル評価に分けて使う
-- デプロイ前の調整
-- [Amazon ML チュートリアル](https://docs.aws.amazon.com/ja_jp/machine-learning/latest/dg/tutorial.html)をやってみては？
-
-+++
-
-### Amazon MLの特徴3点
-
-1. ノンコーディングで機械学習
-2. データはS3に用意
-3. APIにして簡単にアプリ組み込み
-
-+++
+---
 
 ### ウィザードの流れ
 
@@ -289,23 +221,171 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 +++
 
-### 2.データはS3に用意
+### Amazon MLの用語
 
-- @color[#3A8687](S3のファイルを指定)する
-- Amazon MLが自動解析してデータソースを作る
+- データソース：機械学習に使うデータについてのデータ（例：Ageという項目は数値データ）
+- MLモデル：Amazon MLで作ったモデル
+
+---
+
+### (1)データソース作成
+
+1. 手元のデータをS3にアップロード
+2. データソースを作るデータを指定
+3. 予測したいデータの設定
 
 +++
 
-### 予測したい項目を指定するだけ
+### (1-1)S3バケット作成
+
+![Amazon MLと同じリージョンでバケットを作るのがオススメ（転送費用発生しない）](jaws_days_2019_amazonml/assets/appendix/1_s3_bucket.png)
+
++++
+
+### (1-1)手元のデータをアップロード
+
+![](jaws_days_2019_amazonml/assets/appendix/2_upload_csv.png)
+
++++
+
+### S3にアップロードしました
+
+![CSVファイルをアップロードしました](jaws_days_2019_amazonml/assets/1_s3_bucket_upload.png)
+
++++
+
+### 以降は、Amazon ML側で操作
+
+![machineで検索すると見つかります](jaws_days_2019_amazonml/assets/appendix/3_go_amazonml.png)
+
++++
+
+### Amazon MLウィザード起動
+
+![「Datasource and ML model」を選択](jaws_days_2019_amazonml/assets/appendix/4_select_wizard.png)
+
+---
+
+### (1-2)データソースを作るデータを指定
+
+![S3のファイルを指定](jaws_days_2019_amazonml/assets/appendix/5_s3_file.png)
+
++++
+
+### (1-2)読み取り許可を与えます
+
+![読み取り許可を与えた後の状態](jaws_days_2019_amazonml/assets/appendix/6_s3_validation.png)
+
++++
+
+### Amazon MLは自動でデータの型を推測
+
+![Numericは数値、Categoricalは限られた数の文字列の値、Binaryは0または1](jaws_days_2019_amazonml/assets/2_confirm_schema.png)
+
++++
+
+### (1-3)予測したいデータの設定
 
 ![乗客の生死を予測するように設定](jaws_days_2019_amazonml/assets/3_choose_target.png)
 
 +++
 
-### 機械学習の一歩目として
+![Row idはNoのままで進めます](jaws_days_2019_amazonml/assets/appendix/7_row_id.png)
+
++++
+
+### データソース作成前の確認
+
+![](jaws_days_2019_amazonml/assets/appendix/8_datasource_review.png)
+
++++
+
+### (2)MLモデル作成
+
+![引き続きMLモデル作成に移ります。Customを選択](jaws_days_2019_amazonml/assets/appendix/9_mlmodel_setting.png)
+
++++
+
+![Recipeは変更しません](jaws_days_2019_amazonml/assets/appendix/10_recipe.png)
+
++++
+
+![Advanced settingも変更しません](jaws_days_2019_amazonml/assets/appendix/11_advanced_setting.png)
+
++++
+
+### ポイント：性能評価のための設定
+
+![データソースをランダムに分割し、一方でMLモデルを作り、残りでMLモデルを評価する](jaws_days_2019_amazonml/assets/4_random_split.png)
+
++++
+
+### MLモデル作成前の確認 1/2
+
+![](jaws_days_2019_amazonml/assets/appendix/12_mlmodel_review.png)
+
++++
+
+### MLモデル作成前の確認 2/2
+
+![](jaws_days_2019_amazonml/assets/appendix/13_mlmodel_review2.png)
+
+---
+
+### (3)APIとしてデプロイ。その前に
+
+- モデルの性能評価
+  - S3にアップロードしたデータのうち、7割でモデル作成
+  - 残りの3割でMLモデルの性能評価
+- モデルの調整
+
++++
+
+### モデルの性能評価(AUC)
+
+予測の正確性を表す指標（1に近いほど正確）
+
+![AUCは0.825](jaws_days_2019_amazonml/assets/appendix/14_mlmodel_auc.png)
+
++++
+
+### モデルの予測の傾向を確認
+
+![](jaws_days_2019_amazonml/assets/appendix/15_performance.png)
+
++++
+
+### デプロイ前にモデルを調整
+
+![誤って生存と予測することが少なくなるように調整](jaws_days_2019_amazonml/assets/5_adjust_mlmodel.png)
+
++++
+
+### (3)「Create endpoint」の後の確認
+
+![](jaws_days_2019_amazonml/assets/appendix/16_confirm_deploy.png)
+
++++
+
+### (3)APIデプロイ完了です
+
+![](jaws_days_2019_amazonml/assets/appendix/17_deployed.png)
+
+---
+
+### Amazon MLで機械学習の一歩目
 
 - ウィザードを通して@color[#3A8687](機械学習の考え方)に触れられる
 - 考え方を掴んだら、コーディングで機械学習（in @color[#3A8687](SageMaker)）
+
++++
+
+### 機械学習の考え方
+
+- 知っているデータから知らないデータを予測
+- 知っているデータはモデル作成とモデル評価に分けて使う
+- デプロイ前の調整
+- [Amazon ML チュートリアル](https://docs.aws.amazon.com/ja_jp/machine-learning/latest/dg/tutorial.html)をやってみては？
 
 +++
 
