@@ -1,0 +1,11 @@
+# カスタムCSSファイル
+theme-override : common_assets/css/PITCHME.css
+
+#スライドのページ数表示の設定
+slide-number : true
+
+#トランジションの設定
+transition : none
+
+# 全スライドに表示されるロゴ
+logo : jaws_days_2019_amazonml/assets/all_slide_QR.png

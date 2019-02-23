@@ -3,6 +3,7 @@ GitPitchで作成したスライドの公開用リポジトリです。
 
 # スライド一覧
 
+- [Amazon Machine Learningで機械学習始めませんか？](https://gitpitch.com/ftnext/2019_slides/master?p=jaws_days_2019_amazonml/) @[JAWS DAYS 2019 懇親会LT](https://jawsdays2019.jaws-ug.jp/session/2077/)
 - [【羅針盤を手に入れる】Django基礎ハンズオンⅡ](https://gitpitch.com/ftnext/2019_slides/master?p=elv_Feb_django_developcompass/) @[eLV勉強会 (2019/02)](https://elv.connpass.com/event/119181/)
 - [pandas vor! pandasの基礎は奥深いいぞ](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Feb_pandas_basics/) @[みんなのPython勉強会#42 (2019/02)](https://startpython.connpass.com/event/112787/)
 - [QuoraコンペでKPT](https://gitpitch.com/ftnext/2019_slides/master?p=kikamoku_Feb_quora_kpt/) @[キカガクもくもく会 (2019/02/10)](https://kikagaku.connpass.com/event/118556/)
