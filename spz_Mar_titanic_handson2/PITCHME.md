@@ -410,6 +410,127 @@ TODO：試行錯誤するコード
 
 ### まとめ
 
+- ハンズオンの振り返り
+- 「Kaggleを始めてからどんなコンペに取り組めばいいか」
+
++++
+
+### 再掲：機械学習の全体像
+
+<span class="seventy-percent-img">
+![問題設定→データ収集→分析→**前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.004.png)
+</span>
+
++++
+
+### 体験したこと
+
+1. 分析（生存と関係するデータ項目を洗い出した）
+2. 前処理（データは抜けや形式のために、そのままでは機械学習に持ち込めない）
+3. モデル作成
+4. モデル評価
+
++++
+
+### Kaggleの苦楽
+
+- 楽：分析→前処理を工夫するアイデア→試してスコアが上がる
+  - 面白いのは分析（人が仮説を立てて行う領域）
+- 苦：工夫をいくつか試すも、スコアが上がらず
+  - ランダムフォレストというアルゴリズムでモデルを作り、0.727というスコアからはじめました
+
+---
+
+### Kaggleへの取り組み方（案）
+
+今回はじめて取り組む人を想定
+
+- タイタニックコンペでaccuracy 80%を目指す
+- 先人のKernelを写経 & 編集
+- 機械学習の考え方をつかむ
+
++++
+
+### 先人のKernel
+
+図
+投票数が多いもの、またはスコアが高いものに注目する
+言語でも絞れる
+
++++
+
+### 機械学習の考え方を学ぶ
+
+- コードはKernelに豊富にある（コピーすれば動かせる）
+- 機械学習の考え方（例：モデル作成用データの分割）をつかみ、コードを自由に読み書きしよう
+- 参考書籍『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』(2018)
+
++++
+
+### コンペを始めるには
+
+- 評価が高いKernel、スコアが高いKernelの写経から
+- ref: 2018/05 [[入門者向け] Kaggle入門](https://supporterzcolab.com/event/380/)
+
++++
+
+### [サンタンデール銀行コンペ](https://www.kaggle.com/c/santander-customer-transaction-prediction)
+
+- 取引するかしないかを0/1で予測
+- 20万行 × 200 の特徴量からモデル作成
+- 締切は4/10
+- 興味あるものを！ [バスケ試合の結果予測](https://www.kaggle.com/c/mens-machine-learning-competition-2019)や[電力網の故障検知](https://www.kaggle.com/c/vsb-power-line-fault-detection)など
+
++++
+
+### コンペを始めた直後（写経時点）
+
+情報氾濫
+pandas, matplotlib, scikit-learn, ニューラルネットワーク
+
++++
+
+### 多様なPythonパッケージへのアプローチ（案）
+
+1. pandas（分析・前処理）とscikit-learn（モデル作成・評価）に入門する
+2. pandasとscikit-learnの中級者を目指す
+3. scikit-learnにないアルゴリズム（LightGBMなど）やmatplotlib（分析での可視化）
+
++++
+
+### 書籍紹介
+
+- 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』pandas, matplotlib, scikit-learnに入門
+- 『[Pythonではじめる機械学習](https://www.amazon.co.jp/dp/4873117984/)』scikit-learn（実践）
+- 『[pandasクックブック](https://www.amazon.co.jp/dp/425412242X)』pandas（実践）
+- Webドキュメント：（例）[LightGBM](https://lightgbm.readthedocs.io/en/latest/)
+
++++
+
+### 心構え
+
+- 本などでの情報収集と先人のKernelの両輪で取り組む
+- 英語を怖がらない（Google翻訳）
+- Kagglerから情報を入手しよう（例 [カレーちゃん](https://twitter.com/currypurin)さん）
+- 時間の確保（他は手を出せなくなる）
+
++++
+
+### 仲間と取り組む（ジャストアイデア）
+
+- サポーターズさんとColabして、Kaggleもくもく部屋みたいなのができないだろうか？
+- サポーターズKaggle興味ある人Slack（学び方の情報交換）
+- Colabもくもく会に集まる
+- モブでPlaygroundコンペに取り組む（前回の感想から）
+
++++
+
+### 参考文献（ハンズオン準備に当たり）
+
+- 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』pydatatext（ベースにしました）
+- PyData.Tokyo Tutorial [分析パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_dh.ipynb) [モデル作成パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_ml.ipynb)（タイタニックコンペを扱った先行事例）
+- 『[PythonユーザのためのJupyter 実践 入門](https://www.amazon.co.jp/dp/4774192236/)』matplotlibの解説を参照
+
 +++
 
 ### ご清聴ありがとうございました
