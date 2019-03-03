@@ -3,7 +3,9 @@
 
 ---
 
-タイタニックハンズオン続編です
+### [1月のタイタニックハンズオン](https://supporterzcolab.com/event/677/)続編です
+
+![](spz_Mar_titanic_handson2/assets/jan_logo.png)
 
 +++
 
@@ -33,7 +35,7 @@
 ### 自己紹介（About nikkie）
 
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
-- 業務ではマーケティング(Google Analyticsなど)
+- 業務では、GUIで機械学習できるツールのセミナー教材作成
 - Pythonを教える活動も [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳に参加
 - アニメが好き（アイマス、ユーフォ）
 
@@ -79,9 +81,8 @@
 ### アジェンダ（TODO：見直し）
 
 - 導入：機械学習／Kaggle／タイタニック（10分）
-- ハンズオン：手を動かしてタイタニックコンペに参加（25分）←10分分析+15分モデル
-- 座学：精度を上げるためのアプローチの紹介（5分）
-- もくもくタイム：精度向上に各自挑戦（10分）
+- ハンズオン：手を動かしてタイタニックコンペに参加（30分）
+- もくもくタイム：精度向上に各自挑戦（5分）
 - まとめ（10分）
 
 ---
@@ -137,7 +138,7 @@ TODO：見直したアジェンダを貼る
 
 ### Kaggleの対象範囲
 
-<span class="seventy-percent-img">
+<span class="sixty-percent-img">
 ![問題設定→データ収集→**分析→前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.003.png)
 </span>
 
@@ -180,7 +181,7 @@ TODO：見直したアジェンダを貼る
 
 ### 「知っているデータ」と「知らないデータ」
 
- | コンペでの扱い
+&nbsp; | コンペでの扱い
 ----- | -----
 知っているデータ | モデル作成用データ
 知らないデータ | 予測対象データ
@@ -190,9 +191,9 @@ TODO：見直したアジェンダを貼る
 ### kaggleのコンペ 2/2
 
 - 予測対象データをモデルが予測した結果をKaggleに提出
-- Kaggleには「正解」が用意されていて、提出結果が採点されるからモデルの性能が評価される
-    - モデルの性能にスコアがつく（スコアとなる指標はコンペごとに異なる）
-- 性能が一番高いモデルを作った人（チーム）が優勝
+- Kaggleに用意された「正解」から提出結果が採点され、モデルの性能にスコアがつく
+    - スコアとなる指標はコンペごとに異なる
+- 一番優秀なスコアのモデルを作った人（チーム）が優勝
 
 +++
 
@@ -217,11 +218,15 @@ TODO：見直したアジェンダを貼る
 ### 例：タイタニックの場合に取り組むこと
 
 - 乗客の属性と生存／死亡情報からモデルを作る
-- モデルを使って、生存／死亡を知らない乗客について、生存／死亡を予測する（スコアとなる指標は、生存／死亡の正解率）
+- モデルを使って、生存／死亡を知らない乗客について、生存／死亡を予測する（スコアとなる指標は、予測の正解率）
 - ref: https://www.kaggle.com/c/titanic#evaluation
+
+<div class="seventy-percent-quote">
 
 >It is your job to predict if a passenger survived the sinking of the Titanic or not.
 For each PassengerId in the test set, you must predict a 0 or 1 value for the Survived variable.
+
+</div>
 
 +++
 
@@ -229,10 +234,10 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 
 データ種別 | 年齢 | 性別 | 生死
 ----- | ----- | ----- | -----
-学習用データ | 26歳 | 男性 | 死亡
-学習用データ | 30歳 | 男性 | 死亡
-学習用データ | 28歳 | 女性 | 生存
-テスト用データ | 28歳 | 男性 | ？(予測)
+モデル作成用データ | 26歳 | 男性 | 死亡
+モデル作成用データ | 30歳 | 男性 | 死亡
+モデル作成用データ | 28歳 | 女性 | 生存
+予測対象データ | 28歳 | 男性 | ？(予測)
 
 +++
 
@@ -241,6 +246,14 @@ For each PassengerId in the test set, you must predict a 0 or 1 value for the Su
 ---
 
 ### すかすかタイタニックハンズオン
+
++++
+
+### ハンズオン（30分）
+
+1. 分析(10分)
+2. 前処理、モデル作成、評価(15分)
+3. 精度を上げるためのアプローチの紹介（5分）
 
 +++
 
@@ -418,7 +431,7 @@ TODO：試行錯誤するコード
 ### 再掲：機械学習の全体像
 
 <span class="seventy-percent-img">
-![問題設定→データ収集→分析→**前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.004.png)
+![問題設定→データ収集→分析→**前処理→モデル作成→モデル評価**→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.003.png)
 </span>
 
 +++
@@ -427,7 +440,7 @@ TODO：試行錯誤するコード
 
 1. 分析（生存と関係するデータ項目を洗い出した）
 2. 前処理（データは抜けや形式のために、そのままでは機械学習に持ち込めない）
-3. モデル作成
+3. モデル作成（わずか1行！）
 4. モデル評価
 
 +++
@@ -443,19 +456,23 @@ TODO：試行錯誤するコード
 
 ### Kaggleへの取り組み方（案）
 
-今回はじめて取り組む人を想定
+- 今回はじめて取り組んだ方
+  - 引き続きタイタニックコンペ（目標 accuracy 80%）
+- タイタニックは満足という方
+  - 開催中の興味あるコンペに挑戦
 
-- タイタニックコンペでaccuracy 80%を目指す
-- 先人のKernelを写経 & 編集
-- 機械学習の考え方をつかむ
++++
+
+### コンペに取り組むときのポイント
+
+- 先人のKernelを写経し、変更を試す
+- そのために、機械学習の考え方をつかもう
 
 +++
 
 ### 先人のKernel
 
-図
-投票数が多いもの、またはスコアが高いものに注目する
-言語でも絞れる
+![投票数が多いもの、またはスコアが高いものに注目しましょう。また、言語で絞り込めます](spz_Mar_titanic_handson2/assets/titanic_kernels.png)
 
 +++
 
@@ -467,38 +484,31 @@ TODO：試行錯誤するコード
 
 +++
 
-### コンペを始めるには
+### 開催中のコンペに参加
 
+- 興味もてるものを：[**銀行の取引予測**](https://www.kaggle.com/c/santander-customer-transaction-prediction)、[電力網の故障予測](https://www.kaggle.com/c/vsb-power-line-fault-detection)、[バスケの試合結果予測](https://www.kaggle.com/c/mens-machine-learning-competition-2019)
 - 評価が高いKernel、スコアが高いKernelの写経から
 - ref: 2018/05 [[入門者向け] Kaggle入門](https://supporterzcolab.com/event/380/)
 
 +++
 
-### [サンタンデール銀行コンペ](https://www.kaggle.com/c/santander-customer-transaction-prediction)
+### 写経中の私の未来（Python前提）
 
-- 取引するかしないかを0/1で予測
-- 20万行 × 200 の特徴量からモデル作成
-- 締切は4/10
-- 興味あるものを！ [バスケ試合の結果予測](https://www.kaggle.com/c/mens-machine-learning-competition-2019)や[電力網の故障検知](https://www.kaggle.com/c/vsb-power-line-fault-detection)など
-
-+++
-
-### コンペを始めた直後（写経時点）
-
-情報氾濫
-pandas, matplotlib, scikit-learn, ニューラルネットワーク
+<span class="seventy-percent-img">
+![pandas, matplotlib, scikit-learnの進んだ使い方や、ニューラルネットワークなどへのキャッチアップで情報氾濫状態](spz_Mar_titanic_handson2/assets/201903kaggle_talk.001.png)
+</span>
 
 +++
 
-### 多様なPythonパッケージへのアプローチ（案）
+### 優先度と身につける範囲を決める（案）
 
 1. pandas（分析・前処理）とscikit-learn（モデル作成・評価）に入門する
-2. pandasとscikit-learnの中級者を目指す
+2. pandasとscikit-learnでやりたいことができる状態（中級者）を目指す
 3. scikit-learnにないアルゴリズム（LightGBMなど）やmatplotlib（分析での可視化）
 
 +++
 
-### 書籍紹介
+### 書籍紹介（勉強中です）
 
 - 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』pandas, matplotlib, scikit-learnに入門
 - 『[Pythonではじめる機械学習](https://www.amazon.co.jp/dp/4873117984/)』scikit-learn（実践）
@@ -533,6 +543,14 @@ pandas, matplotlib, scikit-learn, ニューラルネットワーク
 
 +++
 
+### 宣伝：技術書典6でアウトプットします
+
+- サークル「サポーターズCoLab」にて合同誌に参加
+- ハンズオンの先の話として、交差検証・グリッドサーチを取り上げます
+- PyData.Tokyo Tutorial で学んだことのアウトプットです
+
++++
+
 ### ご清聴ありがとうございました
 ### ハンズオンお疲れさまでした！
 Contact: [Twitter @ftnext](https://twitter.com/ftnext)
@@ -541,12 +559,16 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 ### Appendix
 
+- ハンズオンソースコードへの補足情報
+- タイタニック号沈没事故について（分析の裏付け）
+- Google Colaboratoryでの実行
+
 +++
 
 ### （参考）`train_test_split` 1/3
 
 <span class="seventy-percent-img">
-![学習用データをランダムに2つに分ける](spz_Jan_titanic_handson/assets/201901kaggel_talk.008.png)
+![モデル作成用データをランダムに2つに分ける](spz_Jan_titanic_handson/assets/201901kaggel_talk.008.png)
 </span>
 
 +++
@@ -567,6 +589,10 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 +++
 
+### matplotlib figureとaxes
+
++++
+
 ### さらに工夫できる 1/2
 
 - 連続値（AgeやFare）をいくつかのカテゴリに分ける
@@ -581,6 +607,64 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
     - Aloneかどうか（SibSpとParchを加工する）
     - Pclass と Age（カテゴリ）の積
 - 詳しくは[可視化の参考にしたkernel参照](https://www.kaggle.com/startupsci/titanic-data-science-solutions)
+
+---
+
+### タイタニック号沈没事故
+
+- Wikipedia [タイタニック号沈没事故](https://ja.m.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%82%BF%E3%83%8B%E3%83%83%E3%82%AF%E5%8F%B7%E6%B2%88%E6%B2%A1%E4%BA%8B%E6%95%85)
+- 1912年4月の海難事故
+- イギリス・サウサンプトンからアメリカ・ニューヨークへの航海中、氷山に衝突
+- 2224人を乗せており、1513人(**68%**)が死亡
+
++++
+
+### （おまけ）タイタニック裏話
+
+先のWikipediaを確認したところ・・・
+
+- 救命ボートの数が全員分ない -> 女性と子供優先
+- 客室係がさばく乗客の数が等級によって違う
+- 三等船室からデッキまでたどり着けず（客室係と言葉が通じない問題）
+
+---
+
+### Google Colaboratoryでの実行
+
+- Kaggleが使えない場合のハンズオン用に用意
+- Googleアカウントを持っている前提
+- 用意したサンプルコードはColaboratoryでも動かすことができる
+
++++
+
+### Google Colaboratoryでの実行手順
+
+1. https://colab.research.google.com/ にアクセス
+2. GitHubリポジトリ https://github.com/ftnext/spzcolab_titanic の中のノートブックを開く(続くスライドで説明)
+
++++
+
+### ノートブックを開く 1/2
+
+![GitHubのタブを選び、https://github.com/ftnext/spzcolab_titanic と入力](spz_Jan_titanic_handson/assets/colab_select_notebook.png)
+
++++
+
+### ノートブックを開く 2/2
+
+![ノートブック(.ipynb)のリンクをクリック](spz_Jan_titanic_handson/assets/colab_select_notebook2.png)
+
++++
+
+### セル実行時 1/2
+
+![セルを初めて実行したときの警告は「このまま実行」を選択](spz_Jan_titanic_handson/assets/colab_run_cell.png)
+
++++
+
+### セル実行時 2/2
+
+![続くすべてのランタイムをリセットは「はい」を選択](spz_Jan_titanic_handson/assets/colab_run_cell2.png)
 
 +++
 
