@@ -43,3 +43,7 @@
   width: 80%;
   height: 80%;
 }
+
+.seventy-percent-quote blockquote {
+  font-size: 70%;
+}
