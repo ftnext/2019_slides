@@ -221,12 +221,12 @@ TODO：見直したアジェンダを貼る
 - モデルを使って、生存／死亡を知らない乗客について、生存／死亡を予測する（スコアとなる指標は、予測の正解率）
 - ref: https://www.kaggle.com/c/titanic#evaluation
 
-<div class="seventy-percent-quote">
+<span class="seventy-percent-quote">
 
 >It is your job to predict if a passenger survived the sinking of the Titanic or not.
 For each PassengerId in the test set, you must predict a 0 or 1 value for the Survived variable.
 
-</div>
+</span>
 
 +++
 
