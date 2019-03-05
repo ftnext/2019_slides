@@ -629,7 +629,7 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 ### ノートブックを開く 2/2
 
-![ノートブック(.ipynb)のリンクをクリック](spz_Jan_titanic_handson/assets/colab_select_notebook2.png)
+![ノートブック(.ipynb)のリンクをクリック](spz_Mar_titanic_handson2/assets/colab_select_notebook2.png)
 
 +++
 
