@@ -134,7 +134,7 @@
 
 - データサイエンスコンペのプラットフォーム
 - 私のイメージ「機械学習を学ぶにはKaggleがいいらしい」
-- 全世界で97000名超えが参加（2019/01/18 [アカウント数](https://www.kaggle.com/rankings)集計）
+- 全世界で102000名超えが参加（2019/03/03 [アカウント数](https://www.kaggle.com/rankings)集計）
 - 学習コンテンツ[Kaggle Learn](https://www.kaggle.com/learn/overview)も提供
 
 +++
@@ -629,7 +629,7 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 ### ノートブックを開く 2/2
 
-![ノートブック(.ipynb)のリンクをクリック](spz_Jan_titanic_handson/assets/colab_select_notebook2.png)
+![ノートブック(.ipynb)のリンクをクリック](spz_Mar_titanic_handson2/assets/colab_select_notebook2.png)
 
 +++
 
