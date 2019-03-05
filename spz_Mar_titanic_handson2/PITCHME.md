@@ -134,7 +134,7 @@
 
 - データサイエンスコンペのプラットフォーム
 - 私のイメージ「機械学習を学ぶにはKaggleがいいらしい」
-- 全世界で97000名超えが参加（2019/01/18 [アカウント数](https://www.kaggle.com/rankings)集計）
+- 全世界で102000名超えが参加（2019/03/03 [アカウント数](https://www.kaggle.com/rankings)集計）
 - 学習コンテンツ[Kaggle Learn](https://www.kaggle.com/learn/overview)も提供
 
 +++
