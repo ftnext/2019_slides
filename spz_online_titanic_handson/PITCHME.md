@@ -1,8 +1,8 @@
 ## Kaggleタイタニックハンズオン
-### エンジニア学生向けオンライン勉強会
+#### エンジニア学生向けオンライン勉強会
 #### 2019/03/06 nikkie
 
-+++
+---
 
 ### Welcome to Kaggleタイタニックハンズオン
 
@@ -22,14 +22,6 @@ YouTubeのコメントに投稿してみてください😁
 - 環境構築不要。Kaggleのアカウントが必要
 - 機械学習のコンペを体験しましょう
 
-+++
-
-### お前、誰よ
-
-- ハンドルネーム nikkie, Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
-- 2019年[1月](https://supporterzcolab.com/event/677/)・[3月](https://supporterzcolab.com/event/740/)サポーターズでKaggleハンズオン登壇
-- 春から4年目のエンジニア。アニメが好き（アイマス、ユーフォ）
-
 ---
 
 ### Kaggleのアカウント作成
@@ -41,6 +33,22 @@ YouTubeのコメントに投稿してみてください😁
 +++
 
 ![お好みの登録方法で進めてください（FB, Google, Yahoo, Email）](spz_Jan_titanic_handson/assets/kaggle_register.png)
+
++++
+
+### （参考）SMS認証
+
+- 国コード +81 80-XXXX-XXXX（国コードを使うので、080の先頭の0は不要）
+- 参考 [【機械学習】さあ、Kaggleを始めよう！ – 初心者向けPython Kernelとは](https://www.secat-blog.net/wordpress/kaggle-getting-started-python-kernel-for-beginners/)
+- つまづいてしまった場合は、本スライドAppendix「Google Colaboratoryでの実行」を参照ください
+
++++
+
+### お前、誰よ
+
+- ハンドルネーム nikkie, Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
+- 2019年[1月](https://supporterzcolab.com/event/677/)・[3月](https://supporterzcolab.com/event/740/)サポーターズでKaggleハンズオン登壇
+- 春から4年目のエンジニア。アニメが好き（アイマス、ユーフォ）
 
 +++
 
@@ -57,19 +65,19 @@ YouTubeのコメントに投稿してみてください😁
 
 ### アジェンダ
 
-- 機械学習・Kaggle・タイタニックとは
-- 単純なモデルを作成してみよう！
-- 単純なモデルより性能のいいモデル作りに挑戦！
-- まとめ
+- 機械学習・Kaggle・タイタニックとは（10分）
+- 単純なモデルを作成してみよう！（10分）
+- 単純なモデルより性能のいいモデル作りに挑戦！（20分）
+- まとめ（10分）
 
 ---
 
 ### Kaggleタイタニックハンズオン
 
-- 機械学習・Kaggle・タイタニックとは
-- 単純なモデルを作成してみよう！
-- 単純なモデルより性能のいいモデル作りに挑戦！
-- まとめ
+- **機械学習・Kaggle・タイタニックとは**（10分）
+- 単純なモデルを作成してみよう！（10分）
+- 単純なモデルより性能のいいモデル作りに挑戦！（20分）
+- まとめ（10分）
 
 +++
 
@@ -88,7 +96,7 @@ YouTubeのコメントに投稿してみてください😁
 
 +++
 
-### モデルを作る
+### モデル
 
 - イメージ：予測するためのルール
 - 実態は「計算式の塊」
@@ -254,10 +262,10 @@ YouTubeのコメントに投稿してみてください😁
 
 ### Kaggleタイタニックハンズオン
 
-- 機械学習・Kaggle・タイタニックとは
-- 単純なモデルを作成してみよう！
-- 単純なモデルより性能のいいモデル作りに挑戦！
-- まとめ
+- 機械学習・Kaggle・タイタニックとは（10分）
+- **単純なモデルを作成してみよう！**（10分）
+- 単純なモデルより性能のいいモデル作りに挑戦！（20分）
+- まとめ（10分）
 
 +++
 
@@ -285,7 +293,7 @@ YouTubeのコメントに投稿してみてください😁
 ### ハンズオン
 
 - ブラウザで以下のKernel（≒ソースコード）にアクセス
-  - TODO
+  - https://www.kaggle.com/ftnext/kaggle-spzcolab-online
 - Kernelを自分のアカウントにコピーします（フォークと言います）
 
 +++
@@ -308,7 +316,7 @@ YouTubeのコメントに投稿してみてください😁
 
 - 前提：submisson.csvを作成するセルまで実行が終わった状態
 - オプション：タイトルを変えたい人は変える
-  - 例：「first_submission_20190305」
+  - 例：「20190306_1_sex」
 
 +++
 
@@ -336,17 +344,17 @@ YouTubeのコメントに投稿してみてください😁
 
 ### Kaggleタイタニックハンズオン
 
-- 機械学習・Kaggle・タイタニックとは
-- 単純なモデルを作成してみよう！
-- 単純なモデルより性能のいいモデル作りに挑戦！
-- まとめ
+- 機械学習・Kaggle・タイタニックとは（10分）
+- 単純なモデルを作成してみよう！（10分）
+- **単純なモデルより性能のいいモデル作りに挑戦！**（20分）
+- まとめ（10分）
 
 +++
 
-### 0.76555超えを目指す
+### 単純なモデルより性能のいいモデル作りに挑戦！
 
-- サンプルコードを選択して実行してみましょう
-- 先ほどCommitしたKernelを編集しながら **上から再実行** します
+- モデル作成を一緒に体験（2）：10分
+- 用意した選択肢2つのうちお好きなものを実行（3）：10分
 
 +++
 
@@ -370,9 +378,11 @@ YouTubeのコメントに投稿してみてください😁
 
 +++
 
-## もくもくタイムです！
+### 0.76555超えを目指す💪
 
-## 精度向上に挑戦💪
+- 選択肢1,2のうち、試したい方を実行してみましょう
+- Kernelを編集しながら選択肢のコードを **上から順に実行** します
+- （操作が不安な方は一緒に進めましょう）
 
 +++
 
@@ -384,10 +394,10 @@ YouTubeのコメントに投稿してみてください😁
 
 ### Kaggleタイタニックハンズオン
 
-- 機械学習・Kaggle・タイタニックとは
-- 単純なモデルを作成してみよう！
-- 単純なモデルより性能のいいモデル作りに挑戦！
-- まとめ
+- 機械学習・Kaggle・タイタニックとは（10分）
+- 単純なモデルを作成してみよう！（10分）
+- 単純なモデルより性能のいいモデル作りに挑戦！（20分）
+- **まとめ**（10分）
 
 +++
 
@@ -423,11 +433,19 @@ YouTubeのコメントに投稿してみてください😁
 
 +++
 
-### 参考書籍
+### 参考書籍 1/2
 
-- 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』
-- Pythonを書けるようになるには？ 入門書は豊富、[公式チュートリアル](https://docs.python.org/ja/3/tutorial/index.html)(無料)、有料のオンライン教材(PyQ)
-- パッケージについてはチャットで回答します
+- 機械学習の考え方：『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』
+- Pythonを書けるようになるには？ 入門書は豊富、[公式チュートリアル](https://docs.python.org/ja/3/tutorial/index.html)(無料)、有料のオンライン教材(PyQなど)
+
++++
+
+### 参考書籍 2/2
+
+- まずはpandas（分析・前処理）とscikit-learn（モデル作成・評価）
+- 『Pythonによるあたらしいデータ分析の教科書』で入門できます
+- 『[Pythonではじめる機械学習](https://www.amazon.co.jp/dp/4873117984/)』scikit-learn（実践）
+- 『[pandasクックブック](https://www.amazon.co.jp/dp/425412242X)』pandas（実践）
 
 +++
 
@@ -450,3 +468,46 @@ YouTubeのコメントに投稿してみてください😁
 ### ご清聴ありがとうございました
 ### ハンズオンお疲れさまでした！
 Contact: [Twitter @ftnext](https://twitter.com/ftnext)
+
+---
+
+### Appendix: Google Colaboratoryでの実行
+
+- Kaggleが使えない場合のハンズオン用に用意
+- Googleアカウントを持っている前提
+- 用意したサンプルコードはColaboratoryでも動かすことができる
+
++++
+
+### Google Colaboratoryでの実行手順
+
+1. https://colab.research.google.com/ にアクセス
+2. GitHubリポジトリ https://github.com/ftnext/spzcolab_titanic の中のノートブックを開く(続くスライドで説明)
+
++++
+
+### ノートブックを開く 1/2
+
+![GitHubのタブを選び、https://github.com/ftnext/spzcolab_titanic と入力](spz_Jan_titanic_handson/assets/colab_select_notebook.png)
+
++++
+
+### ノートブックを開く 2/2
+
+![ノートブック(.ipynb)のリンクをクリック](spz_online_titanic_handson/assets/colab_select_notebook2.png)
+
++++
+
+### セル実行時 1/2
+
+![セルを初めて実行したときの警告は「このまま実行」を選択](spz_Jan_titanic_handson/assets/colab_run_cell.png)
+
++++
+
+### セル実行時 2/2
+
+![続くすべてのランタイムをリセットは「はい」を選択](spz_Jan_titanic_handson/assets/colab_run_cell2.png)
+
++++
+
+# EOF
