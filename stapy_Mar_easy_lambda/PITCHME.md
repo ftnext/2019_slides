@@ -91,7 +91,9 @@
 
 +++
 
+<span class="thirty-percent-img">
 ![私がタイタニックに乗っていたら、死亡してしまうそうです](stapy_Mar_easy_lambda/assets/titanic_app_image.jpg)
+</span>
 
 ---
 
