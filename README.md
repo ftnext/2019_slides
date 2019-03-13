@@ -3,7 +3,7 @@ GitPitchで作成したスライドの公開用リポジトリです。
 
 # スライド一覧
 
-- [λ ~よく見たら片方楽してるアプリ開発~](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Mar_easy_lambda/) @[みんなのPython勉強会#43 (2019/03)](https://startpython.connpass.com/event/112788/)
+- [λ 〜よく見たら片方楽してるアプリ開発〜](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Mar_easy_lambda/) @[みんなのPython勉強会#43 (2019/03)](https://startpython.connpass.com/event/112788/)
 - [Kaggleタイタニックハンズオン](https://gitpitch.com/ftnext/2019_slides/master?p=spz_online_titanic_handson/) @[エンジニア学生向けオンライン勉強会 サポーターズ (2019/03)](https://talent.supporterz.jp/events/2992699f-53ed-417b-abf7-7d7bba931037/)
 - [続・機械学習に興味ありますか？Kaggle始めたいですか？タイタニックでもいいですか？](https://gitpitch.com/ftnext/2019_slides/master?p=spz_Mar_titanic_handson2/) @[サポーターズ勉強会 (2019/03)](https://supporterzcolab.com/event/740/)
 - [Amazon Machine Learningで機械学習始めませんか？](https://gitpitch.com/ftnext/2019_slides/master?p=jaws_days_2019_amazonml/) @[JAWS DAYS 2019 懇親会LT](https://jawsdays2019.jaws-ug.jp/session/2077/)
