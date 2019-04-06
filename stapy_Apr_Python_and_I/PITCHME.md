@@ -125,7 +125,7 @@ Pythonを始めたあとの最初の成功体験を共有
 @snap[east half-width-bullets]
 ### 退Py[17章](http://automatetheboringstuff.com/chapter17/) 画像処理
 
-Pillowというパッケージで画像処理
+Pillowというパッケージで画像処理<br>
 
 @ul[](false)
 - 切り取り
