@@ -52,3 +52,7 @@
 .half-width-bullets {
   width: 50%;
 }
+
+.half-width-image img {
+  width: 50%;
+}
