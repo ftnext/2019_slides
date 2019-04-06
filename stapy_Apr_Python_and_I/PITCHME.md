@@ -179,9 +179,8 @@ Note:
 
 ### Pythonのインストール方法
 
-- [python.org](https://www.python.org/)からダウンロード [Windows](https://www.python.jp/install/windows/index.html) [macOS](https://www.python.jp/install/macos/index.html)
-- [Anaconda](https://www.python.jp/install/anaconda/index.html)
-- etc
+@box[span-80](python.orgからダウンロード)
+@box[span-80](Anaconda)
 
 注：[python.jpの環境構築ガイド](https://www.python.jp/install/install.html)をもとにしています
 
