@@ -28,15 +28,23 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 ### お前、誰よ / About nikkie
 
 @snap[west]
+
+@ul
 - 平成2年生まれ
 - 2016〜 ソフトウェアエンジニア
 - Python歴1年（趣味でスタート、時々業務）
+@ulend
+
 @snapend
 
 @snap[east]
+
+@ul
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
 - 2018/09〜 stapy 4代目LT王子
 - アニメが好き
+@ulend
+
 @snapend
 
 +++?image=stapy_Apr_Python_and_I/assets/colab_book6_cover.png&size=contain&opacity=50
