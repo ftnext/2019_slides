@@ -49,14 +49,24 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 
 @snapend
 
-+++?image=stapy_Apr_Python_and_I/assets/colab_book6_cover.png&size=contain&opacity=50
++++
 
-### 最近のアウトプット：技術書典6 く17
+@snap[west]
+![CoLabユーザーが技術書を書いてみた](stapy_Apr_Python_and_I/assets/colab_book6_cover.png)
+@snapend
 
+@snap[east half-width-bullets]
+
+### 告知：技術書典6でアウトプット
+
+@ul[](false)
 - 2019/04/14(日) 池袋にて開催
 - 合同誌に参加: [サポーターズCoLab く17](https://techbookfest.org/event/tbf06/circle/36070001)
 - 2019年1月,3月のKaggleタイタニックコンペハンズオンを記事化
 - ソースコードは[公開](https://www.kaggle.com/ftnext/spzcolab-techbook6)しています
+@ulend
+
+@snapend
 
 +++
 
