@@ -1,36 +1,45 @@
 ## P(ython)&I
-### Pythonの魅力、そして最初の落とし穴を回避する（仮）
+### Python最初の成功体験と最初の落とし穴の回避策
 #### みんなのPython勉強会#44 (2019/04/10) nikkie
 
 ---
 
-### 4月、始まりの季節
+### 🌸4月、始まりの季節🌸
 
 - プログラミングに興味があり、Pythonを始める方
 - 別の言語からPythonを始める方
 
 そんな方にこのトークを送ります
 
+Note:
+
+Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構築の話が参考になれば幸いです
+
 +++
 
 ### 概要：P(ython)&I
 
 - Pythonと私のこの1年とこれから
-- Pythonを始めた時点でつまづきにくくなるポイントを共有
-- トークを通して、Pythonの魅力を伝えたい
+- Pythonを始めた時点（PythonのPの時点）についての経験を共有
+- トークを通して、✨Pythonの魅力✨を伝えたい
 
 +++
 
 ### お前、誰よ / About nikkie
 
+@snap[west]
 - 平成2年生まれ
 - 2016〜 ソフトウェアエンジニア
-- Pythonは趣味がメイン、時々業務
+- Python歴1年（趣味でスタート、時々業務）
+@snapend
+
+@snap[east]
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
 - 2018/09〜 stapy 4代目LT王子
 - アニメが好き
+@snapend
 
-+++
++++?image=stapy_Apr_Python_and_I/assets/colab_book6_cover.png&size=contain&opacity=50
 
 ### 最近のアウトプット：技術書典6 く17
 
@@ -39,7 +48,7 @@
 - 2019年1月,3月のKaggleタイタニックコンペハンズオンを記事化
 - ソースコードは[公開](https://www.kaggle.com/ftnext/spzcolab-techbook6)しています
 
----
++++
 
 ### 目次：P(ython)&I
 
@@ -47,14 +56,13 @@
 - オリジンを支えた環境構築
 - 私とPython（事例紹介）
 
-+++
+---
 
-### 目次：P(ython)&I あとで
+### 目次：P(ython)&I
 
-- **nikkie "オリジン"：モザイクアートという成功体験**
-- 成功体験を支えた環境構築
-- Pythonにハマる：「エラーが読める！」
-- 広い世界に漕ぎ出す
+- **nikkie "オリジン"：最初の成功体験**
+- オリジンを支えた環境構築
+- 私とPython（事例紹介）
 
 +++
 
@@ -69,7 +77,7 @@ Pythonを始めたあとの最初の成功体験を共有
 
 ### 「悔しくって死にそう」
 
-- なぜPythonを始めたか：業務で力不足を痛感して
+- なぜPythonを始めたか：業務で力不足を痛感して😢
 - 2017年3月（1年目）、進めていたプロジェクト(PHP)で大遅延
 - 「独力で何か作れるようになりたい」と強く思った
 
@@ -83,83 +91,90 @@ Pythonを始めたあとの最初の成功体験を共有
 
 +++
 
-### "自動化事例集"
+### "自動化事例集"<br>『[退屈なことはPythonにやらせよう](https://www.oreilly.co.jp/books/9784873117782/)』
 
-退屈なことはPythonにやらせよう写真
-
-『[退屈なことはPythonにやらせよう](https://www.oreilly.co.jp/books/9784873117782/)』
+![退屈なことはPythonにやらせよう 表紙](stapy_Apr_Python_and_I/assets/taipy_book_cover.jpeg)
 
 +++
 
-### 退Pyにおける画像処理
+### 退Py[17章](http://automatetheboringstuff.com/chapter17/) 画像処理
 
-英語の公開情報から取得する（ロゴを入れる）
+Pillowというパッケージで画像処理（切り取り、配置、拡大、縮小など）
 
-[17章](http://automatetheboringstuff.com/chapter17/) Pillowというパッケージで画像処理（拡大、縮小など）
+![退Py17章 画像処理の例](stapy_Apr_Python_and_I/assets/taipy_ch17_6.jpg)
 
 +++
 
 ### 退Pyで画像処理の事例を見て
 
-- Pythonって画像扱えるんだ！
+- Pythonって画像扱えるんだ！🤩
 - モザイクアート作ってみようかな
 
-+++
++++?image=stapy_Apr_Python_and_I/assets/python_and_i__mosaic_art.png&size=cover
 
-### 作ってみた (2017/12)
+Note:
 
-TODO：モザイクアートを出す
+2017年12月
 
 +++
 
 ### 私とPython、最初の成功体験
 
-- 「作ってみようかな」を実現できた
+- 「作ってみようかな」を実現できた😆
 - ほぼ英文（例：`if not`）なのはポイント高い
 - インデントは最初はとっつきにくかったが、慣れた
 
 ---
 
-### 目次：P(ython)&I あとで
+### 目次：P(ython)&I
 
-- nikkie "オリジン"：モザイクアートという成功体験
-- **成功体験を支えた環境構築**
-- Pythonにハマる：「エラーが読める！」
-- 広い世界に漕ぎ出す
+- nikkie "オリジン"：最初の成功体験
+- **オリジンを支えた環境構築**
+- 私とPython（事例紹介）
 
 +++
 
 ### 成功体験を支えた環境構築
 
-- 私「Pythonの場合、作ってみたいを実現するハードルはそんなに高くない」
-- Pythonを教え始めて：「始めの成功体験、私が思っているよりハードル高い？」
+- 私「Pythonでは、"作ってみたい"を実現するハードルはそんなに高くない」😆
+- Pythonを教え始めて：「始めの成功体験、私が思っているよりハードル高い？」🤔
 
 +++
 
-### 環境構築の罠
+### Pythonのインストール方法
 
-Pythonのインストール方法はいくつかある
-
-- python.orgからダウンロード
-- Anaconda
-- homebrew (macOS)
-- pyenv
+- [python.org](https://www.python.org/)からダウンロード [Windows](https://www.python.jp/install/windows/index.html) [macOS](https://www.python.jp/install/macos/index.html)
+- [Anaconda](https://www.python.jp/install/anaconda/index.html)
 - etc
 
-人数聞いてもいい
+注：[python.jpの環境構築ガイド](https://www.python.jp/install/install.html)をもとにしています
+
+Note:
+
+Pythonのインストール方法について人数を聞く
 
 +++
 
 ### Anacondaとは
 
-- TODO：簡潔な説明（データサイエンスに使うパッケージをPythonとセットにして配布）
-- パッケージの説明
-- このトークではpython.orgからダウンロードとAnacondaのケースに絞って扱う
+- Python + データサイエンスで使うパッケージ(例: `numpy`, `scikit-learn`)
+- パッケージ：第三者が書いたPythonのコード（`import`して関数やクラスを使う）
+- パッケージによっては、Anacondaで使うほうが性能がいいことがある
 
 +++
 
-### インストールはどれか1つだけにしよう
-### インストールの仕方が異なる記事を参照するときは、読み替えよう
+### 環境構築の落とし穴
+
+- 成功体験でつまづく方に見られるケース：
+  - python.orgからダウンロード && Anacondaも利用
+- Pythonを **重複してインストール** している
+
++++
+
+### インストールはどれか1つだけにしよう。
+### 自分の環境とインストールの仕方が異なる記事を参照するときは、インストールの部分を読み替えよう
+
+記事の通りにやる姿勢は素晴らしいです。ただし一部読み替えが必要です
 
 +++
 
@@ -172,16 +187,15 @@ Q: どうしますか？
 
 +++
 
-### A: Anacondaを入れる（ブッブーですわ）
+### A: Anacondaを入れる
 
-記事の通りにやる姿勢は素晴らしいのですが、読み替えが必要です。
+@css[fragment](# 🙅)
 
 +++
 
 ### 想定解：必要なパッケージを`pip install`
 
-- 現状と解説記事の違い：Anacondaに最初から入っているパッケージが手元にはない
-- 例：`numpy`, `scikit-learn`, ...
+- 現状と解説記事の違い：Anacondaに最初から入っているパッケージ（`numpy`, `scikit-learn`など）が手元にはない
 - 別解：python.orgからPythonを入れて機械学習をする記事を探す
 
 +++
@@ -195,9 +209,9 @@ Q: どうしますか？
 
 +++
 
-### A: Anacondaを入れる（ブッブーですわ）
+### A: Anaconda環境でも`pip install`する
 
-記事の通りにやる姿勢は素晴らしいのですが、読み替えが必要です。
+@css[fragment](# 🙅)
 
 +++
 
@@ -210,20 +224,20 @@ Q: どうしますか？
 
 ### pipはcondaに読み替えよう 参考
 
-- [python.jp Condaコマンド](https://www.python.jp/install/anaconda/conda.html)
-
 >慣れるまでは、できるだけ Condaだけを使ってパッケージをインストールするようにしましょう。
+
+[python.jp Condaコマンド](https://www.python.jp/install/anaconda/conda.html) より
 
 +++
 
-### パッケージの扱いのネクストステップ：仮想環境
+### ネクストステップ：仮想環境
 
 - プロジェクトごとに隔離された環境のこと
 - 同じパッケージのバージョン違いを1台のPCに共存させられるのでオススメ
 
 +++
 
-### python.org派で仮想環境を使う
+### python.orgからダウンロードした場合の仮想環境
 
 - 1つの方法として`venv`モジュールを使う
 - 例：`python3 -m venv env` (macOS想定)
@@ -231,10 +245,12 @@ Q: どうしますか？
 
 +++
 
-### Anaconda派で仮想環境を使う
+### Anacondaで仮想環境を使う
 
 - `conda`コマンドで作成できる
-- コマンド例と参考情報
+  - 作成：`conda create`
+  - 切り替え：`conda activate`
+- 参考：[python.jp Condaコマンド](https://www.python.jp/install/anaconda/conda.html)
 
 +++
 
@@ -248,10 +264,9 @@ Q: どうしますか？
 
 ### 目次：P(ython)&I
 
-- nikkie "オリジン"：モザイクアートという成功体験
-- 成功体験を支えた環境構築
-- Pythonにハマる：「エラーが読める！」
-- 広い世界に漕ぎ出す
+- nikkie "オリジン"：最初の成功体験
+- オリジンを支えた環境構築
+- **私とPython（事例紹介）**
 
 +++
 
@@ -301,24 +316,26 @@ NameError: name 'ctiy' is not defined
 
 ### 漕ぎ出す一助に、stapyのLT駆動学習
 
-- 懇親会のLTを目指して学習をする(nao_yさん提唱)
+- 懇親会のLTを目指して学習をする([nao_yさん提唱](https://gitpitch.com/NaoY-2501/GitPitch-Slides?p=stapy31_20180110#/6/2))
 - アウトプットの敷居は低くていい
 	- 「このパッケージのチュートリアルをやりました」
 	- 「このパッケージのここがわかりません」
 
 +++
 
-### LTへのフィードバック、誠にありがとうございます
+### LTへのフィードバック、誠にありがとうございます🙇‍
 
-- 私のLT駆動学習（TODO：例を挙げる／リンク）
+- 私のLT駆動学習
+  - [2018](https://github.com/ftnext/2018_LTslides) Djangoにモザイクアートなど
+  - [2019](https://github.com/ftnext/2019_slides) pandasの基礎を確認して共有など
 - 不完全なプログラムでもアウトプットすることでフィードバックをいただける
 
 +++
 
-### これから-1 DjangoCongress JP話します
+### これから-1 [DjangoCongress JP](https://djangocongress.jp/)話します
 
 - Django Girls TutorialはDjangoに入門するのに最適
-- しかし、それだけでは、アプリを作れるようにならない
+- しかし、それだけでは、アプリを作れるようにならないのでは？
 - →Tutorialで扱うブログを作り直して知見をアウトプット
 
 +++
@@ -339,7 +356,7 @@ NameError: name 'ctiy' is not defined
 
 +++
 
-### 2. 個人開発で未来を作る（build future）
+### 2. 個人開発で未来を作る💪（build future）
 
 - 「作らなければ身につかない」
 - 「自分が **アプリを作る** ことで、知識が身につき、**自分の未来も創ることにつながる**」
@@ -351,21 +368,22 @@ NameError: name 'ctiy' is not defined
 
 - Pythonと私のこの1年を共有してきた
 - まとめ1：Pythonの魅力
-- まとめ2：Pythonを始めたときにつまづかないための情報提供
+- まとめ2：Pythonを始めたときにつまづかないために
 
 +++
 
 ### Pythonの魅力
 
 - ほぼ英文のコード
-- 読みやすいエラー
 - 広い領域を1つの言語で扱える
+- 慣れると美しいインデント
+- 私にとっては、エラーが読める言語
 
 +++
 
-### Pythonを始めてつまづかないために
+### Pythonを始めたときにつまづかないために
 
-- 環境構築の方法が自分と違う場合は読み替えよう
+- Pythonのインストール方法が自分と違う記事は読み替えよう
 - 環境構築でつまづきそうだったら、人に聞こう（一つの質問先として[@ftnext](https://twitter.com/ftnext)）
 - +α：広い世界へ漕ぎ出す一助にアウトプット（stapyでLT駆動学習）
 
@@ -373,9 +391,11 @@ NameError: name 'ctiy' is not defined
 
 ### おまけ：Pythonの知り合いを増やす
 
-PyConJP スタッフ募集中です！
+- コミュニティで知り合いを増やすと、わからないことも質問できる
+- PyCon JP スタッフ募集中です！
+- [PyCon JP 2019 スタッフ募集およびNOCチームスタッフ募集開始](https://pyconjp.blogspot.com/2019/03/pycon-jp-2019-staff-noc.html)
 
 +++
 
 ### ご清聴ありがとうございました
-### Let's build future!
+### 🤞Let's build future!🤞
