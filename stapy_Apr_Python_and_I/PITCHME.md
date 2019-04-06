@@ -224,7 +224,7 @@ Q: どうしますか？
 
 ### A: Anacondaを入れる
 
-@css[fragment](# 🙅)
+# @css[fragment](🙅)
 
 +++
 
