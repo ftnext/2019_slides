@@ -29,7 +29,7 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 ### お前、誰よ / About nikkie
 @snapend
 
-@snap[west]
+@snap[west half-width-bullets]
 
 @ul[](false)
 - 平成2年生まれ
@@ -39,7 +39,7 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 
 @snapend
 
-@snap[east]
+@snap[east half-width-bullets]
 
 @ul[](false)
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
