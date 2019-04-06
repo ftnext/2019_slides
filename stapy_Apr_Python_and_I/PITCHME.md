@@ -111,9 +111,14 @@ Pythonを始めたあとの最初の成功体験を共有
 
 +++
 
+@snap[east half-width-bullets]
+最初に手に取ったのは
 ### "自動化事例集"<br>『[退屈なことはPythonにやらせよう](https://www.oreilly.co.jp/books/9784873117782/)』
+@snapend
 
+@snap[west half-width-image]
 ![退屈なことはPythonにやらせよう 表紙](stapy_Apr_Python_and_I/assets/taipy_book_cover.jpeg)
+@snapend
 
 +++
 
