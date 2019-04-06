@@ -51,7 +51,7 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 
 +++
 
-@snap[west]
+@snap[west half-width-image]
 ![CoLabユーザーが技術書を書いてみた](stapy_Apr_Python_and_I/assets/colab_book6_cover.png)
 @snapend
 
