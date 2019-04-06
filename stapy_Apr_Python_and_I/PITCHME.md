@@ -246,7 +246,7 @@ Q: どうしますか？
 
 ### A: Anaconda環境でも`pip install`する
 
-@css[fragment](# 🙅)
+# @css[fragment](🙅)
 
 +++
 
