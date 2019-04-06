@@ -122,11 +122,22 @@ Pythonを始めたあとの最初の成功体験を共有
 
 +++
 
+@snap[east half-width-bullets]
 ### 退Py[17章](http://automatetheboringstuff.com/chapter17/) 画像処理
 
-Pillowというパッケージで画像処理（切り取り、配置、拡大、縮小など）
+Pillowというパッケージで画像処理
 
+@ul[](false)
+- 切り取り
+- 配置
+- 拡大、縮小
+@ulend
+
+@snapend
+
+@snap[west half-width-image]
 ![退Py17章 画像処理の例](stapy_Apr_Python_and_I/assets/taipy_ch17_6.jpg)
+@snapend
 
 +++
 
