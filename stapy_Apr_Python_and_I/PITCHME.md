@@ -130,7 +130,7 @@ Pillowというパッケージで画像処理（切り取り、配置、拡大�
 - Pythonって画像扱えるんだ！🤩
 - モザイクアート作ってみようかな
 
-+++?image=stapy_Apr_Python_and_I/assets/python_and_i__mosaic_art.png&size=cover
++++?image=stapy_Apr_Python_and_I/assets/python_and_i__mosaic_art.jpg&size=cover
 
 Note:
 
