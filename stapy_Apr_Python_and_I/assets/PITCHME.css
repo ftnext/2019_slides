@@ -19,9 +19,14 @@
 }
 
 .half-width-bullets {
+  text-align: center;
   width: 50%;
 }
 
 .half-width-image img {
   width: 50%;
+}
+
+.snap-seventy-percent-image img {
+  width: 70%;
 }
