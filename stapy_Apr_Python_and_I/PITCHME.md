@@ -339,15 +339,26 @@ NameError: name 'ctiy' is not defined
 
 +++
 
+@snap[north span-100]
 ### これまで-2：Pythonの広い世界へ漕ぎ出す
 
 1つの言語で幅広い領域を扱える
+@snapend
 
+@snap[west span-50]
+@ul[](false)
 - 自動化スクリプト
 - Web
+@ulend
+@snapend
+
+@snap[east span-50]
+@ul[](false)
 - 機械学習
 - 組み込み
 - etc
+@ulend
+@snapend
 
 +++
 
