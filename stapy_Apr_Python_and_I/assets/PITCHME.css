@@ -33,7 +33,7 @@
 
 .snap-south-west-image img {
   width: 60%;
-  margin-left: 30%;
+  margin-left: 30% !important;
 }
 
 .snap-seventy-percent-image img {
