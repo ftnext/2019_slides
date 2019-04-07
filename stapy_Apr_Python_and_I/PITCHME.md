@@ -160,12 +160,29 @@ Note:
 
 +++
 
+@snap[north]
 ### Pythonのインストール方法
+@snapend
 
-@box[span-80](python.orgからダウンロード)
-@box[span-80](Anaconda)
+@snap[west]
+@box[span-80 bg-blue text-white rounded](python.orgからダウンロード)
 
+@ul[](false)
+- [python.org](https://www.python.org/)
+- [Windows向け手順](https://www.python.jp/install/windows/index.html)
+- [macOS向け手順](https://www.python.jp/install/macos/index.html)
+@ulend
+
+@snapend
+
+@snap[east]
+@box[span-80 bg-blue text-white rounded](Anaconda)
+[Anaconda導入手順](https://www.python.jp/install/anaconda/index.html)
+@snapend
+
+@snap[south]
 注：[python.jpの環境構築ガイド](https://www.python.jp/install/install.html)をもとにしています
+@snapend
 
 Note:
 
