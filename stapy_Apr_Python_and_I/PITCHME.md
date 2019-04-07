@@ -101,21 +101,18 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 
 +++
 
-@snap[north-east half-width-bullets]
-### 最初に手に取ったのは<br> "自動化事例集"（[退Py](https://www.oreilly.co.jp/books/9784873117782/)）
-@snapend
-
 @snap[north-west snap-north-west-image]
 ![退屈なことはPythonにやらせよう 表紙](stapy_Apr_Python_and_I/assets/taipy_book_cover.jpeg)
 @snapend
 
-@snap[south-east half-width-bullets]
-### [17章](http://automatetheboringstuff.com/chapter17/) 画像処理 (Pillow)
+@snap[east half-width-bullets]
+### [退Py](https://www.oreilly.co.jp/books/9784873117782/)を手に取る
+
+[17章](http://automatetheboringstuff.com/chapter17/) Pillowによる画像処理
 
 @ul[](false)
-- 切り取り
-- 配置
 - 拡大、縮小
+- 画像を並べて配置
 @ulend
 
 @snapend
@@ -130,6 +127,7 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 
 - Pythonって画像扱えるんだ！🤩
 - モザイクアート作ってみようかな
+- モザイクアート＝画像を寄せ集めて、別の絵を浮かび上がらせる
 
 +++?image=stapy_Apr_Python_and_I/assets/python_and_i__mosaic_art.jpg&size=cover
 
