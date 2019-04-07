@@ -19,8 +19,8 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 
 ### 概要：P(ython)&I
 
-- Pythonと私のこの1年とこれから
-- Pythonを始めた時点（PythonのPの時点）についての経験を共有
+- Pythonと私のこの1年とこれからの話
+- Pythonを始めた時点（＝PythonのPの時点）が中心
 - トークを通して、✨Pythonの魅力✨を伝えたい
 
 +++
@@ -86,20 +86,11 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 
 +++
 
-### nikkie "オリジン"
+### なぜPythonを始めたか
 
-Pythonを始めたあとの最初の成功体験を共有
-
-- Pythonを始めたきっかけ
-- 最初に作ったもの：モザイクアート
-
-+++
-
-### 「悔しくって死にそう」
-
-- なぜPythonを始めたか：業務で力不足を痛感して😢
+- 「悔しくって死にそう」：業務で力不足を痛感😢
 - 2017年3月（1年目）、進めていたプロジェクト(PHP)で大遅延
-- 「独力で何か作れるようになりたい」と強く思った
+- 「**独力で何か作れるようになりたい**」と強く思った
 
 +++
 
@@ -107,25 +98,20 @@ Pythonを始めたあとの最初の成功体験を共有
 
 - 2017年11月頃スタート
 - 2017年1月にPyNyumon（スクレイピングハンズオン）
-- スタートするまでに数回使い、つまづくことはなかった
+- スタートするまでに数回使ったが、つまづかなかったので印象がよかった
 
 +++
 
-@snap[east half-width-bullets]
-最初に手に取ったのは
-### "自動化事例集"<br>『[退屈なことはPythonにやらせよう](https://www.oreilly.co.jp/books/9784873117782/)』
+@snap[north-east half-width-bullets]
+### 最初に手に取ったのは<br> "自動化事例集"（[退Py](https://www.oreilly.co.jp/books/9784873117782/)）
 @snapend
 
-@snap[west half-width-image]
+@snap[north-west half-width-image]
 ![退屈なことはPythonにやらせよう 表紙](stapy_Apr_Python_and_I/assets/taipy_book_cover.jpeg)
 @snapend
 
-+++
-
-@snap[east half-width-bullets]
-### 退Py[17章](http://automatetheboringstuff.com/chapter17/) 画像処理
-
-Pillowというパッケージで画像処理<br>
+@snap[south-east half-width-bullets]
+### [17章](http://automatetheboringstuff.com/chapter17/) 画像処理 (Pillow)
 
 @ul[](false)
 - 切り取り
@@ -135,7 +121,7 @@ Pillowというパッケージで画像処理<br>
 
 @snapend
 
-@snap[west half-width-image]
+@snap[south-west half-width-image]
 ![退Py17章 画像処理の例](stapy_Apr_Python_and_I/assets/taipy_ch17_6.jpg)
 @snapend
 
@@ -194,22 +180,22 @@ Pythonのインストール方法について人数を聞く
 
 - Python + データサイエンスで使うパッケージ(例: `numpy`, `scikit-learn`)
 - パッケージ：第三者が書いたPythonのコード（`import`して関数やクラスを使う）
-- パッケージによっては、Anacondaで使うほうが性能がいいことがある
+- Anacondaで使うほうが性能がいいパッケージもある（`tensorflow`）
 
 +++
 
 ### 環境構築の落とし穴
 
-- 成功体験でつまづく方に見られるケース：
+- Pythonを始めた直後につまづく方に見られるケース：
   - python.orgからダウンロード && Anacondaも利用
 - Pythonを **重複してインストール** している
 
 +++
 
-### インストールはどれか1つだけにしよう。
-### 自分の環境とインストールの仕方が異なる記事を参照するときは、インストールの部分を読み替えよう
+### Pythonのインストールはどれか1つだけにしよう
 
-記事の通りにやる姿勢は素晴らしいです。ただし一部読み替えが必要です
+- 記事の通りにやる姿勢は素晴らしい👏
+- 自分の環境とインストールの仕方が異なる記事を参照するときは、インストールの部分を読み替えよう
 
 +++
 
@@ -230,15 +216,17 @@ Q: どうしますか？
 
 ### 想定解：必要なパッケージを`pip install`
 
-- 現状と解説記事の違い：Anacondaに最初から入っているパッケージ（`numpy`, `scikit-learn`など）が手元にはない
+- Anacondaに最初から入っているパッケージ（`numpy`, `scikit-learn`など）が手元の環境にはない
+- Anacondaを入れるのではなく、個々のパッケージを入れる
 - 別解：python.orgからPythonを入れて機械学習をする記事を探す
 
 +++
 
-### 逆の事例
+### 別の事例
 
 - あなたはAnacondaでPythonをインストールした
-- python.orgからダウンロードして機械学習を解説する記事を見つけた（`pip install`している）
+- 参考記事はpython.orgからダウンロードして環境構築している
+- その記事の中でパッケージを`pip install`している
 
 Q: どうしますか？
 
@@ -252,8 +240,9 @@ Q: どうしますか？
 
 ### Anacondaを使うなら：pipはcondaに読み替えよう
 
-- AnacondaでPythonをインストールしているならば、パッケージは`conda`で入れましょう
-- 見つけた情報の`pip install`は全て`conda install`に読み替えましょう
+- `pip`と`conda`もパッケージを管理するためのコマンド
+- **どちらかに絞って使う** ことをオススメします
+- AnacondaでPythonをインストールしているならば、パッケージは`conda install`で入れましょう
 
 +++
 
@@ -267,7 +256,7 @@ Q: どうしますか？
 
 ### ネクストステップ：仮想環境
 
-- プロジェクトごとに隔離された環境のこと
+- Pythonのプロジェクトごとに隔離された環境のこと
 - 同じパッケージのバージョン違いを1台のPCに共存させられるのでオススメ
 
 +++
@@ -360,10 +349,10 @@ NameError: name 'ctiy' is not defined
 
 ### LTへのフィードバック、誠にありがとうございます🙇‍
 
+- 不完全なソースコードでもアウトプットすることでフィードバックをいただける
 - 私のLT駆動学習
   - [2018](https://github.com/ftnext/2018_LTslides) Djangoにモザイクアートなど
   - [2019](https://github.com/ftnext/2019_slides) pandasの基礎を確認して共有など
-- 不完全なプログラムでもアウトプットすることでフィードバックをいただける
 
 +++
 
@@ -393,9 +382,8 @@ NameError: name 'ctiy' is not defined
 
 ### 2. 個人開発で未来を作る💪（build future）
 
-- 「作らなければ身につかない」
-- 「自分が **アプリを作る** ことで、知識が身につき、**自分の未来も創ることにつながる**」
-- （アプリ開発に限らず、手を動かすことは未来につながると考えています）
+- 手を動かさなければ身につかないと感じていた
+- stapy長野での気づき：「自分が **アプリを作る** ことで、知識が身につき、**自分の未来も創ることにつながる**」
 
 ---
 
