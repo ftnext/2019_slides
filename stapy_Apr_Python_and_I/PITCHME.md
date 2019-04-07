@@ -165,7 +165,7 @@ Note:
 @snapend
 
 @snap[west]
-@box[span-100 bg-blue text-white rounded](<a href="https://www.python.org/" rel="noopener noreferrer" target="_blank">python.org</a>からダウンロード)
+@box[span-100 bg-blue text-white rounded](python.orgからダウンロード)
 
 @ul[](false)
 - [Windows向け手順](https://www.python.jp/install/windows/index.html)
