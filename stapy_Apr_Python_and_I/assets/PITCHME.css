@@ -27,6 +27,15 @@
   width: 50%;
 }
 
+.snap-north-west-image img {
+  width: 60%;
+}
+
+.snap-south-west-image img {
+  width: 60%;
+  margin-left: 30%;
+}
+
 .snap-seventy-percent-image img {
   width: 70%;
 }

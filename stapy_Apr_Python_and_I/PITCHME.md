@@ -105,7 +105,7 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 ### 最初に手に取ったのは<br> "自動化事例集"（[退Py](https://www.oreilly.co.jp/books/9784873117782/)）
 @snapend
 
-@snap[north-west half-width-image]
+@snap[north-west snap-north-west-image]
 ![退屈なことはPythonにやらせよう 表紙](stapy_Apr_Python_and_I/assets/taipy_book_cover.jpeg)
 @snapend
 
@@ -120,7 +120,7 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 
 @snapend
 
-@snap[south-west half-width-image]
+@snap[south-west snap-south-west-image]
 ![退Py17章 画像処理の例](stapy_Apr_Python_and_I/assets/taipy_ch17_6.jpg)
 @snapend
 
