@@ -345,14 +345,14 @@ NameError: name 'ctiy' is not defined
 1つの言語で幅広い領域を扱える
 @snapend
 
-@snap[west span-50]
+@snap[west span-50 text-center]
 @ul[](false)
 - 自動化スクリプト
 - Web
 @ulend
 @snapend
 
-@snap[east span-50]
+@snap[east span-50 text-center]
 @ul[](false)
 - 機械学習
 - 組み込み
