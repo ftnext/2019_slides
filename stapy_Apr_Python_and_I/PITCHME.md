@@ -165,10 +165,9 @@ Note:
 @snapend
 
 @snap[west]
-@box[span-80 bg-blue text-white rounded](python.orgからダウンロード)
+@box[span-100 bg-blue text-white rounded](<a href="https://www.python.org/" rel="noopener noreferrer" target="_blank">python.org</a>からダウンロード)
 
 @ul[](false)
-- [python.org](https://www.python.org/)
 - [Windows向け手順](https://www.python.jp/install/windows/index.html)
 - [macOS向け手順](https://www.python.jp/install/macos/index.html)
 @ulend
@@ -176,8 +175,8 @@ Note:
 @snapend
 
 @snap[east]
-@box[span-80 bg-blue text-white rounded](Anaconda)
-[Anaconda導入手順](https://www.python.jp/install/anaconda/index.html)
+@box[span-100 bg-blue text-white rounded](Anaconda)
+@box[span-100](<a href="https://www.python.jp/install/anaconda/index.html" rel="noopener noreferrer" target="_blank">Anaconda導入手順</a>)
 @snapend
 
 @snap[south]
