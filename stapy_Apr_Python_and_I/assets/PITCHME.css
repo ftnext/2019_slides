@@ -1,0 +1,11 @@
+.reveal {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+}
+
+.half-width-bullets {
+  width: 50%;
+}
+
+.half-width-image img {
+  width: 50%;
+}

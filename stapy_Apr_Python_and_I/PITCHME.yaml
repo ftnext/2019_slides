@@ -1,5 +1,5 @@
 # カスタムCSSファイル
-theme-override : common_assets/css/PITCHME.css
+theme-override : stapy_Apr_Python_and_I/assets/PITCHME.css
 
 #スライドのページ数表示の設定
 slide-number : true
