@@ -1,5 +1,5 @@
 ## P(ython)&I
-### Python最初の成功体験と最初の落とし穴の回避策
+### 最初の落とし穴を避け、成功体験を積むために
 #### みんなのPython勉強会#44 (2019/04/10) nikkie
 
 ---
@@ -309,15 +309,14 @@ Q: どうしますか？
 
 ### 私とPython（事例紹介）
 
-- これまでの1年とこれからを簡単に共有
-- Pythonに夢中になった事例(2点)
-- 「作れるようになりたい」を実現するための取り組み(2点)
+- これまでの1年でPythonに夢中になった事例(2点)
+- 「作れるようになりたい」を実現するためのこれからの取り組み(2点)
 
 +++
 
-### これまで-1：「それが、お前がPythonにハマる瞬間だ」
+### これまで-1：「もしその瞬間が来たら、それがお前がPythonにハマる瞬間だ」
 
-- 開発を続ける中で、それは突然やってきた
+- 開発を続ける中で、その瞬間は突然やってきた
 - Pythonの出す **エラーが読める** ようになった
 - 毎回エラー文をググらなくても開発できる＝Pythonが道具になった
 
@@ -335,7 +334,7 @@ Traceback (most recent call last):
 NameError: name 'ctiy' is not defined
 ```
 
-コードは https://tutorial.djangogirls.org/ja/python_introduction/ より
+コードは[Django Girls Tutorialより](https://tutorial.djangogirls.org/ja/python_introduction/)
 
 +++
 
@@ -366,8 +365,8 @@ NameError: name 'ctiy' is not defined
 
 - 懇親会のLTを目指して学習をする([nao_yさん提唱](https://gitpitch.com/NaoY-2501/GitPitch-Slides?p=stapy31_20180110#/6/2))
 - アウトプットの敷居は低くていい
-	- 「このパッケージのチュートリアルをやりました」
-	- 「このパッケージのここがわかりません」
+	- 「このパッケージのチュートリアルをやりました。ここがポイントでした💡」
+	- 「このパッケージのここがわかりません。助けてください🙏」
 
 +++
 
@@ -396,7 +395,7 @@ NameError: name 'ctiy' is not defined
 
 +++
 
-### 2. stapy 長野 に参加して
+### これから-2 stapy 長野 に参加して
 
 - 2019/03 [stapy in 長野](https://startpython.connpass.com/event/119465/)「社内WebシステムのPython活用秘話」
 - **業務改善かつ修行としてのDjango開発**
@@ -404,14 +403,14 @@ NameError: name 'ctiy' is not defined
 
 +++
 
-### 2. 個人開発で未来を作る💪（build future）
+### 個人開発で未来を作る💪（build future）
 
 - 手を動かさなければ身につかないと感じていた
 - stapy長野での気づき：「自分が **アプリを作る** ことで、知識が身につき、**自分の未来も創ることにつながる**」
 
 ---
 
-## まとめ：P(ython)&I
+### まとめ：P(ython)&I
 
 - Pythonと私のこの1年を共有してきた
 - まとめ1：Pythonの魅力
