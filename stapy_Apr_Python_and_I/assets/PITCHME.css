@@ -8,6 +8,7 @@
 .reveal h4,
 .reveal h5,
 .reveal h6 {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
   text-transform: none;
   word-wrap: break-word;
 }
