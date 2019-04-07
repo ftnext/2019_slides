@@ -323,9 +323,7 @@ Q: どうしますか？
 
 +++
 
-### 例：エラーが読める
-
-Python🐍「ctiyなんてないですよ」→私「あっ、変数名のタイポだ」
+@snap[west span-50]
 
 ```python
 >>> city = "Tokyo"
@@ -334,8 +332,17 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'ctiy' is not defined
 ```
+@snapend
 
-コードは https://tutorial.djangogirls.org/ja/python_introduction/ より
+@snap[east span-50]
+
+@ul[](false)
+- 🐍「ctiyなんてないですよ」
+- →私「あっ、変数名のタイポだ」
+- コードは[Django Girls Tutorialより](https://tutorial.djangogirls.org/ja/python_introduction/)
+@ulend
+
+@snapend
 
 +++
 
