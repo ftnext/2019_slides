@@ -108,7 +108,7 @@ Pythonで別の領域に渡る方（例：Web→機械学習）にも環境構�
 @snap[east half-width-bullets]
 ### [退Py](https://www.oreilly.co.jp/books/9784873117782/)を手に取る
 
-@box[span-80](<a href="http://automatetheboringstuff.com/chapter17/" rel="noopener noreferrer" target="_blank">17章</a> Pillowによる画像処理)
+@box[span-100](<a href="http://automatetheboringstuff.com/chapter17/" rel="noopener noreferrer" target="_blank">17章</a> Pillowによる画像処理)
 
 @ul[](false)
 - 拡大、縮小
