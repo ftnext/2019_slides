@@ -4,25 +4,29 @@
 
 ---
 
-### Welcome to Kaggleタイタニックハンズオン
-
-+++
-
 ### アイスブレイク
 
-どこから参加していますか？（例：東京都）
+YouTubeのコメントに勉強会に参加したきっかけを投稿してみてください😁
 
-YouTubeのコメントに投稿してみてください😁
+例「興味のあったKaggleを体験してみたいです」
 
 +++
 
-### 概要
+### お前、誰よ
 
-- ハンズオン形式でKaggleのタイタニックコンペに取り組みます
-- 環境構築不要。Kaggleのアカウントが必要
-- 機械学習のコンペを体験しましょう
+- ハンドルネーム nikkie, Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
+- 2019年[1月](https://supporterzcolab.com/event/677/)・[3月](https://supporterzcolab.com/event/740/)サポーターズでKaggleハンズオン登壇
+- 春から4年目のエンジニア。アニメが好き（アイマス、ユーフォ）
 
----
++++
+
+### サポーターズCoLabにて、タイタニック関連のアウトプット
+
+- [1月ハンズオン資料](https://gitpitch.com/ftnext/2019_slides/master?p=spz_Jan_titanic_handson/)
+- [3月ハンズオン資料](https://gitpitch.com/ftnext/2019_slides/master?p=spz_Mar_titanic_handson2/)
+- [技術書典6 合同誌](https://techbookfest.org/event/tbf06/circle/36070001)
+
++++
 
 ### Kaggleのアカウント作成
 
@@ -42,13 +46,14 @@ YouTubeのコメントに投稿してみてください😁
 - 参考 [【機械学習】さあ、Kaggleを始めよう！ – 初心者向けPython Kernelとは](https://www.secat-blog.net/wordpress/kaggle-getting-started-python-kernel-for-beginners/)
 - つまづいてしまった場合は、本スライドAppendix「Google Colaboratoryでの実行」を参照ください
 
-+++
+---
 
-### お前、誰よ
 
-- ハンドルネーム nikkie, Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
-- 2019年[1月](https://supporterzcolab.com/event/677/)・[3月](https://supporterzcolab.com/event/740/)サポーターズでKaggleハンズオン登壇
-- 春から4年目のエンジニア。アニメが好き（アイマス、ユーフォ）
+### 概要
+
+- ハンズオン形式でKaggleのタイタニックコンペに取り組みます
+- 環境構築不要。Kaggleのアカウントが必要
+- 機械学習のコンペを体験しましょう
 
 +++
 
@@ -273,14 +278,8 @@ YouTubeのコメントに投稿してみてください😁
 
 **全員** 操作をお願いします🙇
 
-- ログイン後 https://www.kaggle.com/competitions にアクセス
-- （上部の「Competition」のクリックでもOK）
-
-+++
-
-### 「titanic」でコンペを検索🔍
-
-![検索欄にtitanicと入力](spz_Jan_titanic_handson/assets/1_search_titanic_competition.png)
+- ログイン後 https://www.kaggle.com/c/titanic にアクセス
+- （コンペ一覧 https://www.kaggle.com/competitions から「titanic」で検索してもよい）
 
 +++
 
