@@ -156,6 +156,7 @@ Note:
 ### 成功体験を支えた環境構築
 
 - 私「Pythonでは、"作ってみたい"を実現するハードルはそんなに高くない」😆
+  - python.orgからダウンロード & venv（後述）
 - Pythonを教え始めて：「始めの成功体験、私が思っているよりハードル高い？」🤔
 
 +++
@@ -207,8 +208,8 @@ Pythonのインストール方法について人数を聞く
 
 ### @css[text-white](Pythonのインストールはどれか1つだけにしよう)
 
-- @css[text-white](記事の通りにやる姿勢は素晴らしい)👏
-- @css[text-white](自分の環境とインストールの仕方が異なる記事を参照するときは、インストールの部分を読み替えよう)
+- @css[text-white](・記事の通りにやる姿勢は素晴らしい)👏
+- @css[text-white](・自分の環境とインストールの仕方が異なる記事を参照するときは、インストールの部分を読み替えよう)
 
 +++
 
@@ -230,7 +231,7 @@ Q: どうしますか？
 ### 想定解：必要なパッケージを`pip install`
 
 - Anacondaに最初から入っているパッケージ（`numpy`, `scikit-learn`など）が手元の環境にはない
-- Anacondaを入れるのではなく、個々のパッケージを入れる
+- Anacondaを入れるのではなく、**個々のパッケージだけを** インストール
 - 別解：python.orgからPythonを入れて機械学習をする記事を探す
 
 +++
@@ -270,7 +271,7 @@ Q: どうしますか？
 ### ネクストステップ：仮想環境
 
 - Pythonのプロジェクトごとに隔離された環境のこと
-- 同じパッケージのバージョン違いを1台のPCに共存させられるのでオススメ
+- 同じパッケージの **バージョン違い** を1台のPCに **共存** させられるのでオススメ
 
 +++
 
@@ -294,8 +295,8 @@ Q: どうしますか？
 ### 「私(たち)は、頼ってほしいよ」
 
 - 環境構築でつまづいたら人に聞こう（懇親会やもくもく会）
-- やりたいことに取り組む前の環境構築でつまづいて諦めるのはもったいない
 - 質問は答える方の学びにもなるので、遠慮は不要
+- ここまで聞いた皆さんなら答えられる or この資料を案内
 
 ---
 
@@ -338,52 +339,27 @@ NameError: name 'ctiy' is not defined
 
 +++
 
-@snap[north span-100]
-### これまで-2：Pythonの広い世界へ漕ぎ出す
+### これまで-2：stapyをきっかけにPythonの広い世界へ漕ぎ出す
 
-1つの言語で幅広い領域を扱える
-@snapend
-
-@snap[west span-50 text-center]
-@ul[](false)
-- 自動化スクリプト
-- Web
-@ulend
-@snapend
-
-@snap[east span-50 text-center]
-@ul[](false)
-- 機械学習
-- 組み込み
-- etc
-@ulend
-@snapend
+- stapyで聞く **幅広いトーク**（Web、機械学習、etc.etc.）
+- トークをきっかけに触った内容を懇親会でアウトプット
+  - LTへのフィードバック、誠にありがとうございます🙇‍
 
 +++
 
-### 漕ぎ出す一助に、stapyのLT駆動学習
+### stapyのLT駆動学習のすゝめ
 
-- 懇親会のLTを目指して学習をする([nao_yさん提唱](https://gitpitch.com/NaoY-2501/GitPitch-Slides?p=stapy31_20180110#/6/2))
-- アウトプットの敷居は低くていい
+- [nao_yさん提唱](https://gitpitch.com/NaoY-2501/GitPitch-Slides?p=stapy31_20180110#/6/2)「懇親会のLTを目指して学習をする」
+- 思うに、**アウトプットの敷居は低くていい**
 	- 「このパッケージのチュートリアルをやりました。ここがポイントでした💡」
 	- 「このパッケージのここがわかりません。助けてください🙏」
 
 +++
 
-### LTへのフィードバック、誠にありがとうございます🙇‍
-
-- 不完全なソースコードでもアウトプットすることでフィードバックをいただける
-- 私のLT駆動学習
-  - [2018](https://github.com/ftnext/2018_LTslides) Djangoにモザイクアートなど
-  - [2019](https://github.com/ftnext/2019_slides) pandasの基礎を確認して共有など
-
-+++
-
 ### これから-1 [DjangoCongress JP](https://djangocongress.jp/)話します
 
-- Django Girls TutorialはDjangoに入門するのに最適
-- しかし、それだけでは、アプリを作れるようにならないのでは？
-- →Tutorialで扱うブログを作り直して知見をアウトプット
+- Djangoに入門した後、**アプリを作れるようになるための情報が少ない** ように感じる
+- →Django Girls Tutorialのブログアプリを作り直して知見をアウトプット
 
 +++
 
@@ -398,8 +374,8 @@ NameError: name 'ctiy' is not defined
 ### これから-2 stapy 長野 に参加して
 
 - 2019/03 [stapy in 長野](https://startpython.connpass.com/event/119465/)「社内WebシステムのPython活用秘話」
-- **業務改善かつ修行としてのDjango開発**
-- →日本システム技研さんはDjango力を培った
+- 日本システム技研さんのDjango力は、**業務改善かつ修行としてのDjango開発** で培われた
+- 例：Excelの勤怠管理システムをDjangoアプリでリプレース
 
 +++
 
@@ -412,7 +388,7 @@ NameError: name 'ctiy' is not defined
 
 ### まとめ：P(ython)&I
 
-- Pythonと私のこの1年を共有してきた
+- Pythonと私のこれまでとこれからを共有してきた
 - まとめ1：Pythonの魅力
 - まとめ2：Pythonを始めたときにつまづかないために
 
@@ -429,9 +405,9 @@ NameError: name 'ctiy' is not defined
 
 ### Pythonを始めたときにつまづかないために
 
-- Pythonのインストール方法が自分と違う記事は読み替えよう
-- 環境構築でつまづきそうだったら、人に聞こう（一つの質問先として[@ftnext](https://twitter.com/ftnext)）
-- +α：広い世界へ漕ぎ出す一助にアウトプット（stapyでLT駆動学習）
+- Pythonのインストール方法が自分と違う記事は **読み替え** よう
+- 環境構築でつまづきそうだったら、**人に聞こう**（一つの質問先として[@ftnext](https://twitter.com/ftnext)）
+- 環境構築を乗り越えて最初の成功を体験したら、stapyでLTしませんか？
 
 +++
 
@@ -445,3 +421,4 @@ NameError: name 'ctiy' is not defined
 
 ### ご清聴ありがとうございました
 ### 🤞Let's build future!🤞
+Contact: [Twitter @ftnext](https://twitter.com/ftnext)
