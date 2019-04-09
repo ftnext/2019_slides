@@ -212,12 +212,12 @@ Pythonのインストール方法について人数を聞く
 
 ### @css[text-white](Pythonのインストールはどれか1つだけにしよう)
 
-<div class="list-bg-black">
+@ul[list-bg-black](false)
 
 - 記事の通りにやる姿勢は素晴らしい👏
 - Pythonのインストール方法が自分とは異なる記事を参照するときは、記事を読み替えよう
 
-</div>
+@ulend
 
 +++
 
