@@ -39,3 +39,7 @@
 .snap-seventy-percent-image img {
   width: 70%;
 }
+
+.list-bg-black ul li {
+  color: white;
+}
