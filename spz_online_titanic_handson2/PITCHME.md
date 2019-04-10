@@ -72,15 +72,19 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 @snapend
 
 @snap[west span-50 text-center]
+@ul[](false)
 - 機械学習・Kaggle・タイタニックとは（15分）
 - コンペに参加・データの概要確認（15分）
 - 単純なモデルを作成してみよう！（15分）
+@ulend
 @snapend
 
 @snap[east span-50 text-center]
+@ul[](false)
 - 性能のいいモデル作りに挑戦！（カテゴリ変数）（15分）
 - 性能のいいモデル作りに挑戦！（欠損値に対処）（15分）
 - まとめ（15分）
+@ulend
 @snapend
 
 ---
