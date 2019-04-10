@@ -67,12 +67,21 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 +++
 
+@snap[north]
 ### アジェンダ
+@snapend
 
-- 機械学習・Kaggle・タイタニックとは（10分）
-- 単純なモデルを作成してみよう！（10分）
-- 単純なモデルより性能のいいモデル作りに挑戦！（20分）
-- まとめ（10分）
+@snap[west span-50 text-center]
+- 機械学習・Kaggle・タイタニックとは（15分）
+- コンペに参加・データの概要確認（15分）
+- 単純なモデルを作成してみよう！（15分）
+@snapend
+
+@snap[east span-50 text-center]
+- 性能のいいモデル作りに挑戦！（カテゴリ変数）（15分）
+- 性能のいいモデル作りに挑戦！（欠損値に対処）（15分）
+- まとめ（15分）
+@snapend
 
 ---
 
@@ -136,7 +145,7 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 - データサイエンスコンペのプラットフォーム
 - モデルの性能を競う
-- 全世界で105000名超えが参加（2019/03/03 [アカウント数](https://www.kaggle.com/rankings)集計）
+- 全世界で105000名超えが参加（2019/04/10 [アカウント数](https://www.kaggle.com/rankings)集計）
 
 +++
 
@@ -150,9 +159,13 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 +++
 
+@snap[north]
+
 ### Kaggleのコンペ 1/2
 
-@snap[east span-50]
+@snapend
+
+@snap[east span-50 text-center]
 
 @box[span-100](知っているデータから知らないデータを予測することが多い)
 
@@ -165,9 +178,7 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 @snap[west span-50]
 
-<span class="seventy-percent-img">
 ![「モデル」を使って「知らないデータ」について予測する](spz_Jan_titanic_handson/assets/201901kaggel_talk.007.png)
-</span>
 
 @snapend
 
@@ -202,8 +213,8 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 ### 例：タイタニックの場合に取り組むこと
 
-- 乗客の属性と生存／死亡情報からモデルを作り、
-- 生存／死亡を知らない乗客について、生存／死亡を予測する（スコアとなる指標は、予測の正解率）
+- 乗客の属性と生存／死亡情報からモデルを作る
+- 生存／死亡を知らない乗客について、モデルで生死を予測する（スコアとなる指標は、予測の正解率）
 - ref: https://www.kaggle.com/c/titanic#evaluation
 
 >@size[70%](It is your job to predict if a passenger survived the sinking of the Titanic or not.)
@@ -272,11 +283,11 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 +++
 
-### Kernelの提出方法
+### 後追いの方へ：Kernelの提出方法
 
 - 前提：submisson.csvを作成するセルまで実行が終わった状態
 - オプション：タイトルを変えたい人は変える
-  - 例：「20190306_1_sex」
+  - 例：「supporterz_kaggle_20190412」
 
 +++
 
@@ -315,26 +326,6 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 - モデル作成を一緒に体験（2）：10分
 - 用意した選択肢2つのうちお好きなものを実行（3）：10分
-
-+++
-
-### Kernel再実行 1/3
-
-![提出した画面で上部のKernelsをクリック](spz_Jan_titanic_handson/assets/submission_results_to_kernel.jpg)
-
-+++
-
-### Kernel再実行 2/3
-
-![Your Workから先ほどのKernelをクリック](spz_Jan_titanic_handson/assets/select_your_kernels.png)
-
-+++
-
-### Kernel再実行 3/3
-
-![Editをクリック](spz_Jan_titanic_handson/assets/edit_committed_kernel.png)
-
-（以降はKernelで説明します）
 
 +++
 
@@ -417,11 +408,12 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 +++
 
-### （参考）GUIで機械学習
+### Kaggleで学ぶ
 
-- 新しく言語を学ぶのは大変という方へ
-- GUIで機械学習をし、考え方を学ぶことができる
-- 例：[Azure Machine Learning Studio](https://studio.azureml.net/)
+- 「機械学習を学ぶにはKaggleがいいらしい」と言われる
+- うまく行った手法はKernelに公開される文化がある
+- Kernelの一覧から探してまねをするところから始めてみては？
+  - https://www.kaggle.com/c/titanic/kernels
 
 +++
 
@@ -431,7 +423,35 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 
 ---
 
-### 機械学習の流れ
+### Appendix
+
+- Kernel再実行（タブを閉じてしまった場合）
+- 機械学習の流れ
+- Google Colaboratoryでの実行
+
++++
+
+### Kernel再実行 1/3
+
+![提出した画面で上部のKernelsをクリック](spz_Jan_titanic_handson/assets/submission_results_to_kernel.jpg)
+
++++
+
+### Kernel再実行 2/3
+
+![Your Workから先ほどのKernelをクリック](spz_Jan_titanic_handson/assets/select_your_kernels.png)
+
++++
+
+### Kernel再実行 3/3
+
+![Editをクリック](spz_Jan_titanic_handson/assets/edit_committed_kernel.png)
+
+（以降はKernelで説明します）
+
+---
+
+### 補足：機械学習の流れ
 
 <span class="seventy-percent-img">
 ![問題設定→データ収集→分析→前処理→モデル作成→モデル評価→運用](spz_Jan_titanic_handson/assets/201901kaggel_talk.002.png)
@@ -454,9 +474,9 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 6. **モデル評価**（作ったモデルの性能を確認し、もっとも性能のいいモデルを選抜）
 7. 運用（性能のいいモデルを運用して問題解決）
 
-+++
+---
 
-### Appendix: Google Colaboratoryでの実行
+### Google Colaboratoryでの実行
 
 - Kaggleが使えない場合のハンズオン用に用意
 - Googleアカウントを持っている前提
