@@ -1,0 +1,11 @@
+# fixed themeの設定
+theme : beige
+
+# カスタムCSSファイル
+theme-override : stapy_Apr_Python_and_I/assets/PITCHME.css
+
+#スライドのページ数表示の設定
+slide-number : true
+
+#トランジションの設定
+transition : none
