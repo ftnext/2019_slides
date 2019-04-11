@@ -3,6 +3,7 @@ GitPitchで作成したスライドの公開用リポジトリです。
 
 # スライド一覧
 
+- [Kaggleタイタニックハンズオン(2回め)](https://gitpitch.com/ftnext/2019_slides/master?p=spz_online_titanic_handson2/) @[エンジニア学生向けオンライン勉強会 サポーターズ (2019/04)](https://talent.supporterz.jp/events/d7384737-e2a6-4dc9-bc5e-f90e17e0924e/)
 - [P(ython)&I 〜最初の落とし穴を避け、成功体験を積むために〜](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Apr_Python_and_I/) @[みんなのPython勉強会#44 (2019/04)](https://startpython.connpass.com/event/112789/)
 - [λ 〜よく見たら片方楽してるアプリ開発〜](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Mar_easy_lambda/) @[みんなのPython勉強会#43 (2019/03)](https://startpython.connpass.com/event/112788/)
 - [Kaggleタイタニックハンズオン](https://gitpitch.com/ftnext/2019_slides/master?p=spz_online_titanic_handson/) @[エンジニア学生向けオンライン勉強会 サポーターズ (2019/03)](https://talent.supporterz.jp/events/2992699f-53ed-417b-abf7-7d7bba931037/)
