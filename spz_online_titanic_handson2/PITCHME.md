@@ -54,7 +54,7 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 ### Kaggleタイタニックハンズオン 概要
 
-- Kaggle（というコミュニティ）の
+- Kaggle（というオンラインコミュニティ）の
 - タイタニック（というコンペ）を
 - 手を動かして体験（＝ハンズオン）
 
@@ -332,24 +332,30 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 ### 後追いの方へ：Kernelの提出方法
 
 - 前提：submisson.csvを作成するセルまで実行が終わった状態
-- オプション：タイトルを変えたい人は変える
+- 最初の提出の際にタイトルを変えるのがオススメ（自分のKernelを区別できる）
   - 例：「supporterz_kaggle_20190412」
 
 +++
 
 ### 1. Kernel上部の「Commit」をクリック
 
-![](spz_Jan_titanic_handson/assets/commit_kernel.png)
+![](spz_online_titanic_handson2/assets/commit_kernel.png)
 
 +++
 
-### 2. 現れたリンクをクリック
+### 2. Completeとなったら、リンクをクリック
 
-![outputという項目へ移動](spz_Jan_titanic_handson/assets/kaggle_kernel_go_output.png)
+![](spz_online_titanic_handson2/assets/open_kernel_version.png)
 
 +++
 
-### 3. Submit to Competition
+### 3. outputという項目へ移動
+
+![](spz_Jan_titanic_handson/assets/kaggle_kernel_go_output.png)
+
++++
+
+### 4. Submit to Competition
 
 ![](spz_Jan_titanic_handson/assets/kaggle_kernel_submission.png)
 
@@ -435,10 +441,16 @@ YouTubeのコメントに勉強会に参加したきっかけを投稿してみ�
 
 ### Kaggleで学ぶ
 
-- 「機械学習を学ぶにはKaggleがいいらしい」と言われる
+- 「機械学習を学ぶにはKaggleがいい」と言われる
 - うまく行った手法はKernelに公開される文化がある
-- Kernelの一覧から探してまねをするところから始めてみては？
-  - https://www.kaggle.com/c/titanic/kernels
+- 探す→まねる→工夫する
+  - 探す：https://www.kaggle.com/c/titanic/kernels
+
++++
+
+### Kernelを探す
+
+![投票数が多いもの、またはスコアが高いものに注目しましょう。また、言語で絞り込めます](spz_Mar_titanic_handson2/assets/titanic_kernels.png)
 
 +++
 
@@ -471,8 +483,6 @@ Contact: [Twitter @ftnext](https://twitter.com/ftnext)
 ### Kernel再実行 3/3
 
 ![Editをクリック](spz_Jan_titanic_handson/assets/edit_committed_kernel.png)
-
-（以降はKernelで説明します）
 
 ---
 
