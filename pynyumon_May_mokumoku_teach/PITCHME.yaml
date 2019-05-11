@@ -1,0 +1,11 @@
+# fixed themeの設定
+theme : beige
+
+# カスタムCSSファイル
+theme-override : pynyumon_May_mokumoku_teach/assets/PITCHME.css
+
+#スライドのページ数表示の設定
+slide-number : true
+
+#トランジションの設定
+transition : none
