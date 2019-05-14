@@ -11,15 +11,15 @@
 ### ブログアプリをもとにすると
 
 - **特定のユーザがコンテンツを更新するサイト** が作れる
-- 例：管理ユーザだけがコンテンツを更新するポータルサイト
-- あまりメジャーではない
+- 例1：管理ユーザだけがコンテンツを更新するポータルサイト
+- 例2：自分だけで使うタスク管理アプリ
 
 +++
 
 ### 世の中のWebアプリは
 
 - ユーザは誰でもコンテンツを作れる
-- 例：Twitter, Connpass, MF請求書
+- 例：Twitter（ツイート）, Connpass（イベント）
 
 +++
 
@@ -33,18 +33,16 @@
 ### ユーザ管理までの道のり
 
 1. クラスベースビュー
-2. ジェネリックビュー
-3. ユーザ管理
-4. +α：権限
+2. ユーザ作成（ジェネリックビュー）
+3. ユーザ管理（認証ビュー）
 
 ---
 
 ### ユーザ管理までの道のり
 
 1. **クラスベースビュー**
-2. ジェネリックビュー
-3. ユーザ管理
-4. +α：権限
+2. ユーザ作成（ジェネリックビュー）
+3. ユーザ管理（認証ビュー）
 
 +++
 
@@ -56,7 +54,7 @@
 
 +++
 
-@snap[west span-100]
+@snap[west span-50 center]
 ```python
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
@@ -77,7 +75,7 @@ def post_new(request):
 ```
 @snapend
 
-@snap[east span-100]
+@snap[east span-50 center]
 ```python
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
@@ -109,7 +107,7 @@ class PostNewView(LoginRequiredMixin, View):
 
 関数ベースビュー | クラスベースビュー
 ----- | -----
-`request.method == 'POST'`という条件分岐 | `get`, `post`というHTTPメソッドに対応するメソッドを定義。<br>クラスのプロパティを使用（`self.form_class`）
+`request.method == 'POST'`という条件分岐 | `get`, `post`というHTTPメソッドに対応するメソッドを定義。<br>クラスのプロパティを使用（`self.form_class`）<br>`path('post/new/', views.PostNewView.as_view(), name='post_new'),`
 
 書き換えられると紹介しましたが、  
 クラスベースビューは関数ベースのビューを完全に置き換えるものではないそうです（[クラスベースビュー入門](https://docs.djangoproject.com/ja/2.2/topics/class-based-views/intro/)）
@@ -119,108 +117,238 @@ class PostNewView(LoginRequiredMixin, View):
 ### ユーザ管理までの道のり
 
 1. クラスベースビュー
-2. **ジェネリックビュー**
-3. ユーザ管理
-4. +α：権限
+2. **ユーザ作成（ジェネリックビュー）**
+3. ユーザ管理（認証ビュー）
 
 +++
 
 ### ジェネリックビュー
 
 - どんなWebアプリでも使う共通処理がある
-  - 例：データベースのデータの **一覧、詳細**
-- 共通処理を扱うための抽象的なクラスベースビューがDjangoに用意されている＝ジェネリックビュー
+  - 例：データベースのデータの **一覧、詳細** など
+- 共通処理を扱うための抽象的なクラスベースビューがDjangoに用意されている（`django.views.generic`）
+
++++
+
+### ジェネリックビュー 一覧
+
+- display（一覧、詳細）
+- edit（作成、更新、削除）
+- date（アーカイブ。単位：年・月・週など）
+
+[ビルトインのクラスベースビュー API](https://docs.djangoproject.com/ja/2.2/ref/class-based-views/)
 
 +++
 
 @snap[north span-100]
-### 例1：post_listビューをジェネリックビューで書き換える
+### 作成のジェネリックビューの例：CreateView
 @snapend
 
-@snap[west span-100]
+@snap[west center]
 ```python
-from django.shortcuts import render
-from .models import Post
+# クラスベースビューで書いたpost_newビュー
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect, render
+from django.views import View
+from .forms import PostForm
 
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now())
-    return render(request, 'blog/post_list.html', {'posts': posts})
+class PostNewView(LoginRequiredMixin, View):
+    form_class = PostForm
+    template_name = 'blog/post_edit.html'
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('blog:post_detail', pk=post.pk)
+        return render(request, self.template_name, {'form': form})
 ```
 @snapend
 
-@snap[east span-100]
+@snap[east center]
 ```python
-from django.views.generic import ListView
-from .models import Post
+# CreateViewを使って書き換え
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect
+from django.views.generic import CreateView
+from .forms import PostForm
+class PostNewView(LoginRequiredMixin, CreateView):
+    form_class = PostForm
+    template_name = 'blog/post_edit.html'
 
-class PostListView(ListView):
-    # querysetで取得したデータを
-    # context_object_nameという名前でテンプレートに渡すという設定をしている
-    context_object_name = 'posts'
-    queryset = Post.objects.filter(published_date__lte=timezone.now())
+    # カスタマイズしたい処理だけ上書きする
+    # 入力値に問題がないときに呼ばれる処理。authorを設定するように上書きする
+    def form_valid(self, form):
+        post = form.save(commit=False)
+        post.author = self.request.user
+        post.save()
+        return redirect('blog:post_detail', pk=post.pk)
 ```
 @snapend
 
 +++
 
-### 例2：ExtensionsのLoginViewはジェネリックビュー
+### ジェネリックビューを使う
 
-TODO：デフォルトの設定で使っていることを書く
-
-+++
-
-### ジェネリックビューにも限界はある
-
->ジェネリックビューは実質的に開発をスピードアップさせてくれます。しかし、多くのプロジェクトでは遅かれ早かれジェネリックビューだけでは十分ではなくなる瞬間が訪れます。
-
-ref: [ビルトインのクラスベースのジェネリックビュー](https://docs.djangoproject.com/ja/2.2/topics/class-based-views/generic-display/)
+- ジェネリックビューにはWebアプリで共通の処理が用意されている（CreateViewは「作成」処理）
+- 自分のWebアプリの項目を設定して使う（`form_class`, `template_name`）
+- 追加の処理をさせたいときは、処理の一部を上書きする（`form_valid`）
 
 +++
 
-### 私見：ジェネリックビューとの付き合い方
+### ユーザ登録
 
-- Webサイトでよくある機能を早く作れるので、個人開発では便利そう
-- 実務では使わないという選択も考えられるので、依存しないように注意
-- （実務経験がない立場からの意見ですので、フィードバック歓迎です）
+- CreateViewでユーザを登録する
+- 追加の処理をしないので上書きは不要。自分のアプリの項目を設定する
+
+```python
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+class RegisterView(CreateView):
+    template_name = 'accounts/register.html'
+    form_class = UserCreationForm
+    success_url = reverse_lazy('blog:post_list')
+```
+
++++
+
+TODO：コードの動作確認
+
+@snap[west center]
+```html
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Reader Registeration</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <table>
+      {% for field in form %}
+      <tr>
+        <td>{{ field.label_tag }}</td>
+        <td>{{ field }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <input type="submit" value="register">
+  </form>
+{% endblock %}
+```
+@snapend
+
+@snap[east center]
+### RegisterViewの設定値
+@ul[](false)
+- 左は`template_name`に指定したテンプレートの例
+- テンプレート中の`form`には、`form_class`に指定した[UserCreationForm](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.forms.UserCreationForm)が渡る
+- 作成に成功すると、`success_url`に遷移する
+@ulend
+@snapend
+
++++
+
+TODO：画面イメージ
 
 ---
 
 ### ユーザ管理までの道のり
 
 1. クラスベースビュー
-2. ジェネリックビュー
-3. **ユーザ管理**
-4. +α：権限
+2. ユーザ作成（ジェネリックビュー）
+3. **ユーザ管理（認証ビュー）**
 
 +++
 
-### ユーザ管理の実装内容
+### 認証ビュー
 
-- ユーザ管理用のジェネリックビューを設定して使う
-- `django.contrib.auth.views`にユーザ登録、パスワード再設定など用意されている
-- クラスベースビューを使う知識が必要
+- TODO：認証(Authentication)の定義（登録されたユーザであることを確認する）
+- Djangoが認証のためのビューを用意している（`django.contrib.auth.views`）
+- クラスベースビューで実装されている
 
 +++
 
-### ユーザ管理の実装
+### 認証ビューの使用例：LoginView
 
-- ユーザ登録
-- パスワード再設定（パスワードを忘れた場合の対応）
+- Extensions「[ウェブサイトをセキュアにする](https://tutorial-extensions.djangogirls.org/ja/authentication_authorization/)」で扱っている
+- LoginViewをデフォルトの設定（`django.contrib.auth.views`に実装された設定）で使っている
 
-TODO：続きを書く
++++
+
+### LoginViewのデフォルト設定（一部）
+
+- template_name：`registration/login.html`
+  - そのため、`blog/templates/registration/login.html`を作った
+- redirect_field_name：`next`
+  - テンプレートで`<input type="hidden" name="next" value="{{ next }}" />`
+
+[ドキュメント LoginView](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.views.LoginView)
+
++++
+
+@snap[north span-100]
+### 認証ビューの一覧
+@snapend
+
+@snap[west center]
+@ul[](false)
+- LoginView
+- LogoutView
+- PasswordChangeView（ログイン状態でパスワード変更）
+- PasswordChangeDoneView
+@ulend
+@snapend
+
+@snap[east center]
+@ul[](false)
+- PasswordResetView（「パスワードを忘れた場合」画面）
+- PasswordResetDoneView
+- PasswordResetConfirmView（メールで届くリンクからアクセスし、再設定）
+- PasswordResetCompleteView
+@ulend
+@snapend
+
++++
+
+### パスワード再設定
+
+以下のようにビューを実装
+
+```python
+from django.contrib.auth.views import PasswordResetView
+
+class PasswordReset(PasswordResetView):
+    template_name = 'accounts/password_reset_form.html'
+    success_url = reverse_lazy('accounts:password_reset_done')
+    subject_template_name = 'accounts/mail_template/password_reset/subject.txt'
+    email_template_name = 'accounts/mail_template/password_reset/message.html'
+```
+
+ref: naritoさんBlog [パスワード変更ページと忘れた際の再設定ページ](https://narito.ninja/blog/detail/44/)
+
++++
+
+TODO：画面イメージ
+
++++
+
+### [PasswordResetView](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.views.PasswordResetView)
+
+- `template_name`のテンプレートを表示。Djangoに用意された[PasswordResetForm](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.forms.PasswordResetForm)が渡る
+- 入力されたメールアドレスにメールを送る（件名には`subject_template_name`、本文はに`email_template_name`のテンプレートを使う）
+- パスワード再設定のリクエストが処理されたら`success_url`に遷移する
+- 注：機能させるにはユーザ登録でメールアドレスの入力を必須にする必要がある
 
 ---
 
-### ユーザ管理までの道のり
+### まとめ：ユーザまわりを実装
 
-1. クラスベースビュー
-2. ジェネリックビュー
-3. ユーザ管理
-4. **+α：権限**
-
-+++
-
-### ブログアプリの要件
-
-- ユーザ登録を実装したが、誰にでも記事を書かせたくはない
-- → ユーザに権限をつけてコントロールする
+- もう一つのビューの書き方：クラスベースビュー
+- Djangoに用意されたクラスベースビューを設定変更／処理の上書きをして使う
+  - ジェネリックビュー
+  - 認証ビュー
