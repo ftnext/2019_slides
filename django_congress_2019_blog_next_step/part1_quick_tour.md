@@ -30,12 +30,12 @@
 
 +++
 
-@snap[west span-100]
+@snap[west span-50 center]
 ### 公開記事一覧
 ![だれでも公開記事の一覧が見られます](django_congress_2019_blog_next_step/assets/part1/1_post_list.png)
 @snapend
 
-@snap[east span-100]
+@snap[east span-50 center]
 ### 公開記事詳細
 ![だれでも公開記事の詳細が見られます](django_congress_2019_blog_next_step/assets/part1/2_post_detail.png)
 @snapend
