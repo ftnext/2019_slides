@@ -216,6 +216,7 @@ urlpatterns = [
 - <app_name>:<path name>（コロンでつなぐ）
 - ref: [はじめての Django アプリ作成、その 3](https://docs.djangoproject.com/ja/2.2/intro/tutorial03/)「URL名の名前空間」
 
+&nbsp; | &nbsp;
 ----- | -----
 `app_name` 導入前 | `{% url 'post_list'}`
 `app_name` 導入後 | `{% url 'blog:post_list'}`
