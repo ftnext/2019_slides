@@ -24,57 +24,63 @@
 
 ### ブログアプリでできること
 
-- だれでも公開記事の一覧、詳細が見られる
-- ログインしたユーザはドラフト記事が作成・編集・公開できる
-- ログインしたユーザは公開記事が編集できる
+スクリーンショットをもとに紹介します
 
 +++
 
-@snap[west span-50 center]
+@snap[west span-50 text-center]
 ### 公開記事一覧
 ![だれでも公開記事の一覧が見られます](django_congress_2019_blog_next_step/assets/part1/1_post_list.png)
 @snapend
 
-@snap[east span-50 center]
+@snap[east span-50 text-center]
 ### 公開記事詳細
 ![だれでも公開記事の詳細が見られます](django_congress_2019_blog_next_step/assets/part1/2_post_detail.png)
 @snapend
 
 +++
 
-@snap[west span-100]
+@snap[west span-50 text-center]
 ### ログイン
 ![記事を管理するにはログインが必要です](django_congress_2019_blog_next_step/assets/part1/3_login.png)
 @snapend
 
-@snap[east span-100]
+@snap[east span-50 text-center]
 ### 記事作成
 ![ログインしたユーザはドラフト記事が作れます](django_congress_2019_blog_next_step/assets/part1/4_new_post.png)
 @snapend
 
 +++
 
-@snap[west span-100]
+@snap[west span-50 text-center]
 ### ドラフト記事一覧
 ![ログインしたユーザはドラフト記事の一覧が見られます](django_congress_2019_blog_next_step/assets/part1/5_post_edit.png)
 @snapend
 
-@snap[east span-100]
+@snap[east span-50 text-center]
 ### 記事の編集
 ![ログインしたユーザは、ドラフト記事も公開記事も編集できます](django_congress_2019_blog_next_step/assets/part1/6_draft_post_list.png)
 @snapend
 
 +++
 
-@snap[west span-100]
+@snap[west span-50 text-center]
 ### ドラフト記事の公開
 ![ログインしたユーザはドラフト記事を公開できます](django_congress_2019_blog_next_step/assets/part1/7_draft_detail.png)
 @snapend
 
-@snap[east span-100]
+@snap[east span-50 text-center]
 ### 記事の状態
 TODO：図を追加
 @snapend
+
++++
+
+### ブログアプリでできること
+
+- だれでも公開記事の一覧、詳細が見られる
+- ログインしたユーザはドラフト記事が作成・編集・公開できる
+- ログインしたユーザは公開記事が編集できる
 
 +++
 
