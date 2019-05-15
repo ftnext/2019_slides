@@ -54,7 +54,8 @@
 
 +++
 
-@snap[west span-50 center]
+@snap[west span-50 text-center]
+
 ```python
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
@@ -73,16 +74,18 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 ```
+
 @snapend
 
-@snap[east span-50 center]
+@snap[east span-50 text-center]
+
 ```python
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.views import View
 from .forms import PostForm
 
-class PostNewView(LoginRequiredMixin, View):
+class PostNew(LoginRequiredMixin, View):
     form_class = PostForm
     template_name = 'blog/post_edit.html'
 
@@ -99,6 +102,7 @@ class PostNewView(LoginRequiredMixin, View):
             return redirect('blog:post_detail', pk=post.pk)
         return render(request, self.template_name, {'form': form})
 ```
+
 @snapend
 
 +++
@@ -107,7 +111,7 @@ class PostNewView(LoginRequiredMixin, View):
 
 関数ベースビュー | クラスベースビュー
 ----- | -----
-`request.method == 'POST'`という条件分岐 | `get`, `post`というHTTPメソッドに対応するメソッドを定義。<br>クラスのプロパティを使用（`self.form_class`）<br>`path('post/new/', views.PostNewView.as_view(), name='post_new'),`
+`request.method == 'POST'`という条件分岐 | `get`, `post`というHTTPメソッドに対応するメソッドを定義。<br>クラスのプロパティを使用（`self.form_class`）<br>`path('post/new/', views.PostNew.as_view(), name='post_new'),`
 
 書き換えられると紹介しましたが、  
 クラスベースビューは関数ベースのビューを完全に置き換えるものではないそうです（[クラスベースビュー入門](https://docs.djangoproject.com/ja/2.2/topics/class-based-views/intro/)）
@@ -152,7 +156,7 @@ from django.shortcuts import redirect, render
 from django.views import View
 from .forms import PostForm
 
-class PostNewView(LoginRequiredMixin, View):
+class PostNew(LoginRequiredMixin, View):
     form_class = PostForm
     template_name = 'blog/post_edit.html'
 
@@ -178,7 +182,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.views.generic import CreateView
 from .forms import PostForm
-class PostNewView(LoginRequiredMixin, CreateView):
+class PostNew(LoginRequiredMixin, CreateView):
     form_class = PostForm
     template_name = 'blog/post_edit.html'
 
