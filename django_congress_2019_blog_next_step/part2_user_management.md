@@ -46,15 +46,9 @@
 
 +++
 
-### Djangoのビューの書き方は2通り
+### Tutorialで書くビュー
 
-- Django Girls Tutorialで書いてきたビューは **関数ベース** ビュー
-- クラスを使って書く **クラスベース** ビューを紹介
-- post_newビューを2通りで書いてみます（次のスライド）
-
-+++
-
-@snap[west span-50 text-center]
+[テンプレート内の動的データ](https://tutorial.djangogirls.org/ja/dynamic_data_in_templates/)
 
 ```python
 from django.contrib.auth.decorators import login_required
@@ -75,35 +69,15 @@ def post_new(request):
     return render(request, 'blog/post_edit.html', {'form': form})
 ```
 
-@snapend
++++
 
-@snap[east span-50 text-center]
+### Djangoのビューの書き方は2通り
 
-```python
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect, render
-from django.views import View
-from .forms import PostForm
+- Django Girls Tutorialで書いてきたビューは **関数ベース** ビュー
+- クラスを使って書く **クラスベース** ビューを紹介
+- 次のスライドで、post_newビューを書き換えます
 
-class PostNew(LoginRequiredMixin, View):
-    form_class = PostForm
-    template_name = 'blog/post_edit.html'
-
-    def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-            return redirect('blog:post_detail', pk=post.pk)
-        return render(request, self.template_name, {'form': form})
-```
-
-@snapend
++++?code=django_congress_2019_blog_next_step/src/part2/PostNew_CBV.py&lang=python&title=クラスベースビューの例
 
 +++
 
