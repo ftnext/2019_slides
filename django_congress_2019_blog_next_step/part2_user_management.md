@@ -77,7 +77,19 @@ def post_new(request):
 - クラスを使って書く **クラスベース** ビューを紹介
 - 次のスライドで、post_newビューを書き換えます
 
-+++?code=django_congress_2019_blog_next_step/src/part2/PostNew_CBV.py&lang=python&title=クラスベースビューの例
++++?code=django_congress_2019_blog_next_step/src/part2/PostNew_CBV.py&lang=python&title=Example of Class Based View
+
++++
+
+### クラスベースビュー
+
+- Djangoに用意されたビューのクラスを継承（例では`django.views.View`）
+- クラスの属性（attribute。元のクラスに定義された変数や関数）を更新して使う
+- urls.pyでは`as_view()`を使ってpathを書く
+
+```python
+    path('post/new/', views.PostNew.as_view(), name='post_new'),
+```
 
 +++
 
@@ -85,7 +97,7 @@ def post_new(request):
 
 関数ベースビュー | クラスベースビュー
 ----- | -----
-`request.method == 'POST'`という条件分岐 | `get`, `post`というHTTPメソッドに対応するメソッドを定義。<br>クラスのプロパティを使用（`self.form_class`）<br>`path('post/new/', views.PostNew.as_view(), name='post_new'),`
+`request.method == 'POST'`という条件分岐 | `get`, `post`というHTTPメソッドに対応するメソッドを定義
 
 書き換えられると紹介しましたが、  
 クラスベースビューは関数ベースのビューを完全に置き換えるものではないそうです（[クラスベースビュー入門](https://docs.djangoproject.com/ja/2.2/topics/class-based-views/intro/)）
