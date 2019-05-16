@@ -128,59 +128,28 @@ def post_new(request):
 
 [ビルトインのクラスベースビュー API](https://docs.djangoproject.com/ja/2.2/ref/class-based-views/)
 
++++?code=django_congress_2019_blog_next_step/src/part2/PostNew_CBV.py&lang=python&title=Before: Class Based View
+
 +++
 
-@snap[north span-100]
-### 作成のジェネリックビューの例：CreateView
-@snapend
+### After: CreateView (GenericView)
 
-@snap[west center]
-```python
-# クラスベースビューで書いたpost_newビュー
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect, render
-from django.views import View
-from .forms import PostForm
-
-class PostNew(LoginRequiredMixin, View):
-    form_class = PostForm
-    template_name = 'blog/post_edit.html'
-
-    def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-            return redirect('blog:post_detail', pk=post.pk)
-        return render(request, self.template_name, {'form': form})
-```
-@snapend
-
-@snap[east center]
 ```python
 # CreateViewを使って書き換え
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect
 from django.views.generic import CreateView
 from .forms import PostForm
+
 class PostNew(LoginRequiredMixin, CreateView):
     form_class = PostForm
     template_name = 'blog/post_edit.html'
 
-    # カスタマイズしたい処理だけ上書きする
-    # 入力値に問題がないときに呼ばれる処理。authorを設定するように上書きする
     def form_valid(self, form):
-        post = form.save(commit=False)
-        post.author = self.request.user
-        post.save()
-        return redirect('blog:post_detail', pk=post.pk)
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 ```
-@snapend
+
+ref: [Models and request.user](https://docs.djangoproject.com/ja/2.2/topics/class-based-views/generic-editing/#models-and-request-user)
 
 +++
 
@@ -192,26 +161,54 @@ class PostNew(LoginRequiredMixin, CreateView):
 
 +++
 
+### CreateView設定項目 1/2
+
+- `template_name`に指定されたテンプレートを使う
+- `form_class`に指定されたフォームを`form`として渡す
+- 入力値に問題がないときの処理`form_valid`にauthorの設定を追加
+
++++
+
+### CreateView設定項目 2/2
+
+- 作成後、記事の詳細画面に遷移するという動作は変えない
+- 作成された記事のURLを取得するメソッドをPostモデルにメソッドを追加（記事作成後に呼び出される）
+
+```python
+from django.urls import reverse
+class Post(models.Model):
+    # : (省略)
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', kwargs={'pk': self.pk})
+```
+
+ref: [モデルフォーム](https://docs.djangoproject.com/ja/2.2/topics/class-based-views/generic-editing/#model-forms)
+
++++
+
 ### ユーザ登録
 
 - CreateViewでユーザを登録する
-- 追加の処理をしないので上書きは不要。自分のアプリの項目を設定する
+- 追加の処理をしないので、処理の上書きは不要。自分のアプリの項目を設定する
 
 ```python
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-class RegisterView(CreateView):
+class Register(CreateView):
     template_name = 'accounts/register.html'
     form_class = UserCreationForm
     success_url = reverse_lazy('blog:post_list')
 ```
 
+ref:『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6TRJ)）』
+
 +++
 
-TODO：コードの動作確認
+### ユーザ登録テンプレート
 
-@snap[west center]
+`accounts/register.html`
+
 ```html
 {% extends 'base.html' %}
 {% block content %}
@@ -230,20 +227,20 @@ TODO：コードの動作確認
   </form>
 {% endblock %}
 ```
-@snapend
-
-@snap[east center]
-### RegisterViewの設定値
-@ul[](false)
-- 左は`template_name`に指定したテンプレートの例
-- テンプレート中の`form`には、`form_class`に指定した[UserCreationForm](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.forms.UserCreationForm)が渡る
-- 作成に成功すると、`success_url`に遷移する
-@ulend
-@snapend
 
 +++
 
-TODO：画面イメージ
+### Registerの設定値
+
+- 前のスライドで示したテンプレートを`template_name`に指定
+- テンプレート中の`form`には、`form_class`に指定した[UserCreationForm](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.forms.UserCreationForm)が渡る
+- 作成に成功すると、`success_url`（記事一覧）に遷移する
+
++++
+
+### ユーザ登録
+
+![ユーザ名とパスワードをフォームから設定します](django_congress_2019_blog_next_step/assets/part2/1_register_user.png)
 
 ---
 
