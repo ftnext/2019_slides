@@ -44,6 +44,8 @@
 2. ユーザ作成（ジェネリックビュー）
 3. ユーザ管理（認証ビュー）
 
+[part2 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
+
 +++
 
 ### Tutorialで書くビュー
@@ -109,6 +111,8 @@ def post_new(request):
 1. クラスベースビュー
 2. **ユーザ作成（ジェネリックビュー）**
 3. ユーザ管理（認証ビュー）
+
+[part2 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
 
 +++
 
@@ -250,11 +254,13 @@ ref:『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6
 2. ユーザ作成（ジェネリックビュー）
 3. **ユーザ管理（認証ビュー）**
 
+[part2 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
+
 +++
 
 ### 認証ビュー
 
-- TODO：認証(Authentication)の定義（登録されたユーザであることを確認する）
+- 認証(Authentication)して、登録されたユーザであることを確認する
 - Djangoが認証のためのビューを用意している（`django.contrib.auth.views`）
 - クラスベースビューで実装されている
 

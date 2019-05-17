@@ -29,6 +29,8 @@
 2. 検索機能
 3. ユーザの権限
 
+[part3 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
+
 +++
 
 ### ページネーション
@@ -122,6 +124,8 @@ class PostList(ListView):
 1. ページネーション
 2. **検索機能**
 3. ユーザの権限
+
+[part3 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
 
 +++
 
@@ -297,6 +301,8 @@ def query_replace(request, field, value):
 1. ページネーション
 2. 検索機能
 3. **ユーザの権限**
+
+[part3 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
 
 +++
 
