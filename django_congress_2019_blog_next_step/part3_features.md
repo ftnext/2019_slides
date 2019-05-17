@@ -132,11 +132,13 @@ class PostList(ListView):
 
 +++
 
-TODO：検索機能実装イメージ
+### 検索のイメージ
+
+![タイトルまたは本文に指定の語句を含む記事を検索しています](django_congress_2019_blog_next_step/assets/part3/2_search_keyword.png)
 
 +++
 
-### ページネーションを実装する
+### 検索を実装する
 
 - サイドバーにフォームを用意（入力語句を記事一覧にGETで送信）
   - URL例：`http://127.0.0.1:8000/?keyword=すごい記事`
@@ -144,7 +146,7 @@ TODO：検索機能実装イメージ
 
 +++
 
-### ビューの実装
+### ビューの実装(`blog/views.py`)
 
 ```python
 from django.views.generic import ListView
@@ -152,16 +154,15 @@ from django.views.generic import ListView
 class PostList(ListView):
     context_object_name = 'posts'
     template_name = 'blog/post_list.html'
-    paginate_by = 4
+    paginate_by = 2
 
-    # querysetを絞り込んで返す処理を上書き（queryset変数の代わりに使う）
     def get_queryset(self):
-      posts = Post.objects.filter(published_date__lte=timezone.now())
-      keyword = self.request.GET.get('keyword')
-      if keyword:
-          # keywordが指定されているとき、タイトルにkeywordを含む記事を検索
-          posts = posts.filter(title__icontains=keyword)
-      return posts
+        posts = Post.objects.filter(published_date__lte=timezone.now())
+        keyword = self.request.GET.get('keyword')
+        if keyword:
+            # keywordが指定されているとき、タイトルにkeywordを含む記事を検索
+            posts = posts.filter(title__icontains=keyword)
+        return posts
 ```
 
 +++
@@ -174,11 +175,15 @@ class PostList(ListView):
 # 該当部分のみ示しています
 from django.db.models import Q
 
-keyword = self.request.GET.get('keyword')
-if keyword:
-    posts = posts.filter(
-        Q(title__icontains=keyword) | Q(text__icontains=keyword)
-    )
+class PostList(ListView):
+    def get_queryset(self):
+        posts = Post.objects.filter(published_date__lte=timezone.now())
+        keyword = self.request.GET.get('keyword')
+        if keyword:
+            posts = posts.filter(
+                Q(title__icontains=keyword) | Q(text__icontains=keyword)
+            )
+        return posts
 ```
 
 ref: naritoさんBlog [Djangoで、OR検索](https://narito.ninja/blog/detail/91/)
@@ -196,7 +201,7 @@ ref: naritoさんBlog [Djangoで、OR検索](https://narito.ninja/blog/detail/91
 
 ### フィルタを実装する
 
-blog/templatetags/blog_custom_tags.py
+blog/templatetags/blog_customs.py
 
 ```python
 from django import template
@@ -213,20 +218,26 @@ def parse_keyword(querydict):
 
 ### テンプレートでカスタムフィルタを使う
 
-```html
-{% load blog_custom_tags %}
+`blog/post_list.html`
 
-<input type="text" name="keyword" value="{{ request.GET|parse_keyword }}">
+```html
+{% load blog_customs %}
+
+<!-- 実際のHTMLを簡略化して表示しています -->
+<form method="GET" action="{% url 'blog:post_list' %}">
+  <input type="text" name="keyword" value="{{ request.GET|parse_keyword }}">
+  <button type="submit">Search</button>
+</form>
 ```
 
 +++
 
-### 検索結果をページネーションさせたい
+### 参考：検索結果をページネーションさせたい
+
+時間があったときに扱うコンテンツです
 
 - 検索結果を表示した際に次のページのリンクをクリックすると、検索の絞り込みが解除されてしまう
 - 原因はURLでkeywordパラメタが消えてしまうため（`http://127.0.0.1:8000/?page=2`）
-
-TODO：図を示す
 
 +++
 
@@ -241,7 +252,7 @@ TODO：図を示す
 
 ### タグを実装する
 
-blog/templatetags/blog_custom_tags.py
+blog/templatetags/blog_customs.py
 
 ```python
 from django import template
@@ -249,7 +260,7 @@ register = template.Library()
 
 @register.simple_tag
 def query_replace(request, field, value):
-    """GETのクエリパラメタを追加する"""
+    """GETのクエリ文字列にパラメタfieldと値valueを追加する"""
     url_dict = request.GET.copy()
     url_dict[field] = value
     return url_dict.urlencode()
@@ -260,6 +271,7 @@ def query_replace(request, field, value):
 ### テンプレートでカスタムタグを使う
 
 - ページネーションのURL作成部分を変更（一例のみ示す）
+- `http://127.0.0.1:8000/?keyword=すごい記事` のとき、hrefは`http://127.0.0.1:8000/?keyword=すごい記事&page=2`となります
 
 ```html
 <!-- 1つ前のページ -->
@@ -277,8 +289,6 @@ def query_replace(request, field, value):
   </li>
 {% endif %}
 ```
-
-`http://127.0.0.1:8000/?keyword=すごい記事` のとき、hrefは`http://127.0.0.1:8000/?keyword=すごい記事&page=2`となります
 
 ---
 
