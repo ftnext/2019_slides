@@ -18,7 +18,7 @@
 ### Quick Tour
 
 1. ブログアプリでできることを概観
-2. 作り直しに関わる4つのトピックス
+2. 作り直しに関わる3トピック
 
 ---
 
@@ -71,7 +71,10 @@
 
 @snap[east span-50 text-center]
 ### 記事の状態
-TODO：図を追加
+@ul[](false)
+- 作成されたらドラフト（公開日が未設定）
+- ドラフトを公開すると一覧に現れる（公開日を設定）
+@ulend
 @snapend
 
 +++
@@ -92,23 +95,23 @@ TODO：図を追加
 
 +++
 
-### 作り直しの4トピック
+### 作り直しの3トピック
 
 1. プロジェクト作成
 2. 名前空間(namespace)
-3. 共通テンプレートの配置
-4. settings.pyの分割
+3. settings.pyの分割
 
-作り直したポイント全体はこちらをご覧ください
+[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 ---
 
-### 作り直しの4トピック
+### 作り直しの3トピック
 
 1. **プロジェクト作成**
 2. 名前空間(namespace)
-3. 共通テンプレートの配置
-4. settings.pyの分割
+3. settings.pyの分割
+
+[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 +++
 
@@ -149,7 +152,7 @@ djangogirls
 └── requirements.txt
 ```
 
-**外側** のmysiteディレクトリを **rename** して使う（ref: 『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6TRJ)）』
+**外側** のmysiteディレクトリを **rename** して使う（ref: 『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6TRJ)』）
 
 +++
 
@@ -162,12 +165,13 @@ djangogirls
 
 ---
 
-### 作り直しの4トピック
+### 作り直しの3トピック
 
 1. プロジェクト作成
 2. **名前空間(namespace)**
-3. 共通テンプレートの配置
-4. settings.pyの分割
+3. settings.pyの分割
+
+[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 +++
 
@@ -231,83 +235,13 @@ urlpatterns = [
 
 ---
 
-### 作り直しの4トピック
+### 作り直しの3トピック
 
 1. プロジェクト作成
 2. 名前空間(namespace)
-3. **共通テンプレートの配置**
-4. settings.pyの分割
+3. **settings.pyの分割**
 
-+++
-
-### 共通テンプレート
-
-- Django Girls Tutorial 「[テンプレートを拡張しよう](https://tutorial.djangogirls.org/ja/template_extending/)」
-- `blog/templates/blog/post_list.html`と配置しているが、manage.pyと同じ階層にtemplatesフォルダを作り、その中に置く
-- blog以外のアプリでも使う意図
-
-```
-apps  # = BASE_DIR
-├── blog
-│   └── templates  # ブログアプリでのみ使うテンプレート
-├── manage.py
-├── mysite
-├── static
-│   └── css
-└── templates  # 共通テンプレートを置く
-    └── base.html
-```
-
-+++
-
-### 配置換えに伴って必要な設定変更
-
-- settings.pyのTEMPLATESの[DIRS](https://docs.djangoproject.com/en/2.2/ref/settings/#dirs)
-- 各アプリのtemplatesフォルダに加えて、manage.pyと同階層のtemplatesフォルダのテンプレートも使うと設定
-
-```python
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [  # 変更前は空のリスト[]だった
-            os.path.join(BASE_DIR, 'templates'),
-        ],
-        'APP_DIRS': True,
-        # 省略
-    },
-]
-```
-
-+++
-
-### 合わせて、CSSも配置換え
-
-- CSSを共通テンプレートで使うので、manage.pyと同階層にstaticディレクトリを作る
-- [STATICFILES_DIRS](https://docs.djangoproject.com/en/2.2/ref/settings/#staticfiles-dirs)という変数を定義し、manage.pyと同階層のstaticディレクトリを使う設定
-
-```python
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-# collectstaticされるディレクトリは、manage.pyと同階層のstaticとは別のディレクトリにする
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-```
-
-+++
-
-### テンプレートでの呼び出し方
-
-- `{% extends 'base.html' %}` （blog/を前につけなくてよい）
-- `{% static 'css/blog.css' %}`
-
----
-
-### 作り直しの4トピック
-
-1. プロジェクト作成
-2. 名前空間(namespace)
-3. 共通テンプレートの配置
-4. **settings.pyの分割**
+[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 +++
 
@@ -392,8 +326,79 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.local')
 ### Quick Tour まとめ
 
 - ブログアプリでできることを紹介
-- 作り直しに着手。4点共有
+- 作り直しに着手。3点共有
   - プロジェクト作成
   - 名前空間(urls.pyの`app_name`)
-  - 共通テンプレートの配置(settings.py `TEMPLATES`の`DIRS`)
   - settings.pyの分割
+
++++
+
+### 追加トピック
+
+- **共通テンプレートの配置**
+
+[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
+
+時間に余裕がある場合のみ扱います
+
++++
+
+### 共通テンプレート
+
+- Django Girls Tutorial 「[テンプレートを拡張しよう](https://tutorial.djangogirls.org/ja/template_extending/)」
+- `blog/templates/blog/post_list.html`と配置しているが、manage.pyと同じ階層にtemplatesフォルダを作り、その中に置く
+- blog以外のアプリでも使う意図
+
+```
+apps  # = BASE_DIR
+├── blog
+│   └── templates  # ブログアプリでのみ使うテンプレート
+├── manage.py
+├── mysite
+├── static
+│   └── css
+└── templates  # 共通テンプレートを置く
+    └── base.html
+```
+
++++
+
+### 配置換えに伴って必要な設定変更
+
+- settings.pyのTEMPLATESの[DIRS](https://docs.djangoproject.com/en/2.2/ref/settings/#dirs)
+- 各アプリのtemplatesフォルダに加えて、manage.pyと同階層のtemplatesフォルダのテンプレートも使うと設定
+
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [  # 変更前は空のリスト[]だった
+            os.path.join(BASE_DIR, 'templates'),
+        ],
+        'APP_DIRS': True,
+        # 省略
+    },
+]
+```
+
++++
+
+### 合わせて、CSSも配置換え
+
+- CSSを共通テンプレートで使うので、manage.pyと同階層にstaticディレクトリを作る
+- [STATICFILES_DIRS](https://docs.djangoproject.com/en/2.2/ref/settings/#staticfiles-dirs)という変数を定義し、manage.pyと同階層のstaticディレクトリを使う設定
+
+```python
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+# collectstaticされるディレクトリは、manage.pyと同階層のstaticとは別のディレクトリにする
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+```
+
++++
+
+### テンプレートでの呼び出し方
+
+- `{% extends 'base.html' %}` （blog/を前につけなくてよい）
+- `{% static 'css/blog.css' %}`
