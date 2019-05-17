@@ -40,7 +40,9 @@
 
 +++
 
-TODO：ページネーション実装イメージ
+### ページネーションの例
+
+![](django_congress_2019_blog_next_step/assets/part3/1_pagination.png)
 
 +++
 
@@ -58,12 +60,15 @@ TODO：ページネーション実装イメージ
 from django.views.generic import ListView
 
 class PostList(ListView):
-    # querysetで取得したデータを、context_object_nameという名前で
+    # get_querysetで取得したデータを、context_object_nameという名前で
     # template_nameのテンプレートに渡すという設定をしている
     context_object_name = 'posts'
-    queryset = Post.objects.filter(published_date__lte=timezone.now())
     template_name = 'blog/post_list.html'
-    paginate_by = 4  # 1ページあたりのページ数
+    paginate_by = 2  # 1ページあたりの記事の数
+
+    def get_queryset(self):
+        posts = Post.objects.filter(published_date__lte=timezone.now())
+        return posts
 ```
 
 +++
