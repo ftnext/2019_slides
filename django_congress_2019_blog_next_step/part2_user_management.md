@@ -278,11 +278,55 @@ ref:『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6
 
 +++
 
+### その他の認証ビュー
+
+- LoginView以外にも認証ビューは用意されている
+- Webアプリのユーザまわり（パスワードまわり）でよく使う機能
+- 画面例を表示します
+
++++
+
+@snap[west span-50 text-center]
+### パスワード変更
+![ログインしているユーザは自身のパスワードを変更できます](django_congress_2019_blog_next_step/assets/part2/2_change_password.png)
+@snapend
+
+@snap[east span-50 text-center]
+### パスワード変更完了
+![](django_congress_2019_blog_next_step/assets/part2/3_change_password_done.png)
+@snapend
+
++++
+
+@snap[west span-50 text-center]
+### パスワード再設定リクエスト
+![パスワードを忘れた場合、メールアドレスを入力します](django_congress_2019_blog_next_step/assets/part2/4_reset_password_request.png)
+@snapend
+
+@snap[east span-50 text-center]
+### 再設定用のメール送信完了
+![入力したメールアドレスにパスワード再設定画面のリンクがメールで届きます](django_congress_2019_blog_next_step/assets/part2/5_password_reset_mail_done.png)
+@snapend
+
++++
+
+@snap[west span-50 text-center]
+### パスワード再設定（メールからアクセス）
+![パスワードを再設定する画面です](django_congress_2019_blog_next_step/assets/part2/6_password_reset.png)
+@snapend
+
+@snap[east span-50 text-center]
+### パスワード再設定完了
+![](django_congress_2019_blog_next_step/assets/part2/7_password_reset_complete.png)
+@snapend
+
++++
+
 @snap[north span-100]
 ### 認証ビューの一覧
 @snapend
 
-@snap[west center]
+@snap[west span-45 text-center]
 @ul[](false)
 - LoginView
 - LogoutView
@@ -291,7 +335,7 @@ ref:『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6
 @ulend
 @snapend
 
-@snap[east center]
+@snap[east span-45 text-center]
 @ul[](false)
 - PasswordResetView（「パスワードを忘れた場合」画面）
 - PasswordResetDoneView
@@ -307,29 +351,74 @@ ref:『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6
 以下のようにビューを実装
 
 ```python
+from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.views import PasswordResetView
 
 class PasswordReset(PasswordResetView):
-    template_name = 'accounts/password_reset_form.html'
-    success_url = reverse_lazy('accounts:password_reset_done')
     subject_template_name = 'accounts/mail_template/password_reset/subject.txt'
     email_template_name = 'accounts/mail_template/password_reset/message.html'
+    template_name = 'accounts/password_reset_form.html'
+    form_class = PasswordResetForm
+    success_url = reverse_lazy('accounts:password_reset_done')
 ```
 
 ref: naritoさんBlog [パスワード変更ページと忘れた際の再設定ページ](https://narito.ninja/blog/detail/44/)
 
 +++
 
-TODO：画面イメージ
+### [PasswordResetView](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.views.PasswordResetView) 1/2
+
+ユーザ登録の時と同様、**設定をしている** にすぎない
+
+設定項目 | 内容
+----- | -----
+`template_name` | 表示するテンプレート
+`form_class` | テンプレートに渡るフォーム<br>Djangoに用意された[PasswordResetForm](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.forms.PasswordResetForm)
 
 +++
 
-### [PasswordResetView](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.views.PasswordResetView)
+### [PasswordResetView](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.views.PasswordResetView) 2/2
 
-- `template_name`のテンプレートを表示。Djangoに用意された[PasswordResetForm](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.forms.PasswordResetForm)が渡る
-- 入力されたメールアドレスにメールを送る（件名には`subject_template_name`、本文はに`email_template_name`のテンプレートを使う）
-- パスワード再設定のリクエストが処理されたら`success_url`に遷移する
-- 注：機能させるにはユーザ登録でメールアドレスの入力を必須にする必要がある
+設定項目 | 内容
+----- | -----
+`subject_template_name` | 送るメールの件名
+`email_template_name` | 送るメールの本文
+`success_url` | パスワード再設定のリクエストが処理されたら遷移
+
++++
+
+### 注：パスワード再設定を機能させるために
+
+- ユーザ登録でメールアドレスの入力を必須にする必要がある
+- UserCreationFormをカスタマイズし、`form_class`に設定する
+
++++
+
+### accounts/forms.py
+
+```python
+from django import forms
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
+from django.utils.translation import ugettext_lazy as _
+
+User = get_user_model()
+
+class MyRegisterForm(UserCreationForm):
+    email = forms.EmailField(label=_("Email"), required=True)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email',)
+
+    # Bootstrapのクラス設定やEメールの重複があると登録エラーとする処理を省略しています
+```
+
++++
+
+### ユーザ登録にメールアドレスを追加
+
+![](django_congress_2019_blog_next_step/assets/part2/8_user_register_add_email.png)
 
 ---
 
@@ -339,3 +428,13 @@ TODO：画面イメージ
 - Djangoに用意されたクラスベースビューを設定変更／処理の上書きをして使う
   - ジェネリックビュー
   - 認証ビュー
+
++++
+
+### 参考：さらに進んだ認証
+
+「[Django における認証処理実装パターン](https://nwpct1.hatenablog.com/entry/django-auth-patterns)」  
+DjangoCongress 2018 c-bataさん
+
+- ユーザ名の代わりにメールアドレスを使った認証
+- OAuth（Googleアカウントなどでログイン）
