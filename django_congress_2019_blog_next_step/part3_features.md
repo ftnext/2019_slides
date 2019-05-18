@@ -21,6 +21,8 @@
 2. 検索機能
 3. ユーザの権限
 
+[ソースコード tag:3-more_features](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
+
 ---
 
 ### この機能、どう作る？
@@ -29,30 +31,30 @@
 2. 検索機能
 3. ユーザの権限
 
-[part3 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
+[ソースコード tag:3-more_features](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
 
 +++
 
-### ページネーション
+### ページネーション（ページングとも）
 
 - 現状のブログアプリは一覧画面に全記事表示
-- 1画面あたりに表示される記事が10件のように決まっているのをよく見かける
-- 「ページング」とも言うそうです
+- 1画面あたりに表示される記事が10件のように決まっているのをよく見かける（検索結果など）
 - thinkAmiさんBlog [Djangoで、Paginatorやdjango-pure-paginationを使ってページングしてみた](https://thinkami.hatenablog.com/entry/2016/02/04/231901)を参考に、Bootstrapを当てて実装しています
 
 +++
 
 ### ページネーションの例
 
+<span class="sixty-percent-img">
 ![](django_congress_2019_blog_next_step/assets/part3/1_pagination.png)
+</span>
 
 +++
 
 ### ページネーションを実装する
 
-- 一覧表示のジェネリックビュー（ListView）を使う
+- 一覧表示のジェネリックビュー（ListView）を使う方法を選択（実装簡単）
 - テンプレートで、[Pageオブジェクト](https://docs.djangoproject.com/ja/2.2/topics/pagination/#page-objects)`page_obj`を使って、前後のページへのリンクを作る
-- → post_listビューをジェネリックビューを使って書き換える
 
 +++
 
@@ -66,7 +68,7 @@ class PostList(ListView):
     # template_nameのテンプレートに渡すという設定をしている
     context_object_name = 'posts'
     template_name = 'blog/post_list.html'
-    paginate_by = 2  # 1ページあたりの記事の数
+    paginate_by = 2  # 1ページあたりの記事の数（ページネーションの設定はここだけ）
 
     def get_queryset(self):
         posts = Post.objects.filter(published_date__lte=timezone.now())
@@ -84,6 +86,7 @@ class PostList(ListView):
       <!-- 1つ前のページ -->
       {% if page_obj.has_previous %}
         <li class="page-item">
+          <!-- http://127.0.0.1:8000/?page=1 のようなURLになる -->
           <a class="page-link"
               href="{% url 'blog:post_list' %}?page={{ page_obj.previous_page_number }}"
               aria-label="Previous">
@@ -125,7 +128,7 @@ class PostList(ListView):
 2. **検索機能**
 3. ユーザの権限
 
-[part3 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
+[ソースコード tag:3-more_features](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
 
 +++
 
@@ -138,15 +141,17 @@ class PostList(ListView):
 
 ### 検索のイメージ
 
+<span class="sixty-percent-img">
 ![タイトルまたは本文に指定の語句を含む記事を検索しています](django_congress_2019_blog_next_step/assets/part3/2_search_keyword.png)
+</span>
 
 +++
 
 ### 検索を実装する
 
-- サイドバーにフォームを用意（入力語句を記事一覧にGETで送信）
+- サイドバーにフォームを用意（入力語句をkeywordパラメタの値に設定）
   - URL例：`http://127.0.0.1:8000/?keyword=すごい記事`
-- PostListビューは、URLのkeywordの値を含む記事を絞って表示する
+- PostListビューは、keywordパラメタの値を含む記事に絞って表示する
 
 +++
 
@@ -173,7 +178,7 @@ class PostList(ListView):
 
 ### 複数のフィールドを「または」で検索したければ
 
-例：タイトルにkeywordを含む、または、本文にkeywordを含む
+ref: naritoさんBlog [Djangoで、OR検索](https://narito.ninja/blog/detail/91/)
 
 ```python
 # 該当部分のみ示しています
@@ -185,19 +190,24 @@ class PostList(ListView):
         keyword = self.request.GET.get('keyword')
         if keyword:
             posts = posts.filter(
+                # タイトルにkeywordを含む、または、本文にkeywordを含む
                 Q(title__icontains=keyword) | Q(text__icontains=keyword)
             )
         return posts
 ```
 
-ref: naritoさんBlog [Djangoで、OR検索](https://narito.ninja/blog/detail/91/)
-
 +++
 
 ### 検索欄にkeywordを残したい
 
-- URLのkeywordに指定された値を検索欄（input要素）のvalueに持たせればよい
-- URLのkeywordに指定された値を取得する **フィルタ** を実装する（カスタムフィルタ）
+- ここまででは検索結果の検索欄は空（検索語句はURLに残る）
+- keywordパラメタの値を検索欄（input要素）のvalue属性に持たせればよい
+
++++
+
+### クエリ文字列からパラメタの値を取得
+
+- keywordパラメタの値を取得する **フィルタ** を実装する（カスタムフィルタ）
 - フィルタ：テンプレートで`{{}}`の中に`|`を使って書くもの（例：`post.text|linebreaksbr`）
 - ref: thinkAmiさんBlog [DjangoのListViewで、ページをフィルタしてみた](https://thinkami.hatenablog.com/entry/2016/03/17/003140)
 
@@ -275,7 +285,6 @@ def query_replace(request, field, value):
 ### テンプレートでカスタムタグを使う
 
 - ページネーションのURL作成部分を変更（一例のみ示す）
-- `http://127.0.0.1:8000/?keyword=すごい記事` のとき、hrefは`http://127.0.0.1:8000/?keyword=すごい記事&page=2`となります
 
 ```html
 <!-- 1つ前のページ -->
@@ -283,6 +292,7 @@ def query_replace(request, field, value):
   <li class="page-item">
     <!-- hrefの?の右側が変わっています -->
     <!-- 変更前 ?page={{ page_obj.previous_page_number }} -->
+    <!-- http://127.0.0.1:8000/?keyword=すごい記事&page=2 のようになります -->
     <a class="page-link"
         href="{% url 'blog:post_list' %}?{% query_replace request 'page' page_obj.previous_page_number %}"
         aria-label="Previous">
@@ -302,7 +312,7 @@ def query_replace(request, field, value):
 2. 検索機能
 3. **ユーザの権限**
 
-[part3 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
+[ソースコード tag:3-more_features](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/3-more_features)
 
 +++
 
@@ -310,7 +320,7 @@ def query_replace(request, field, value):
 
 - ユーザ登録を実装したが、誰にでも記事を書かせたくはない
 - 現状は、登録したユーザは記事を書ける
-- → ユーザに権限をつけて、できることをコントロールする
+- → ユーザのできることをコントロールする
 
 +++
 
@@ -337,7 +347,7 @@ ref: [権限と認可](https://docs.djangoproject.com/ja/2.2/topics/auth/default
 
 ### グループ（Group）
 
-- ユーザ一人ひとりに権限を付与するのは、大変
+- ユーザ一人ひとりに権限を付与するのは、権限が増えると　大変そう
 - 権限をグループにまとめ、ユーザをグループに所属させる
 - 記事の閲覧だけできる権限からなるグループを作成
 
@@ -345,9 +355,11 @@ ref: [権限と認可](https://docs.djangoproject.com/ja/2.2/topics/auth/default
 
 ### 記事を閲覧だけできるグループを作成
 
-Django Adminから操作
+Django AdminからGUIで操作
 
+<span class="sixty-percent-img">
 ![](django_congress_2019_blog_next_step/assets/part3/3_create_Readeruser_Group.png)
+</span>
 
 +++
 
@@ -470,4 +482,4 @@ class Post(models.Model):
 - ListViewを使ったページネーション
 - 検索 + カスタムフィルタ／タグ
 - グループでユーザに権限付与
-  - ビュー、テンプレートで確認
+  - ビューで権限設定、テンプレートで権限確認
