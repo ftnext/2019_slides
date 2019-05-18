@@ -66,7 +66,7 @@
 ### おことわり：「実務レベル」
 
 - 発表者は実務のWeb開発でDjangoを使った経験はありません
-- 実務レベル=Djangoで作りたいアプリが作れる と想定
+- 実務レベル=**Djangoで作りたいアプリが作れる** と想定
 - 本発表を実務レベルに近づけるために、フィードバックは大歓迎です
 
 +++
@@ -75,7 +75,7 @@
 
 - Django Girls Tutorialのブログアプリを作り直す
 - 実務でDjangoを使う上で必要と考える知見を共有
-- Tutorialで扱っていないが、世のWebアプリで見かける機能について話します
+- **Tutorialで扱っていないが、世のWebアプリで見かける機能** について話します
 
 +++
 
@@ -118,6 +118,8 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 
 ---?include=django_congress_2019_blog_next_step/part3_features.md
 
+---
+
 ### Agenda
 
 - Django Girls Tutorial クイックツアー（10min）
@@ -151,13 +153,13 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 - [cronote DRF勉強会](https://github.com/righ/djample)
 - [MyMDB](https://github.com/tomaratyn/MyMDB)（後述の書籍のリポジトリ）
 
-→ GitHubにあるDjangoのコードも参考にしましょう
+→ GitHubにあるDjangoのコードも参考にしましょう🔍
 
 +++
 
 ### 「この機能。どう実装する？」と思ったら
 
-**二刀流** で調べましょう
+**二刀流** で調べましょう⚔️
 
 - Google検索（検索エンジン）
 - Djangoドキュメント内の検索（英語ドキュメントを検索）
@@ -175,7 +177,7 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 ### 合わせてDjangoドキュメントで検索
 
 - Django2.2系のブログ記事はまだ少ない
-- 英語のDjangoドキュメント内を検索し、一次情報にあたって実装（読むときは日本語）
+- **英語** のDjangoドキュメント内を検索し、一次情報にあたって実装（**読むときは日本語**）
 - ドキュメントで記述が少ない部分はソースコードを見る（認証ビューのところでソースを見ました）
 
 +++
@@ -193,7 +195,7 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 ### 最後に：実務レベルに至るには、情報をかき集めつつ手を動かそう
 
 - 実務レベル = 作りたいアプリをDjangoで作れる状態
-- GitHubで公開されたコード、Django強者のブログ、Djangoドキュメント・ソースコード、書籍
+- GitHubで公開されたコード、先達のブログ、Djangoドキュメント・ソースコード、書籍
 - 「手を動かすことは、エンジニアとしての自分の未来を創ること」（nikkie語録）
 
 +++
@@ -209,6 +211,7 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 ### Special Thanks
 
 - 登壇を応援してくださった勤務先のチームメンバー
+- Support By @gitpitch(David Russell)
 - 劇場で素敵な演奏🎺を披露している北宇治高校吹奏楽部メンバー
 - そして、これまで教える機会を提供してくださった、Workshopやハンズオンの参加者の方々に感謝申し上げます
 
@@ -216,6 +219,6 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 
 ### ご清聴ありがとうございました
 
-休憩時間やパーティーなどでフィードバックいただけると嬉しいです
+休憩時間やパーティーなどでフィードバックいただけると嬉しいです😄
 
 Contact: [Twitter @ftnext](https://twitter.com/ftnext)／[匿名質問箱](https://peing.net/ja/ftnext)
