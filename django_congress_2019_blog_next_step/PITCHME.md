@@ -8,7 +8,7 @@
 
 やりたいことに取り組むことをいつも応援してくれる両親に本発表を捧げます。
 
-〜 Mother's Day & Father's Day 〜
+〜 Mother's Day🌹 & Father's Day 〜
 
 +++
 
@@ -32,7 +32,7 @@
 
 - [Tutorial](https://tutorial.djangogirls.org/ja/)に沿ってブログアプリを作る
 - 女性がプログラミングに出会う機会を提供
-- Tutorialを修了した後、作りたいアプリを作れるようになるには？
+- Tutorialを修了した後、作りたいアプリを作れるようになるには？🤔
 
 +++
 
@@ -59,7 +59,7 @@
 ### Django is Hot! But ...
 
 - Djangoに注目：[Qiita2018年流行語大賞で3位](https://qiita.com/dcm_chida/items/15b9e7e835e3e5f9d5e5)
-- Issue：注目されているDjangoには、入門者用チュートリアルを終えても、実務レベルとの間にギャップがある
+- Issue：注目されているDjangoには、入門者用チュートリアルを終えても、**実務レベルとの間にギャップがある**
 
 +++
 
@@ -198,19 +198,19 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 
 +++
 
-### Special Thanks
-
-- 登壇を応援してくださった勤務先のチームメンバー
-- 登壇準備中は、京都アニメーションの『響け！ユーフォニアム』に支えていただきました
-- そして、これまで教える機会を提供してくださった、Workshopやハンズオンの参加者の方々に
-
-+++
-
 ### おまけ：デプロイについて
 
 - ソースコードはPythonAnywhereで動作します
-- ただし、[Freeプランでのメール送信](https://help.pythonanywhere.com/pages/SMTPForFreeUsers/)未設定のためパスワード再設定は動作しません
+- ただし、[Freeプランでのメール送信](https://help.pythonanywhere.com/pages/SMTPForFreeUsers/)未設定のためパスワード再設定は動作しません😢
 - 手順参考（暫定版）：https://ftnext.pythonanywhere.com/post/1/
+
++++
+
+### Special Thanks
+
+- 登壇を応援してくださった勤務先のチームメンバー
+- 劇場で素敵な演奏🎺を披露している北宇治高校吹奏楽部メンバー
+- そして、これまで教える機会を提供してくださった、Workshopやハンズオンの参加者の方々に感謝申し上げます
 
 +++
 
