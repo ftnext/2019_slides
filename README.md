@@ -3,6 +3,7 @@ GitPitchで作成したスライドの公開用リポジトリです。
 
 # スライド一覧
 
+- [独学Python in コミュニティ](https://gitpitch.com/ftnext/2019_slides/master?p=pynyumon_May_mokumoku_teach/) @[Python入門者の集い#8 (2019/05)](https://python-nyumon.connpass.com/event/113338/)
 - [Kaggleタイタニックハンズオン(2回め)](https://gitpitch.com/ftnext/2019_slides/master?p=spz_online_titanic_handson2/) @[エンジニア学生向けオンライン勉強会 サポーターズ (2019/04)](https://talent.supporterz.jp/events/d7384737-e2a6-4dc9-bc5e-f90e17e0924e/)
 - [P(ython)&I 〜最初の落とし穴を避け、成功体験を積むために〜](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Apr_Python_and_I/) @[みんなのPython勉強会#44 (2019/04)](https://startpython.connpass.com/event/112789/)
 - [λ 〜よく見たら片方楽してるアプリ開発〜](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Mar_easy_lambda/) @[みんなのPython勉強会#43 (2019/03)](https://startpython.connpass.com/event/112788/)
