@@ -349,6 +349,10 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.local')
 - `blog/templates/blog/post_list.html`と配置しているが、manage.pyと同じ階層にtemplatesフォルダを作り、その中に置く
 - blog以外のアプリでも使う意図
 
++++
+
+### 共通テンプレート配置
+
 ```
 apps  # = BASE_DIR
 ├── blog
