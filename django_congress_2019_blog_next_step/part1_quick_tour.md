@@ -72,8 +72,8 @@
 @snap[east span-50 text-center]
 ### 記事の状態
 @ul[](false)
-- 作成されたらドラフト（公開日が未設定）
-- ドラフトを公開すると一覧に現れる（公開日を設定）
+- 作成されたら **ドラフト**（公開日が未設定）
+- ドラフトを **公開** すると一覧に現れる（公開日を設定）
 @ulend
 @snapend
 
@@ -101,7 +101,7 @@
 2. 名前空間(namespace)
 3. settings.pyの分割
 
-[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
+[ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 ---
 
@@ -111,7 +111,7 @@
 2. 名前空間(namespace)
 3. settings.pyの分割
 
-[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
+[ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 +++
 
@@ -120,7 +120,7 @@
 `django-admin startproject mysite .`
 
 ```
-djangogirls
+djangogirls  # ここでstartproject
 ├── manage.py
 ├── mysite
 │   ├── __init__.py
@@ -140,7 +140,7 @@ ref: [プロジェクトを作成しよう！](https://tutorial.djangogirls.org/
 `django-admin startproject mysite`
 
 ```
-djangogirls
+djangogirls  # ここでstartproject
 ├── mysite  # rename to `apps`
 │   ├── manage.py
 │   └── mysite
@@ -158,7 +158,7 @@ djangogirls
 
 ### プロジェクト作成
 
-- Django Girls Tutorialのやり方は、1つのやり方にすぎない
+- Django Girls Tutorialのやり方以外は、あくまで1つのやり方
 - 他のプロジェクト作成方法を知っていることで、GitHubのソースコードが読める状態に近づく
   - 例：[PyCon Taiwanのサイト](https://github.com/pycontw/pycon.tw/tree/master/src)  	project: pycontw2016
 - 参考：[`django-admin startproject name (directory)`](https://docs.djangoproject.com/en/2.2/ref/django-admin/#startproject)
@@ -171,7 +171,7 @@ djangogirls
 2. **名前空間(namespace)**
 3. settings.pyの分割
 
-[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
+[ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 +++
 
@@ -192,6 +192,7 @@ djangogirls
 
 ### なぜテンプレートで名前空間を使うのか
 
+- Djangoがテンプレートを探す（まず見つかったものを使う）（ref:[TEMPLATES](https://docs.djangoproject.com/en/2.2/ref/settings/#templates)）
 - アプリは複数作られるが、アプリ名が一致することはない（`python manage.py startapp app_name`）
 - テンプレート名とアプリ名をセットにすることで、**重複しない**
 - ref: [はじめての Django アプリ作成、その 3](https://docs.djangoproject.com/ja/2.2/intro/tutorial03/)「テンプレートの名前空間」
@@ -200,7 +201,7 @@ djangogirls
 
 ### URLの名前空間
 
-- テンプレートと同様に考えて、URLにも名前空間を導入
+- URLにも名前空間を導入（URLをpathの名前で探す）
 - blog/urls.pyに`app_name`という変数を定義する
 
 ```python
@@ -233,6 +234,8 @@ urlpatterns = [
 - ビューのredirectの引数 `redirect('blog:post_list')`
 - settings.pyの定数 `LOGIN_REDIRECT_URL = 'blog:post_list'`
 
+pathのnameを使うことで、urls.pyだけの変更でURLが変更可能に
+
 ---
 
 ### 作り直しの3トピック
@@ -241,7 +244,7 @@ urlpatterns = [
 2. 名前空間(namespace)
 3. **settings.pyの分割**
 
-[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
+[ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 +++
 
@@ -287,6 +290,8 @@ MIDDLEWARE += [
 ]
 INTERNAL_IPS = '127.0.0.1'
 ```
+
+[ファイルの差分の参考PR](https://github.com/ftnext/nextstep_djangogirls_tutorial/pull/1/files)
 
 +++
 
@@ -337,7 +342,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.local')
 
 - **共通テンプレートの配置**
 
-[part1 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
+[ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
 
 時間に余裕がある場合のみ扱います
 
