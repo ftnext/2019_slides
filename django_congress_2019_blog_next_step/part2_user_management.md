@@ -36,6 +36,8 @@
 2. ユーザ作成（ジェネリックビュー）
 3. ユーザ管理（認証ビュー）
 
+[ソースコード tag:2-user_management](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
+
 ---
 
 ### ユーザ管理までの道のり
@@ -44,7 +46,7 @@
 2. ユーザ作成（ジェネリックビュー）
 3. ユーザ管理（認証ビュー）
 
-[part2 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
+[ソースコード tag:2-user_management](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
 
 +++
 
@@ -76,7 +78,7 @@ def post_new(request):
 ### Djangoのビューの書き方は2通り
 
 - Django Girls Tutorialで書いてきたビューは **関数ベース** ビュー
-- クラスを使って書く **クラスベース** ビューを紹介
+- クラスを使って書く **クラスベース** ビューを紹介（class based view）
 - 次のスライドで、post_newビューを書き換えます
 
 +++?code=django_congress_2019_blog_next_step/src/part2/PostNew_CBV.py&lang=python&title=Example of Class Based View
@@ -85,8 +87,8 @@ def post_new(request):
 
 ### クラスベースビュー
 
-- Djangoに用意されたビューのクラスを継承（例では`django.views.View`）
-- クラスの属性（attribute。元のクラスに定義された変数や関数）を更新して使う
+- Djangoに用意されたビューのクラスを継承（例では`django.views.View` [docs](https://docs.djangoproject.com/ja/2.2/ref/class-based-views/base/)）
+- 継承元のクラスに定義された変数や関数のうち必要なものを更新して使う
 - urls.pyでは`as_view()`を使ってpathを書く
 
 ```python
@@ -112,14 +114,14 @@ def post_new(request):
 2. **ユーザ作成（ジェネリックビュー）**
 3. ユーザ管理（認証ビュー）
 
-[part2 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
+[ソースコード tag:2-user_management](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
 
 +++
 
 ### ジェネリックビュー
 
 - どんなWebアプリでも使う共通処理がある
-  - 例：データベースのデータの **一覧、詳細** など
+  - 例：データベースのデータの **一覧、作成** など
 - 共通処理を扱うための抽象的なクラスベースビューがDjangoに用意されている（`django.views.generic`）
 
 +++
@@ -145,10 +147,12 @@ from django.views.generic import CreateView
 from .forms import PostForm
 
 class PostNew(LoginRequiredMixin, CreateView):
-    form_class = PostForm
-    template_name = 'blog/post_edit.html'
+    form_class = PostForm  # テンプレートにformとして渡る
+    template_name = 'blog/post_edit.html'  # テンプレートの指定
 
     def form_valid(self, form):
+        # 入力値に問題がない場合に呼ばれる処理
+        # authorの設定追加のために上書き
         form.instance.author = self.request.user
         return super().form_valid(form)
 ```
@@ -165,15 +169,7 @@ ref: [Models and request.user](https://docs.djangoproject.com/ja/2.2/topics/clas
 
 +++
 
-### CreateView設定項目 1/2
-
-- `template_name`に指定されたテンプレートを使う
-- `form_class`に指定されたフォームを`form`として渡す
-- 入力値に問題がないときの処理`form_valid`にauthorの設定を追加
-
-+++
-
-### CreateView設定項目 2/2
+### CreateView設定項目（ビュー以外）
 
 - 作成後、記事の詳細画面に遷移するという動作は変えない
 - 作成された記事のURLを取得するメソッドをPostモデルにメソッドを追加（記事作成後に呼び出される）
@@ -193,7 +189,7 @@ ref: [モデルフォーム](https://docs.djangoproject.com/ja/2.2/topics/class-
 ### ユーザ登録
 
 - CreateViewでユーザを登録する
-- 追加の処理をしないので、処理の上書きは不要。自分のアプリの項目を設定する
+- 今回は追加の処理をしない（上書き不要）。自分のアプリの項目を設定する
 
 ```python
 from django.contrib.auth.forms import UserCreationForm
@@ -254,7 +250,7 @@ ref:『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6
 2. ユーザ作成（ジェネリックビュー）
 3. **ユーザ管理（認証ビュー）**
 
-[part2 ソースコード](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
+[ソースコード tag:2-user_management](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/2-user_management)
 
 +++
 
@@ -379,7 +375,7 @@ ref: naritoさんBlog [パスワード変更ページと忘れた際の再設定
 設定項目 | 内容
 ----- | -----
 `template_name` | 表示するテンプレート
-`form_class` | テンプレートに渡るフォーム<br>Djangoに用意された[PasswordResetForm](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.forms.PasswordResetForm)
+`form_class` | テンプレートに渡るフォーム。<br>Djangoに用意された[PasswordResetForm](https://docs.djangoproject.com/ja/2.2/topics/auth/default/#django.contrib.auth.forms.PasswordResetForm)を指定
 
 +++
 
@@ -387,9 +383,15 @@ ref: naritoさんBlog [パスワード変更ページと忘れた際の再設定
 
 設定項目 | 内容
 ----- | -----
-`subject_template_name` | 送るメールの件名
-`email_template_name` | 送るメールの本文
+`subject_template_name` | 送るメールの件名を書いたファイル
+`email_template_name` | 送るメールの本文を書いたファイル
 `success_url` | パスワード再設定のリクエストが処理されたら遷移
+
++++
+
+### こんなメールが届きます
+
+![](django_congress_2019_blog_next_step/assets/part2/reset_mail.png)
 
 +++
 
