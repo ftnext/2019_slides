@@ -228,6 +228,8 @@ def parse_keyword(querydict):
     return keyword if keyword else ''
 ```
 
+templatetagsの中に`__init__.py`（空）も作りましょう
+
 +++
 
 ### テンプレートでカスタムフィルタを使う
