@@ -30,8 +30,8 @@
 
 ### ジェネリックビューとは？
 
-- Webアプリの共通処理をDjangoが用意している
-- クラスベースビューで書かれている
+- Webアプリの共通処理を担うビュー
+- Djangoに用意されていて、クラスベースビューで書かれている
 - 日本語ドキュメントでは「汎用ビュー」
 
 +++
@@ -95,15 +95,28 @@ class PostNew(LoginRequiredMixin, CreateView):
 
 ### 動作確認
 
+- 作成画面 http://127.0.0.1:8000/post/new/
 - フォームの表示はされます
-- 保存するとエラーになります（authorやpublished_dateを設定するというこのブログだけの処理の設定が必要）
+- 保存してみると。。。
+
++++
+
+### 保存すると、エラー発生😱
+
+![](django_girls_Jun_user_register_handson/assets/part3/1_not_exist_form_valid.png)
+
+設定されているべきauthorが設定されていないためエラー
 
 +++
 
 ### 発展内容：CreateView
 
-CreateViewの中にgetとpostメソッドが用意されている  
-（`myvenv/lib/python3.7/site-packages/django/views/generic/edit.py`）
+- CreateViewの中にgetとpostメソッドが用意されている
+- `myvenv/lib/python3.7/site-packages/django/views/generic/edit.py` で確認できる（次スライド）
+
++++
+
+### 発展内容：CreateView
 
 ```python
 class BaseCreateView(ModelFormMixin, ProcessFormView):
@@ -133,7 +146,7 @@ class CreateView(SingleObjectTemplateResponseMixin, BaseCreateView):
 ### 記事を保存する際の設定を追加
 
 - フォームで入力されないauthorを追加する
-- 記事を公開するためにpublished_dateを設定する
+- 一覧画面に記事を表示するためにpublished_dateを設定する
 
 +++
 
@@ -149,6 +162,13 @@ class PostNew(LoginRequiredMixin, CreateView):
         form.instance.published_date = timezone.now()
         return super().form_valid(form)
 ```
+
++++
+
+### 動作確認
+
+- 作成画面 http://127.0.0.1:8000/post/new/
+- 記事を保存できます！
 
 +++
 
