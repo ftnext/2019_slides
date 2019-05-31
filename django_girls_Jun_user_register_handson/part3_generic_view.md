@@ -1,3 +1,12 @@
+### Djangoでユーザ登録ハンズオン
+
+- ハンズオンの準備をしよう
+- クラスベースビューを使ってみよう
+- **ジェネリックビューを使ってみよう**
+- ユーザ登録機能を作ってみよう
+
++++
+
 ### ジェネリックビューを使ってみよう
 
 - ジェネリックビュー（＝汎用ビュー）を紹介します
@@ -27,9 +36,13 @@
 
 +++
 
-### ジェネリックビュー
+### ジェネリックビュー 一覧
 
-TODO：一覧を示す
+- 表示系：一覧、詳細
+- 編集系：作成、更新、削除
+- アーカイブ系：年・月・週などの単位
+
+[ビルトインのクラスベースビュー API](https://docs.djangoproject.com/ja/2.2/ref/class-based-views/)
 
 +++
 
@@ -70,25 +83,61 @@ class PostNew(LoginRequiredMixin, CreateView):
 
 +++
 
-### 動作確認
+### CreateView 設定項目
 
-これだけでフォームの表示はされる。
+- `form_class`：表示するフォームを指定
+- `template_name`：テンプレートを指定
+- `success_url`：作成完了後に表示するURLを指定（`path()`の`name`で指定）
+
+[クラスベース汎用ビュー - フラットインデックス CreateView](https://docs.djangoproject.com/ja/2.2/ref/class-based-views/flattened-index/#createview)
 
 +++
 
-### ジェネリックビュー
+### 動作確認
 
-- CreateViewの中にgetとpostメソッドが用意されている
-getやpostでフォームを表示する際のフォーム、テンプレートの設定
+- フォームの表示はされます
+- 保存するとエラーになります（authorやpublished_dateを設定するというこのブログだけの処理の設定が必要）
 
-メモ：保存に成功した場合の遷移先の設定が必要（リダイレクト先が不明のエラー）
->No URL to redirect to.  Either provide a url or define a get_absolute_url method on the Model.
++++
+
+### 発展内容：CreateView
+
+CreateViewの中にgetとpostメソッドが用意されている  
+（`myvenv/lib/python3.7/site-packages/django/views/generic/edit.py`）
+
+```python
+class BaseCreateView(ModelFormMixin, ProcessFormView):
+    """
+    Base view for creating a new object instance.
+
+    Using this base class requires subclassing to provide a response mixin.
+    """
+    def get(self, request, *args, **kwargs):
+        self.object = None
+        return super().get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        self.object = None
+        return super().post(request, *args, **kwargs)
+
+
+class CreateView(SingleObjectTemplateResponseMixin, BaseCreateView):
+    """
+    View for creating a new object, with a response rendered by a template.
+    """
+    template_name_suffix = '_form'
+```
 
 ---
 
-保存する際の設定が必要（著者の部分）
+### 記事を保存する際の設定を追加
+
+- フォームで入力されないauthorを追加する
+- 記事を公開するためにpublished_dateを設定する
 
 +++
+
+### 記事を保存する際の設定を追加
 
 ```python
 class PostNew(LoginRequiredMixin, CreateView):
@@ -101,9 +150,20 @@ class PostNew(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 ```
 
-Djangoが用意している一連の処理の中のform_validを上書き
-（TODO：一連の処理はもう少し具体的に示したい）
-
 +++
 
-ジェネリックビューを使うとクラスベースビューを簡単にかけることを学んだ
+### やや発展：`form_valid`メソッド
+
+- `post`ではなく`form_valid`メソッドを定義した
+- これはCreateViewの`post`メソッドで呼び出されるメソッド
+- ブログアプリ用に **上書き設定** した（`post`をまるまる定義しなくてよい）
+
+参考：[Models and request.user](https://docs.djangoproject.com/ja/2.2/topics/class-based-views/generic-editing/#models-and-request-user)
+
+---
+
+### 小まとめ：ジェネリックビュー
+
+- Djangoに用意されたクラスベースビュー
+- クラスベースビューで書くよりも簡単に書ける
+- プロパティやメソッドを自分のアプリ用に設定して使う
