@@ -284,9 +284,9 @@ def post_new(request):
 
 # クラスベースビュー
 def get(self, request, *args, **kwargs):
-		form = self.form_class()  # form = PostForm()と同じ
-		# render(request, 'blog/post_edit.html', {'form': form}) と同じ
-		return render(request, self.template_name, {'form': form})
+    form = self.form_class()  # form = PostForm()と同じ
+    # render(request, 'blog/post_edit.html', {'form': form}) と同じ
+    return render(request, self.template_name, {'form': form})
 ```
 
 ---
