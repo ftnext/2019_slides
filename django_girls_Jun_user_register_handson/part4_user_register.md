@@ -1,3 +1,12 @@
+### Djangoでユーザ登録ハンズオン
+
+- ハンズオンの準備をしよう
+- クラスベースビューを使ってみよう
+- ジェネリックビューを使ってみよう
+- **ユーザ登録機能を作ってみよう**
+
++++
+
 ### ユーザ登録機能を作ってみよう
 
 ジェネリックビュー（`CreateView`）を使って、ユーザ登録機能を作成します
@@ -14,7 +23,7 @@
 
 +++
 
-### 記事の作成で必要
+### 記事の作成で必要だった
 
 - モデル：Post
 - URLConf；`path('post/new/', ..., name='post_new'),`
@@ -72,9 +81,10 @@
 
 ### 1. アプリ作成
 
-`python manage.py startapp accounts`
+ユーザ管理用のアプリaccountsを作る
 
-- ユーザ管理用のアプリaccountsを作る
+1. コマンドラインで CtrlキーとCキーを同時押し（runserverを終了）
+2. `python manage.py startapp accounts`
 
 +++
 
@@ -159,19 +169,9 @@ class Register(CreateView):
 
 +++
 
-### ビューの設定項目
-
-TODO
-
-CreateViewは変数の設定だけでよい（success_urlのreverse_lazy）
-
-+++
-
 ### 4. ユーザ登録用のテンプレート
 
 accounts/templates/accounts/register.html
-
-TODO：エラーの表示は追加したほうがよい
 
 ```html
 {% extends 'blog/base.html' %}
@@ -184,6 +184,7 @@ TODO：エラーの表示は追加したほうがよい
                 <tr>
                     <td>{{ field.label_tag }}</td>
                     <td>{{ field }}</td>
+                    <td>{{ field.errors }}</td>
                 </tr>
             {% endfor %}
         </table>
@@ -194,14 +195,36 @@ TODO：エラーの表示は追加したほうがよい
 
 +++
 
-### 動作確認：ユーザ登録画面
+### 動作確認：ユーザ登録機能
 
-http://127.0.0.1:8000/accounts/register/ にアクセスするとユーザ登録のフォームが表示される
+1. コマンドラインで`python manage.py runserver`
+2. http://127.0.0.1:8000/accounts/register/ にアクセスする（ユーザ登録のフォームが表示される）
 
-![](django_girls_Jun_user_register_handson/assets/part4/1_user_registeration_form.png)
+![フォームからユーザ登録できます！](django_girls_Jun_user_register_handson/assets/part4/1_user_registeration_form.png)
 
 +++
 
-ヘッダーにユーザ登録のアイコンを表示する
+### ヘッダーにユーザ登録へのリンクを追加
 
-TODO：Glyphiconで人のアイコンを探す
+blog/templates/blog/base.html
+
+```html
+<div class="page-header">
+    {% if user.is_authenticated %}
+        <!-- 変更なし。省略 -->
+    {% else %}
+        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+        <!-- 以下の1行を追加 -->
+        <a href="{% url 'register' %}" class="top-menu"><span class="glyphicon glyphicon-user"></span></a>
+    {% endif %}
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+```
+
+---
+
+### 小まとめ：ユーザ登録機能
+
+- ユーザ管理用のアプリを作成
+- モデルとフォームはDjangoが用意したものを使用
+- URLConf、ビュー、テンプレートを用意
