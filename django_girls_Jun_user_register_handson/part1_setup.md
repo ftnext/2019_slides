@@ -47,7 +47,7 @@ Django Girls Tutorial [コードエディタ](https://tutorial.djangogirls.org/j
 
 https://github.com/ftnext/djangogirls-user-register
 
-「Clone or download」から「Download ZIP」
+![「Clone or download」から「Download ZIP」](django_girls_Jun_user_register_handson/assets/part1/github.png)
 
 +++
 
@@ -72,6 +72,14 @@ https://github.com/ftnext/djangogirls-user-register
 - コマンドラインでいくつかコマンドを入力します
 - Windowsの方はコマンドプロンプトを、Macの方はターミナルを起動してください
 - 最初のコマンド：`cd user_register`
+
++++?color=#ffdba8
+
+### Anacondaの方へ
+
+- Anacondaプロンプトではなく、コマンドプロンプトまたはターミナルを使ってください
+- この後の手順で仮想環境を作りますが、**うまくいかなかったら教えてください**🙇‍
+- （うまくいかなかったら、condaコマンドで環境構築お願いします [参考](https://qiita.com/ftnext/items/082ec8fe96f26b181fc5)）
 
 +++
 
