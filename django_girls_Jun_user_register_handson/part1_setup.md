@@ -86,7 +86,7 @@ myvenv\Scripts\activate
 
 +++
 
-### 仮想環境作成（Windows編）
+### 仮想環境作成（macOS編）
 
 Django Girls Tutorial [Djangoのインストール](https://tutorial.djangogirls.org/ja/django_installation/)
 
@@ -98,6 +98,8 @@ source myvenv/bin/activate
 +++
 
 ### Djangoのインストール
+
+Django Girls Tutorial [Djangoのインストール](https://tutorial.djangogirls.org/ja/django_installation/)
 
 ```shell
 python -m pip install --upgrade pip
@@ -147,13 +149,17 @@ python manage.py runserver
 
 ### 記事を作る（公開日設定）
 
+<span class="seventy-percent-img">
 ![](django_girls_Jun_user_register_handson/assets/part1/1_post_published.png)
+</span>
 
 +++
 
 ### one more（公開日未設定）
 
+<span class="seventy-percent-img">
 ![](django_girls_Jun_user_register_handson/assets/part1/2_post_not_published.png)
+</span>
 
 +++
 
@@ -204,7 +210,7 @@ python manage.py runserver
 
 File → Open からホームディレクトリの`user_register`を開く
 
-左側を操作するとファイルが開けるので便利です
+![左側を操作するとファイルが開けるので便利です](django_girls_Jun_user_register_handson/assets/part1/8_atom.png)
 
 +++
 

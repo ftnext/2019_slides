@@ -72,16 +72,16 @@
 
 ### ユーザ登録機能 作成手順
 
-1. ユーザ管理用のアプリ作成
+1. ユーザ管理用のアプリケーション作成
 2. URLConf設定
 3. CreateViewを使ってビューを用意
 4. ユーザ登録用のテンプレートを用意
 
 +++
 
-### 1. アプリ作成
+### 1. アプリケーション作成
 
-ユーザ管理用のアプリaccountsを作る
+ユーザ管理用のアプリケーションaccountsを作る
 
 1. コマンドラインで CtrlキーとCキーを同時押し（runserverを終了）
 2. `python manage.py startapp accounts`
@@ -90,8 +90,8 @@
 
 ### Djangoのアプリケーション
 
-- Djangoではアプリは機能ごとに作ることが多いです
-- ブログの機能を担うblogアプリにユーザ管理機能をもたせるのは、私はオススメしません
+- Djangoではアプリケーションは機能ごとに作ることが多いです
+- ブログの機能を担うblogアプリケーションにユーザ管理機能をもたせるのは、私はオススメしません
 
 （力試し：ハンズオンのあと、ログイン・ログアウトのURL設定もaccountsに移してみてください）
 
@@ -99,7 +99,7 @@
 
 ### mysite/settings.py
 
-アプリを「インストール」します
+アプリケーションを「インストール」します
 
 ```python
 INSTALLED_APPS = [
@@ -121,7 +121,7 @@ INSTALLED_APPS = [
 2つ設定します
 
 - プロジェクトのURLConf
-- アプリのURLConf
+- アプリケーションのURLConf
 
 ユーザ登録画面を`http://127.0.0.1:8000/accounts/register/`とします
 
@@ -198,9 +198,13 @@ accounts/templates/accounts/register.html
 ### 動作確認：ユーザ登録機能
 
 1. コマンドラインで`python manage.py runserver`
-2. http://127.0.0.1:8000/accounts/register/ にアクセスする（ユーザ登録のフォームが表示される）
+2. http://127.0.0.1:8000/accounts/register/ にアクセスする
 
-![フォームからユーザ登録できます！](django_girls_Jun_user_register_handson/assets/part4/1_user_registeration_form.png)
++++
+
+### ユーザ登録できます！
+
+![](django_girls_Jun_user_register_handson/assets/part4/1_user_registeration_form.png)
 
 +++
 
@@ -225,6 +229,6 @@ blog/templates/blog/base.html
 
 ### 小まとめ：ユーザ登録機能
 
-- ユーザ管理用のアプリを作成
+- ユーザ管理用のアプリケーションを作成
 - モデルとフォームはDjangoが用意したものを使用
 - URLConf、ビュー、テンプレートを用意
