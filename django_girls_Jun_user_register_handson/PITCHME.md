@@ -7,7 +7,7 @@
 
 勉強会の申し込みページ：https://djangogirls-org.connpass.com/event/131237/
 
-資料にスライド・ソースコードのリンクがあります
+![資料にスライド・ソースコードのリンクがあります](django_girls_Jun_user_register_handson/assets/part1/connpass_slide.png)
 
 +++
 
