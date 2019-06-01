@@ -67,7 +67,7 @@ class PostNew(View):
 ### 記事作成機能に関係するものを洗い出す
 
 - モデル：Post
-- URLConf；`path('post/new/', ..., name='post_new'),`
+- URL設定；`path('post/new/', ..., name='post_new'),`
 - ビュー：`post_new`
 - テンプレート：blog/post_edit.html
   - フォーム：PostForm
@@ -76,7 +76,7 @@ class PostNew(View):
 
 ### クラスベースビューへの書き換え
 
-1. URLConfを変更（クラスベースビュー用の書き方にする）
+1. URL設定を変更（クラスベースビュー用の書き方にする）
 2. ビューをクラスベースビューで書く
 
 今回は、モデル、テンプレート、フォームに変更はありません
@@ -92,12 +92,12 @@ class PostNew(View):
 
 ### クラスベースビューへの書き換え
 
-1. **URLConfを変更**（クラスベースビュー用の書き方にする）
+1. **URL設定を変更**（クラスベースビュー用の書き方にする）
 2. ビューをクラスベースビューで書く
 
 +++
 
-### URLConf変更
+### URL設定変更
 
 `blog/urls.py`
 
@@ -108,9 +108,11 @@ class PostNew(View):
     path('post/new/', views.PostNew.as_view(), name='post_new'),
 ```
 
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%99%E3%83%BC%E3%82%B9%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+
 +++
 
-### 動作確認：URLConf変更
+### 動作確認：URL設定変更
 
 一覧画面：http://127.0.0.1:8000/ にアクセス  
 （スライドのリンクをクリックしてください）
@@ -136,7 +138,7 @@ class PostNew(View):
 
 ### クラスベースビューへの書き換え
 
-1. URLConfを変更（クラスベースビュー用の書き方にする）
+1. URL設定を変更（クラスベースビュー用の書き方にする）
 2. **ビューをクラスベースビューで書く**
 
 まず最小限で簡単に作り、徐々に機能を追加していきます
@@ -153,6 +155,9 @@ from django.views import View  # 追加
 class PostNew(View):
     pass
 ```
+
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%99%E3%83%BC%E3%82%B9%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+
 
 +++
 
@@ -208,7 +213,8 @@ http://127.0.0.1:8000/
 
 ### 記事作成 フォーム表示 1/2
 
-クラスのプロパティを設定する
+クラスのプロパティを設定する（[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%99%E3%83%BC%E3%82%B9%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+）
 
 ```python
 class PostNew(View):
@@ -223,7 +229,8 @@ class PostNew(View):
 
 ### 記事作成 フォーム表示 2/2
 
-クラスにメソッドを追加
+クラスにメソッドを追加（[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%99%E3%83%BC%E3%82%B9%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+）
 
 ```python
 class PostNew(View):
@@ -261,7 +268,7 @@ Webアプリへのデータの送り方は2通りある
 
 URLに対してGETまたはPOSTでデータを送る
 
-+++
++++?color=#ffdba8
 
 ### 発展内容：`get`
 
@@ -269,7 +276,7 @@ URLに対してGETまたはPOSTでデータを送る
 - URLのページを **ブラウザで単に表示** する際もGETメソッドを使う
 - GETメソッドでデータを送ると、URLに含まれる
 
-+++
++++?color=#ffdba8
 
 ### 解説：実は設定内容はこれまでと同じ
 
@@ -293,7 +300,8 @@ def get(self, request, *args, **kwargs):
 
 ### 記事作成 1/2
 
-クラスにメソッドを追加
+クラスにメソッドを追加（[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%99%E3%83%BC%E3%82%B9%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+）
 
 ```python
 class PostNew(View):
@@ -312,6 +320,9 @@ class PostNew(View):
 +++
 
 ### 記事作成 2/2
+
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%99%E3%83%BC%E3%82%B9%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+
 
 ```python
     def post(self, request, *args, **kwargs):
@@ -334,7 +345,7 @@ class PostNew(View):
 - 一覧画面 http://127.0.0.1:8000/
 - フォームから保存できるようになりました
 
-+++
++++?color=#ffdba8
 
 ### 発展内容：`post`
 
@@ -342,7 +353,7 @@ class PostNew(View):
 - URLに含めずにデータを送る方法
 - メリットの1つ：長いデータ（ブログの記事など）を送信できる
 
-+++
++++?color=#ffdba8
 
 ### 解説：実は設定内容はこれまでと同じ
 
@@ -384,6 +395,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin  # 追加
 class PostNew(LoginRequiredMixin, View):
     # この下に変更はありません
 ```
+
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%AF%E3%83%A9%E3%82%B9%E3%83%99%E3%83%BC%E3%82%B9%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
 
 +++
 

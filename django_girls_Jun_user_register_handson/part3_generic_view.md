@@ -64,11 +64,13 @@
 
 1. ビューをジェネリックビューで書く
 
-今回は、URLConf、モデル、テンプレート、フォームに変更はありません
+今回は、URL設定、モデル、テンプレート、フォームに変更はありません
 
 +++
 
 ### blog/views.py
+
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AA%E3%83%83%E3%82%AF%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
 
 ```python
 # from django.views import View  # 使わないので削除
@@ -107,14 +109,14 @@ class PostNew(LoginRequiredMixin, CreateView):
 
 設定されているべきauthorが設定されていないためエラー
 
-+++
++++?color=#ffdba8
 
 ### 発展内容：CreateView
 
 - CreateViewの中にgetとpostメソッドが用意されている
 - `myvenv/lib/python3.7/site-packages/django/views/generic/edit.py` で確認できる（次スライド）
 
-+++
++++?color=#ffdba8
 
 ### 発展内容：CreateView
 
@@ -151,6 +153,8 @@ class CreateView(SingleObjectTemplateResponseMixin, BaseCreateView):
 +++
 
 ### 記事を保存する際の設定を追加
+
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AA%E3%83%83%E3%82%AF%E3%83%93%E3%83%A5%E3%83%BC%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
 
 ```python
 class PostNew(LoginRequiredMixin, CreateView):

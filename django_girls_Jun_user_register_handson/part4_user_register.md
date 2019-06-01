@@ -26,7 +26,7 @@
 ### 記事の作成で必要だった
 
 - モデル：Post
-- URLConf；`path('post/new/', ..., name='post_new'),`
+- URL設定；`path('post/new/', ..., name='post_new'),`
 - ビュー：`post_new`
 - テンプレート：blog/post_edit.html
   - フォーム：PostForm
@@ -36,7 +36,7 @@
 ### ユーザの作成に必要
 
 - モデル
-- URLConf
+- URL設定
 - ビュー
 - テンプレート
   - フォーム
@@ -46,7 +46,7 @@
 ### Djangoに用意されたものを使う
 
 - **モデル**：User
-- URLConf
+- URL設定
 - ビュー
 - テンプレート
   - **フォーム**：UserCreationForm
@@ -56,7 +56,7 @@
 ### 私たちで用意
 
 - モデル
-- **URLConf**
+- **URL設定**
 - **ビュー**
 - **テンプレート**
   - フォーム
@@ -73,7 +73,7 @@
 ### ユーザ登録機能 作成手順
 
 1. ユーザ管理用のアプリケーション作成
-2. URLConf設定
+2. URL設定追加
 3. CreateViewを使ってビューを用意
 4. ユーザ登録用のテンプレートを用意
 
@@ -116,18 +116,20 @@ INSTALLED_APPS = [
 
 +++
 
-### 2. URLConf設定
+### 2. URL設定追加
 
 2つ設定します
 
-- プロジェクトのURLConf
-- アプリケーションのURLConf
+- プロジェクトのURL設定
+- アプリケーションのURL設定
 
 ユーザ登録画面を`http://127.0.0.1:8000/accounts/register/`とします
 
 +++
 
 ### mysite/urls.py
+
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%83%A6%E3%83%BC%E3%82%B6%E7%99%BB%E9%8C%B2%E6%A9%9F%E8%83%BD%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
 
 ```python
 urlpatterns = [
@@ -143,6 +145,8 @@ urlpatterns = [
 
 ### accounts/urls.py（新規作成）
 
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%83%A6%E3%83%BC%E3%82%B6%E7%99%BB%E9%8C%B2%E6%A9%9F%E8%83%BD%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+
 ```python
 from django.urls import path
 from . import views
@@ -155,6 +159,8 @@ urlpatterns = [
 +++
 
 ### 3. ビューを用意（accounts/views.py）
+
+[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%83%A6%E3%83%BC%E3%82%B6%E7%99%BB%E9%8C%B2%E6%A9%9F%E8%83%BD%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
 
 ```python
 from django.contrib.auth.forms import UserCreationForm
@@ -171,7 +177,8 @@ class Register(CreateView):
 
 ### 4. ユーザ登録用のテンプレート
 
-accounts/templates/accounts/register.html
+accounts/templates/accounts/register.html（[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%83%A6%E3%83%BC%E3%82%B6%E7%99%BB%E9%8C%B2%E6%A9%9F%E8%83%BD%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+）
 
 ```html
 {% extends 'blog/base.html' %}
@@ -210,7 +217,8 @@ accounts/templates/accounts/register.html
 
 ### ヘッダーにユーザ登録へのリンクを追加
 
-blog/templates/blog/base.html
+blog/templates/blog/base.html（[コピーペースト用スニペット](https://github.com/ftnext/djangogirls-user-register/blob/master/handson_snippet.md#%E3%83%A6%E3%83%BC%E3%82%B6%E7%99%BB%E9%8C%B2%E6%A9%9F%E8%83%BD%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)
+）
 
 ```html
 <div class="page-header">
@@ -231,4 +239,4 @@ blog/templates/blog/base.html
 
 - ユーザ管理用のアプリケーションを作成
 - モデルとフォームはDjangoが用意したものを使用
-- URLConf、ビュー、テンプレートを用意
+- URL設定、ビュー、テンプレートを用意
