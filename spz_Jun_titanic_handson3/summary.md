@@ -1,9 +1,9 @@
 ### 【生配信】すかすかタイタニックハンズオン
 
 - 導入：機械学習／Kaggle／タイタニック（10分）
-- ハンズオン：手を動かしてタイタニックコンペに参加（30分）
-- もくもくタイム：精度向上に各自挑戦（5分）
+- ハンズオン：手を動かしてタイタニックコンペに参加（35分）
 - <div class="kaggle-color-highlight">まとめ（10分）</div>
+- 質疑&もくもくタイム：精度向上に各自挑戦（20分程度）
 
 +++
 
@@ -68,14 +68,6 @@
 
 +++
 
-### ディープラーニングを学ぶ
-
-- Kaggelのコンペでは、ディープラーニングを使うことも多い
-- ディープラーニングのパッケージ：TensorFlow, PyTorch, Chainer, ...
-- 私は[TensorFlowチュートリアル](https://www.tensorflow.org/tutorials/)で学びました（機械学習の考え方も学べます）
-
-+++
-
 ### （参考）ハンズオンがちょっと難しかったという方向け
 
 [Udemy はじめてのAI](https://www.udemy.com/google-jp-ai/)
@@ -85,11 +77,21 @@
 
 +++
 
+@snap[east snap-seventy-percent-image]
+![CoLabユーザーが技術書を書いてみた](stapy_Apr_Python_and_I/assets/colab_book6_cover.png)
+@snapend
+
+@snap[west half-width-bullets]
+
 ### （参考）nikkieのアウトプット関連
 
+@ul[](false)
 - このハンズオンの学生向けバージョンの[Kernel](https://www.kaggle.com/ftnext/kaggle-spzcolab-online)
-- 技術書典6で、少し進んだ内容を[合同誌](https://supporterz.booth.pm/items/1315417)でアウトプット（交差検証、グリッドサーチ）
-- アウトプットの元の[PyData.Tokyo Tutorial](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1)
+- 技術書典6で、少し進んだ内容を[合同誌(boothでPDF頒布中)](https://supporterz.booth.pm/items/1315417)でアウトプット（交差検証、グリッドサーチ）
+- 合同誌の[ソースコード](https://www.kaggle.com/ftnext/spzcolab-techbook6)は公開しています
+@ulend
+
+@snapend
 
 ---
 
@@ -100,7 +102,7 @@
 
 +++
 
-### Kaggleで学ぶ
+### (A) Kaggleで学ぶ
 
 - 「機械学習を学ぶにはKaggleがいい」と言われる
 - うまく行った手法はKernelに公開される文化がある
@@ -115,7 +117,15 @@
 
 +++
 
-### Kaggleのコンペに参加する
+### ディープラーニングを学ぶ
+
+- Kaggelのコンペでは、ディープラーニングを使うことも多い
+- ディープラーニングのパッケージ：TensorFlow, PyTorch, Chainer, ...
+- 私は[TensorFlowチュートリアル](https://www.tensorflow.org/tutorials/)で学びました（機械学習の考え方も学べます）
+
++++
+
+### (B) Kaggleのコンペに参加する
 
 - 自分が興味をもてる開催中のコンペに参加（タイタニックで基礎固めでもOK）
 - 評価が高いKernel、スコアが高いKernelの写経からスタート

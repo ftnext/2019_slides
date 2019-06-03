@@ -11,10 +11,10 @@ Twitterにご自身のこと（Python歴やKaggle歴）を投稿してみてく�
 
 +++
 
-### 自己紹介（About nikkie）
+### お前、誰よ（About nikkie）
 
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
-- エンジニア4年目。4月から駆け出しデータサイエンティスト
+- エンジニア4年目。4月から駆け出しデータサイエンティスト（Python）
 - Pythonを教える活動（[Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳など）やPyConJP 2019 スタッフ活動をしています
 - アニメが好き（ユーフォ、アイマス）
 
@@ -28,7 +28,9 @@ Twitterにご自身のこと（Python歴やKaggle歴）を投稿してみてく�
 
 +++
 
+<span class="eighty-percent-img">
 ![お好みの登録方法で進めてください（FB, Google, Yahoo, Email）](spz_Jan_titanic_handson/assets/kaggle_register.png)
+</span>
 
 できた方は「登録できました！ #spzcolab」ツイートお願いします🙇
 
@@ -42,7 +44,7 @@ Twitterにご自身のこと（Python歴やKaggle歴）を投稿してみてく�
 
 ---
 
-#### 機械学習に興味ありますか？Kaggle始めたいですか？タイタニックでもいいですか？ とは
+### 機械学習に興味ありますか？Kaggle始めたいですか？タイタニックでもいいですか？ って何よ
 
 - Kaggle（というオンラインコミュニティ）の
 - タイタニック（というコンペ）を
@@ -75,9 +77,9 @@ Kaggleとタイタニックについてはこの後説明します
 ### アジェンダ
 
 - 導入：機械学習／Kaggle／タイタニック（10分）
-- ハンズオン：手を動かしてタイタニックコンペに参加（30分）
-- もくもくタイム：精度向上に各自挑戦（5分）
+- ハンズオン：手を動かしてタイタニックコンペに参加（35分）
 - まとめ（10分）
+- 質疑&もくもくタイム：精度向上に各自挑戦（20分程度）
 
 ---?include=spz_Jun_titanic_handson3/ML_kaggle_titanic.md
 
@@ -86,20 +88,17 @@ Kaggleとタイタニックについてはこの後説明します
 ### 【生配信】すかすかタイタニックハンズオン
 
 - 導入：機械学習／Kaggle／タイタニック（10分）
-- <div class="kaggle-color-highlight">ハンズオン：手を動かしてタイタニックコンペに参加（30分）</div>
-- もくもくタイム：精度向上に各自挑戦（5分）
+- <div class="kaggle-color-highlight">ハンズオン：手を動かしてタイタニックコンペに参加（35分）</div>
 - まとめ（10分）
+- 質疑&もくもくタイム：精度向上に各自挑戦（20分程度）
 
 +++
 
-### ハンズオン（30分）
+### ハンズオン（35分）
 
-時間配分は見直し
-
-1. 準備
+1. 準備(10分)
 2. 分析(10分)
 3. 前処理、モデル作成、評価(15分)
-4. 精度を上げるためのアプローチの紹介（5分）
 
 +++
 
@@ -114,7 +113,9 @@ Kaggleとタイタニックについてはこの後説明します
 
 ### タイタニックコンペにJoin
 
+<span class="eighty-percent-img">
 ![「Join Competition」→「I Understand and Accept」](spz_Jan_titanic_handson/assets/join_titanic_competition.png)
+</span>
 
 できた方は「タイタニックコンペに参加できました！ #spzcolab」ツイートお願いします🙇
 
@@ -123,7 +124,7 @@ Kaggleとタイタニックについてはこの後説明します
 ### ハンズオン
 
 - ブラウザで以下のKernel（≒ソースコード）にアクセス
-  - https://www.kaggle.com/ftnext/kaggle-spzcolab-201903
+  - https://www.kaggle.com/ftnext/kaggle-spzcolab-201906
 - Kernelを自分のアカウントにコピーします（フォークと言います）
 
 +++
@@ -169,6 +170,8 @@ Kaggleとタイタニックについてはこの後説明します
 
 ![](spz_Jan_titanic_handson/assets/kaggle_kernel_go_output.png)
 
+※2のタブは **閉じない** でください
+
 +++
 
 ### 4. Submit to Competition
@@ -192,47 +195,7 @@ Kaggleとタイタニックについてはこの後説明します
 
 - 性能：0.76555 😳
 - ロジックはシンプル。**女性が助かり、男性が死亡と予測**
-
----
-
-### 0.76555超えを目指す
-
-- サンプルコードを組合せてみましょう
-- 先ほどCommitしたKernelを編集しながら **上から再実行** します
-
-+++
-
-### Kernel再実行 1/3
-
-![提出した画面で上部のKernelsをクリック](spz_Jan_titanic_handson/assets/submission_results_to_kernel.jpg)
-
-+++
-
-### Kernel再実行 2/3
-
-![Your Workから先ほどのKernelをクリック](spz_Jan_titanic_handson/assets/select_your_kernels.png)
-
-+++
-
-### Kernel再実行 3/3
-
-![Editをクリック](spz_Jan_titanic_handson/assets/edit_committed_kernel.png)
-
-（以降はKernelで説明します）
-
-+++
-
-## もくもくタイムです！
-
-## 精度向上に挑戦💪
-
-- Pythonのサンプルコードを組合せて、試行錯誤しましょう
-
-+++
-
-## 0.76555超えた人🙋
-
-ぜひツイートを
+- もくもくタイムで、提出練習用データのスコア超えに取り組みましょう
 
 ---?include=spz_Jun_titanic_handson3/summary.md
 
@@ -242,12 +205,60 @@ Kaggleとタイタニックについてはこの後説明します
 
 - 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』pydatatext（ベースにしました）
 - PyData.Tokyo Tutorial [分析パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_dh.ipynb) [モデル作成パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_ml.ipynb)（タイタニックコンペを扱った先行事例）
-- 『[PythonユーザのためのJupyter 実践 入門](https://www.amazon.co.jp/dp/4774192236/)』matplotlibの解説を参照
+- 『[PythonユーザのためのJupyter 実践 入門](https://www.amazon.co.jp/dp/4774192236/)』可視化で参照
 
 +++
 
 ### ご清聴ありがとうございました
 ### ハンズオンお疲れさまでした！
 Contact: [Twitter @ftnext](https://twitter.com/ftnext)
+
+---
+
+## もくもくタイムです！
+
+## 精度向上に挑戦💪
+
+Pythonのサンプルコードを組合せて、試行錯誤しましょう
+
++++
+
+### 0.76555超えを目指す
+
+- Kernel下部のサンプルコードを組合せてみましょう
+  - `"""`の間のコードで置き換えます（例を示します）
+- 先ほどCommitしたKernelを編集しながら **上から再実行** します
+
++++
+
+### Kernel再編集
+
+![「Return to Editor」をクリックします](spz_Jun_titanic_handson3/assets/kernel_return_to_editor.png)
+
++++
+
+### （参考）Kernel再実行 1/3
+
+Kernelのタブを閉じてしまった方への案内です
+
+![提出した画面で上部のKernelsをクリック](spz_Jan_titanic_handson/assets/submission_results_to_kernel.jpg)
+
++++
+
+### （参考）Kernel再実行 2/3
+
+![Your Workから先ほどのKernelをクリック](spz_Jan_titanic_handson/assets/select_your_kernels.png)
+
++++
+
+### （参考）Kernel再実行 3/3
+
+![Editをクリック](spz_Jan_titanic_handson/assets/edit_committed_kernel.png)
+
++++
+
+## 0.76555超えた人🙋
+
+ぜひツイートを：「0.78出ました！ #spzcolab」
 
 ---?include=spz_Jun_titanic_handson3/appendix.md
