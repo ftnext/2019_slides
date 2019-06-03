@@ -119,7 +119,7 @@
 
 ### ディープラーニングを学ぶ
 
-- Kaggelのコンペでは、ディープラーニングを使うことも多い
+- Kaggleのコンペでは、ディープラーニングを使うことも多い
 - ディープラーニングのパッケージ：TensorFlow, PyTorch, Chainer, ...
 - 私は[TensorFlowチュートリアル](https://www.tensorflow.org/tutorials/)で学びました（機械学習の考え方も学べます）
 
