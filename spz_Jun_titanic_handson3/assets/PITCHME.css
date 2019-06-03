@@ -1,0 +1,40 @@
+.reveal {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  text-transform: none;
+  word-wrap: break-word;
+}
+
+.reveal section img {
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal div .kaggle-color-highlight {
+  color: #fff;
+  background-color: #58BCF9;
+  padding: 15px 8px;
+}
+
+.sixty-percent-img img {
+  width: 60%;
+  height: 60%;
+}
+
+.seventy-percent-img img {
+  width: 70%;
+  height: 70%;
+}
+
+.eighty-percent-img img {
+  width: 80%;
+  height: 80%;
+}
