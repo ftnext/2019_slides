@@ -233,7 +233,9 @@ Pythonのサンプルコードを組合せて、試行錯誤しましょう
 
 ### Kernel再編集
 
+<span class="seventy-percent-img">
 ![「Return to Editor」をクリックします](spz_Jun_titanic_handson3/assets/kernel_return_to_editor.png)
+</span>
 
 +++
 

@@ -77,11 +77,11 @@
 
 +++
 
-@snap[east snap-seventy-percent-image]
+@snap[east span-50]
 ![CoLabユーザーが技術書を書いてみた](stapy_Apr_Python_and_I/assets/colab_book6_cover.png)
 @snapend
 
-@snap[west half-width-bullets]
+@snap[west span-50 text-center]
 
 ### （参考）nikkieのアウトプット関連
 
