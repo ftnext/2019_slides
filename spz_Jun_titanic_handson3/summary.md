@@ -93,11 +93,11 @@
 
 @snap[west span-50 text-center]
 
-### （参考）nikkieのアウトプット関連
+### （参考）nikkieのアウトプット
 
 @ul[](false)
-- このハンズオンの学生向けバージョンの[Kernel](https://www.kaggle.com/ftnext/kaggle-spzcolab-online)
-- 技術書典6で、少し進んだ内容を[合同誌(boothでPDF頒布中)](https://supporterz.booth.pm/items/1315417)でアウトプット（交差検証、グリッドサーチ）
+- 学生向けバージョンの[ハンズオン(Kernel)](https://www.kaggle.com/ftnext/kaggle-spzcolab-online)
+- 技術書典6の[合同誌(boothでPDF頒布中)](https://supporterz.booth.pm/items/1315417)（少し進んで、交差検証、グリッドサーチ）
 - 合同誌の[ソースコード](https://www.kaggle.com/ftnext/spzcolab-techbook6)は公開しています
 @ulend
 
