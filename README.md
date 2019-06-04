@@ -3,6 +3,7 @@ GitPitchで作成したスライドの公開用リポジトリです。
 
 # スライド一覧
 
+- [【生配信】機械学習に興味ありますか？Kaggle始めたいですか？タイタニックでもいいですか？](https://gitpitch.com/ftnext/2019_slides/master?p=spz_Jun_titanic_handson3) @[サポーターズ勉強会 (2019/06)](https://supporterzcolab.com/event/844/)
 - [Djangoでユーザ登録ハンズオン](https://gitpitch.com/ftnext/2019_slides/master?p=django_girls_Jun_user_register_handson) @[Django Girls Japan 勉強会(2019/06)](https://djangogirls-org.connpass.com/event/131237/)
 - [Django Girls Blogのネクストステップ 〜実務レベルへ橋渡し〜](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step) @[Django Congress 2019](https://djangocongress.jp/)
 - [独学Python in コミュニティ](https://gitpitch.com/ftnext/2019_slides/master?p=pynyumon_May_mokumoku_teach/) @[Python入門者の集い#8 (2019/05)](https://python-nyumon.connpass.com/event/113338/)
