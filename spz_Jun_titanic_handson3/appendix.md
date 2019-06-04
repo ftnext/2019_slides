@@ -50,7 +50,7 @@
 
 ### ささやかな応用コンテンツ
 
-準備中
+https://www.kaggle.com/ftnext/advanced-titanic-kernel-shakyo-example/
 
 ---
 
