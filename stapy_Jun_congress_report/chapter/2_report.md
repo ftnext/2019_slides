@@ -11,6 +11,8 @@
 >DjangoCongress JPは、Djangoでアプリケーションを開発している人、Djangoを学んでいる人などDjangoに関わる全ての人が参加できます。  
 >参加する全ての人がDjangoについて交流し、出会い、学び、楽しみ、深い理解を得ることを目的にしています。
 
+https://djangocongress.jp/
+
 +++
 
 ### 当日の雰囲気
@@ -23,7 +25,9 @@
 
 ### 会場はサイボウズさんの素敵オフィス！
 
+<span class="eighty-percent-img">
 ![居心地のいいサイボウズバー](stapy_Jun_congress_report/assets/part2/cybozu_bar.jpg)
+</span>
 
 +++
 
@@ -44,7 +48,7 @@
 
 - stapy 長野支部＝GeekLab.Nagano
 - GeekLab.Naganoの運営が日本システム技研さん
-- **業務改善かつ修行としてのDjango開発** でDjango力を培った会社（という印象）
+- **業務改善かつ修行としてのDjango開発** *でDjango力を培った会社（nikkieの印象）*
 
 +++
 
@@ -65,8 +69,8 @@
 ### [Make Query Great Again!](https://www.slideshare.net/dattun/django-congress-jp-2019-make-query-great-again-slide-share)（Nakajimaさん）
 
 - Djangoのクエリセットについて
-- `filter`から始まり、無駄なSQLをなくす(`select_related`や`prefetch_related`)
-- 一番盛り上がったトーク（nikkie談）
+- `filter`から始まり、無駄なSQLをなくすやり方まで(`select_related`や`prefetch_related`)
+- *一番盛り上がったトーク（nikkie談）*
 
 +++
 
@@ -80,7 +84,7 @@
 
 - EmailBackend（送信手段）とEmailMessage（メールの情報）
 - 送信手段をカスタマイズして、Slack通知も可能（サーバでエラーが発生したら通知する）
-- 取り組む必要がある箇所だったのでありがたい（nikkie談）
+- *取り組む必要がある箇所だったのでありがたい（nikkie談）*
 
 +++
 
@@ -94,7 +98,7 @@
 
 - 日本システム技研のこれまでのお話（Webエンジニア0%→80%）
 - 下請け思考から脱却し、Webエンジニアを増やす道のりの共有
-- 『カイゼン・ジャーニー』を彷彿とさせる、一番エモかったトーク（nikkie談）
+- *『カイゼン・ジャーニー』を彷彿とさせる、一番エモいい👍トーク（nikkie談）*
 
 +++
 
@@ -106,8 +110,6 @@
 
 ### nikkie 一推しトーク
 
-@css[fragment](現場で使える Django のセキュリティ対策（akiyokoさん）)
-
 +++
 
 ### 現場で使える Django のセキュリティ対策（akiyokoさん）
@@ -118,12 +120,12 @@
 
 ### [現場で使える Django のセキュリティ対策](https://speakerdeck.com/akiyoko/django-security-measures-for-business-djangocon-jp-2019)（akiyokoさん）
 
-- Djangoでセキュリティがどこまで全部入りなのかがつかめました（nikkie談）
-- IPA「安全なウェブサイトの作り方」や[徳丸本](https://www.amazon.co.jp/dp/4797393165)を引きながら、Djangoで必要な設定を解説
 - 現場で使えるDjangoの教科書シリーズ（[基礎編](https://www.amazon.co.jp/dp/4802094744)・[実践編](https://www.amazon.co.jp/dp/B07L3DRGBT/)・[DRF](https://booth.pm/ja/items/1314617)）の著者の方です
+- IPA「安全なウェブサイトの作り方」や[徳丸本](https://www.amazon.co.jp/dp/4797393165)を引きながら、Djangoで必要な設定を解説
+- *Djangoではセキュリティがどの程度まで用意されているかがつかめました（nikkie談）*
 
 +++
 
-### 全員で記念撮影！
+### 全員で記念撮影！📸
 
 ![](stapy_Jun_congress_report/assets/part2/participants.jpg)

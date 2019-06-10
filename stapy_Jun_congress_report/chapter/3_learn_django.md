@@ -24,7 +24,7 @@ Djangoをちょっと勉強してみようかなという方🙋‍
 ### 作りたいアプリを作れるようになるには
 
 - チュートリアル修了≠作りたいWebアプリが作れる
-- Django Congressでは「[Django Girls Blogのネクストステップ](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step)」と題して「チュートリアルの次にこう学ぶといいのでは？」を共有
+- Django Congressでは「[Django Girls Blogのネクストステップ](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step)」と題して「**チュートリアルの次にこう学ぶといいのでは？**」を共有
 - Django Girls TutorialのBlogアプリを作り直しています
 
 +++
@@ -56,6 +56,6 @@ https://ftnext.pythonanywhere.com/
 
 ### Djangoの学び方案
 
-1. いずれかのチュートリアルでDjangoのルールに慣れる（URL設定、モデル、ビュー、テンプレート）
-2. クラスベースビューなどDjangoに用意された機能の使い方を身につける
+1. いずれかのチュートリアルでDjangoの **ルールに慣れる**（URL設定、モデル、ビュー、テンプレート）
+2. クラスベースビューなど **Djangoに用意された機能の使い方** を身につける
 3. ドキュメントや実装例を参考にしながら、作りたいアプリに取り組む

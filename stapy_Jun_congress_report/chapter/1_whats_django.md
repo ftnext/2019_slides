@@ -21,8 +21,6 @@
 
 このトークではWebアプリの例としてconnpassを挙げます。
 
-（tokibitoさん資料わかりやすい）
-
 +++
 
 ### Webアプリを使う中で感じませんか？
@@ -64,19 +62,19 @@
 
 - 入力：リクエスト≒URLとHTTPメソッド(GET,POST,etc.)
 - 出力：レスポンス≒HTML
-  - Webアプリはリクエストに応じたレスポンスを返すことができます
-  - 例：connpassではログインした **あなた** がstapyに申込み
+- Webアプリはリクエストに応じたレスポンスを返すことができます
 
 +++
 
 ### Djangoがリクエストを受けてからレスポンスを返すまで
 
+<span class="seventy-percent-img">
 ![Webアプリの動作の流れ：リクエスト→URL設定→ビュー→モデル→ビュー→テンプレート→レスポンス](elv_Feb_django_developcompass/assets/part0/django_structure.001.png)
+</span>
 
 +++
 
 ### Djangoは広大
 
 - Webアプリに必要な機能（ログインなど）は一通り揃っている
-- ゆえに広大
-- Djangoだけを扱った勉強会→Django Congress
+- Djangoだけを扱った勉強会の需要→Django Congress

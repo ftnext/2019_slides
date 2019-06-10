@@ -7,7 +7,7 @@
 
 5月18日に東京で開催されたDjango Congress 2019 カンファレンスデーのレポートをお送りします。
 
-登壇者の視点でレポートします（「[Django Girls Blogのネクストステップ](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step)」）
+登壇（「[Django Girls Blogのネクストステップ](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step)」）の話も少し扱います
 
 +++
 
@@ -15,7 +15,7 @@
 
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
 - [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳(2018/05~)、Workshopコーチ
-- PyConJP 2019 スタッフ活動
+- 最近はPyConJP 2019 スタッフ活動に注力
 - 本日は推しのTシャツによる **正装** 登壇です
 
 +++
@@ -28,9 +28,9 @@
 
 ### PyConJP 2019で募集中
 
-- [**ビギナーセッション**]()（〜7/7）
+- [**ビギナーセッション**](https://pyconjp.blogspot.com/2019/06/beginner-session-cfp.html)（〜7/7）
 - [LT&ポスター](https://pyconjp.blogspot.com/2019/06/pycon-jp-2019-pycon-jp-2019-call-for.html)（〜7/7）
-- [トーク採択mtgのオブザーバー]()（6/16開催）
+- [トーク採択mtgのオブザーバー](https://pyconjp.blogspot.com/2019/06/2019-talk-adoption-mtg.html)（6/16開催）
 - [スポンサー](https://pyconjp.blogspot.com/2019/04/sponsor-application.html)
 - [スタッフ](https://pyconjp.blogspot.com/2019/03/pycon-jp-2019-staff-team.html)
 
@@ -39,7 +39,16 @@
 ### ビギナーセッションって、何よ
 
 - ＝Python入門者が中級者に進むきっかけとなるハンズオン
-- 登壇者を募集！また、ハンズオンの題材として扱ってほしいトピックも[フォーム]()から募集中！！
+- 登壇者を募集！また、ハンズオンの題材として扱ってほしいトピックも[フォーム](https://docs.google.com/forms/d/e/1FAIpQLSdL1fM8Q86qevqhWYDHmYDNSnxgjaVNpyeqI-gts1yMMRfD4Q/viewform)から募集中！！
+
++++
+
+### あなたとビギナーセッション
+
+できそうなところから参加してみてください！
+
+- 入門者：参加、また、中級者になるために知りたい題材リクエスト
+- 中級者以上：登壇、また、「これを知ったら中級者になれた」題材共有 |
 
 @css[fragment](宣伝≒周知にお時間いただき、ありがとうございました🙇‍)
 
@@ -75,10 +84,10 @@
 
 +++
 
-### 懇親会でプレゼント（じゃん献本）
+### お土産プレゼント
 
-- Django Congress ステッカー
-- （レビューした #dekiru_py ）
+- 質問者の方に、Django Congress ステッカー
+- （レビューした #dekiru_py を懇親会にじゃん献本します）
 
 +++
 
