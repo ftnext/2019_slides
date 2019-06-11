@@ -24,7 +24,9 @@
 
 ### 登壇したので告知させてください
 
+<span class="eighty-percent-img">
 ![PyCon JP 2019は9/16,17にカンファレンス開催です](stapy_Jun_congress_report/assets/PyConJP2019_anouncement_v2.png)
+</span>
 
 https://pycon.jp/2019/
 
@@ -43,7 +45,7 @@ https://pycon.jp/2019/
 ### ビギナーセッションって、何よ
 
 - ＝Python入門者が中級者に進むきっかけとなるハンズオン
-- 登壇者を募集！また、ハンズオンの題材として扱ってほしいトピックも[フォーム](https://docs.google.com/forms/d/e/1FAIpQLSdL1fM8Q86qevqhWYDHmYDNSnxgjaVNpyeqI-gts1yMMRfD4Q/viewform)から募集中！！
+- [登壇者を募集](https://www.papercall.io/pyconjp2019-beginner)！また、ハンズオンの題材として扱ってほしいトピックも[フォーム](https://docs.google.com/forms/d/e/1FAIpQLSdL1fM8Q86qevqhWYDHmYDNSnxgjaVNpyeqI-gts1yMMRfD4Q/viewform)から募集中！！
 
 +++
 
@@ -52,7 +54,7 @@ https://pycon.jp/2019/
 できそうなところから参加してみてください！
 
 - 入門者：参加、また、中級者になるために知りたい[題材リクエスト](https://docs.google.com/forms/d/e/1FAIpQLSdL1fM8Q86qevqhWYDHmYDNSnxgjaVNpyeqI-gts1yMMRfD4Q/viewform)
-- 中級者以上：[登壇](https://www.papercall.io/pyconjp2019-beginner)、また、「これを知ったら中級者になれた」[題材共有](https://docs.google.com/forms/d/e/1FAIpQLSdL1fM8Q86qevqhWYDHmYDNSnxgjaVNpyeqI-gts1yMMRfD4Q/viewform) |
+- <span>中級者以上：[登壇](https://www.papercall.io/pyconjp2019-beginner)、また、「これを知ったら中級者になれた」[題材共有](https://docs.google.com/forms/d/e/1FAIpQLSdL1fM8Q86qevqhWYDHmYDNSnxgjaVNpyeqI-gts1yMMRfD4Q/viewform)</span> |
 
 @css[fragment](告知にお時間いただき、ありがとうございました🙇‍)
 
