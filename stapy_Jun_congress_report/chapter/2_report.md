@@ -18,8 +18,9 @@ https://djangocongress.jp/
 ### 当日の雰囲気
 
 - [写真](https://photos.google.com/share/AF1QipNQQpVhhVIpzEs-dFVsTr90Uk4E6qvEIgvHOGK17PGze03tnXeL6vyVWEeILpc1GQ?key=LVN0LWo0ZWdTUVJlVGYyQkJJME5tQi1PSVZmVFR3)（以降のスライドでも使わせていただきました。多謝）
-- [#djangocongressツイートまとめ](https://togetter.com/li/1359565)
-- [関連アウトプット一覧]()（私見でまとめました）
+- [動画アーカイブ](https://www.youtube.com/playlist?list=PLfNCXSj_QJrquQyL-bSBdOFyvInP3vxqX)
+- [#djangocongressツイートまとめ](https://togetter.com/li/1359565) (by nikkie)
+- [関連アウトプット一覧]() (by nikkie)
 
 +++
 
@@ -44,7 +45,7 @@ https://djangocongress.jp/
 
 ---
 
-### 日本システム技研さんの活躍
+### 1.日本システム技研さんの活躍
 
 - stapy 長野支部＝GeekLab.Nagano
 - GeekLab.Naganoの運営が日本システム技研さん
@@ -69,7 +70,7 @@ https://djangocongress.jp/
 ### [Make Query Great Again!](https://www.slideshare.net/dattun/django-congress-jp-2019-make-query-great-again-slide-share)（Nakajimaさん）
 
 - Djangoのクエリセットについて
-- `filter`から始まり、無駄なSQLをなくすやり方まで(`select_related`や`prefetch_related`)
+- 基本(`filter`)から応用(`select_related`や`prefetch_related`で無駄なSQLをなくす)まで
 - *一番盛り上がったトーク（nikkie談）*
 
 +++
@@ -82,8 +83,8 @@ https://djangocongress.jp/
 
 ### [Djangoでのメール送信 - 設定からテストまで](https://speakerdeck.com/thinkami/djangocongress-jp-2019-talk)（thinkAmiさん）
 
-- EmailBackend（送信手段）とEmailMessage（メールの情報）
-- 送信手段をカスタマイズして、Slack通知も可能（サーバでエラーが発生したら通知する）
+- メール送信全般：送信手段とメールメッセージ
+- 拡張性：送信手段をカスタマイズして、Slack通知も可能（サーバでエラーが発生したら通知する）
 - *取り組む必要がある箇所だったのでありがたい（nikkie談）*
 
 +++
@@ -108,7 +109,7 @@ https://djangocongress.jp/
 
 ---
 
-### nikkie 一推しトーク
+### 2.nikkie 一推しトーク
 
 +++
 
@@ -121,7 +122,7 @@ https://djangocongress.jp/
 ### [現場で使える Django のセキュリティ対策](https://speakerdeck.com/akiyoko/django-security-measures-for-business-djangocon-jp-2019)（akiyokoさん）
 
 - 現場で使えるDjangoの教科書シリーズ（[基礎編](https://www.amazon.co.jp/dp/4802094744)・[実践編](https://www.amazon.co.jp/dp/B07L3DRGBT/)・[DRF](https://booth.pm/ja/items/1314617)）の著者の方です
-- IPA「安全なウェブサイトの作り方」や[徳丸本](https://www.amazon.co.jp/dp/4797393165)を引きながら、Djangoで必要な設定を解説
+- IPA「安全なウェブサイトの作り方」や[徳丸本](https://www.amazon.co.jp/dp/4797393165)を引きながら、Djangoで必要なセキュリティ設定を解説
 - *Djangoではセキュリティがどの程度まで用意されているかがつかめました（nikkie談）*
 
 +++

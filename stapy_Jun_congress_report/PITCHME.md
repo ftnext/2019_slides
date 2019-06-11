@@ -1,13 +1,15 @@
-## Django Congress 2019 レポート
+## Django Congress 2019<br>レポート
 #### みんなのPython勉強会#46 (2019/06/12) nikkie
 
 ---
 
 ### このトークでは
 
-5月18日に東京で開催されたDjango Congress 2019 カンファレンスデーのレポートをお送りします。
+5月18日に東京で開催されたDjangoCongress JP 2019 カンファレンスデーのレポートをお送りします。
 
-登壇（「[Django Girls Blogのネクストステップ](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step)」）の話も少し扱います
+登壇してチュートリアルの次の話をしてきました（「[Django Girls Blogのネクストステップ](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step)」）
+
+@img[span-30](stapy_Jun_congress_report/assets/nikkie.jpg)
 
 +++
 
@@ -15,21 +17,23 @@
 
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
 - [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳(2018/05~)、Workshopコーチ
-- 最近はPyConJP 2019 スタッフ活動に注力
+- 私の熱いPyCon JP 2019スタッフ活動、はじめてます！
 - 本日は推しのTシャツによる **正装** 登壇です
 
 +++
 
-### 登壇したので宣伝させてください
+### 登壇したので告知させてください
 
-![PyCon JP 2019は9/16,17にカンファレンス開催です](pynyumon_May_mokumoku_teach/assets/PyConJP2019_anouncement.png)
+![PyCon JP 2019は9/16,17にカンファレンス開催です](stapy_Jun_congress_report/assets/PyConJP2019_anouncement_v2.png)
+
+https://pycon.jp/2019/
 
 +++
 
 ### PyConJP 2019で募集中
 
-- [**ビギナーセッション**](https://pyconjp.blogspot.com/2019/06/beginner-session-cfp.html)（〜7/7）
 - [LT&ポスター](https://pyconjp.blogspot.com/2019/06/pycon-jp-2019-pycon-jp-2019-call-for.html)（〜7/7）
+- [**ビギナーセッション**](https://pyconjp.blogspot.com/2019/06/beginner-session-cfp.html)（〜7/7）
 - [トーク採択mtgのオブザーバー](https://pyconjp.blogspot.com/2019/06/2019-talk-adoption-mtg.html)（6/16開催）
 - [スポンサー](https://pyconjp.blogspot.com/2019/04/sponsor-application.html)
 - [スタッフ](https://pyconjp.blogspot.com/2019/03/pycon-jp-2019-staff-team.html)
@@ -47,10 +51,10 @@
 
 できそうなところから参加してみてください！
 
-- 入門者：参加、また、中級者になるために知りたい題材リクエスト
-- 中級者以上：登壇、また、「これを知ったら中級者になれた」題材共有 |
+- 入門者：参加、また、中級者になるために知りたい[題材リクエスト](https://docs.google.com/forms/d/e/1FAIpQLSdL1fM8Q86qevqhWYDHmYDNSnxgjaVNpyeqI-gts1yMMRfD4Q/viewform)
+- 中級者以上：[登壇](https://www.papercall.io/pyconjp2019-beginner)、また、「これを知ったら中級者になれた」[題材共有](https://docs.google.com/forms/d/e/1FAIpQLSdL1fM8Q86qevqhWYDHmYDNSnxgjaVNpyeqI-gts1yMMRfD4Q/viewform) |
 
-@css[fragment](宣伝≒周知にお時間いただき、ありがとうございました🙇‍)
+@css[fragment](告知にお時間いただき、ありがとうございました🙇‍)
 
 +++
 
@@ -84,18 +88,15 @@
 
 +++
 
-### お土産プレゼント
+### 質問者の方に、ステッカープレゼント
 
-- 質問者の方に、Django Congress ステッカー
-- （レビューした #dekiru_py を懇親会にじゃん献本します）
+![DjangoCongress JP 2019ステッカー](stapy_Jun_congress_report/assets/djangocongress_logo2019.png)
 
 +++
 
-### 最後なので宣伝させてください
+### 最後に：ビギナーセッション、LT・ポスター、そしてスタッフ募集中！
 
-ビギナーセッション、LT・ポスター、そしてスタッフ募集中！
-
-![](pynyumon_May_mokumoku_teach/assets/PyConJP2019_anouncement.png)
+![](stapy_Jun_congress_report/assets/PyConJP2019_anouncement_v2.png)
 
 +++
 
