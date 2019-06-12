@@ -20,7 +20,7 @@ https://djangocongress.jp/
 - [写真](https://photos.google.com/share/AF1QipNQQpVhhVIpzEs-dFVsTr90Uk4E6qvEIgvHOGK17PGze03tnXeL6vyVWEeILpc1GQ?key=LVN0LWo0ZWdTUVJlVGYyQkJJME5tQi1PSVZmVFR3)（以降のスライドでも使わせていただきました。多謝）
 - [動画アーカイブ](https://www.youtube.com/playlist?list=PLfNCXSj_QJrquQyL-bSBdOFyvInP3vxqX)
 - [#djangocongressツイートまとめ](https://togetter.com/li/1359565) (by nikkie)
-- [関連アウトプット一覧]() (by nikkie)
+- [関連アウトプット一覧](https://qiita.com/ftnext/items/37eaa01908d267780452) (by nikkie)
 
 +++
 
@@ -83,8 +83,8 @@ https://djangocongress.jp/
 
 ### [Djangoでのメール送信 - 設定からテストまで](https://speakerdeck.com/thinkami/djangocongress-jp-2019-talk)（thinkAmiさん）
 
-- メール送信全般：送信手段とメールメッセージ
-- 拡張性：送信手段をカスタマイズして、Slack通知も可能（サーバでエラーが発生したら通知する）
+- EmailBackend（送信手段）とEmailMessage（メールの情報）
+- メールだけにとどまらず、送信手段をカスタマイズして、Slack通知も可能（エラー通知）
 - *取り組む必要がある箇所だったのでありがたい（nikkie談）*
 
 +++

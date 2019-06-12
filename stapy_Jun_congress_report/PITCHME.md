@@ -16,6 +16,7 @@
 ### お前、誰よ (About nikkie)
 
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
+- 2018/09〜 stapy 4代目LT王子
 - [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳(2018/05~)、Workshopコーチ
 - 私の熱いPyCon JP 2019スタッフ活動、はじめてます！
 - 本日は推しのTシャツによる **正装** 登壇です
