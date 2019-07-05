@@ -54,12 +54,12 @@
 
 @snap[west span-50 text-center]
 ### ドラフト記事一覧
-![ログインしたユーザはドラフト記事の一覧が見られます](django_congress_2019_blog_next_step/assets/part1/5_post_edit.png)
+![ログインしたユーザはドラフト記事の一覧が見られます](django_congress_2019_blog_next_step/assets/part1/6_draft_post_list.png)
 @snapend
 
 @snap[east span-50 text-center]
 ### 記事の編集
-![ログインしたユーザは、ドラフト記事も公開記事も編集できます](django_congress_2019_blog_next_step/assets/part1/6_draft_post_list.png)
+![ログインしたユーザは、ドラフト記事も公開記事も編集できます](django_congress_2019_blog_next_step/assets/part1/5_post_edit.png)
 @snapend
 
 +++

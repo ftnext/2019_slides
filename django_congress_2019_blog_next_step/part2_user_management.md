@@ -201,7 +201,7 @@ class Register(CreateView):
     success_url = reverse_lazy('blog:post_list')
 ```
 
-ref:『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6TRJ)）』
+ref:『[Building Django 2.0 Web Application](https://www.amazon.co.jp/dp/B079DW6TRJ)』
 
 +++
 

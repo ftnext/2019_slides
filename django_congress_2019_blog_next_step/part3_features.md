@@ -228,6 +228,8 @@ def parse_keyword(querydict):
     return keyword if keyword else ''
 ```
 
+templatetagsの中に`__init__.py`（空）も作りましょう
+
 +++
 
 ### テンプレートでカスタムフィルタを使う
@@ -477,7 +479,7 @@ class Post(models.Model):
 
 ---
 
-### まとめ：ユーザまわりを実装
+### まとめ：この機能、どう作る？
 
 - ListViewを使ったページネーション
 - 検索 + カスタムフィルタ／タグ
