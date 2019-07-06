@@ -46,6 +46,10 @@
 @ulend
 @snapend
 
+@snap[south span-100]
+[ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
+@snapend
+
 +++
 
 ### ブログアプリでできること
@@ -60,7 +64,7 @@
 
 - まず、[Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)に取り組む
 - その後、Extensionsの「[ウェブサイトにもっと機能を追加しよう!](https://tutorial-extensions.djangogirls.org/ja/homework/)」「[ウェブサイトをセキュアにする](https://tutorial-extensions.djangogirls.org/ja/authentication_authorization/)」に取り組む
-- それでは、ブログアプリを作り直していきます（※お見せした写真は作り直したブログアプリのものです）
+- それでは、ブログアプリを作り直していきます @css[omitted-item](（※お見せした写真は作り直したブログアプリのものです）)
 
 +++
 
