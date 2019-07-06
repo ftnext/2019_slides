@@ -22,7 +22,7 @@
 
 ---?color=#ccffcc
 
-@snap[north]
+@snap[north span-100]
 ### デモ：ブログアプリでできること
 @snapend
 
@@ -237,3 +237,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.local')
 
 - [名前空間（テンプレート、URL）](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step#/6)
 - [共通テンプレートの配置](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step#/8/1)
+
+興味がある方は初演スライドをご確認ください
