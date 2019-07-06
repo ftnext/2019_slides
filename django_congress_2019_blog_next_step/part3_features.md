@@ -304,9 +304,8 @@ class Post(models.Model):
 ### 参考：さらに進んだ権限
 
 「[Authorization in Django](https://gitpitch.com/hirokiky/gitpitch?p=2019djangocongress)」  
-DjangoCongress 2019 kyさん
-
-+++
+DjangoCongress 2019 kyさん  
+[YouTube](https://www.youtube.com/watch?v=gaS2vi4wOMQ)
 
 +++?color=#ccffcc
 
