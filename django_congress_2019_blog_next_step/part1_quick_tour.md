@@ -20,60 +20,29 @@
 1. ブログアプリでできることを概観
 2. 作り直しに関わる3トピック
 
----
+---?color=#ccffcc
 
-### ブログアプリでできること
-
-スクリーンショットをもとに紹介します
-
-+++
+@snap[north]
+### デモ：ブログアプリでできること
+@snapend
 
 @snap[west span-50 text-center]
-### 公開記事一覧
-![だれでも公開記事の一覧が見られます](django_congress_2019_blog_next_step/assets/part1/1_post_list.png)
-@snapend
-
-@snap[east span-50 text-center]
-### 公開記事詳細
-![だれでも公開記事の詳細が見られます](django_congress_2019_blog_next_step/assets/part1/2_post_detail.png)
-@snapend
-
-+++
-
-@snap[west span-50 text-center]
-### ログイン
-![記事を管理するにはログインが必要です](django_congress_2019_blog_next_step/assets/part1/3_login.png)
-@snapend
-
-@snap[east span-50 text-center]
-### 記事作成
-![ログインしたユーザはドラフト記事が作れます](django_congress_2019_blog_next_step/assets/part1/4_new_post.png)
-@snapend
-
-+++
-
-@snap[west span-50 text-center]
-### ドラフト記事一覧
-![ログインしたユーザはドラフト記事の一覧が見られます](django_congress_2019_blog_next_step/assets/part1/6_draft_post_list.png)
-@snapend
-
-@snap[east span-50 text-center]
-### 記事の編集
-![ログインしたユーザは、ドラフト記事も公開記事も編集できます](django_congress_2019_blog_next_step/assets/part1/5_post_edit.png)
-@snapend
-
-+++
-
-@snap[west span-50 text-center]
-### ドラフト記事の公開
-![ログインしたユーザはドラフト記事を公開できます](django_congress_2019_blog_next_step/assets/part1/7_draft_detail.png)
-@snapend
-
-@snap[east span-50 text-center]
-### 記事の状態
 @ul[](false)
-- 作成されたら **ドラフト**（公開日が未設定）
-- ドラフトを **公開** すると一覧に現れる（公開日を設定）
+
+- 公開された記事の一覧
+- 公開された記事の詳細
+- 記事を作るためにログイン
+
+@ulend
+@snapend
+
+@snap[east span-50 text-center]
+@ul[](false)
+
+- ドラフト記事を作成
+- ドラフト記事を編集・公開
+- ※ドラフト記事はログインしないと見えない
+
 @ulend
 @snapend
 
@@ -98,7 +67,7 @@
 ### 作り直しの3トピック
 
 1. プロジェクト作成
-2. 名前空間(namespace)
+2. <span class="omitted-item">名前空間(namespace)</span>
 3. settings.pyの分割
 
 [ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
@@ -108,7 +77,7 @@
 ### 作り直しの3トピック
 
 1. **プロジェクト作成**
-2. 名前空間(namespace)
+2. <span class="omitted-item">名前空間(namespace)</span>
 3. settings.pyの分割
 
 [ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
@@ -168,80 +137,7 @@ djangogirls  # ここでstartproject
 ### 作り直しの3トピック
 
 1. プロジェクト作成
-2. **名前空間(namespace)**
-3. settings.pyの分割
-
-[ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
-
-+++
-
-### 名前空間
-
-- テンプレートの名前空間
-- URLの名前空間
-
-+++
-
-### テンプレートの名前空間
-
-- `blog/templates/blog/post_list.html` という配置のこと
-- アプリのディレクトリ内のtemplatesディレクトリに、**アプリ名（blog）のディレクトリを作ってから**、テンプレートを配置する
-- Django Girls Tutorialでは [HTML 入門](https://tutorial.djangogirls.org/ja/html/)
-
-+++
-
-### なぜテンプレートで名前空間を使うのか
-
-- Djangoがテンプレートを探す（まず見つかったものを使う）（ref:[TEMPLATES](https://docs.djangoproject.com/en/2.2/ref/settings/#templates)）
-- アプリは複数作られるが、アプリ名が一致することはない（`python manage.py startapp app_name`）
-- テンプレート名とアプリ名をセットにすることで、**重複しない**
-- ref: [はじめての Django アプリ作成、その 3](https://docs.djangoproject.com/ja/2.2/intro/tutorial03/)「テンプレートの名前空間」
-
-+++
-
-### URLの名前空間
-
-- URLにも名前空間を導入（URLをpathの名前で探す）
-- blog/urls.pyに`app_name`という変数を定義する
-
-```python
-from django.urls import path
-from . import views
-
-app_name = 'blog'  # URLの名前空間
-urlpatterns = [
-    path('', views.post_list, name='post_list'),
-]
-```
-
-+++
-
-### URLの名前空間の使い方
-
-- <app_name>:<path name>（コロンでつなぐ）
-- ref: [はじめての Django アプリ作成、その 3](https://docs.djangoproject.com/ja/2.2/intro/tutorial03/)「URL名の名前空間」
-
-&nbsp; | &nbsp;
------ | -----
-`app_name` 導入前 | `{% url 'post_list'}`
-`app_name` 導入後 | `{% url 'blog:post_list'}`
-
-+++
-
-### URLの名前空間の使いどころ
-
-- テンプレートのurlタグ `{% url %}`
-- ビューのredirectの引数 `redirect('blog:post_list')`
-- settings.pyの定数 `LOGIN_REDIRECT_URL = 'blog:post_list'`
-
-pathのnameを使うことで、urls.pyだけの変更でURLが変更可能に
-
----
-
-### 作り直しの3トピック
-
-1. プロジェクト作成
-2. 名前空間(namespace)
+2. <span class="omitted-item">名前空間(namespace)</span>
 3. **settings.pyの分割**
 
 [ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
@@ -331,83 +227,13 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings.local')
 ### Quick Tour まとめ
 
 - ブログアプリでできることを紹介
-- 作り直しに着手。3点共有
+- 作り直しに着手。2点共有
   - プロジェクト作成
-  - 名前空間(urls.pyの`app_name`)
   - settings.pyの分割
 
-+++
++++?color=#ccffcc
 
-### 追加トピック
+### 初演から省略したトピック
 
-- **共通テンプレートの配置**
-
-[ソースコード tag:1-tutorial_quick_tour](https://github.com/ftnext/nextstep_djangogirls_tutorial/releases/tag/1-tutorial_quick_tour)
-
-時間に余裕がある場合のみ扱います
-
-+++
-
-### 共通テンプレート
-
-- Django Girls Tutorial 「[テンプレートを拡張しよう](https://tutorial.djangogirls.org/ja/template_extending/)」
-- `blog/templates/blog/post_list.html`と配置しているが、manage.pyと同じ階層にtemplatesフォルダを作り、その中に置く
-- blog以外のアプリでも使う意図
-
-+++
-
-### 共通テンプレート配置
-
-```
-apps  # = BASE_DIR
-├── blog
-│   └── templates  # ブログアプリでのみ使うテンプレート
-├── manage.py
-├── mysite
-├── static
-│   └── css
-└── templates  # 共通テンプレートを置く
-    └── base.html
-```
-
-+++
-
-### 配置換えに伴って必要な設定変更
-
-- settings.pyのTEMPLATESの[DIRS](https://docs.djangoproject.com/en/2.2/ref/settings/#dirs)
-- 各アプリのtemplatesフォルダに加えて、manage.pyと同階層のtemplatesフォルダのテンプレートも使うと設定
-
-```python
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [  # 変更前は空のリスト[]だった
-            os.path.join(BASE_DIR, 'templates'),
-        ],
-        'APP_DIRS': True,
-        # 省略
-    },
-]
-```
-
-+++
-
-### 合わせて、CSSも配置換え
-
-- CSSを共通テンプレートで使うので、manage.pyと同階層にstaticディレクトリを作る
-- [STATICFILES_DIRS](https://docs.djangoproject.com/en/2.2/ref/settings/#staticfiles-dirs)という変数を定義し、manage.pyと同階層のstaticディレクトリを使う設定
-
-```python
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-# collectstaticされるディレクトリは、manage.pyと同階層のstaticとは別のディレクトリにする
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-```
-
-+++
-
-### テンプレートでの呼び出し方
-
-- `{% extends 'base.html' %}` （blog/を前につけなくてよい）
-- `{% static 'css/blog.css' %}`
+- [名前空間（テンプレート、URL）](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step#/6)
+- [共通テンプレートの配置](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step#/8/1)
