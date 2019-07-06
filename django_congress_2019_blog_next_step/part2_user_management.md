@@ -436,6 +436,7 @@ class MyRegisterForm(UserCreationForm):
 - Djangoに用意されたクラスベースビューを設定変更／処理の上書きをして使う
   - ジェネリックビュー
   - 認証ビュー
+- 手を動かしたい方へ：[6月に開催したハンズオン](https://gitpitch.com/ftnext/2019_slides/master?p=django_girls_Jun_user_register_handson)
 
 +++
 
