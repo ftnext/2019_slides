@@ -1,14 +1,13 @@
-## Django Girls Blogのネクストステップ
+## 再演：Django Girls Blogのネクストステップ
 ## 〜実務レベルへ橋渡し〜
-#### Django Congress 2019 nikkie
+#### モグモグDjango(2019/07/06) nikkie
 
----
+---?color=#ccffcc
 
-### Dedication（献辞）
+### 再演：Django Girls Blogのネクストステップ
 
-やりたいことに取り組むことをいつも応援してくれる両親に本発表を捧げます。
-
-〜 Mother's Day🌹 & Father's Day 〜
+- 5月(初演)の[スライド](https://gitpitch.com/ftnext/2019_slides/master?p=django_congress_2019_blog_next_step)、[YouTube](https://www.youtube.com/watch?v=KjJLB9Up0SQ)
+- 内容を絞った代わりに、デモを追加して構成しました
 
 +++
 
@@ -16,8 +15,18 @@
 
 - Alias @ftnext: [Twitter](https://twitter.com/ftnext), [はてなブログ](http://nikkie-ftnext.hatenablog.com/)
 - Python歴1年半(2017/11頃〜) 実務ではWeb開発(Flask)、機械学習
-- 2018/05~ [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/) 翻訳、Workshopコーチ
-- Django Girls Tutorialをベースにしたハンズオン開催 [2019/01](https://gitpitch.com/ftnext/2019_slides/master?p=elv_Jan_django_errorfriends/), [2019/02](https://gitpitch.com/ftnext/2019_slides/master?p=elv_Feb_django_developcompass/)
+- 2018/05~ [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/) 翻訳、Workshopコーチ、Tutorialをベースにハンズオン（[2019/01](https://gitpitch.com/ftnext/2019_slides/master?p=elv_Jan_django_errorfriends/), [2019/02](https://gitpitch.com/ftnext/2019_slides/master?p=elv_Feb_django_developcompass/)）
+- 私の熱いPyCon JP 2019スタッフ活動、はじめてます！
+
++++?color=#ccffcc
+
+### [PyCon JP] ポスター・LT 7/7まで
+
+<span class="eighty-percent-img">
+![PyCon JP 2019は9/16,17にカンファレンス開催。チケットも売り出しています](stapy_Jun_congress_report/assets/PyConJP2019_anouncement_v2.png)
+</span>
+
+https://pycon.jp/2019/
 
 +++
 
@@ -25,6 +34,7 @@
 
 1. Django Girls Tutorialに取り組んだことのある方🙋‍
 2. 実務や個人開発でDjangoを使っている方🙋‍
+3. DjangoCongressでこのトークを聞いた方🙋‍
 
 ---
 
@@ -132,9 +142,9 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 
 ### Django Girls Blogのネクストステップ
 
-- ログイン機能まで：プロジェクト作成、名前空間、settings.py分割
+- ログイン機能まで：プロジェクト作成、@css[omitted-item](名前空間)、settings.py分割
 - ユーザ管理を追加：ユーザ登録、パスワード再設定
-- よく見かける機能：ページネーション、カスタムタグ／フィルタ、権限
+- よく見かける機能：ページネーション、@css[omitted-item](カスタムタグ／フィルタ)、権限
 
 +++
 
@@ -197,6 +207,7 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 - 実務レベル = 作りたいアプリをDjangoで作れる状態
 - GitHubで公開されたコード、先達のブログ、Djangoドキュメント・ソースコード、書籍
 - 「手を動かすことは、エンジニアとしての自分の未来を創ること」（nikkie語録）
+- 仮説：ジェネリックビューに用意された機能を一から実装できる＝実務レベル
 
 +++
 
@@ -210,8 +221,7 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 
 ### Special Thanks
 
-- 登壇を応援してくださった勤務先のチームメンバー
-- Support By @gitpitch(David Russell)
+- 再演の場を用意してくださった モグモグDjango運営の皆さま
 - 劇場で素敵な演奏🎺を披露している北宇治高校吹奏楽部メンバー
 - そして、これまで教える機会を提供してくださった、Workshopやハンズオンの参加者の方々に感謝申し上げます
 
@@ -219,6 +229,6 @@ Django Girls TutorialはDjangoのチュートリアルの一例として挙げ�
 
 ### ご清聴ありがとうございました
 
-休憩時間やパーティーなどでフィードバックいただけると嬉しいです😄
+気になる点ありましたら、もくもく会の場でお気軽にお知らせください😄
 
 Contact: [Twitter @ftnext](https://twitter.com/ftnext)／[匿名質問箱](https://peing.net/ja/ftnext)
