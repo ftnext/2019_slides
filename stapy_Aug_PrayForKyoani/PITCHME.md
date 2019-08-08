@@ -47,7 +47,7 @@ https://pycon.jp/2019/
 - 西屋さん
 - 石田さん
 
-+++?color=#dddddd
++++?color=#222222
 
 +++?color=#777777
 
