@@ -14,7 +14,9 @@
 
 ### 登壇したので告知させてください
 
-PyCon JPのWebサイト、リニューアルしました！
+<span class="eighty-percent-img">
+![PyCon JPのWebサイト、リニューアルしました！](stapy_Aug_PrayForKyoani/assets/pyconjp_web_renewal.png)
+</span>
 
 https://pycon.jp/2019/
 
@@ -22,10 +24,10 @@ https://pycon.jp/2019/
 
 ### PyCon JP 2019
 
-- 9/14 スプリント
-- 9/15 チュートリアル
-- 9/16-17 カンファレンス
-- 託児室あります。スタッフ募集中
+- [9/14 スプリント](https://pyconjp.connpass.com/event/136558/)
+- [9/15 チュートリアル](https://pyconjp.connpass.com/event/136606/)（もう満席の講座あり！）
+- [9/16-17 カンファレンス](https://pyconjp.connpass.com/event/135734/)（ビジネスチケット残60！）
+- 4日とも[託児室](https://pyconjp.connpass.com/event/137599/)あります。スタッフ興味あればお声がけください
 
 ---
 
@@ -37,17 +39,17 @@ https://pycon.jp/2019/
 
 京都アニメーション放火事件
 
-+++
++++?color=#aaaaaa
 
-### めのまえブラックアウト
+### めのまえブラックアウト 🍨
 
-西屋さんはじめ　アイスクリーム入れる
+- 武本さん
+- 西屋さん
+- 石田さん
 
-+++
++++?color=#dddddd
 
-黒いスライド：だいぶこたえています
-
-+++
++++?color=#777777
 
 ### 暗闇の中で
 
@@ -61,13 +63,14 @@ https://pycon.jp/2019/
 
 +++
 
-つまりこういうこと（画像を示す）
+![つまり、PrayForKyoaniと入った画像をPythonで作るということです](stapy_Aug_PrayForKyoani/assets/pray_candles.jpg)
 
 ---
 
 ### python4kyoani パッケージ
 
 - （急遽）リリース v0.9.0
+- https://pypi.org/project/python4kyoani/
 - 作成者は私(nikkie)です
 
 +++
@@ -93,13 +96,15 @@ https://pycon.jp/2019/
 
 ### LT：京アニへの祈りをPythonでも捧げよう
 
-- 自作のpython4kyoaniパッケージを紹介
+- PrayForKyoani画像を作れるpython4kyoaniパッケージを紹介
 - 現在最小構成で、ブラッシュアップできる箇所は多い（エラー処理など）
 - これを使って、バーチャル献花台サイトをDjangoで構築しようかと思っています
 
 +++
 
 # PrayForKyoani
+
+ご冥福ならびにご回復をお祈り申し上げます
 
 +++
 
