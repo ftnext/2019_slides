@@ -3,6 +3,7 @@ GitPitchで作成したスライドの公開用リポジトリです。
 
 # スライド一覧
 
+- [京アニへの祈りをPythonでも捧げよう](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Aug_PrayForKyoani) @[みんなのPython勉強会#48 (2019/08)](https://startpython.connpass.com/event/124253/)
 - [合同誌執筆でKPT！](https://gitpitch.com/ftnext/2019_slides/master?p=spz_Jun_techbookfest_lt) @[サポーターズ勉強会 技術書初チャレンジ感想LT (2019/06)](https://supporterzcolab.com/event/864/)
 - LT: [プロポーザルを出すということ](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Jun_lt_proposal) @[みんなのPython勉強会#46 (2019/06)](https://startpython.connpass.com/event/124251/)
 - [Django Congress 2019 レポート](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Jun_congress_report) @[みんなのPython勉強会#46 (2019/06)](https://startpython.connpass.com/event/124251/)
