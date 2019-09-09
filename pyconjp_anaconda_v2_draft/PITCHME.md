@@ -150,9 +150,24 @@ imagesize                 1.1.0                    pypi_0    pypi
 
 ### condaが4.6より前は併用できない
 
-二重管理になって、環境が壊れてしまう
+二重管理になってしまう（環境が壊れる要因に）
 
-TODO：Dockerイメージが1GBあるので、自宅の回線で確認する
+```
+(some_pip_test) $ conda --version
+conda 4.4.10
+(some_pip_test) $ conda list
+# Name                    Version                   Build  Channel
+
+imagesize                 1.0.0                    py37_0
+
+(some_pip_test) $ pip install -U imagesize
+(some_pip_test) $ conda list
+# Name                    Version                   Build  Channel
+
+imagesize                 1.1.0                     <pip>
+imagesize                 1.0.0                    py37_0  
+
+```
 
 +++
 
@@ -160,7 +175,9 @@ TODO：Dockerイメージが1GBあるので、自宅の回線で確認する
 
 `conda update conda`
 
-TODO：自宅の回線で入れたイメージで実際に動かして確認（影響はあるのか。パッケージのバージョンも上がる？）
+(base)で実行する  
+(base)に入っているパッケージのバージョンが上がる（固定する方法もある）  
+二重管理の表示状態が解決された（見た目の変更だけの可能性）
 
 https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-conda
 
