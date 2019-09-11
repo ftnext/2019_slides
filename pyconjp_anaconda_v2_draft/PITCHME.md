@@ -88,7 +88,19 @@ Note:
 
 +++
 
+### 補足：Pythonをインストールする手段は1つでOK
+
+- AnacondaでPythonをインストールしたなら、python.orgなど他の手段は使う必要なし
+- 本やWeb記事は読み替えましょう
+- 複数の手段でPythonをインストールしても、1つのコマンドラインから使えるPythonは1つだけ
+
++++
+
 ### パッケージとは
+
+![私たちはインターネットからパッケージ（Pythonファイルやそれを入れたフォルダのアーカイブファイル）をダウンロードし、インストールして使う](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.001.png)
+
+Note:
 
 - 私たちはインターネットからパッケージをダウンロードし、インストールして使う
 - パッケージ ≒ Pythonファイルやそれを入れたフォルダをアーカイブにしたファイル（ref: [Distribution Package](https://packaging.python.org/glossary/#term-distribution-package)）
@@ -97,6 +109,10 @@ Note:
 
 ### パッケージの配布元は色々
 
+![PyPIというリポジトリやAnacondaを提供する会社が管理するリポジトリがある](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.002.png)
+
+Note:
+
 - PyPI
 - Anaconda社（Anacondaの提供元）管理
 
@@ -104,8 +120,24 @@ Note:
 
 ### パッケージを管理するツール：パッケージマネージャ
 
-- Anacondaに付属するパッケージマネージャが`conda`（コマンド）
+![リポジトリからパッケージをダウンロードするにはパッケージマネージャというツールを使う](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.003.png)
+
+Note:
+
+リポジトリからパッケージをダウンロードするにはパッケージマネージャというツールを使う
+
++++
+
+### パッケージマネージャも複数ある
+
+![Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`、Anacondaに付属するパッケージマネージャが`conda`](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.004.png)
+
+パッケージの形式が異なるのが一因（後述）
+
+Note:
+
 - Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`
+- Anacondaに付属するパッケージマネージャが`conda`（コマンド）
 
 +++
 
@@ -113,8 +145,8 @@ Note:
 
 パッケージマネージャ | リポジトリ | パッケージ数
 ----- | ----- | -----
-`conda` | PyPI | 多い（開発者に公開）
-`pip` | repo.anaconda.com | 少ない（Anaconda社が管理）
+`pip` | PyPI | 多い（開発者に公開）
+`conda` | repo.anaconda.com | 少ない（Anaconda社が管理）
 
 ---
 
@@ -128,22 +160,31 @@ Note:
 
 ### `conda`はパッケージが少ない？
 
-- `conda-forge`
-- 「PyPIのAnacondaエコシステム版」
-- TODO：ドキュメントリンク
+- 回答：[`conda-forge`](https://conda-forge.org/)
+- PyPIのAnacondaにおけるPyPIのようなリポジトリ ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
+- デフォルトのAnaconda社管理リポジトリ以外を対象にする際は`--channnel`(`-c`)オプション：`conda install scipy --channel conda-forge`
 
 +++
 
-### そうは言えども`pip`を使わざるを得ない
+### 最終手段`pip`
 
-- `conda-forge`にもないパッケージ
-- TODO：ドキュメントリンク
+- `conda-forge`にもパッケージがない場合、`pip`を使わざるを得ない ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages)
+- `pip install see`
+
+>The differences between pip and conda packages cause certain unavoidable limits in compatibility but conda works hard to be as compatible with pip as possible.
+
+Note:
+
+pipパッケージとcondaパッケージの違いが互換性に置いて避けられない制限をもたらす。
+condaはpip五巻となるように可能な限り対応している
 
 +++
 
 ### 気にしたい：パッケージの形式が異なる
 
 TODO：フォルダ構造を横に並べて見せたい
+
+ref: [`conda`で扱うパッケージ](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)、[`pip`で扱うパッケージ](https://packaging.python.org/tutorials/packaging-projects/)
 
 +++
 
@@ -157,17 +198,21 @@ TODO：フォルダ構造を横に並べて見せたい
 ### `conda`と`pip`の使い分け（方針）
 
 1. Anaconda社のリポジトリや`conda-forge`のパッケージを使う（`pip install`は`conda install`に読み替える）
-		- 極力`conda`を使うことで、`pip`向けパッケージが重複しにくく
+	- 極力`conda`を使うことで、`conda`向けパッケージと`pip`向けパッケージの重複を抑える
 2. `conda`で見つからない場合だけ、`pip`を使う（`pip`は最終手段）
+
++++
+
+![](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.005.png)
 
 +++
 
 ### なるべく`conda`コマンドを！
 
-```
-conda search
-conda install
-conda update
+```shell
+(base) $ conda search ...  # conda向けリポジトリでパッケージを検索
+(base) $ conda install ...
+(base) $ conda update ...  # conda向けリポジトリからパッケージをアップデート
 ```
 
 ---
@@ -180,23 +225,30 @@ conda update
 
 +++
 
-### Pythonを使っていくと出会う問題
+### Anacondaのbase環境のPythonを使っていくと
 
-- Anacondaのbase環境のPythonでアプリケーション開発
+![アプリケーションAの開発のために `conda install LibFoo=1.0`。別のアプリケーションBの開発のために `conda install LibFoo=2.0`。base環境にはLibFooのバージョンの一方しか入らない。。](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.006.png)
+
+Note:
+
 - アプリケーションAの開発のために `conda install LibFoo=1.0`
 - 別のアプリケーションBの開発のために `conda install LibFoo=2.0`
 - base環境にはLibFooのバージョンの一方しか入らない。。
 
 +++
 
-### 解決方法
+### 解決方法（Anacondaではない場合）
 
-- 解決方法として、標準のPythonでは「仮想環境」が[案内](https://docs.python.org/ja/3/tutorial/venv.html)される
+- 標準のPythonでは「仮想環境」が[案内](https://docs.python.org/ja/3/tutorial/venv.html)される
 - 標準モジュールvenvを使用する（Python3.3以降）
 
 +++
 
-### venvによる解決方法（TODO：あとで図にしたい）
+### venvによる解決方法（Anacondaではない場合）
+
+![それぞれのアプリケーションの開発用ディレクトリの下に仮想環境のディレクトリを作り、そこにインストール。仮想環境どうしは独立させる](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.007.png)
+
+Note:
 
 アプリケーションAの開発用ディレクトリの下に仮想環境のディレクトリを作る  
 アプリケーションAに必要なモジュールは全てそこにインストール
@@ -206,7 +258,7 @@ conda update
 
 +++
 
-### venvのコマンド例
+### venvのコマンド例（Anacondaではない場合）
 
 ```shell
 $ python3 -m venv tutorial-env  # 仮想環境作成(Linux, macOS前提)
@@ -227,15 +279,90 @@ $ source tutorial-env/bin/activate  # 仮想環境有効化(Linux, macOS前提)
 
 +++
 
-### 仮想環境の使い方（作成中）
+### (案1) 仮想環境の使い方
 
-```
-conda create -n ml_tf python=3.6 jupyter tensorflow
-conda activate ml_tf
-conda deactivate
+tensorflowを使うための環境を作る
+
+```shell
+(base) $ conda create -n ml_tf python=3.6 jupyter tensorflow
+(base) $ conda activate ml_tf
+(ml_tf) $  # tensorflowを使った開発
+(ml_tf) $ conda deactivate  # 開発終了後、base環境に戻す
+(base) $
 ```
 
-TODO：続くスライドは発表者ノートになりそう
+Note:
+
+- tensorflowはbaseには入っていない
+- `conda create`でPython3.6とnumpyが使える環境をmyenvという名前(`-n`)で作成
+- `conda activate`で仮想環境myenvを有効にする
+- `conda deactivate`で仮想環境myenvを無効にし、元の環境baseに戻す
+
++++
+
+### (案2) 便利なbase環境をなるべく安全に使う TODO検証
+
+- 例：base環境に`pip`でパッケージを入れたい
+- `conda create --clone base`
+- うまく動かなかったら捨てればいい。base環境に影響はない
+
+---
+
+### まとめ：Anaconda環境運用TIPS
+
+- `conda`を積極的に使ってパッケージ管理を。`pip`は最終手段
+- 仮想環境の考え方をAnacondaでも取り入れよう
+	- `conda create`で環境を分けると便利
+	- `conda clone`でbase環境を安全に使おう
+
++++
+
+### 語り
+
+- 繰り返しですが、Anacondaを薦めるトークではありません。思うに、環境構築の方法に優劣はない（Pythonでやりたいことができることが重要）
+- 動いていることが重要。なんとしても今すぐ直さなきゃいけないわけじゃない。次に構築する時、もっとうまくやろう🐴
+
++++
+
+### Appendix
+
+TODO：目次
+
++++
+
+### Special Thanks
+
+- 練習に付き合ってくださった方々（職場、コミュニティ）
+- 資料作成の場として利用させていただいたPythonのもくもく会（#pyhack, #rettypy）
+- これまでPythonを教える機会をくださった方々
+- PyCon JP 2018で「来年は登壇したい」と思った過去の自分
+- 素敵なアニメでリフレッシュを支えてくださる京都アニメーション
+
++++
+
+### ご清聴ありがとうございました
+
+Appendixが続きます
+
+---
+
+Appendix
+
+- 検証環境のバージョンを共有
+
++++
+
+condaコマンドでできること
+
++++
+
+### `conda`でできること（一例）
+
+- [`conda search scikit`](https://conda.io/projects/conda/en/latest/commands/search.html)：scikitを名前に含むパッケージを検索
+- [`conda install scikit-rf`](https://conda.io/projects/conda/en/latest/commands/install.html)：パッケージのインストール
+- マネージ（管理）するのはパッケージに限らず、Pythonのバージョンも管理できるのが特徴
+
+デフォルトでは、Anaconda社管理下のパッケージが対象（[各種一覧](https://docs.anaconda.com/anaconda/packages/pkg-docs/)）。（Appendixへ）
 
 +++
 
@@ -245,6 +372,7 @@ TODO：続くスライドは発表者ノートになりそう
 	- Python3.7とnumpyが使える環境をmyenvという名前で作成
 - `conda create -n myenv2 anaconda`
 	- base環境と同様に科学計算のパッケージが入った環境をmyenv2という名前で作成
+	- base環境と共通のパッケージが入るが、最新バージョンになる（固定も可能 TODOドキュメント）
 
 +++
 
@@ -283,61 +411,6 @@ ROOT_DIRの/envs下に仮想環境に対応するディレクトリが作成さ�
 ├── myenv2
 └── some_pip_test
 ```
-
----
-
-### まとめ：Anaconda環境運用TIPS
-
-- 仮想環境の考え方にならって、`conda create`で環境を分けると便利
-- `conda`を積極的に使ってパッケージ管理を。`pip`は最終手段
-
-+++
-
-### 語り
-
-- 繰り返しですが、Anacondaを薦めるトークではありません。思うに、環境構築の方法に優劣はない（Pythonでやりたいことができることが重要）
-- 動いていることが重要。なんとしても今すぐ直さなきゃいけないわけじゃない。次に構築する時、もっとうまくやろう🐴
-
-+++
-
-### Appendix
-
-TODO：目次
-
-+++
-
-### Special Thanks
-
-- 練習に付き合ってくださった方々（職場、コミュニティ）
-- 資料作成の場として利用させていただいたPythonのもくもく会（#pyhack, #rettypy）
-- PyCon JP 2018で「来年は登壇したい」と思った過去の自分
-- 素敵なアニメでリフレッシュを支えてくださる京都アニメーション
-
-+++
-
-### ご清聴ありがとうございました
-
-Appendixが続きます
-
----
-
-Appendix
-
-- 検証環境のバージョンを共有
-
-+++
-
-condaコマンドでできること
-
-+++
-
-### `conda`でできること（一例）
-
-- [`conda search scikit`](https://conda.io/projects/conda/en/latest/commands/search.html)：scikitを名前に含むパッケージを検索
-- [`conda install scikit-rf`](https://conda.io/projects/conda/en/latest/commands/install.html)：パッケージのインストール
-- マネージ（管理）するのはパッケージに限らず、Pythonのバージョンも管理できるのが特徴
-
-デフォルトでは、Anaconda社管理下のパッケージが対象（[各種一覧](https://docs.anaconda.com/anaconda/packages/pkg-docs/)）。（Appendixへ）
 
 +++
 
