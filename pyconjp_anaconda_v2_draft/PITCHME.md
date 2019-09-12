@@ -98,7 +98,9 @@ Note:
 
 ### パッケージとは
 
+<span class="eighty-percent-img">
 ![私たちはインターネットからパッケージ（Pythonファイルやそれを入れたフォルダのアーカイブファイル）をダウンロードし、インストールして使う](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.001.png)
+</span>
 
 Note:
 
@@ -109,7 +111,9 @@ Note:
 
 ### パッケージの配布元は色々
 
+<span class="eighty-percent-img">
 ![PyPIというリポジトリやAnacondaを提供する会社が管理するリポジトリがある](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.002.png)
+</span>
 
 Note:
 
@@ -120,7 +124,9 @@ Note:
 
 ### パッケージを管理するツール：パッケージマネージャ
 
+<span class="eighty-percent-img">
 ![リポジトリからパッケージをダウンロードするにはパッケージマネージャというツールを使う](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.003.png)
+</span>
 
 Note:
 
@@ -130,7 +136,9 @@ Note:
 
 ### パッケージマネージャも複数ある
 
+<span class="eighty-percent-img">
 ![Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`、Anacondaに付属するパッケージマネージャが`conda`](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.004.png)
+</span>
 
 パッケージの形式が異なるのが一因（後述）
 
@@ -203,7 +211,7 @@ ref: [`conda`で扱うパッケージ](https://docs.conda.io/projects/conda/en/l
 
 +++
 
-![](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.005.png)
+![本心を図で示しています](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.005.png)
 
 +++
 
@@ -227,7 +235,9 @@ ref: [`conda`で扱うパッケージ](https://docs.conda.io/projects/conda/en/l
 
 ### Anacondaのbase環境のPythonを使っていくと
 
+<span class="seventy-percent-img">
 ![アプリケーションAの開発のために `conda install LibFoo=1.0`。別のアプリケーションBの開発のために `conda install LibFoo=2.0`。base環境にはLibFooのバージョンの一方しか入らない。。](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.006.png)
+</span>
 
 Note:
 
@@ -246,7 +256,9 @@ Note:
 
 ### venvによる解決方法（Anacondaではない場合）
 
+<span class="seventy-percent-img">
 ![それぞれのアプリケーションの開発用ディレクトリの下に仮想環境のディレクトリを作り、そこにインストール。仮想環境どうしは独立させる](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.007.png)
+</span>
 
 Note:
 
