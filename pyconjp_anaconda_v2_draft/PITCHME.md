@@ -29,6 +29,14 @@
 
 +++
 
+### Anacondaの使い方が伝わっていなくて発生する問題（一例）
+
+あるパッケージをcondaコマンドでもpipコマンドでも管理したことが原因で、環境が壊れる
+
+tensorflowモジュールがimportできなくなりました（手順は後述）
+
++++
+
 ### トークの対象者
 
 - メイン＝「知る」： **Anacondaを使っているPython初学者の方**
@@ -49,7 +57,7 @@
 ### 目次
 
 - Anacondaを知ってみよう
-- 2本の刀：`conda`と`pip`
+- `conda`と`pip`を使い分けよう
 - 仮想環境を使ってみよう
 
 ---
@@ -57,7 +65,7 @@
 ### 目次
 
 - **Anacondaを知ってみよう**
-- 2本の刀：`conda`と`pip`
+- `conda`と`pip`を使い分けよう
 - 仮想環境を使ってみよう
 
 +++
@@ -120,6 +128,8 @@ Note:
 - PyPI
 - Anaconda社（Anacondaの提供元）管理
 
+といったリポジトリがある
+
 +++
 
 ### パッケージを管理するツール：パッケージマネージャ
@@ -136,16 +146,16 @@ Note:
 
 ### パッケージマネージャも複数ある
 
-<span class="eighty-percent-img">
-![Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`、Anacondaに付属するパッケージマネージャが`conda`](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.004.png)
+<span class="seventy-percent-img">
+![Anacondaに付属するパッケージマネージャが`conda`、Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.004.png)
 </span>
 
-パッケージの形式が異なるのが一因（後述）
+パッケージマネージャごとに、扱うパッケージの形式が異なる（後述）
 
 Note:
 
+- Anacondaに付属するパッケージマネージャが`conda`
 - Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`
-- Anacondaに付属するパッケージマネージャが`conda`（コマンド）
 
 +++
 
@@ -161,7 +171,7 @@ Note:
 ### 目次
 
 - Anacondaを知ってみよう
-- **2本の刀：`conda`と`pip`**
+- **`conda`と`pip`を使い分けよう**
 - 仮想環境を使ってみよう
 
 +++
@@ -169,8 +179,8 @@ Note:
 ### `conda`はパッケージが少ない？
 
 - 回答：[`conda-forge`](https://conda-forge.org/)
-- PyPIのAnacondaにおけるPyPIのようなリポジトリ ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
-- デフォルトのAnaconda社管理リポジトリ以外を対象にする際は`--channnel`(`-c`)オプション：`conda install scipy --channel conda-forge`
+- Anaconda社でなく、コミュニティが管理するリポジトリ ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
+- デフォルトのAnaconda社管理リポジトリ以外を対象にする際は`--channel`(`-c`)オプション：`conda install scipy --channel conda-forge`
 
 +++
 
@@ -184,11 +194,13 @@ Note:
 Note:
 
 pipパッケージとcondaパッケージの違いが互換性に置いて避けられない制限をもたらす。
-condaはpip五巻となるように可能な限り対応している
+condaはpip互換となるように可能な限り対応している
 
 +++
 
 ### 気にしたい：パッケージの形式が異なる
+
+同じパッケージを`conda`でも`pip`でもインストールしたら、二重管理となる
 
 TODO：フォルダ構造を横に並べて見せたい
 
@@ -198,7 +210,7 @@ ref: [`conda`で扱うパッケージ](https://docs.conda.io/projects/conda/en/l
 
 ### `conda`側も改善してきているものの
 
-- ドキュメントに`conda`4.6以降で`pip`と併用可能を示す[例](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/pip-interoperability.html)
+- `conda`4.6以降では、同じパッケージを`conda`でも`pip`でも管理できることを示す[例（ドキュメント）](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/pip-interoperability.html)
 - 手元で検証したところ、併用によるリスクが絶対にないとは言い切れない
 
 +++
@@ -211,16 +223,16 @@ ref: [`conda`で扱うパッケージ](https://docs.conda.io/projects/conda/en/l
 
 +++
 
-![本心を図で示しています](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.005.png)
+![使い分け方針を図で示しています](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.005.png)
 
 +++
 
 ### なるべく`conda`コマンドを！
 
 ```shell
-(base) $ conda search ...  # conda向けリポジトリでパッケージを検索
-(base) $ conda install ...
-(base) $ conda update ...  # conda向けリポジトリからパッケージをアップデート
+(base) $ conda search ... [-c conda-forge]  # conda向けリポジトリでパッケージを検索
+(base) $ conda install ... [-c conda-forge]
+(base) $ conda update ... [-c conda-forge]  # conda向けリポジトリからパッケージをアップデート
 ```
 
 ---
@@ -228,7 +240,7 @@ ref: [`conda`で扱うパッケージ](https://docs.conda.io/projects/conda/en/l
 ### 目次
 
 - Anacondaを知ってみよう
-- 2本の刀：`conda`と`pip`
+- `conda`と`pip`を使い分けよう
 - **仮想環境を使ってみよう**
 
 +++
@@ -236,12 +248,23 @@ ref: [`conda`で扱うパッケージ](https://docs.conda.io/projects/conda/en/l
 ### Anacondaのbase環境のPythonを使っていくと
 
 <span class="seventy-percent-img">
-![アプリケーションAの開発のために `conda install LibFoo=1.0`。別のアプリケーションBの開発のために `conda install LibFoo=2.0`。base環境にはLibFooのバージョンの一方しか入らない。。](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.006.png)
+![アプリケーションAの開発のために `conda install LibFoo=1.0`](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.006.png)
 </span>
 
 Note:
 
 - アプリケーションAの開発のために `conda install LibFoo=1.0`
+
++++
+
+### Anacondaのbase環境のPythonを使っていくと
+
+<span class="seventy-percent-img">
+![別のアプリケーションBの開発のために `conda install LibFoo=2.0`。base環境にはLibFooのバージョンの一方しか入らない。。](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.007.png)
+</span>
+
+Note:
+
 - 別のアプリケーションBの開発のために `conda install LibFoo=2.0`
 - base環境にはLibFooのバージョンの一方しか入らない。。
 
@@ -257,7 +280,7 @@ Note:
 ### venvによる解決方法（Anacondaではない場合）
 
 <span class="seventy-percent-img">
-![それぞれのアプリケーションの開発用ディレクトリの下に仮想環境のディレクトリを作り、そこにインストール。仮想環境どうしは独立させる](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.007.png)
+![それぞれのアプリケーションの開発用ディレクトリの下に仮想環境のディレクトリを作り、そこにインストール。仮想環境どうしは独立させる](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.008.png)
 </span>
 
 Note:
@@ -285,7 +308,7 @@ $ source tutorial-env/bin/activate  # 仮想環境有効化(Linux, macOS前提)
 ### Anaconda版「仮想環境」
 
 - Anacondaでもvenvを使うこともできる
-	- Anacondaに同梱された科学計算向けパッケージを無視するため、Anaconda向きではないという考え
+	- base環境にインストールされた科学計算向けパッケージを無視するため、Anaconda向きではないという考え
 - よりAnacondaの機能を引き出すと考える方法を紹介：`conda create`
 - もし壊れてもその環境を捨てるだけで済む
 
@@ -325,7 +348,7 @@ Note:
 - `conda`を積極的に使ってパッケージ管理を。`pip`は最終手段
 - 仮想環境の考え方をAnacondaでも取り入れよう
 	- `conda create`で環境を分けると便利
-	- `conda clone`でbase環境を安全に使おう
+	- `conda create --clone`でbase環境を安全に使おう
 
 +++
 
