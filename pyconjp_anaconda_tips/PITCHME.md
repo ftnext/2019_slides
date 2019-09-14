@@ -96,14 +96,6 @@ Note:
 
 +++
 
-### 補足：Pythonをインストールする手段は1つでOK
-
-- AnacondaでPythonをインストールしたなら、python.orgなど他の手段は使う必要なし
-- 本やWeb記事は読み替えましょう
-- 複数の手段でPythonをインストールしても、1つのコマンドラインから使えるPythonは1つだけ
-
-+++
-
 ### パッケージとは
 
 <span class="eighty-percent-img">
@@ -176,9 +168,9 @@ Note:
 
 ### `conda`はパッケージが少ない？
 
-- 回答：[`conda-forge`](https://conda-forge.org/)
-- Anaconda社でなく、コミュニティが管理するリポジトリ ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
+- 回答として[`conda-forge`](https://conda-forge.org/)：Anaconda社でなく、コミュニティが管理するリポジトリ ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
 - デフォルトのAnaconda社管理リポジトリ以外を対象にする際は`--channel`(`-c`)オプション：`conda install scipy --channel conda-forge`
+	- `--channel`を指定しない場合、Anaconda社管理リポジトリが対象
 
 +++
 
@@ -198,15 +190,17 @@ condaはpip互換となるように可能な限り対応している
 
 ### 気にしたい：パッケージの形式が異なる（[`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)／[`pip`](https://packaging.python.org/tutorials/packaging-projects/)）
 
-同じパッケージを`conda`でも`pip`でもインストールしたら、二重管理となる
-
 <span class="seventy-percent-img">
 ![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_tips/assets/pyconjp2019_images.010.png)
 </span>
 
-Note:
++++
 
-構成が異なるものの二重管理が積み重なると、パッケージどうしの整合性が取れなくなり、結果的に環境が壊れてしまうわけです
+### 危険：同名パッケージを`conda`でも`pip`でも
+
+- それぞれのパッケージマネージャが管理する状況は、PC全体で見ると二重管理
+- 二重管理が積み重なることで、AnacondaのPython環境が壊れてしまう
+- この話は「[混ぜるな危険](http://onoz000.hatenablog.com/entry/2018/02/11/142347)」で話題に
 
 +++
 
@@ -220,7 +214,7 @@ Note:
 ### `conda`と`pip`の使い分け（方針）
 
 1. Anaconda社のリポジトリや`conda-forge`のパッケージを使う（`pip install`は`conda install`に読み替える）
-	- 極力`conda`を使うことで、`conda`向けパッケージと`pip`向けパッケージの重複を抑える
+	- 極力`conda`を使うことで、`conda`で扱うパッケージと`pip`で扱うパッケージの重複を抑える
 2. `conda`で見つからない場合だけ、`pip`を使う（`pip`は最終手段）
 
 +++
@@ -232,9 +226,9 @@ Note:
 ### なるべく`conda`コマンドを！
 
 ```shell
-(base) $ conda search ... [-c conda-forge]  # conda向けリポジトリでパッケージを検索
+(base) $ conda search ... [-c conda-forge]  # condaで扱えるリポジトリでパッケージを検索
 (base) $ conda install ... [-c conda-forge]
-(base) $ conda update ... [-c conda-forge]  # conda向けリポジトリからパッケージをアップデート
+(base) $ conda update ... [-c conda-forge]  # condaで扱えるリポジトリからパッケージをアップデート
 ```
 
 ---
@@ -345,7 +339,7 @@ Note:
 
 +++
 
-### Anacondaにおける仮想環境
+### 参考：Anacondaにおける仮想環境
 
 <span class="eighty-percent-img">
 ![base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります](pyconjp_anaconda_tips/assets/pyconjp2019_images.009.png)
@@ -356,6 +350,14 @@ Note:
 base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります
 
 ---
+
+### Anaconda環境運用TIPSで話したこと
+
+- Anacondaを知ってみよう
+- `conda`と`pip`を使い分けよう
+- 仮想環境を使ってみよう
+
++++
 
 ### まとめ：Anaconda環境運用TIPS
 
@@ -527,6 +529,14 @@ https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managi
 +++
 
 環境の持ち運び方法（ファイルからの読み込みやclone）
+
++++
+
+### 補足：Pythonをインストールする手段は1つでOK
+
+- AnacondaでPythonをインストールしたなら、python.orgなど他の手段は使う必要なし
+- 本やWeb記事は読み替えましょう
+- 複数の手段でPythonをインストールしても、1つのコマンドラインから使えるPythonは1つだけ
 
 +++
 
