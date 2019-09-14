@@ -146,11 +146,9 @@ Note:
 
 ### パッケージマネージャも複数ある
 
-<span class="seventy-percent-img">
+<span class="eighty-percent-img">
 ![Anacondaに付属するパッケージマネージャが`conda`、Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.004.png)
 </span>
-
-パッケージマネージャごとに、扱うパッケージの形式が異なる（後述）
 
 Note:
 
@@ -198,19 +196,23 @@ condaはpip互換となるように可能な限り対応している
 
 +++
 
-### 気にしたい：パッケージの形式が異なる
+### 気にしたい：パッケージの形式が異なる（[`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)／[`pip`](https://packaging.python.org/tutorials/packaging-projects/)）
 
 同じパッケージを`conda`でも`pip`でもインストールしたら、二重管理となる
 
-TODO：フォルダ構造を横に並べて見せたい
+<span class="seventy-percent-img">
+![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.010.png)
+</span>
 
-ref: [`conda`で扱うパッケージ](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)、[`pip`で扱うパッケージ](https://packaging.python.org/tutorials/packaging-projects/)
+Note:
+
+構成が異なるものの二重管理が積み重なると、パッケージどうしの整合性が取れなくなり、結果的に環境が壊れてしまうわけです
 
 +++
 
 ### `conda`側も改善してきているものの
 
-- `conda`4.6以降では、同じパッケージを`conda`でも`pip`でも管理できることを示す[例（ドキュメント）](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/pip-interoperability.html)
+- `conda`4.6以降では、`pip`でバージョンアップしたパッケージを`conda`で二重管理しない[改善例（ドキュメント）](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/pip-interoperability.html)
 - 手元で検証したところ、併用によるリスクが絶対にないとは言い切れない
 
 +++
@@ -277,7 +279,19 @@ Note:
 
 +++
 
-### venvによる解決方法（Anacondaではない場合）
+### venvのコマンド例（Anacondaではない場合）
+
+```shell
+$ python3 -m venv tutorial-env  # 仮想環境作成(Linux, macOS前提)
+$ source tutorial-env/bin/activate  # 仮想環境有効化(Linux, macOS前提)
+(tutorial-env) $ pip install scikit-learn
+```
+
+参考：[Python チュートリアル](https://docs.python.org/ja/3/tutorial/venv.html)、[Django Girls Tutorial](https://tutorial.djangogirls.org/ja/django_installation/)
+
++++
+
+### venvによる解決方法（Anacondaではない場合）※Linux想定
 
 <span class="seventy-percent-img">
 ![それぞれのアプリケーションの開発用ディレクトリの下に仮想環境のディレクトリを作り、そこにインストール。仮想環境どうしは独立させる](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.008.png)
@@ -293,24 +307,12 @@ Note:
 
 +++
 
-### venvのコマンド例（Anacondaではない場合）
-
-```shell
-$ python3 -m venv tutorial-env  # 仮想環境作成(Linux, macOS前提)
-$ source tutorial-env/bin/activate  # 仮想環境有効化(Linux, macOS前提)
-(tutorial-env) $ pip install scikit-learn
-```
-
-参考：[Python チュートリアル](https://docs.python.org/ja/3/tutorial/venv.html)、[Django Girls Tutorial](https://tutorial.djangogirls.org/ja/django_installation/)
-
-+++
-
 ### Anaconda版「仮想環境」
 
 - Anacondaでもvenvを使うこともできる
-	- base環境にインストールされた科学計算向けパッケージを無視するため、Anaconda向きではないという考え
+	- base環境にインストールされた科学計算のパッケージを無視するため、Anaconda向きではないという考え
 - よりAnacondaの機能を引き出すと考える方法を紹介：`conda create`
-- もし壊れてもその環境を捨てるだけで済む
+- メリット：もし壊れてもその仮想環境を捨てるだけで済む
 
 +++
 
@@ -335,11 +337,23 @@ Note:
 
 +++
 
-### (案2) 便利なbase環境をなるべく安全に使う TODO検証
+### (案2) 便利なbase環境をなるべく安全に使う
 
 - 例：base環境に`pip`でパッケージを入れたい
-- `conda create --clone base`
+- `conda create --clone base -n v2_base`
 - うまく動かなかったら捨てればいい。base環境に影響はない
+
++++
+
+### Anacondaにおける仮想環境
+
+<span class="eighty-percent-img">
+![base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.009.png)
+</span>
+
+Note:
+
+base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります
 
 ---
 
@@ -384,6 +398,7 @@ Appendixが続きます
 Appendix
 
 - 検証環境のバージョンを共有
+- 環境破壊手順
 
 +++
 
