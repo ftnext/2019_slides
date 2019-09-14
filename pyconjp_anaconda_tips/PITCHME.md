@@ -107,7 +107,7 @@ Note:
 ### パッケージとは
 
 <span class="eighty-percent-img">
-![私たちはインターネットからパッケージ（Pythonファイルやそれを入れたフォルダのアーカイブファイル）をダウンロードし、インストールして使う](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.001.png)
+![私たちはインターネットからパッケージ（Pythonファイルやそれを入れたフォルダのアーカイブファイル）をダウンロードし、インストールして使う](pyconjp_anaconda_tips/assets/pyconjp2019_images.001.png)
 </span>
 
 Note:
@@ -120,7 +120,7 @@ Note:
 ### パッケージの配布元は色々
 
 <span class="eighty-percent-img">
-![PyPIというリポジトリやAnacondaを提供する会社が管理するリポジトリがある](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.002.png)
+![PyPIというリポジトリやAnacondaを提供する会社が管理するリポジトリがある](pyconjp_anaconda_tips/assets/pyconjp2019_images.002.png)
 </span>
 
 Note:
@@ -135,7 +135,7 @@ Note:
 ### パッケージを管理するツール：パッケージマネージャ
 
 <span class="eighty-percent-img">
-![リポジトリからパッケージをダウンロードするにはパッケージマネージャというツールを使う](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.003.png)
+![リポジトリからパッケージをダウンロードするにはパッケージマネージャというツールを使う](pyconjp_anaconda_tips/assets/pyconjp2019_images.003.png)
 </span>
 
 Note:
@@ -147,7 +147,7 @@ Note:
 ### パッケージマネージャも複数ある
 
 <span class="eighty-percent-img">
-![Anacondaに付属するパッケージマネージャが`conda`、Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.004.png)
+![Anacondaに付属するパッケージマネージャが`conda`、Anacondaを使わずにPythonをインストールした場合、パッケージマネージャは`pip`](pyconjp_anaconda_tips/assets/pyconjp2019_images.004.png)
 </span>
 
 Note:
@@ -201,7 +201,7 @@ condaはpip互換となるように可能な限り対応している
 同じパッケージを`conda`でも`pip`でもインストールしたら、二重管理となる
 
 <span class="seventy-percent-img">
-![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.010.png)
+![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_tips/assets/pyconjp2019_images.010.png)
 </span>
 
 Note:
@@ -225,7 +225,7 @@ Note:
 
 +++
 
-![使い分け方針を図で示しています](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.005.png)
+![使い分け方針を図で示しています](pyconjp_anaconda_tips/assets/pyconjp2019_images.005.png)
 
 +++
 
@@ -250,7 +250,7 @@ Note:
 ### Anacondaのbase環境のPythonを使っていくと
 
 <span class="seventy-percent-img">
-![アプリケーションAの開発のために `conda install LibFoo=1.0`](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.006.png)
+![アプリケーションAの開発のために `conda install LibFoo=1.0`](pyconjp_anaconda_tips/assets/pyconjp2019_images.006.png)
 </span>
 
 Note:
@@ -262,7 +262,7 @@ Note:
 ### Anacondaのbase環境のPythonを使っていくと
 
 <span class="seventy-percent-img">
-![別のアプリケーションBの開発のために `conda install LibFoo=2.0`。base環境にはLibFooのバージョンの一方しか入らない。。](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.007.png)
+![別のアプリケーションBの開発のために `conda install LibFoo=2.0`。base環境にはLibFooのバージョンの一方しか入らない。。](pyconjp_anaconda_tips/assets/pyconjp2019_images.007.png)
 </span>
 
 Note:
@@ -294,7 +294,7 @@ $ source tutorial-env/bin/activate  # 仮想環境有効化(Linux, macOS前提)
 ### venvによる解決方法（Anacondaではない場合）※Linux想定
 
 <span class="seventy-percent-img">
-![それぞれのアプリケーションの開発用ディレクトリの下に仮想環境のディレクトリを作り、そこにインストール。仮想環境どうしは独立させる](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.008.png)
+![それぞれのアプリケーションの開発用ディレクトリの下に仮想環境のディレクトリを作り、そこにインストール。仮想環境どうしは独立させる](pyconjp_anaconda_tips/assets/pyconjp2019_images.008.png)
 </span>
 
 Note:
@@ -348,7 +348,7 @@ Note:
 ### Anacondaにおける仮想環境
 
 <span class="eighty-percent-img">
-![base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります](pyconjp_anaconda_v2_draft/assets/pyconjp2019_images.009.png)
+![base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります](pyconjp_anaconda_tips/assets/pyconjp2019_images.009.png)
 </span>
 
 Note:
