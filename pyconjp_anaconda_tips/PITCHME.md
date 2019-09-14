@@ -4,12 +4,51 @@
 
 ---
 
+@snap[north]
 ### お前、誰よ (About nikkie)
+@snapend
 
+@snap[west span-50 text-center]
+
+@ul[](false)
 - ハンドルネーム nikkie （alias [@ftnext](https://twitter.com/ftnext)）
-- 株式会社ユーザベース所属 データサイエンティスト（※本発表は **個人の見解** です）
-- PyCon JP 2019 スタッフ、みんなのPython勉強会スタッフ・4代目LT王子
+- 株式会社ユーザベース所属 データサイエンティスト
+- ※本発表で示すのは、あくまで **個人の見解** です
+@ulend
+
+@snapend
+
+@snap[east span-50 text-center]
+
+![https://bit.ly/2lNRb10](pyconjp_anaconda_tips/assets/QR_slide_link.png)
+
+@snapend
+
+Note:
+
+所属組織や所属コミュニティを代表する見解ではなく
+
++++
+
+@snap[north]
+### 続：お前、誰よ (About nikkie)
+@snapend
+
+@snap[west span-50 text-center]
+
+@ul[](false)
+- PyCon JP 2019 スタッフ
+- みんなのPython勉強会スタッフ・4代目LT王子
 - Django Girls Tutorial翻訳やWorkshopのコーチ
+@ulend
+
+@snapend
+
+@snap[east span-50 text-center]
+
+![https://bit.ly/2lNRb10](pyconjp_anaconda_tips/assets/QR_slide_link.png)
+
+@snapend
 
 +++
 
@@ -33,7 +72,12 @@
 
 あるパッケージをcondaコマンドでもpipコマンドでも管理したことが原因で、環境が壊れる
 
-tensorflowモジュールがimportできなくなりました（手順は後述）
+![tensorflowモジュールがimportできなくなりました](pyconjp_anaconda_tips/assets/destruted_env.png)
+
+Note:
+
+macOSで検証したところ、tensorflowモジュールがimportできなくなりました。
+手順はAppendixで示します
 
 +++
 
@@ -339,7 +383,7 @@ Note:
 
 +++
 
-### 参考：Anacondaにおける仮想環境
+### Anacondaにおける仮想環境
 
 <span class="eighty-percent-img">
 ![base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります](pyconjp_anaconda_tips/assets/pyconjp2019_images.009.png)
