@@ -12,13 +12,15 @@
 
 @ul[](false)
 - ハンドルネーム nikkie （alias [@ftnext](https://twitter.com/ftnext)）
-- 株式会社ユーザベース所属 データサイエンティスト
+- 株式会社ユーザベース所属 データサイエンティスト（自然言語処理）
 - ※本発表で示すのは、あくまで **個人の見解** です
 @ulend
 
 @snapend
 
 @snap[east span-50 text-center]
+
+スライドは↓から
 
 ![https://bit.ly/2lNRb10](pyconjp_anaconda_tips/assets/QR_slide_link.png)
 
@@ -38,13 +40,15 @@ Note:
 
 @ul[](false)
 - PyCon JP 2019 スタッフ
-- みんなのPython勉強会スタッフ・4代目LT王子
-- Django Girls Tutorial翻訳やWorkshopのコーチ
+- [みんなのPython勉強会](https://startpython.connpass.com/)スタッフ・4代目LT王子
+- [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳や[Workshop](https://djangogirls.org/tokyo/)のコーチ
 @ulend
 
 @snapend
 
 @snap[east span-50 text-center]
+
+スライドは↓から
 
 ![https://bit.ly/2lNRb10](pyconjp_anaconda_tips/assets/QR_slide_link.png)
 
@@ -383,7 +387,7 @@ Note:
 
 +++
 
-### Anacondaにおける仮想環境
+### Anacondaにおける[仮想環境](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html)
 
 <span class="eighty-percent-img">
 ![base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります](pyconjp_anaconda_tips/assets/pyconjp2019_images.009.png)
@@ -421,7 +425,9 @@ base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの�
 
 ### Appendix
 
-TODO：目次
+- 動作検証環境
+- `conda`コマンド解説
+- 盛り込みきれなかったこと
 
 +++
 
@@ -441,14 +447,41 @@ Appendixが続きます
 
 ---
 
-Appendix
+### Appendix：動作検証環境
 
 - 検証環境のバージョンを共有
 - 環境破壊手順
 
 +++
 
-condaコマンドでできること
+### 検証環境
+
+- macOS 10.12.6、conda 4.6.11、anaconda=2019.07導入
+- Dockerイメージ[continuumio/anaconda3](https://hub.docker.com/r/continuumio/anaconda3) タグ:2019.07, 5.1.0（ディレクトリ構造の確認にも使用）
+
++++
+
+### 環境破壊手順（@macOS環境）
+
+```shell
+(base) $ conda create --clone base -n update_tf_test
+(base) $ conda activate update_tf_test
+(update_tf_test) $ conda install tensorflow=1.13.1
+(update_tf_test) $ python
+>>> import tensorflow
+>>> exit()
+(update_tf_test) $ pip install -U tensorflow
+(update_tf_test) $ python
+>>> import tensorflow
+Illegal instruction: 4
+(update_tf_test) $
+```
+
+---
+
+### Appendix：`conda`コマンド解説
+
+TODO：ここに目次を入れる
 
 +++
 
@@ -492,20 +525,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import numpy as np
 >>> np.__version__
 '1.16.4'
-```
-
-+++
-
-### conda createの挙動
-
-ROOT_DIRの/envs下に仮想環境に対応するディレクトリが作成される [ref](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html)  
-それぞれのディレクトリの下にパッケージがインストールされている
-
-```
-/opt/conda/envs/
-├── myenv
-├── myenv2
-└── some_pip_test
 ```
 
 +++
@@ -574,13 +593,24 @@ https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managi
 
 環境の持ち運び方法（ファイルからの読み込みやclone）
 
+---
+
+### Appendix：盛り込みきれなかったこと
+
+- Pythonのインストールと読み替え
+- TODOここから
+
 +++
 
 ### 補足：Pythonをインストールする手段は1つでOK
 
 - AnacondaでPythonをインストールしたなら、python.orgなど他の手段は使う必要なし
-- 本やWeb記事は読み替えましょう
+- 本やWeb記事は、自分の環境に合わせて **読み替え** や **スキップ** しましょう
 - 複数の手段でPythonをインストールしても、1つのコマンドラインから使えるPythonは1つだけ
+
++++
+
+TODO：Anaconda Navigatorなら心配不要？
 
 +++
 
