@@ -67,12 +67,11 @@ Note:
 ### 問題意識：伝わっていないAnacondaの使い方
 
 - 初学者とAnacondaの接点（入門書やWeb記事）が増えている
-- 教える中で、Anacondaの使い方が伝わっていないために発生した問題をたびたび解決
-- このトークでは、Pythonを使う上でハマりにくい考え方をAnacondaにも適用 → Pythonでやりたいことをやるのに集中できるように
+- Pythonを人に教える中で、Anacondaの使い方が伝わっていないために発生した問題をたびたび解決
 
 +++
 
-### Anacondaの使い方が伝わっていなくて発生する問題（一例）
+### Anacondaの使い方が伝わっていなくて発生する問題例
 
 あるパッケージをcondaコマンドでもpipコマンドでも管理したことが原因で、環境が壊れる
 
@@ -82,6 +81,13 @@ Note:
 
 macOSで検証したところ、tensorflowモジュールがimportできなくなりました。
 手順はAppendixで示します
+
++++
+
+### 使い方が伝わっていない問題を解決するために
+
+- Pythonを使う上でハマりにくい考え方をAnacondaにも適用
+- Pythonでやりたいことをやるのに集中していただければ
 
 +++
 
@@ -166,9 +172,11 @@ Note:
 Note:
 
 - PyPI
-- Anaconda社（Anacondaの提供元）管理
+- Anaconda社が管理する
 
 といったリポジトリがある
+
+（Anaconda社はそういう会社名という説明になる。condaコマンドはOSS。商業利用もできる）
 
 +++
 
@@ -216,8 +224,9 @@ Note:
 
 ### `conda`はパッケージが少ない？
 
-- 回答として[`conda-forge`](https://conda-forge.org/)：Anaconda社でなく、コミュニティが管理するリポジトリ ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
-- デフォルトのAnaconda社管理リポジトリ以外を対象にする際は`--channel`(`-c`)オプション：`conda install scipy --channel conda-forge`
+- 回答として[`conda-forge`](https://conda-forge.org/)：Anaconda社でなく、[コミュニティが管理するリポジトリ](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
+- `--channel`(`-c`)オプション
+	- `conda install scipy --channel conda-forge`
 	- `--channel`を指定しない場合、Anaconda社管理リポジトリが対象
 
 +++
@@ -231,24 +240,16 @@ Note:
 
 Note:
 
-pipパッケージとcondaパッケージの違いが互換性に置いて避けられない制限をもたらす。
+pipパッケージとcondaパッケージの違いが互換性に置いて避けられない制限をもたらす（Appendix参照）。
 condaはpip互換となるように可能な限り対応している
 
 +++
 
-### 気にしたい：パッケージの形式が異なる（[`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)／[`pip`](https://packaging.python.org/tutorials/packaging-projects/)）
+### 気をつけて：同名パッケージを`conda`でも`pip`でも管理する
 
-<span class="seventy-percent-img">
-![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_tips/assets/pyconjp2019_images.010.png)
-</span>
-
-+++
-
-### 危険：同名パッケージを`conda`でも`pip`でも
-
-- それぞれのパッケージマネージャが管理する状況は、PC全体で見ると二重管理
-- 二重管理が積み重なることで、AnacondaのPython環境が壊れてしまう
-- この話は「[混ぜるな危険](http://onoz000.hatenablog.com/entry/2018/02/11/142347)」で話題に
+- 形式の異なるパッケージ（Appendix参照）を、PC全体で見ると二重管理した状態
+- 二重管理が積み重なることで、AnacondaのPython環境が壊れてしまう（冒頭の例）
+- 参考：「[混ぜるな危険](http://onoz000.hatenablog.com/entry/2018/02/11/142347)」の話
 
 +++
 
@@ -274,9 +275,11 @@ condaはpip互換となるように可能な限り対応している
 ### なるべく`conda`コマンドを！
 
 ```shell
-(base) $ conda search ... [-c conda-forge]  # condaで扱えるリポジトリでパッケージを検索
+# condaで扱えるリポジトリでパッケージを検索
+(base) $ conda search ... [-c conda-forge]
 (base) $ conda install ... [-c conda-forge]
-(base) $ conda update ... [-c conda-forge]  # condaで扱えるリポジトリからパッケージをアップデート
+# condaで扱えるリポジトリからパッケージをアップデート
+(base) $ conda update ... [-c conda-forge]
 ```
 
 ---
@@ -509,7 +512,7 @@ TODO：ここに目次を入れる
 
 - 有効にする：`conda activate <仮想環境名>`
 	- condaの4.6以降前提。4.6より前は[ドキュメント](https://conda.io/projects/continuumio-conda/en/latest/user-guide/getting-started.html#managing-environments)参照
-- 無効にする：`deactivate`
+- 無効にする：`conda deactivate`
 
 +++
 
@@ -607,6 +610,14 @@ https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managi
 - AnacondaでPythonをインストールしたなら、python.orgなど他の手段は使う必要なし
 - 本やWeb記事は、自分の環境に合わせて **読み替え** や **スキップ** しましょう
 - 複数の手段でPythonをインストールしても、1つのコマンドラインから使えるPythonは1つだけ
+
++++
+
+### 気にしたい：パッケージの形式が異なる（[`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)／[`pip`](https://packaging.python.org/tutorials/packaging-projects/)）
+
+<span class="seventy-percent-img">
+![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_tips/assets/pyconjp2019_images.010.png)
+</span>
 
 +++
 
