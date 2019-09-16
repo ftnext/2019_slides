@@ -233,19 +233,23 @@ Note:
 
 ### 最終手段`pip`
 
-- `conda-forge`にもパッケージがない場合、`pip`を使わざるを得ない ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages)
+- `conda-forge`にもパッケージがない場合、[`pip`を使わざるを得ない](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages)
 - `pip install see`
 
 >The differences between pip and conda packages cause certain unavoidable limits in compatibility but conda works hard to be as compatible with pip as possible.
 
 Note:
 
+seeは組み込み関数dirを読みやすくして置き換えるパッケージ
+
 pipパッケージとcondaパッケージの違いが互換性に置いて避けられない制限をもたらす（Appendix参照）。
 condaはpip互換となるように可能な限り対応している
 
+↑形式が異なると言っている（次のスライドにつながる）
+
 +++
 
-### 気をつけて：同名パッケージを`conda`でも`pip`でも管理する
+### 危険：同名パッケージを`conda`でも`pip`でも管理する
 
 - 形式の異なるパッケージ（Appendix参照）を、PC全体で見ると二重管理した状態
 - 二重管理が積み重なることで、AnacondaのPython環境が壊れてしまう（冒頭の例）
@@ -354,10 +358,10 @@ Note:
 
 ### Anaconda版「仮想環境」
 
+- メリット：もし壊れてもその仮想環境を捨てるだけで済む
 - Anacondaでもvenvを使うこともできる
 	- base環境にインストールされた科学計算のパッケージを無視するため、Anaconda向きではないという考え
 - よりAnacondaの機能を引き出すと考える方法を紹介：`conda create`
-- メリット：もし壊れてもその仮想環境を捨てるだけで済む
 
 +++
 
@@ -426,10 +430,21 @@ base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの�
 
 +++
 
+### 参考資料
+
+- [`conda`ドキュメント](https://docs.conda.io/projects/conda/en/latest/index.html)
+- [各種一覧](https://docs.anaconda.com/anaconda/packages/pkg-docs/)
+
+Note:
+
+深く知りたい方はご確認ください
+
++++
+
 ### Appendix
 
 - 動作検証環境
-- `conda`コマンド解説
+- `conda`コマンドを詳しく
 - 盛り込みきれなかったこと
 
 +++
@@ -482,9 +497,12 @@ Illegal instruction: 4
 
 ---
 
-### Appendix：`conda`コマンド解説
+### Appendix：`conda`コマンドを詳しく
 
-TODO：ここに目次を入れる
+- condaコマンド紹介（search, install）
+- condaコマンドと仮想環境
+- Anaconda環境の持ち運び
+- `conda`と`pip`併用例（本編より詳しく）
 
 +++
 
@@ -494,8 +512,6 @@ TODO：ここに目次を入れる
 - [`conda install scikit-rf`](https://conda.io/projects/conda/en/latest/commands/install.html)：パッケージのインストール
 - マネージ（管理）するのはパッケージに限らず、Pythonのバージョンも管理できるのが特徴
 
-デフォルトでは、Anaconda社管理下のパッケージが対象（[各種一覧](https://docs.anaconda.com/anaconda/packages/pkg-docs/)）。（Appendixへ）
-
 +++
 
 ### [`conda create`](https://docs.conda.io/projects/conda/en/latest/commands/create.html)
@@ -504,7 +520,7 @@ TODO：ここに目次を入れる
 	- Python3.7とnumpyが使える環境をmyenvという名前で作成
 - `conda create -n myenv2 anaconda`
 	- base環境と同様に科学計算のパッケージが入った環境をmyenv2という名前で作成
-	- base環境と共通のパッケージが入るが、最新バージョンになる（固定も可能 TODOドキュメント）
+	- base環境と共通のパッケージが入るが、最新バージョンになる（固定 [pinned](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#preventing-packages-from-updating-pinning) も可能）
 
 +++
 
@@ -532,7 +548,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 +++
 
-### 併用例（imagesizeパッケージをpipでアップグレード）
+### Anaconda環境の持ち運び
+
+- 紹介した`conda create --clone`
+- ymlファイルに[エクスポート](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#exporting-the-environment-yml-file)→[読み込み](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)
+
++++
+
+### [併用例](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/pip-interoperability.html)（imagesizeパッケージをpipでアップグレード）
 
 ```
 (some_pip_test) $ conda --version
@@ -575,33 +598,21 @@ imagesize                 1.0.0                    py37_0
 
 +++
 
-### condaのバージョンを上げる
+### 注意：併用の前に、[condaのバージョンを上げる](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-conda)こと
 
 `conda update conda`
 
 (base)で実行する  
-(base)に入っているパッケージのバージョンが上がる（固定する方法もある）  
-二重管理の表示状態が解決された（見た目の変更だけの可能性）
-
-https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-conda
-
-+++
-
-チャンネル
-
-- チャンネル（TODO：要説明）からパッケージを検索・インストール・アップデート
-- デフォルト、コミュニティ管理のチャンネルも対象にできる
-
-+++
-
-環境の持ち運び方法（ファイルからの読み込みやclone）
+(base)に入っているパッケージのバージョンが上がる（必要であれば、先に紹介した固定方法）  
+→imagesizeの例の二重管理の表示状態は解決される
 
 ---
 
 ### Appendix：盛り込みきれなかったこと
 
 - Pythonのインストールと読み替え
-- TODOここから
+- パッケージの形式の違い
+- 調査が至らなかった事項
 
 +++
 
@@ -613,7 +624,7 @@ https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managi
 
 +++
 
-### 気にしたい：パッケージの形式が異なる（[`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)／[`pip`](https://packaging.python.org/tutorials/packaging-projects/)）
+### パッケージの形式が異なる（[`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)／[`pip`](https://packaging.python.org/tutorials/packaging-projects/)）
 
 <span class="seventy-percent-img">
 ![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_tips/assets/pyconjp2019_images.010.png)
@@ -621,10 +632,11 @@ https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managi
 
 +++
 
-TODO：Anaconda Navigatorなら心配不要？
+### 調査が至らなかった事項
+
+- 紹介したコマンドと、Anaconda NavigatorでのGUI操作の対応付け
+- 環境分離ツールの"New Era" [pipenvはAnaconda環境でも使える](https://pipenv.readthedocs.io/en/latest/advanced/#pipenv-and-other-python-distributions)
 
 +++
 
-### おまけ：環境切り分けのNew Era
-
-pipenvまたはpoetryを紹介
+# EOF
