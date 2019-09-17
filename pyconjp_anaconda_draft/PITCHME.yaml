@@ -1,8 +1,0 @@
-# カスタムCSSファイル
-theme-override : common_assets/css/PITCHME.css
-
-#スライドのページ数表示の設定
-slide-number : true
-
-#トランジションの設定
-transition : none

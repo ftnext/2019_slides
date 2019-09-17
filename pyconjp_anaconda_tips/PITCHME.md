@@ -4,12 +4,59 @@
 
 ---
 
+@snap[north]
 ### お前、誰よ (About nikkie)
+@snapend
 
+@snap[west span-50 text-center]
+
+@ul[](false)
 - ハンドルネーム nikkie （alias [@ftnext](https://twitter.com/ftnext)）
-- 株式会社ユーザベース所属 データサイエンティスト（※本発表は **個人の見解** です）
-- PyCon JP 2019 スタッフ、みんなのPython勉強会スタッフ・4代目LT王子
-- Django Girls Tutorial翻訳やWorkshopのコーチ
+- 株式会社ユーザベース所属 データサイエンティスト（自然言語処理）
+- ※本発表で示すのは、あくまで **個人の見解** です
+@ulend
+
+@snapend
+
+@snap[east span-50 text-center]
+
+スライドは↓から
+
+![https://bit.ly/2lNRb10](pyconjp_anaconda_tips/assets/QR_slide_link.png)
+
+`#pyconjp_5`
+
+@snapend
+
+Note:
+
+所属組織や所属コミュニティを代表する見解ではなく
+
++++
+
+@snap[north]
+### 続：お前、誰よ (About nikkie)
+@snapend
+
+@snap[west span-50 text-center]
+
+@ul[](false)
+- PyCon JP 2019 スタッフ
+- [みんなのPython勉強会](https://startpython.connpass.com/)スタッフ・4代目LT王子
+- [Django Girls Tutorial](https://tutorial.djangogirls.org/ja/)翻訳や[Workshop](https://djangogirls.org/tokyo/)のコーチ
+@ulend
+
+@snapend
+
+@snap[east span-50 text-center]
+
+スライドは↓から
+
+![https://bit.ly/2lNRb10](pyconjp_anaconda_tips/assets/QR_slide_link.png)
+
+`#pyconjp_5`
+
+@snapend
 
 +++
 
@@ -24,16 +71,27 @@
 ### 問題意識：伝わっていないAnacondaの使い方
 
 - 初学者とAnacondaの接点（入門書やWeb記事）が増えている
-- 教える中で、Anacondaの使い方が伝わっていないために発生した問題をたびたび解決
-- このトークでは、Pythonを使う上でハマりにくい考え方をAnacondaにも適用 → Pythonでやりたいことをやるのに集中できるように
+- Pythonを人に教える中で、Anacondaの使い方が伝わっていないために発生した問題をたびたび解決
 
 +++
 
-### Anacondaの使い方が伝わっていなくて発生する問題（一例）
+### Anacondaの使い方が伝わっていなくて発生する問題例
 
 あるパッケージをcondaコマンドでもpipコマンドでも管理したことが原因で、環境が壊れる
 
-tensorflowモジュールがimportできなくなりました（手順は後述）
+![tensorflowモジュールがimportできなくなりました](pyconjp_anaconda_tips/assets/destruted_env.png)
+
+Note:
+
+macOSで検証したところ、tensorflowモジュールがimportできなくなりました。
+手順はAppendixで示します
+
++++
+
+### 使い方が伝わっていない問題を解決するために
+
+- Pythonを使う上でハマりにくい考え方をAnacondaにも適用
+- Pythonでやりたいことをやるのに集中していただければ
 
 +++
 
@@ -118,9 +176,11 @@ Note:
 Note:
 
 - PyPI
-- Anaconda社（Anacondaの提供元）管理
+- Anaconda社が管理する
 
 といったリポジトリがある
+
+（Anaconda社はそういう会社名という説明になる。condaコマンドはOSS。商業利用もできる）
 
 +++
 
@@ -168,39 +228,36 @@ Note:
 
 ### `conda`はパッケージが少ない？
 
-- 回答として[`conda-forge`](https://conda-forge.org/)：Anaconda社でなく、コミュニティが管理するリポジトリ ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
-- デフォルトのAnaconda社管理リポジトリ以外を対象にする際は`--channel`(`-c`)オプション：`conda install scipy --channel conda-forge`
+- 回答として[`conda-forge`](https://conda-forge.org/)：Anaconda社でなく、[コミュニティが管理するリポジトリ](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html?highlight=conda-forge#what-is-a-conda-channel)
+- `--channel`(`-c`)オプション
+	- `conda install scipy --channel conda-forge`
 	- `--channel`を指定しない場合、Anaconda社管理リポジトリが対象
 
 +++
 
 ### 最終手段`pip`
 
-- `conda-forge`にもパッケージがない場合、`pip`を使わざるを得ない ref:[docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages)
+- `conda-forge`にもパッケージがない場合、[`pip`を使わざるを得ない](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages)
 - `pip install see`
 
 >The differences between pip and conda packages cause certain unavoidable limits in compatibility but conda works hard to be as compatible with pip as possible.
 
 Note:
 
-pipパッケージとcondaパッケージの違いが互換性に置いて避けられない制限をもたらす。
+seeは組み込み関数dirを読みやすくして置き換えるパッケージ
+
+pipパッケージとcondaパッケージの違いが互換性に置いて避けられない制限をもたらす（Appendix参照）。
 condaはpip互換となるように可能な限り対応している
 
-+++
-
-### 気にしたい：パッケージの形式が異なる（[`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)／[`pip`](https://packaging.python.org/tutorials/packaging-projects/)）
-
-<span class="seventy-percent-img">
-![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_tips/assets/pyconjp2019_images.010.png)
-</span>
+↑形式が異なると言っている（次のスライドにつながる）
 
 +++
 
-### 危険：同名パッケージを`conda`でも`pip`でも
+### 危険：同名パッケージを`conda`でも`pip`でも管理する
 
-- それぞれのパッケージマネージャが管理する状況は、PC全体で見ると二重管理
-- 二重管理が積み重なることで、AnacondaのPython環境が壊れてしまう
-- この話は「[混ぜるな危険](http://onoz000.hatenablog.com/entry/2018/02/11/142347)」で話題に
+- 形式の異なるパッケージ（Appendix参照）を、PC全体で見ると二重管理した状態
+- 二重管理が積み重なることで、AnacondaのPython環境が壊れてしまう（冒頭の例）
+- 参考：「[混ぜるな危険](http://onoz000.hatenablog.com/entry/2018/02/11/142347)」の話
 
 +++
 
@@ -226,9 +283,11 @@ condaはpip互換となるように可能な限り対応している
 ### なるべく`conda`コマンドを！
 
 ```shell
-(base) $ conda search ... [-c conda-forge]  # condaで扱えるリポジトリでパッケージを検索
+# condaで扱えるリポジトリでパッケージを検索
+(base) $ conda search ... [-c conda-forge]
 (base) $ conda install ... [-c conda-forge]
-(base) $ conda update ... [-c conda-forge]  # condaで扱えるリポジトリからパッケージをアップデート
+# condaで扱えるリポジトリからパッケージをアップデート
+(base) $ conda update ... [-c conda-forge]
 ```
 
 ---
@@ -303,10 +362,10 @@ Note:
 
 ### Anaconda版「仮想環境」
 
+- メリット：もし壊れてもその仮想環境を捨てるだけで済む
 - Anacondaでもvenvを使うこともできる
 	- base環境にインストールされた科学計算のパッケージを無視するため、Anaconda向きではないという考え
 - よりAnacondaの機能を引き出すと考える方法を紹介：`conda create`
-- メリット：もし壊れてもその仮想環境を捨てるだけで済む
 
 +++
 
@@ -339,7 +398,7 @@ Note:
 
 +++
 
-### 参考：Anacondaにおける仮想環境
+### Anacondaにおける[仮想環境](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html)
 
 <span class="eighty-percent-img">
 ![base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの下に作成され、そこに環境ごとにパッケージが入ります](pyconjp_anaconda_tips/assets/pyconjp2019_images.009.png)
@@ -375,9 +434,22 @@ base環境とは別に仮想環境用のディレクトリが/opt/conda/envsの�
 
 +++
 
+### 参考資料
+
+- [`conda`ドキュメント](https://docs.conda.io/projects/conda/en/latest/index.html)
+- [各種一覧](https://docs.anaconda.com/anaconda/packages/pkg-docs/)
+
+Note:
+
+深く知りたい方はご確認ください
+
++++
+
 ### Appendix
 
-TODO：目次
+- 動作検証環境
+- `conda`コマンドを詳しく
+- 盛り込みきれなかったこと
 
 +++
 
@@ -397,14 +469,44 @@ Appendixが続きます
 
 ---
 
-Appendix
+### Appendix：動作検証環境
 
 - 検証環境のバージョンを共有
 - 環境破壊手順
 
 +++
 
-condaコマンドでできること
+### 検証環境
+
+- macOS 10.12.6、conda 4.6.11、anaconda=2019.07導入
+- Dockerイメージ[continuumio/anaconda3](https://hub.docker.com/r/continuumio/anaconda3) タグ:2019.07, 5.1.0（ディレクトリ構造の確認にも使用）
+
++++
+
+### 環境破壊手順（@macOS環境）
+
+```shell
+(base) $ conda create --clone base -n update_tf_test
+(base) $ conda activate update_tf_test
+(update_tf_test) $ conda install tensorflow=1.13.1
+(update_tf_test) $ python
+>>> import tensorflow
+>>> exit()
+(update_tf_test) $ pip install -U tensorflow
+(update_tf_test) $ python
+>>> import tensorflow
+Illegal instruction: 4
+(update_tf_test) $
+```
+
+---
+
+### Appendix：`conda`コマンドを詳しく
+
+- condaコマンド紹介（search, install）
+- condaコマンドと仮想環境
+- Anaconda環境の持ち運び
+- `conda`と`pip`併用例（本編より詳しく）
 
 +++
 
@@ -414,8 +516,6 @@ condaコマンドでできること
 - [`conda install scikit-rf`](https://conda.io/projects/conda/en/latest/commands/install.html)：パッケージのインストール
 - マネージ（管理）するのはパッケージに限らず、Pythonのバージョンも管理できるのが特徴
 
-デフォルトでは、Anaconda社管理下のパッケージが対象（[各種一覧](https://docs.anaconda.com/anaconda/packages/pkg-docs/)）。（Appendixへ）
-
 +++
 
 ### [`conda create`](https://docs.conda.io/projects/conda/en/latest/commands/create.html)
@@ -424,7 +524,7 @@ condaコマンドでできること
 	- Python3.7とnumpyが使える環境をmyenvという名前で作成
 - `conda create -n myenv2 anaconda`
 	- base環境と同様に科学計算のパッケージが入った環境をmyenv2という名前で作成
-	- base環境と共通のパッケージが入るが、最新バージョンになる（固定も可能 TODOドキュメント）
+	- base環境と共通のパッケージが入るが、最新バージョンになる（固定 [pinned](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#preventing-packages-from-updating-pinning) も可能）
 
 +++
 
@@ -432,7 +532,7 @@ condaコマンドでできること
 
 - 有効にする：`conda activate <仮想環境名>`
 	- condaの4.6以降前提。4.6より前は[ドキュメント](https://conda.io/projects/continuumio-conda/en/latest/user-guide/getting-started.html#managing-environments)参照
-- 無効にする：`deactivate`
+- 無効にする：`conda deactivate`
 
 +++
 
@@ -452,21 +552,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 +++
 
-### conda createの挙動
+### Anaconda環境の持ち運び
 
-ROOT_DIRの/envs下に仮想環境に対応するディレクトリが作成される [ref](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html)  
-それぞれのディレクトリの下にパッケージがインストールされている
-
-```
-/opt/conda/envs/
-├── myenv
-├── myenv2
-└── some_pip_test
-```
+- 紹介した`conda create --clone`
+- ymlファイルに[エクスポート](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#exporting-the-environment-yml-file)→[読み込み](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)
 
 +++
 
-### 併用例（imagesizeパッケージをpipでアップグレード）
+### [併用例](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/pip-interoperability.html)（imagesizeパッケージをpipでアップグレード）
 
 ```
 (some_pip_test) $ conda --version
@@ -509,37 +602,45 @@ imagesize                 1.0.0                    py37_0
 
 +++
 
-### condaのバージョンを上げる
+### 注意：併用の前に、[condaのバージョンを上げる](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-conda)こと
 
 `conda update conda`
 
 (base)で実行する  
-(base)に入っているパッケージのバージョンが上がる（固定する方法もある）  
-二重管理の表示状態が解決された（見た目の変更だけの可能性）
+(base)に入っているパッケージのバージョンが上がる（必要であれば、先に紹介した固定方法）  
+→imagesizeの例の二重管理の表示状態は解決される
 
-https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-conda
+---
 
-+++
+### Appendix：盛り込みきれなかったこと
 
-チャンネル
-
-- チャンネル（TODO：要説明）からパッケージを検索・インストール・アップデート
-- デフォルト、コミュニティ管理のチャンネルも対象にできる
-
-+++
-
-環境の持ち運び方法（ファイルからの読み込みやclone）
+- Pythonのインストールと読み替え
+- パッケージの形式の違い
+- 調査が至らなかった事項
 
 +++
 
 ### 補足：Pythonをインストールする手段は1つでOK
 
 - AnacondaでPythonをインストールしたなら、python.orgなど他の手段は使う必要なし
-- 本やWeb記事は読み替えましょう
+- 本やWeb記事は、自分の環境に合わせて **読み替え** や **スキップ** しましょう
 - 複数の手段でPythonをインストールしても、1つのコマンドラインから使えるPythonは1つだけ
 
 +++
 
-### おまけ：環境切り分けのNew Era
+### パッケージの形式が異なる（[`conda`](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html#what-is-a-conda-package)／[`pip`](https://packaging.python.org/tutorials/packaging-projects/)）
 
-pipenvまたはpoetryを紹介
+<span class="seventy-percent-img">
+![`conda`で扱うパッケージと`pip`で扱うパッケージの構成を比較](pyconjp_anaconda_tips/assets/pyconjp2019_images.010.png)
+</span>
+
++++
+
+### 調査が至らなかった事項
+
+- 紹介したコマンドと、Anaconda NavigatorでのGUI操作の対応付け
+- 環境分離ツールの"New Era" [pipenvはAnaconda環境でも使える](https://pipenv.readthedocs.io/en/latest/advanced/#pipenv-and-other-python-distributions)
+
++++
+
+# EOF
