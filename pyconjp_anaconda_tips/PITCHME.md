@@ -24,6 +24,8 @@
 
 ![https://bit.ly/2lNRb10](pyconjp_anaconda_tips/assets/QR_slide_link.png)
 
+`#pyconjp_5`
+
 @snapend
 
 Note:
@@ -51,6 +53,8 @@ Note:
 スライドは↓から
 
 ![https://bit.ly/2lNRb10](pyconjp_anaconda_tips/assets/QR_slide_link.png)
+
+`#pyconjp_5`
 
 @snapend
 
