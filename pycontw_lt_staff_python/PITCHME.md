@@ -8,14 +8,12 @@
 
 - nicknamed 'nikkie' （@fab[twitter] [@ftnext](https://twitter.com/ftnext)）
 - I’m from PyCon JP, too!
-- engaged in [Django Girls Tutorial translation](https://tutorial.djangogirls.org/ja/)🇯🇵 & workshop coach
 - PyCon JP 2019 staff, a member of program committee
 
 Note:
 
-please call me nikkie.
-I'm from PyCon Japan, too.
-I'm engaged Django Girls Tutorial translation & workshop coach.
+please call me nikkie.  
+I'm from PyCon Japan, too.  
 and I'm PyCon JP 2019 staff. a member of program committee
 
 +++
@@ -28,9 +26,9 @@ and I'm PyCon JP 2019 staff. a member of program committee
 
 Note:
 
-As you already know(笑), PyCon JP 2019 was held from 14th September Saturday to 17th Tuesday.
-is there anyone went to PyCon JP?
-oh, many people!
+As you already know(笑), PyCon JP 2019 was held from 14th September Saturday to 17th Tuesday.  
+is there anyone went to PyCon JP?  
+oh, many people!  
 I am happy if they had a fruitful time at PyCon JP.
 
 +++
@@ -56,7 +54,7 @@ https://github.com/pycontw/pycon.tw
 
 Note:
 
-and Python is a member of PyCon TW staffs!
+and Python is a member of PyCon TW staffs!  
 For example, the site of PyCon TW 2019 made by Django
 
 +++
@@ -76,7 +74,7 @@ For example, the site of PyCon TW 2019 made by Django
 
 Note:
 
-now introduction ended.
+now introduction ended.  
 next I will tell you about situation & solution
 
 ---
@@ -118,19 +116,19 @@ https://pyconjp.connpass.com/event/136558/
 
 Note:
 
-in connpass, we can create a questionnaire form.
+in connpass, we can create a questionnaire form.  
 Participants will submit the questionnaire in applying the event
 
 +++
 
 ### Requirements
 
-- there are two types of participants: attendees and leaders
-- we want **leaders** to **submit information** about their projects
+- there are two types of participants: **attendees** and **leaders**
+- we want leaders to submit information about their projects
 
 Note:
 
-In PyCon JP 2019 sprint, there are two types of participants: attendees and leaders
+In PyCon JP 2019 sprint, there are two types of participants: attendees and leaders  
 we want leaders to submit information about their projects
 
 +++
@@ -163,7 +161,7 @@ we want leaders to submit information about their projects
 
 +++
 
-### How work the script
+### How the script work
 
 1. open the CSV file (already downloaded)
 2. select rows of leaders (**not including attendees**)
