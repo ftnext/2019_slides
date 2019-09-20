@@ -22,7 +22,7 @@ and I'm PyCon JP 2019 staff. a member of program committee
 
 ### Do you know PyCon JP? / 你們知道PyCon JP嗎?
 
-<span class="eighty-percent-img">
+<span class="fifty-percent-img">
 ![PyCon JP logo](pycontw_lt_staff_python/assets/square_color.png)
 </span>
 
