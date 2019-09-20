@@ -7,20 +7,20 @@
 ### self-introduction / お前、誰よ
 
 - nicknamed 'nikkie' （@fab[twitter] [@ftnext](https://twitter.com/ftnext)）
-- came to PyCon TW 2019 from Japan
+- I’m from PyCon JP, too!
 - engaged in [Django Girls Tutorial translation](https://tutorial.djangogirls.org/ja/)🇯🇵 & workshop coach
 - PyCon JP 2019 staff, a member of program committee
 
 Note:
 
 please call me nikkie.
-I'm from Japan.
+I'm from PyCon Japan, too.
 I'm engaged Django Girls Tutorial translation & workshop coach.
 and I'm PyCon JP 2019 staff. a member of program committee
 
 +++
 
-### PyCon JP (from 14th Sep. to 17th)
+### Do you know PyCon JP? / 你們知道PyCon JP嗎?
 
 ![PyCon JP logo](pycontw_lt_staff_python/assets/square_color.png)
 
