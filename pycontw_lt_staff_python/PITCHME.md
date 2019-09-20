@@ -96,7 +96,7 @@ next I will tell you about situation & solution
 
 ### Our tool: connpass
 
-![connpass page of sprint](pycontw_lt_staff_python/assets/sprint_connpass_page.png)
+![connpass page of sprint](pycontw_lt_staff_python/assets/sprint_connpass_page.jpg)
 
 https://pyconjp.connpass.com/event/136558/
 
@@ -112,7 +112,7 @@ https://pyconjp.connpass.com/event/136558/
 
 ### Questionnaire form
 
-![image of a questionnaire form](pycontw_lt_staff_python/assets/connpass_questionnaire.jpg)
+![image of a questionnaire form](pycontw_lt_staff_python/assets/connpass_questionnaire.png)
 
 Note:
 
