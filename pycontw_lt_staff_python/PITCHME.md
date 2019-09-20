@@ -1,5 +1,5 @@
 ## Prepare PyCon JP 2019 with Python
-#### PyCon JP 2019 LT
+#### PyCon TW 2019 LT
 #### 2019/09/20 nikkie
 
 ---
@@ -104,7 +104,7 @@ https://pyconjp.connpass.com/event/136558/
 
 ### connpass is
 
-- a web application by Be Proud inc. to manage applications of an event
+- a web application by BeProud Inc. to manage applications of an event
 - **free** to use
 - in Japan, used in many events about IT (not only Python events, other language event)
 
@@ -112,7 +112,7 @@ https://pyconjp.connpass.com/event/136558/
 
 ### Questionnaire form
 
-![image of a questionnaire form](pycontw_lt_staff_python/assets/connpass_questionnaire.png)
+![image of a questionnaire form](pycontw_lt_staff_python/assets/connpass_questionnaire.jpg)
 
 Note:
 
@@ -153,11 +153,11 @@ we want leaders to submit information about their projects
 
 +++
 
-## Solve the issues
+### Solve the issues
 
 - Only staffs can see answers 👉 **download** answers as a CSV file
 - we want to publish a page 👉 Google spreadsheet (share with **people who knows the link**)
-- we want to update** regularly 👉 create **Python script**
+- we want to update regularly 👉 create **Python script**
 
 +++
 
