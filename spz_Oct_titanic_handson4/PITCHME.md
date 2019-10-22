@@ -70,7 +70,7 @@ Kaggleとタイタニックについてはこの後説明します
 - 機械学習の概念を詳細に説明しません
 - ディープラーニングには立ち入りません
 
-最後に参考資料を案内します
+まとめで情報提供します
 
 +++
 
@@ -85,7 +85,7 @@ Kaggleとタイタニックについてはこの後説明します
 - まとめ（10分）
 - 質疑&もくもくタイム：精度向上に各自挑戦（20分程度）
 
----?include=spz_Jun_titanic_handson3/ML_kaggle_titanic.md
+---?include=spz_Oct_titanic_handson4/ML_kaggle_titanic.md
 
 ---
 
@@ -131,7 +131,7 @@ Kaggleとタイタニックについてはこの後説明します
 
 +++
 
-### Kernelのコピー
+### Notebookのコピー
 
 ![「・・・」→「Copy and Edit Kernel」をクリック](spz_Oct_titanic_handson4/assets/copy_and_edit_kernel.png)
 
@@ -139,7 +139,9 @@ Kaggleとタイタニックについてはこの後説明します
 
 ### 準備完了です！👍
 
+<span class="ninety-percent-img">
 ![Notebookのコピーが編集できるようになりました](spz_Oct_titanic_handson4/assets/editting_notenook.png)
+</span>
 
 以降はNotebookを一緒に進めます
 
@@ -163,19 +165,25 @@ Kaggleとタイタニックについてはこの後説明します
 
 ### 処理が終わるのを待ちます
 
+<span class="eighty-percent-img">
 ![](spz_Oct_titanic_handson4/assets/committing.png)
+</span>
 
 +++
 
 ### 2. Completeとなったら、リンクをクリック
 
+<span class="ninety-percent-img">
 ![](spz_Oct_titanic_handson4/assets/open_version.png)
+</span>
 
 +++
 
 ### 3. outputという項目へ移動
 
+<span class="seventy-percent-img">
 ![](spz_Oct_titanic_handson4/assets/kaggle_notebook_go_output.png)
+</span>
 
 ※2のタブは **閉じない** でください
 

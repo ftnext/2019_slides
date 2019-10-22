@@ -94,17 +94,19 @@
 
 ### Kaggle取り組み方案
 
-- 自分が興味をもてる開催中のコンペに参加。やりながら学べばいい
-- 評価が高いKernel、スコアが高いKernelの写経からスタート
+- 自分が興味をもてる開催中のコンペに参加。**やりながら学べばいい**
+- 評価が高いNotebook、スコアが高いNotebookの写経からスタート
 - 探す→まねる→工夫する で 順位上げに挑戦
 
 +++
 
-### Kernelを探す
+### Notebookを探す
 
-https://www.kaggle.com/c/titanic/kernels
+https://www.kaggle.com/c/titanic/notebooks
 
+<span class="ninety-percent-img">
 ![投票数が多いもの、またはスコアが高いものに注目しましょう。また、言語で絞り込めます](spz_Mar_titanic_handson2/assets/titanic_kernels.png)
+</span>
 
 +++
 
