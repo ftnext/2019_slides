@@ -204,7 +204,7 @@ Kaggleとタイタニックについてはこの後説明します
 - ロジックはシンプル。**女性が助かり、男性が死亡と予測**
 - もくもくタイムで、提出練習用データのスコア超えに取り組みましょう
 
----?include=spz_Jun_titanic_handson3/summary.md
+---?include=spz_Oct_titanic_handson4/summary.md
 
 ---
 
