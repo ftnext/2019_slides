@@ -146,7 +146,7 @@ Kaggleとタイタニックについてはこの後説明します
 
 以降はNotebookを一緒に進めます
 
-+++
+---
 
 ### Notebookで作った予測結果の提出方法
 
@@ -213,33 +213,9 @@ Kaggleとタイタニックについてはこの後説明します
 - ロジックはシンプル。**女性が助かり、男性が死亡と予測**
 - もくもくタイムで、提出練習用データのスコア超えに取り組みましょう
 
----?include=spz_Oct_titanic_handson4/summary.md
-
 ---
 
-### 参考文献（ハンズオン準備に当たり）
-
-- 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』pydatatext（ベースにしました）
-- PyData.Tokyo Tutorial [分析パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_dh.ipynb) [モデル作成パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_ml.ipynb)（タイタニックコンペを扱った先行事例）
-- 『[PythonユーザのためのJupyter 実践 入門](https://www.amazon.co.jp/dp/4774192236/)』可視化で参照
-
-+++
-
-### ご清聴ありがとうございました
-### ハンズオンお疲れさまでした！
-Contact: [Twitter @ftnext](https://twitter.com/ftnext)
-
----
-
-## もくもくタイムです！
-
-## 精度向上に挑戦💪
-
-Pythonのサンプルコードを組合せて、試行錯誤しましょう
-
-+++
-
-### 0.76555超えを目指す
+### もくもくタイムに向けて：0.76555超えを目指す
 
 - Notebook下部のサンプルコードを組合せてみましょう
   - `"""`や`'''`の間のコードで置き換えます（例を示します）
@@ -279,10 +255,32 @@ Notebookのタブを閉じてしまった方への案内です
 
 ![Editをクリック](spz_Oct_titanic_handson4/assets/edit_committed_notebook.png)
 
+---?include=spz_Oct_titanic_handson4/summary.md
+
+---
+
+### 参考文献（ハンズオン準備に当たり）
+
+- 『[Pythonによるあたらしいデータ分析の教科書](https://www.amazon.co.jp/dp/4798158348)』pydatatext（ベースにしました）
+- PyData.Tokyo Tutorial [分析パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_dh.ipynb) [モデル作成パート](https://github.com/PyDataTokyo/pydata-tokyo-tutorial-1/blob/master/pydatatokyo_tutorial_ml.ipynb)（タイタニックコンペを扱った先行事例）
+- 『[PythonユーザのためのJupyter 実践 入門](https://www.amazon.co.jp/dp/4774192236/)』可視化で参照
+
++++
+
+### ご清聴ありがとうございました
+### ハンズオンお疲れさまでした！
+Contact: [Twitter @ftnext](https://twitter.com/ftnext)
+
+---
+
+## 質疑&もくもくタイムです！
+
+## 精度向上に挑戦💪
+
+Pythonのサンプルコードを組合せて、試行錯誤しましょう
+
 +++
 
 ## 0.76555超えた人🙋
-
-ぜひツイートを：「0.78出ました！ #spzcolab」
 
 ---?include=spz_Jun_titanic_handson3/appendix.md
