@@ -96,17 +96,17 @@ https://www.kaggle.com/ftnext/advanced-titanic-kernel-shakyo-example/
 
 ### ノートブックを開く 2/2
 
-![ノートブック(.ipynb)のリンクをクリック](spz_Jun_titanic_handson3/assets/colab_select_notebook3.png)
+![ノートブック(.ipynb)のリンクをクリック](spz_Oct_titanic_handson4/assets/colab_select_notebook4.png)
 
 +++
 
-### セル実行時 1/2
+### セル実行時
 
 ![セルを初めて実行したときの警告は「このまま実行」を選択](spz_Jan_titanic_handson/assets/colab_run_cell.png)
 
 +++
 
-### セル実行時 2/2
+### （参考）セル実行時
 
 ![続くすべてのランタイムをリセットは「はい」を選択](spz_Jan_titanic_handson/assets/colab_run_cell2.png)
 
