@@ -79,16 +79,23 @@
 ### 実装できるようになりたければ
 
 - Pythonを学ぶ：無料の[公式チュートリアル](https://docs.python.org/ja/3/tutorial/index.html)、有料のオンライン教材：[PyQ](https://pyq.jp/)など
-- `pandas`や`scikit-learn`を深く学ぶ：『[pandasクックブック](https://www.amazon.co.jp/dp/425412242X)』、『[Pythonではじめる機械学習](https://www.amazon.co.jp/dp/4873117984/)』
+- `pandas`や`scikit-learn`を深く学ぶ：[spzcolabのハンズオン（pandas体験）](https://supporterzcolab.com/event/971/presentation/)、『[pandasクックブック](https://www.amazon.co.jp/dp/425412242X)』、『[Pythonではじめる機械学習](https://www.amazon.co.jp/dp/4873117984/)』
+
++++
+
+### 理論を学ぶ
+
+- 『[見て試してわかる機械学習アルゴリズムの仕組み 機械学習図鑑](https://www.amazon.co.jp/dp/4798155659)』
+- 数式をあまり見ずに理論が学べる本です
 
 +++
 
 ### ディープラーニングを学ぶ
 
-- Kaggleのコンペでは、ディープラーニングを使うことも多い（知っているとNotebookが読める）
-- ディープラーニングのパッケージ：TensorFlow, PyTorch, Chainer, ...
+- ディープラーニングが使えると、Kaggleで読めるNotebookが増える
+- ディープラーニングのパッケージ：TensorFlow, PyTorch, ...
 - 私は[TensorFlowチュートリアル](https://www.tensorflow.org/tutorials/)で学びました（機械学習の考え方も学べます）
-- TODO：おすすめの本
+- 実装例は『[直感 Deep Learning](https://www.amazon.co.jp/dp/4873118263/)』、理論を学ぶなら『[ゼロから作るDeep Learning](https://www.amazon.co.jp/dp/4873117585/)』
 
 ---
 
@@ -115,5 +122,5 @@ https://www.kaggle.com/c/titanic/notebooks
 注：Kaggleをバリバリやっていない立場からの見解です
 
 - 興味あるコンペのスコアを上げるために、必要なところだけつまみ食い学習
-- Kagglerから情報入手（例 [カレーちゃん](https://twitter.com/currypurin)さんによる[チュートリアル](https://note.mu/currypurin/n/nf390914c721e)）
+- Kagglerから情報入手（例 [カレーちゃん](https://twitter.com/currypurin)さんや[kaggler-ja コミュニティ](https://kaggler-ja-wiki.herokuapp.com/)）
 - 一番重要と思うのは、時間の確保（他は手を出せなくなる）
