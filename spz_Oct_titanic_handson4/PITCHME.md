@@ -283,4 +283,4 @@ Pythonのサンプルコードを組合せて、試行錯誤しましょう
 
 ## 0.76555超えた人🙋
 
----?include=spz_Jun_titanic_handson3/appendix.md
+---?include=spz_Oct_titanic_handson4/appendix.md
