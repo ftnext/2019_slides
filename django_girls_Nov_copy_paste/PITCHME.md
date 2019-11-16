@@ -59,7 +59,7 @@ https://tutorial.djangogirls.org/ja/intro_to_command_line/
 
 ### コピペ全盛期
 
-Pythonを書くときのを書くときの私
+Pythonを書くときの私
 
 1. 参考コードをコピペする
 2. 参考コードを動かしてみる
