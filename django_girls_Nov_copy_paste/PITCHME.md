@@ -1,5 +1,6 @@
-## コピペについて
-#### Django Girls Tokyo Workshop<br>2019/11/16 nikkie
+# コピペについて
+#### Django Girls Tokyo Workshop
+#### 2019/11/16 nikkie
 
 ---
 
@@ -26,7 +27,9 @@
 
 ### コピペの例
 
+<span class="seventy-percent-img">
 ![チュートリアルのコードやコマンドを選択してコピー](django_girls_Nov_copy_paste/copypaste_example.png)
+</span>
 
 →手元のエディタやコマンドラインにペースト（貼り付け）
 
