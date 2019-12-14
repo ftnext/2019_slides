@@ -3,6 +3,7 @@ GitPitchで作成したスライドの公開用リポジトリです。
 
 # スライド一覧
 
+- [技書博への道、振り返りLT](https://gitpitch.com/ftnext/2019_slides/master?p=gishohaku_Dec_retrospectives) @[第二回 技術書同人誌博覧会（懇親会）](https://peatix.com/event/1374258/)
 - [コピペについて](https://gitpitch.com/ftnext/2019_slides/master?p=django_girls_Nov_copy_paste) @[Django Girls Tokyo Workshop](https://djangogirls.org/tokyo/)
 - [機械学習に興味ありますか？Kaggle始めたいですか？タイタニックでもいいですか？](https://gitpitch.com/ftnext/2019_slides/master?p=spz_Oct_titanic_handson4) @[サポーターズ勉強会 (2019/10)](https://supporterzcolab.com/event/968/)
 - [京アニへの祈りをPythonでも捧げよう](https://gitpitch.com/ftnext/2019_slides/master?p=stapy_Aug_PrayForKyoani) @[みんなのPython勉強会#48 (2019/08)](https://startpython.connpass.com/event/124253/)
